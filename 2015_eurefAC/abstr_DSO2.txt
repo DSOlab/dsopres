@@ -1,0 +1,20 @@
+Title: GNSS processing at DSO: recent activity and current status
+Authors:
+Affiliations:
+
+abstract:
+Dionysos Satellite Observatory and Higher Geodesy Laboratory of National Technical University of Athens have developed
+an automated processing scheme to accommodate the daily analysis af all available continuous GNSS stations in Greece.
+
+This daily analysis process is implemented for the last three years,
+yielding results which help us further understand the complicated tectonic settings of Greece.
+
+Last few months, processing platform, whithin the SEISMO project,
+is in practice re-designed and re-implemented and upgraded to include more GNSS stations,
+new processing capabilities, automated archiving and publishing of results and products.
+
+At this time, reprocessing of all the available GNSS data up to date has begun using Bernese GNSS Software v 5.2.
+Also, the daily analysis of final and rapid solution is in progress..?!!?E??
+Results and products disseminated via a dedicated website.
+
+In the immediate future planned the processing scheme will include new processing software (GAMIT, GIPSY) and τι ´αλλο??!!
