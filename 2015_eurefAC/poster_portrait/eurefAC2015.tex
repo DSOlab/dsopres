@@ -70,7 +70,7 @@
 % \subtitle{}
 \author{Demitris Anastasiou, Xanthos Papanikolaou, Aggeliki Marinou, Vangelis Zacharis, Stavroula Alatza, Demitris Paradissis} % Author(s)
 
-\institute{National Technical University of Athens,  School of Rural and Surveying Engineering} % Institution(s)
+\institute{National Technical University of Athens\\ \vspace{0.3em} \par{  School of Rural and Surveying Engineering, Dionysos Stallite Observatory}} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -96,27 +96,36 @@
 
 \begin{block}{Introduction}
 {\small
-Dionysos Satellite Observatory and Higher Geodesy Laboratory of the National Technical University of Athens, have developed 
-an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
+Dionysos Satellite Observatory and Higher Geodesy Laboratory of National Technical University of Athens
+have developed an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
 
-This daily analysis process, is implemented for the last two years, yielding results which help us further understand the 
-complicated tectonic setting of Greece and nearby regions.
+This daily analysis process has been implemented for the last three years,
+yielding results which help us further understand the complicated tectonic settings of Greece.
 
-In the past few months, several modules (including a dedicated website) were updated, to facilitate the growing scientific research 
-activities of the laboratories. This ongoing effort, is part of the \emph{South Aegean Geodynamic And Tsunami Monitoring Platform}
-(SEISMO) project, which aims at the establishment of a multi-parametric/multi-method platform to accomodate an in-depth study of
-the South Aegean region (\cite{dsoseismo}).
+In the last few months, within the SEISMO project(\cite{dsoseismo}), 
+this processing platform has been re-designed and upgraded to include more GNSS stations,
+new processing capabilities, automated archiving and publishing of results and products.
+
+Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2. 
+
+In this study we present the final scheme of this platform, that invcludes data archive, prossecings, dissemination of results and products
+.
+
+Our goals for the near future include contributing to EUREF and expanding our research activities and capabilities.
+
+
 }
 \end{block}
 
-%------------------------------------------------
 
 \begin{figure}
     \includegraphics[width=0.8\onecolwid]{eu-greece-15065-fin-proc.eps}
     \caption{Processed stations and baselines for a typical run of the processing scheme.}
     \label{fig:proc-net}
 \end{figure}
-
+%----------------------------------------------------------------------------------------
+%           DATA
+%------------------------------------------------
 \begin{block}{Data}
 {\small
 In our daily processing scheme, we incorporate all GPS/GNSS stations placed in Greece, for which the data are made available. 
@@ -136,19 +145,26 @@ This accounts for a more homogenous spatial distribution and computational effic
 %\item Other: a collection of freely available stations installed by various institutions
 %\end{enumerate}
 
-One of these subnetworks, includes all GNSS stations installed on the island of Santorini (South Aegean), which is of great
-geodynamic and volcanic interest. All subnetworks, incorporate GNSS sites established in the South Aegean, a region of special 
-tectonic interest, including the so-called \emph{Hellenic Arc}. The four subnetworks are \emph{Greece}, \emph{Uranus}, \emph{Santorini} 
-and \emph{Other}.
+% One of these subnetworks, includes all GNSS stations installed on the island of Santorini (South Aegean), which is of great
+% geodynamic and volcanic interest. All subnetworks, incorporate GNSS sites established in the South Aegean, a region of special 
+% tectonic interest, including the so-called \emph{Hellenic Arc}. The four subnetworks are \emph{Greece}, \emph{Uranus}, \emph{Santorini} 
+% and \emph{Other}.
 }
 %\end{minipage}%
 %\begin{minipage}{.35\textwidth}
 \begin{figure}
   \centering
-  \includegraphics[width=0.4\onecolwid]{Diagram1.eps}
-  \caption{Flowchart of the processing scheme.}
+  \includegraphics[width=0.8\onecolwid]{grnets.jpg}
+  \caption{cGNSS stations prosseced at DSO.}
   \label{fig:test2}
 %\end{minipage}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\linewidth,height=.05\paperheight]{greece-freqs.png}
+    %\captionof{figure}{Another figure}
+    \caption{Data-span histogram for network GREECE.}
+    \label{fig:modts}
 \end{figure}
 \end{block}
 
@@ -186,8 +202,9 @@ All networks are processed sequentially, using the Bernese GNSS Software Version
 using a double-difference approach. In a last step, the networks are alligned to IGb08 \cite{igb08}.
 
 The processing of each network is performed twice for each day; first using ultra-rapid/rapid products and then, with a time 
-lag of approximately 20 days, using final products. Estimates for parameters of interest are archived and saved to be later 
-made available via the GSAC platform, or to be used as a-priori input values for later processing.
+lag of approximately 20 days, using final products. 
+% Estimates for parameters of interest are archived and saved to be later 
+% made available via the GSAC platform, or to be used as a-priori input values for later processing.
 
 Coordinate estimates are inserted in respective time-series files, which are then processed to estimate tectonic velocities, 
 offsets and annual and semi-annual harmonic coefficients (see Figure \ref{fig:modts}).
@@ -196,12 +213,29 @@ Specialities in each network are introduced; \emph{Santorini} network is aligned
 \emph{Greece}'s stations, while for the \emph{Uranus} network we process both GPS and GLONASS observations.
 }
 \begin{figure}
-  \centering
-  \includegraphics[width=0.9\onecolwid]{tspan.png}
-  \caption{Number of processed stations.}
-  \label{fig:tspan}
-%\end{minipage}
+\centering
+\begin{minipage}{.45\textwidth}
+    \centering
+    \includegraphics[width=.55\linewidth]{Diagram1.eps}
+    %\captionof{figure}{A figure}
+    \caption{Processing scheme.} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
+    \label{fig:ion}
+\end{minipage}%
+\begin{minipage}{.45\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{flowc.png}
+    %\captionof{figure}{Another figure}
+    \caption{Individual platform modules.}
+    \label{fig:modts}
+\end{minipage}
 \end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.9\onecolwid]{greece-freqs.png}
+%   \caption{Data-span histogram for network GREECE.}
+%   \label{fig:tspan}
+% %\end{minipage}
+% \end{figure}
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -240,8 +274,7 @@ Some of the results are already accesible via our website, while others will soo
 \cite{gsac} repository (\url{http://dionysos.survey.ntua.gr/dsoportal/_datacenter/gsacrepos.html}).\\
 
 Note that each site has a dedicated webpage, depicting its time-series analysis information; additionaly, 
-phenomena of special insterest are analyzed with minimin latency, and results are pubslished on the web
-(e.g. \cite{dsokep}).
+phenomena of special insterest are analyzed with minimin latency, and results are pubslished on the web).
 }
 \end{block}
 
@@ -267,8 +300,8 @@ This routine analysis has already provided crucial insight on various abrupt geo
 both for the scientific community and the public.
 }
 \begin{figure}
-    \includegraphics[width=1.0\onecolwid]{sa_gpsvel.jpg}
-    \caption{Tectonic velocities at the South Aegean wrt fixed Europe.}
+    \includegraphics[width=.9\onecolwid]{testvel.jpg}
+    \caption{Tectonic velocities of all processed GNSS stations wrt fixed Europe.}
     \label{fig:vels}
 \end{figure}
 \end{block}
@@ -295,7 +328,7 @@ both for the scientific community and the public.
 \begin{alertblock}{Contact Information}
 \begin{itemize}
 \item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
-\item Email: \href{xanthos@mail.ntua.gr}{xanthos@mail.ntua.gr}
+\item Email: \href{danast@mail.ntua.gr}{danast@mail.ntua.gr}
 \end{itemize}
 \end{alertblock}
 
