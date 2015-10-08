@@ -70,7 +70,7 @@
 % \subtitle{}
 \author{Demitris Anastasiou, Xanthos Papanikolaou, Aggeliki Marinou, Vangelis Zacharis, Stavroula Alatza, Demitris Paradissis} % Author(s)
 
-\institute{National Technical University of Athens\\ \vspace{0.3em} \par{  School of Rural and Surveying Engineering, Dionysos Stallite Observatory}} % Institution(s)
+\institute{National Technical University of Athens\\ \vspace{0.3em} \par{  School of Rural and Surveying Engineering, Dionysos Satellite Observatory}} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ In our daily processing scheme, we incorporate all GPS/GNSS stations placed in G
 These stations, are established and maintained by various institutions thus varying in quality, spatial distribution, hardware and 
 data aquisition methods and rates.
 
-At the moment, we analyze data from over 150 stations in Greece, divided in 4 subnetworks. 
+At the moment, we analyze data from over 150 stations in Greece, divided in 4 subnetworks (Figure \ref{fig:grnets}). 
 This accounts for a more homogenous spatial distribution and computational efficiency.
 
 %% EGU 2015 %%
@@ -156,7 +156,7 @@ This accounts for a more homogenous spatial distribution and computational effic
   \centering
   \includegraphics[width=0.8\onecolwid]{grnets.jpg}
   \caption{cGNSS stations prosseced at DSO.}
-  \label{fig:test2}
+  \label{fig:grnets}
 %\end{minipage}
 \end{figure}
 \begin{figure}
@@ -164,7 +164,7 @@ This accounts for a more homogenous spatial distribution and computational effic
     \includegraphics[width=.7\linewidth,height=.05\paperheight]{greece-freqs.png}
     %\captionof{figure}{Another figure}
     \caption{Data-span histogram for network GREECE.}
-    \label{fig:modts}
+    \label{fig:grfreq}
 \end{figure}
 \end{block}
 
@@ -196,7 +196,7 @@ This accounts for a more homogenous spatial distribution and computational effic
 %\centering
 %\begin{minipage}{.7\textwidth}
 {\small
-The processing routine starts a few hours after the end of day (typically at 3 am). All available data are collected and quality 
+The processing routine (Figure \ref{fig:process}) starts a few hours after the end of day (typically at 3 am). All available data are collected and quality 
 checks are performed. The required products are retreived from CODE Analysis Center \cite{codeac}.
 All networks are processed sequentially, using the Bernese GNSS Software Version 5.2 \cite{bernese}, in baseline mode, 
 using a double-difference approach. In a last step, the networks are alligned to IGb08 \cite{igb08}.
@@ -219,14 +219,14 @@ Specialities in each network are introduced; \emph{Santorini} network is aligned
     \includegraphics[width=.55\linewidth]{Diagram1.eps}
     %\captionof{figure}{A figure}
     \caption{Processing scheme.} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
-    \label{fig:ion}
+    \label{fig:process}
 \end{minipage}%
 \begin{minipage}{.45\textwidth}
     \centering
     \includegraphics[width=.8\linewidth]{flowc.png}
     %\captionof{figure}{Another figure}
     \caption{Individual platform modules.}
-    \label{fig:modts}
+    \label{fig:flowc}
 \end{minipage}
 \end{figure}
 % \begin{figure}
@@ -274,7 +274,7 @@ Some of the results are already accesible via our website, while others will soo
 \cite{gsac} repository (\url{http://dionysos.survey.ntua.gr/dsoportal/_datacenter/gsacrepos.html}).\\
 
 Note that each site has a dedicated webpage, depicting its time-series analysis information; additionaly, 
-phenomena of special insterest are analyzed with minimin latency, and results are pubslished on the web).
+phenomena of special insterest are analyzed with minimin latency, and results are pubslished on the web.
 }
 \end{block}
 
@@ -294,10 +294,11 @@ phenomena of special insterest are analyzed with minimin latency, and results ar
 
 \begin{block}{Conclusion}
 {\small
-A validated and efficient processing scheme is established, to closely monitor the tectonically active region of Greece. 
-This routine analysis has already provided crucial insight on various abrupt geophysical events in the recent past 
-(e.g. \cite{GRL:GRL50066}). We hope that in the near future, it will evolve into a node of knowledge and research, 
+The routine analysis of these stations has already provided crucial insight on various abrupt geophysical events in the recent past (e.g. \cite{GRL:GRL50066}),
+but also for the long time period  monitoring of such a tectonically active region such as greece.
+We hope that in the near future, it will evolve into a node of knowledge and research, 
 both for the scientific community and the public.
+
 }
 \begin{figure}
     \includegraphics[width=.9\onecolwid]{testvel.jpg}
@@ -316,6 +317,10 @@ both for the scientific community and the public.
 \footnotesize{\bibliographystyle{unsrt}
 \bibliography{sample}\vspace{0.75in}}
 
+\textbf{Acknowledgments...}
+\par\textit{\footnotesize We would like to thank all the GNSS data providers for this study.
+GNSS data for URANUS network provided by Tree Company CO.}
+\par\textit{\footnotesize This work is co-financed by Greece and the European Union}
 \end{block}
 
 %----------------------------------------------------------------------------------------
