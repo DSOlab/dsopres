@@ -1,0 +1,23 @@
+Title: Planning DSO contribution to EUREF densification project
+Authors:
+Affiliations:
+
+Abstract:
+For the last few years, Dionysos Satellite Observatory (NTUA) has been routinely 
+processing GNSS data to monitor ground deformation in Greece. During the last 
+months, we have concentrated our efforts in contributing to EUREF's 
+Densification Project via our dedicated processing platform.
+
+Of crucial importance is the establishment of a network of GPS/GNSS stations, 
+placed in Greece, which will provide a credible dataset; to this end, we have 
+filtered a large set of inhomogenous stations, installed by various institutes 
+to serve different scopes, to establish a geodetic quality network of reliable 
+time span.
+
+Our processing platform has been modernized, updated and enlarged to accommodate 
+the efficient analysis of large GNSS datasets and the corresponding dissemination
+of results and products. A large number of in-house software has been developed and
+a database was designed to couple Bernese GNSS Software.
+
+We are looking forward to a long term, fruitful cooperation with EUREF as well as
+extending our contribution to other projects within the community.
