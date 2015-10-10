@@ -1,4 +1,4 @@
-\beamer@endinputifotherversion {3.26pt}
+\beamer@endinputifotherversion {3.33pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
@@ -31,24 +31,26 @@
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\slideentry {2}{0}{13}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\sectionentry {3}{Web Resources}{14}{Web Resources}{0}}
-\headcommand {\beamer@sectionpages {6}{13}}
-\headcommand {\beamer@subsectionpages {6}{13}}
-\headcommand {\slideentry {3}{0}{14}{14/14}{}{0}}
+\headcommand {\slideentry {2}{0}{14}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\sectionentry {4}{Thank you}{15}{Thank you}{0}}
-\headcommand {\beamer@sectionpages {14}{14}}
-\headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\slideentry {4}{0}{15}{15/15}{}{0}}
+\headcommand {\sectionentry {3}{Web Resources}{15}{Web Resources}{0}}
+\headcommand {\beamer@sectionpages {6}{14}}
+\headcommand {\beamer@subsectionpages {6}{14}}
+\headcommand {\slideentry {3}{0}{15}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
+\headcommand {\sectionentry {4}{Thank you}{16}{Thank you}{0}}
+\headcommand {\beamer@sectionpages {15}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
 \headcommand {\slideentry {4}{0}{16}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {4}{0}{16}{16/17}{}{0}}
-\headcommand {\beamer@framepages {16}{17}}
-\headcommand {\slideentry {4}{0}{16}{16/18}{}{0}}
-\headcommand {\beamer@framepages {16}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {15}{18}}
-\headcommand {\beamer@sectionpages {15}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\def \inserttotalframenumber {18}}
+\headcommand {\slideentry {4}{0}{17}{17/17}{}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {4}{0}{17}{17/18}{}{0}}
+\headcommand {\beamer@framepages {17}{18}}
+\headcommand {\slideentry {4}{0}{17}{17/19}{}{0}}
+\headcommand {\beamer@framepages {17}{19}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {16}{19}}
+\headcommand {\beamer@sectionpages {16}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\def \inserttotalframenumber {19}}
