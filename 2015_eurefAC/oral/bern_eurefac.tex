@@ -15,10 +15,7 @@
 \usepackage{dtklogos}
 \usepackage{tikz}
 \usetikzlibrary{mindmap,shadows}
-% Information boxes
-\tikzset{level 1 concept/.append style={font=\sf, sibling angle=90,level distance = 17mm}}
-\tikzset{level 2 concept/.append style={font=\sf, sibling angle=45,level distance = 7mm}}
-\tikzset{every node/.append style={scale=0.4}} 
+\usepackage{smartdiagram}
 
 % Watermark background (simple theme)
 \setwatermark{\includegraphics[height=8cm]{img/ntua.png}}
@@ -84,27 +81,6 @@
     \item the recent volcanic activity in \emph{Santorini} (e.g. \cite{papoutsis}),
     \item the 2014 \emph{Kefallonia} earthquakes (e.g. \cite{sarkefalonia}, \cite{sakkas})
   \end{itemize}
-%    Key idea : \textbf{Interconnection between the Processing Scheme, a DataBase system, GSAC interface and a dedicated WebSite.}
-
-%  \begin{columns}
-%    \column{.5\textwidth}
-%    \begin{figure}
-%        \begin{center}
-%        \includegraphics[width=.8\textwidth]{img/flowc.png}
-%        \caption{Flowchart of the individual platform modules.}
-%        \label{fig:mits}
-%        \end{center}
-%    \end{figure}
-%    \column{.5\textwidth}
-%    \begin{figure}
-%        \begin{center}
-%        \includegraphics[width=.5\textwidth]{img/Diagram1.eps}
-%        \caption{Flowchart of the processing scheme.}
-%        \label{fig:dgrm}
-%        \end{center}
-%    \end{figure}
-%  \end{columns}
-
 \end{frame}
 
 \begin{frame}\frametitle{SEISMO Project}\framesubtitle{}
@@ -116,7 +92,7 @@
     \item manipulation, archiving \& dissemination of GNSS data files,
     \item new processing capabilities (e.g. GPS+GLONASS processing),
     \item automatic archiving and publishing of results (via a dedicated web-site),
-    \item integration with GSAC (\cite{gsac}) and MySQL databases,
+    \item integration with \texttt{GSAC} (\cite{gsac}) and \texttt{MySQL} databases,
     \item new results and products
   \end{itemize}
 
@@ -137,45 +113,86 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
+\section{GPS/GNSS Networks}
+
+\begin{frame}\frametitle{Data}\framesubtitle{What we process}
   Currently we process whatever we can get our hands on \ldots\\
   Problems:
   \begin{itemize}
-    \item Inhomogenous dataset (RINEX, raw files, etc).
+    \item Inhomogenous dataset (\texttt{RINEX}, raw files, etc).
     \item Various maintainers, different mentalities.
     \item Different aquisition methods/rates.
     \item Hardly any log files.
-    \item Wide variety of equipment (not always included in atx files).
+    \item Wide variety of equipment (not always included in \texttt{atx} files).
   \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
-  Network installed/maintained by COMET\footnotemark  \& NTUA.
+\begin{frame}\frametitle{COMET/NTUA Network}\framesubtitle{}
+  Network installed/maintained by \texttt{COMET}\footnotemark \& \texttt{NTUA}.
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
+  {\small
   \begin{itemize}
+    \setlength\itemsep{.1em}
     \item<pro@1-> established along the Aegean Arc
     \item<pro@1-> homogenous (geodetic type) equipment
     \item<pro@1-> credible time-span (early 2004 - late 2011)
     \item<con@1-> data aquisition stoped at late 2011
     \item<con@1-> equipment is old \& GPS-only
     \item<con@1-> needs repairing
-  \end{itemize}
+\end{itemize}
+}
+\end{column}%
+\hfill%
+\begin{column}{.68\textwidth}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.6\textwidth]{img/uranusnet.eps}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+  \begin{block}{}
+    Can be used for EUREF densification 'as is'.
+  \end{block}
   \footnotetext[1]{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
-  Network maintained by GEIN/NOA\footnotemark. Sites established by various institutes
-  (NTUA, UNAVCO, MIT).
+\begin{frame}\frametitle{NOA/GEIN and others}\framesubtitle{}
+  Network maintained by \texttt{GEIN}/\texttt{NOA}\footnotemark. Sites established by various institutes
+  (\texttt{NTUA, UNAVCO, MIT}).
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
   \begin{itemize}
     \item<pro@1-> covers (sparsely) all of Greece 
     \item<pro@1-> credible time-span (newest stations at 2012)
     \item<con@1-> inconsistent providers (for some stations)
     \item<con@1-> no log files
   \end{itemize}
+\end{column}%
+\hfill%
+\begin{column}{.68\textwidth}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+  \begin{block}{}
+    Unusable sites: atal, stef, ?? (no calibration).
+  \end{block}
   \footnotetext[1]{National Observatory of Athens \url{http://www.gein.noa.gr/services/GPS/noa\_gps.html}}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
-  Network installed/maintained by Tree-Company\footnotemark.
+\begin{frame}\frametitle{Tree-Compant / URANUS}\framesubtitle{}
+  Network installed/maintained by \texttt{Tree-Company}\footnotemark.
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
@@ -183,22 +200,54 @@
     \item<con@1-> no log files
     \item<con@1-> comercial usage oriented
   \end{itemize}
+\end{column}%
+\hfill%
+\begin{column}{.68\textwidth}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+  \begin{block}{}
+  Can nonly use ones with time-span > 2 years ($\sim$ ??). 
+  \end{block}
   \footnotetext[1]{URANUS network \url{http://www.uranus.gr/}}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
-  Network installed/maintained by HEPOS\footnotemark (Greek Cadastre Service). 
+\begin{frame}\frametitle{HEPOS}\framesubtitle{}
+  Network installed/maintained by \texttt{HEPOS}\footnotemark (Greek Cadastre Service). 
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
     \item<con@1-> credible time-span (late 2013 onwards)
     \item<con@1-> limited access ($\sim$5 stations)!!
   \end{itemize}
+\end{column}%
+\hfill%
+\begin{column}{.68\textwidth}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+  \begin{block}{}
+  Can only use somewhere between 5 and 10 sites for a time-span of $\sim$ 4 years.
+  \end{block}
   \footnotetext[1]{\url{http://www.hepos.gr/}}
 \end{frame}
 
-\begin{frame}\frametitle{Data}\framesubtitle{}
-  Network installed/maintained by CRLab\footnotemark. 
+\begin{frame}\frametitle{Localised Networks}\framesubtitle{}
+  Network installed/maintained by \texttt{CRLab}\footnotemark. 
   \begin{itemize}
     \item<pro@1-> credible time-span
     \item<pro@1-> only covers the Corinth Rift
@@ -215,18 +264,19 @@
   \footnotetext[1]{Corinth Rift Laboratory \url{http://webobs.crlab.eu/}}
 \end{frame}
 
-\begin{frame}\frametitle{Processing}\framesubtitle{}
+\section{Processing}
 
+\begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.28\textwidth}
-  The core tool/software is Bernese GNSS Software v5.2\cite{bernese}.\\
+  The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bernese}.\\
   \medskip
   Integration with 
   \begin{itemize}
-    \item MySQL database,
-    \item Python library
-    \item GSAC
-    \item wrappers (shell)
+    \item \texttt{MySQL} database,
+    \item \texttt{Python} library
+    \item \texttt{GSAC}
+    \item wrappers (\texttt{shell})
   \end{itemize}
 \end{column}%
 \hfill%
@@ -275,7 +325,54 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}\frametitle{Processing}\framesubtitle{}
+\begin{frame}\frametitle{Outlook}\framesubtitle{}
+  \begin{itemize}
+    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
+    \item synchronize \texttt{GEN/} directory
+    \item closely follow \texttt{RNX2SNX.PCF}
+    \begin{itemize}
+      \item variabes in PCF are set by external tools (genericity)
+      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
+    \end{itemize}
+    \item update database
+    \item customize output (\texttt{html, json})
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Workflow}\framesubtitle{}
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
+  \texttt{\$>ddproces.sh --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv=}
+\end{column}
+\hfill%
+\begin{column}{.48\textwidth}
+  \scalebox{0.5}{
+  \smartdiagram[priority descriptive diagram]{
+    Download \texttt{RINEX} consulting \texttt{MySQL} db,
+    Download products,
+    Validate \texttt{.STA}; synchronize \texttt{/GEN},
+    Set variables in the Protocol Control File (\texttt{.PCF}),
+    Process the dataset,
+    Check for errors,
+    Save Products \& Update database records,
+    Compile Report (\texttt{json} | \texttt{html})
+}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Results \& Output}\framesubtitle{}
+JSON output
+\end{frame}
+
+\begin{frame}\frametitle{Velocity Field}\framesubtitle{}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.8\textwidth]{img/testvel.jpg}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
 \end{frame}
 
 \section{Web Resources}
