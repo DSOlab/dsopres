@@ -16,6 +16,11 @@
 \usepackage{tikz}
 \usetikzlibrary{mindmap,shadows}
 \usepackage{smartdiagram}
+% restart numbering footnotes per page
+\usepackage{perpage}
+\MakePerPage{footnote}
+% use nice itemlists ..
+\usepackage{enumitem}
 
 % Watermark background (simple theme)
 \setwatermark{\includegraphics[height=8cm]{img/ntua.png}}
@@ -84,7 +89,7 @@
 \end{frame}
 
 \begin{frame}\frametitle{SEISMO Project}\framesubtitle{}
-  In the framework of the SEISMO\footnotemark Project, platform has been upgraded,
+  In the framework of the SEISMO\footnote{South Aegean Geodynamic And Tsunami Monitoring Platform} Project, platform has been upgraded,
   to include:
 
   \begin{itemize}
@@ -98,7 +103,6 @@
 
   The platform was in practice re-designed \& re-implemented.
 
-  \footnotetext[1]{South Aegean Geodynamic And Tsunami Monitoring Platform}
 \end{frame}
 
 \begin{frame}\frametitle{Status}\framesubtitle{}
@@ -107,15 +111,22 @@
 \section{Contribution To EUREF}
 
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
+  Via our contribution to EUREF and interaction with its community, we hope to:
   \begin{itemize}
     \item expand \& modernize our research activity,
     \item contribute to the GNSS community,
+    \item take part in ongoing/future projects,
+    \item expand our knowlegdbase,
+    \item improve our academic services (NTUA is a University)
   \end{itemize}
 \end{frame}
 
-\section{GPS/GNSS Networks}
+\subsection{GPS/GNSS Networks}
 
-\begin{frame}\frametitle{Data}\framesubtitle{What we process}
+\begin{frame}\frametitle{Densification Network Selection}\framesubtitle{}
+  To contribute to the Densification we have to establish a credible dataset
+  (network). This has proven to be rather challenging !\\
+  \bigskip
   Currently we process whatever we can get our hands on \ldots\\
   Problems:
   \begin{itemize}
@@ -128,7 +139,7 @@
 \end{frame}
 
 \begin{frame}\frametitle{COMET/NTUA Network}\framesubtitle{}
-  Network installed/maintained by \texttt{COMET}\footnotemark \& \texttt{NTUA}.
+  Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
   {\small
@@ -155,13 +166,12 @@
 \end{column}%
 \end{columns}
   \begin{block}{}
-    Can be used for EUREF densification 'as is'.
+    Can be used for EUREF densification ``as is''.
   \end{block}
-  \footnotetext[1]{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}}
 \end{frame}
 
 \begin{frame}\frametitle{NOA/GEIN and others}\framesubtitle{}
-  Network maintained by \texttt{GEIN}/\texttt{NOA}\footnotemark. Sites established by various institutes
+  Network maintained by \texttt{GEIN}/\texttt{NOA}\footnote{National Observatory of Athens \url{http://www.gein.noa.gr/services/GPS/noa\_gps.html}}. Sites established by various institutes
   (\texttt{NTUA, UNAVCO, MIT}).
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
@@ -186,11 +196,10 @@
   \begin{block}{}
     Unusable sites: atal, stef, ?? (no calibration).
   \end{block}
-  \footnotetext[1]{National Observatory of Athens \url{http://www.gein.noa.gr/services/GPS/noa\_gps.html}}
 \end{frame}
 
-\begin{frame}\frametitle{Tree-Compant / URANUS}\framesubtitle{}
-  Network installed/maintained by \texttt{Tree-Company}\footnotemark.
+\begin{frame}\frametitle{Tree-Company / URANUS}\framesubtitle{}
+  Network installed/maintained by \texttt{Tree-Company}\footnote{URANUS network \url{http://www.uranus.gr/}}.
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
   \begin{itemize}
@@ -199,6 +208,7 @@
     \item<con@1-> limited time-span (late 2013 onwards)
     \item<con@1-> no log files
     \item<con@1-> comercial usage oriented
+    \item<con@1-> $\sim$ 2 years of data lost !
   \end{itemize}
 \end{column}%
 \hfill%
@@ -215,17 +225,16 @@
   \begin{block}{}
   Can nonly use ones with time-span > 2 years ($\sim$ ??). 
   \end{block}
-  \footnotetext[1]{URANUS network \url{http://www.uranus.gr/}}
 \end{frame}
 
 \begin{frame}\frametitle{HEPOS}\framesubtitle{}
-  Network installed/maintained by \texttt{HEPOS}\footnotemark (Greek Cadastre Service). 
+  Network installed/maintained by \texttt{HEPOS}\footnote{\url{http://www.hepos.gr/}} (Greek Cadastre Service). 
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
-    \item<con@1-> credible time-span (late 2013 onwards)
+    \item<con@1-> credible time-span (late 2007 onwards)
     \item<con@1-> limited access ($\sim$5 stations)!!
   \end{itemize}
 \end{column}%
@@ -243,11 +252,10 @@
   \begin{block}{}
   Can only use somewhere between 5 and 10 sites for a time-span of $\sim$ 4 years.
   \end{block}
-  \footnotetext[1]{\url{http://www.hepos.gr/}}
 \end{frame}
 
 \begin{frame}\frametitle{Localised Networks}\framesubtitle{}
-  Network installed/maintained by \texttt{CRLab}\footnotemark. 
+  Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
   \begin{itemize}
     \item<pro@1-> credible time-span
     \item<pro@1-> only covers the Corinth Rift
@@ -261,10 +269,20 @@
     \item<con@1-> limited time-span
   \end{itemize}
 
-  \footnotetext[1]{Corinth Rift Laboratory \url{http://webobs.crlab.eu/}}
 \end{frame}
 
-\section{Processing}
+\begin{frame}\frametitle{Densification Network}\framesubtitle{}
+  The network to be used for the Densification, will look something like this \ldots
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
+ \caption{Flowchart of the processing scheme.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{frame}
+
+\subsection{Processing}
 
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
@@ -326,23 +344,37 @@
 \end{frame}
 
 \begin{frame}\frametitle{Outlook}\framesubtitle{}
-  \begin{itemize}
-    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
-    \item synchronize \texttt{GEN/} directory
-    \item closely follow \texttt{RNX2SNX.PCF}
-    \begin{itemize}
-      \item variabes in PCF are set by external tools (genericity)
-      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
-    \end{itemize}
-    \item update database
-    \item customize output (\texttt{html, json})
+  Processing is consistent with EUREFF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
+  \begin{itemize}[label={\checkmark}]
+    \item \texttt{SINEX} with required info/blocks,
+    \item Reference frame \texttt{IGb08},
+    \item \texttt{IERS} Conventions 2010,
+    \item \texttt{IGS}/\texttt{CODE} products,
+    \item ocean loading corrections (\texttt{FES2004}),
+    \item atmospheric tidal loading corrections,
+    \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
+    \item \texttt{GMF} and/or \texttt{VMF1}; \texttt{Chen-Herring} gradient parameter,
+    \item amiguities fixed (length-dependent algorithm),
+    \item use \texttt{GLONASS} obs (when available)
   \end{itemize}
+
+%  \begin{itemize}
+%    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
+%    \item synchronize \texttt{GEN/} directory
+%    \item closely follow \texttt{RNX2SNX.PCF}
+%    \begin{itemize}
+%      \item variabes in PCF are set by external tools (genericity)
+%      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
+%    \end{itemize}
+%    \item update database
+%    \item customize output (\texttt{html, json})
+%  \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Workflow}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
-  \texttt{\$>ddproces.sh --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv=}
+  \texttt{\$>ddproces.sh --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
 \end{column}
 \hfill%
 \begin{column}{.48\textwidth}
