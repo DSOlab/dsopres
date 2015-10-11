@@ -20,7 +20,10 @@
 \usepackage{perpage}
 \MakePerPage{footnote}
 % use nice itemlists ..
-\usepackage{enumitem}
+%\usepackage{enumitem, color, amssymb}
+% customize captions
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize,skip=0pt,belowskip=0pt}
 
 % Watermark background (simple theme)
 \setwatermark{\includegraphics[height=8cm]{img/ntua.png}}
@@ -139,9 +142,9 @@
 \end{frame}
 
 \begin{frame}\frametitle{COMET/NTUA Network}\framesubtitle{}
-  Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
+%Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
+\begin{column}{.40\textwidth}
   {\small
   \begin{itemize}
     \setlength\itemsep{.1em}
@@ -155,12 +158,12 @@
 }
 \end{column}%
 \hfill%
-\begin{column}{.68\textwidth}
+\begin{column}{.60\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[width=.6\textwidth]{img/uranusnet.eps}
- \caption{Flowchart of the processing scheme.}
- \label{fig:dgrm}
+ \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/comet.eps}
+ \caption{COMET/NTUA network.}
+ \label{fig:cometntua}
  \end{center}
  \end{figure}
 \end{column}%
@@ -171,10 +174,10 @@
 \end{frame}
 
 \begin{frame}\frametitle{NOA/GEIN and others}\framesubtitle{}
-  Network maintained by \texttt{GEIN}/\texttt{NOA}\footnote{National Observatory of Athens \url{http://www.gein.noa.gr/services/GPS/noa\_gps.html}}. Sites established by various institutes
-  (\texttt{NTUA, UNAVCO, MIT}).
+%Network maintained by \texttt{GEIN}/\texttt{NOA}\footnote{National Observatory of Athens \url{http://www.gein.noa.gr/services/GPS/noa\_gps.html}}. Sites established by various institutes
+%(\texttt{NTUA, UNAVCO, MIT}).
 \begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
+\begin{column}{.40\textwidth}
   \begin{itemize}
     \item<pro@1-> covers (sparsely) all of Greece 
     \item<pro@1-> credible time-span (newest stations at 2012)
@@ -183,12 +186,12 @@
   \end{itemize}
 \end{column}%
 \hfill%
-\begin{column}{.68\textwidth}
+\begin{column}{.60\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
- \caption{Flowchart of the processing scheme.}
- \label{fig:dgrm}
+ \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/noanet.eps}
+ \caption{NOA/GEIN network.}
+ \label{fig:noa}
  \end{center}
  \end{figure}
 \end{column}%
@@ -199,9 +202,9 @@
 \end{frame}
 
 \begin{frame}\frametitle{Tree-Company / URANUS}\framesubtitle{}
-  Network installed/maintained by \texttt{Tree-Company}\footnote{URANUS network \url{http://www.uranus.gr/}}.
+%  Network installed/maintained by \texttt{Tree-Company}\footnote{URANUS network \url{http://www.uranus.gr/}}.
 \begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
+\begin{column}{.40\textwidth}
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
@@ -212,12 +215,12 @@
   \end{itemize}
 \end{column}%
 \hfill%
-\begin{column}{.68\textwidth}
+\begin{column}{.60\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
- \caption{Flowchart of the processing scheme.}
- \label{fig:dgrm}
+ \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/uranus.eps}
+ \caption{Tree-Company URANUS network.}
+ \label{fig:uranus}
  \end{center}
  \end{figure}
 \end{column}%
@@ -228,9 +231,9 @@
 \end{frame}
 
 \begin{frame}\frametitle{HEPOS}\framesubtitle{}
-  Network installed/maintained by \texttt{HEPOS}\footnote{\url{http://www.hepos.gr/}} (Greek Cadastre Service). 
+%  Network installed/maintained by \texttt{HEPOS}\footnote{\url{http://www.hepos.gr/}} (Greek Cadastre Service). 
 \begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
+\begin{column}{.40\textwidth}
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
@@ -242,9 +245,9 @@
 \begin{column}{.68\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
- \caption{Flowchart of the processing scheme.}
- \label{fig:dgrm}
+ \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.85\textwidth]{img/heposnet.eps}
+ \caption{HEPOS network.}
+ \label{fig:hepos}
  \end{center}
  \end{figure}
 \end{column}%
@@ -255,28 +258,49 @@
 \end{frame}
 
 \begin{frame}\frametitle{Localised Networks}\framesubtitle{}
-  Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
+  %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
+  \FourQuad
+  {
   \begin{itemize}
     \item<pro@1-> credible time-span
     \item<pro@1-> only covers the Corinth Rift
     \item<con@1-> inconsistent providers
     \item<con@1-> no log files \& equipment changes
   \end{itemize}
-
+  }
+  {
+ \begin{figure}
+ \begin{center}
+ \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/crlsmall.eps}
+ \caption{CRLab network.}
+ \label{fig:crlab}
+ \end{center}
+ \end{figure}
+  }
+  {
   Santorini Network. 
   \begin{itemize}
     \item<con@1-> localized
     \item<con@1-> limited time-span
   \end{itemize}
-
+  }
+  {
+ \begin{figure}
+ \begin{center}
+ \includegraphics[trim={1cm 2cm 1cm 2.8cm},clip,width=.7\textwidth]{img/sntrnet.eps}
+ \caption{Santorini network.}
+ \label{fig:sntrnet}
+ \end{center}
+ \end{figure}
+  }
 \end{frame}
 
 \begin{frame}\frametitle{Densification Network}\framesubtitle{}
   The network to be used for the Densification, will look something like this \ldots
  \begin{figure}
  \begin{center}
- \includegraphics[width=.5\textwidth]{img/uranusnet.eps}
- \caption{Flowchart of the processing scheme.}
+ \includegraphics[trim={1cm 2cm 1cm 2.8cm},clip,width=.65\textwidth]{img/greeceall.eps}
+ \caption{Densification network (preliminery).}
  \label{fig:dgrm}
  \end{center}
  \end{figure}
@@ -345,7 +369,7 @@
 
 \begin{frame}\frametitle{Outlook}\framesubtitle{}
   Processing is consistent with EUREFF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
-  \begin{itemize}[label={\checkmark}]
+  \begin{itemize}%%[label={\checkmark}]
     \item \texttt{SINEX} with required info/blocks,
     \item Reference frame \texttt{IGb08},
     \item \texttt{IERS} Conventions 2010,
