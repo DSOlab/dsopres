@@ -1,0 +1,126 @@
+\documentclass{beamer}
+
+%\usetheme{Singapore}
+%\usetheme{Madrid}
+\usetheme{simpledso}
+\usepackage{lmodern}
+\usepackage[scale=2]{ccicons}
+
+% TODO: 
+%   position adjustement
+%   change colours
+%
+\usepackage{graphicx}  % Required for including images
+\graphicspath{{../../figures/}} % Directory in which figures are stored
+
+%% for tikz
+\usepackage{dtklogos}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,shadows}
+\usepackage{smartdiagram}
+% restart numbering footnotes per page
+\usepackage{perpage}
+\MakePerPage{footnote}
+% use nice itemlists ..
+%\usepackage{enumitem, color, amssymb}
+% customize captions
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize,labelfont=footnotesize,skip=0pt,belowskip=0pt}
+
+% Watermark background (simple theme)
+\setwatermark{\includegraphics[height=8cm]{ntua.png}}
+
+\newcommand\FourQuad[4]{
+    \begin{minipage}[b][.45\textheight][t]{.50\textwidth}\centering#1\end{minipage}\hfill%
+    \begin{minipage}[b][.45\textheight][t]{.50\textwidth}\centering#2\end{minipage}\\[0.9em]
+    \begin{minipage}[b][.45\textheight][t]{.50\textwidth}\centering#3\end{minipage}\hfill
+    \begin{minipage}[b][.45\textheight][t]{.50\textwidth}\centering#4\end{minipage}%
+}
+
+\setbeamerfont{caption}{size=\scriptsize}
+
+%%  for pros and cons
+\newenvironment{proenv}{\only{\setbeamercolor{local structure}{fg=green}}}{}
+\newenvironment{conenv}{\only{\setbeamercolor{local structure}{fg=red}}}{}
+
+\title{GNSS processing at DSO: recent activity and current status.}
+% \subtitle{Data, products and preliminary results}
+% \date{\today}
+\date{}
+\author{Demitris Anastasiou, Xanthos Papanikolaou, Aggeliki Marinou, Vangelis Zacharis, Stavroula Alatza, Demitris Paradissis}
+\institute{National Technical University of Athens\\Dionysos Satellite Observatory\\\url{http://dionysos.survey.ntua.gr}}
+
+\begin{document}
+
+%%
+%% TITLE PAGE
+%%
+\begin{frame}[plain]
+\maketitle
+\begin{block}{}
+    \begin{center}
+      \textbf{EUREF Analysis Centre Workshop}\\
+    AIU Bern, Switzerland, October 14-15, 2015 \\
+    \end{center}
+\end{block}
+\end{frame}
+
+
+\begin{frame}\frametitle{GPS/GNSS Networks}\framesubtitle{}
+\begin{figure}
+ \begin{center}
+ \vskip -.2cm
+  \includegraphics[width=0.75\textwidth]{grnets.jpg}
+ \label{fig:noa}
+ \end{center}
+ \end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{Processing}\framesubtitle{}
+\begin{columns}[T] % align columns
+\begin{column}{.50\textwidth}
+\begin{figure}
+ \begin{center}
+ \vskip -.2cm
+    \includegraphics[width=.55\linewidth]{Diagram1.eps}
+ \label{fig:noa}
+ \end{center}
+ \end{figure}
+\end{column}%
+\hfill%
+\begin{column}{.50\textwidth}
+ \begin{figure}
+ \begin{center}
+ \vskip -.2cm
+    \includegraphics[width=.8\linewidth]{flowc.png}
+ \label{fig:noa}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Dissemination}\framesubtitle{}
+\begin{figure}
+ \begin{center}
+ \vskip -.2cm
+  \includegraphics[width=1\textwidth]{dsowebprint.png}
+ 
+ \label{fig:noa}
+ \url{http://dionysos.survey.ntua.gr}
+ \end{center}
+ \end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{}\framesubtitle{}
+    \begin{center}
+    Thank you very much for your attention !
+    \end{center}
+\end{frame}
+
+
+
+
+
+\end{document}

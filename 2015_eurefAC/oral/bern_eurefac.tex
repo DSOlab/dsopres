@@ -10,7 +10,8 @@
 %   position adjustement
 %   change colours
 %
-
+\usepackage{graphicx}  % Required for including images
+\usepackage{fancybox}
 %% for tikz
 \usepackage{dtklogos}
 \usepackage{tikz}
@@ -45,7 +46,7 @@
 % \subtitle{Data, products and preliminary results}
 % \date{\today}
 \date{}
-\author{X. Papanikolaou, D. Anastasiou, A. Marinou, V. Zacharis, E. Tita, and D. Paradissis}
+\author{X. Papanikolaou, D. Anastasiou, V. Zacharis, A. Marinou, E. Tita, and D. Paradissis}
 \institute{National Technical University of Athens\\Dionysos Satellite Observatory\\\url{http://dionysos.survey.ntua.gr}}
 
 \begin{document}
@@ -108,10 +109,10 @@
 
 \end{frame}
 
-\begin{frame}\frametitle{Status}\framesubtitle{}
-\end{frame}
+% \begin{frame}\frametitle{Status}\framesubtitle{}
+% \end{frame}
 
-\section{Contribution To EUREF}
+\section{Contribution to EUREF}
 
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
   Via our contribution to EUREF and interaction with its community, we hope to:
@@ -124,7 +125,17 @@
   \end{itemize}
 \end{frame}
 
-\subsection{GPS/GNSS Networks}
+\begin{frame}\frametitle{Velocity Field}\framesubtitle{}
+ \begin{figure}
+ \begin{center}
+ \includegraphics[width=.7\textwidth]{img/testvel.jpg}
+ \caption{Flowchart of the processing scheme \cite{papanikolaou}.}
+ \label{fig:dgrm}
+ \end{center}
+ \end{figure}
+\end{frame}
+
+\section{GPS/GNSS Networks in Greece}
 
 \begin{frame}\frametitle{Densification Network Selection}\framesubtitle{}
   To contribute to the Densification we have to establish a credible dataset
@@ -161,7 +172,9 @@
 \begin{column}{.60\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/comet.eps}
+ \vskip -.2cm
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{img/comet.eps} %1 2.2 0 0
+ \vskip -.7cm
  \caption{COMET/NTUA network.}
  \label{fig:cometntua}
  \end{center}
@@ -189,7 +202,9 @@
 \begin{column}{.60\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/noanet.eps}
+ \vskip -.2cm
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{img/noanet.eps}
+ \vskip -.7cm
  \caption{NOA/GEIN network.}
  \label{fig:noa}
  \end{center}
@@ -197,14 +212,15 @@
 \end{column}%
 \end{columns}
   \begin{block}{}
-    Unusable sites: atal, stef, ?? (no calibration).
+    Unusable sites: atal, stef (no calibration).
   \end{block}
 \end{frame}
 
 \begin{frame}\frametitle{Tree-Company / URANUS}\framesubtitle{}
 %  Network installed/maintained by \texttt{Tree-Company}\footnote{URANUS network \url{http://www.uranus.gr/}}.
 \begin{columns}[T] % align columns
-\begin{column}{.40\textwidth}
+\begin{column}{.35\textwidth}
+{\small
   \begin{itemize}
     \item<pro@1-> dense network, covers all of Greece
     \item<pro@1-> homogenous (geodetic type) equipment
@@ -213,12 +229,15 @@
     \item<con@1-> comercial usage oriented
     \item<con@1-> $\sim$ 2 years of data lost !
   \end{itemize}
+  }
 \end{column}%
 \hfill%
-\begin{column}{.60\textwidth}
+\begin{column}{.65\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/uranus.eps}
+ \vskip .5cm
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=1.1\textwidth]{img/uranus.eps}
+ \vskip -.4cm
  \caption{Tree-Company URANUS network.}
  \label{fig:uranus}
  \end{center}
@@ -226,7 +245,7 @@
 \end{column}%
 \end{columns}
   \begin{block}{}
-  Can nonly use ones with time-span > 2 years ($\sim$ ??). 
+  Can only use sites with time-span > 2 years. 
   \end{block}
 \end{frame}
 
@@ -245,7 +264,9 @@
 \begin{column}{.68\textwidth}
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.85\textwidth]{img/heposnet.eps}
+ \vskip -.2cm
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{img/heposnet.eps}
+ \vskip -.7cm
  \caption{HEPOS network.}
  \label{fig:hepos}
  \end{center}
@@ -257,7 +278,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}\frametitle{Localised Networks}\framesubtitle{}
+\begin{frame}\frametitle{Local Networks}\framesubtitle{}
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
   \FourQuad
   {
@@ -272,7 +293,8 @@
   {
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.5cm},clip,width=.9\textwidth]{img/crlsmall.eps}
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{img/crlnet.eps}
+  \vskip -.6cm
  \caption{CRLab network.}
  \label{fig:crlab}
  \end{center}
@@ -289,7 +311,8 @@
   {
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.8cm},clip,width=.7\textwidth]{img/sntrnet.eps}
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.85\textwidth]{img/sntrnet.eps}
+  \vskip -.6cm
  \caption{Santorini network.}
  \label{fig:sntrnet}
  \end{center}
@@ -301,19 +324,21 @@
   The network to be used for the Densification, will look something like this \ldots
  \begin{figure}
  \begin{center}
- \includegraphics[trim={1cm 2cm 1cm 2.8cm},clip,width=.65\textwidth]{img/greeceall.eps}
- \caption{Densification network (preliminery).}
+ \vskip -.2cm
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.75\textwidth]{img/greeceall.eps}
+  \vskip -.7cm
+ \caption{Densification network (preliminary).}
  \label{fig:dgrm}
  \end{center}
  \end{figure}
 \end{frame}
 
-\subsection{Processing}
+\section{Processing}
 
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.28\textwidth}
-  The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bernese}.\\
+  The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
   \medskip
   Integration with 
   \begin{itemize}
@@ -325,6 +350,7 @@
 \end{column}%
 \hfill%
 \begin{column}{.68\textwidth}
+\vskip -1cm
 \begin{tikzpicture}[ every annotation/.style = {draw,
                      fill = white, font = \large}]
 
@@ -420,19 +446,23 @@
 \end{columns}
 \end{frame}
 
+{
+\usebackgroundtemplate{\includegraphics[height=.9\paperheight,width=.9\paperwidth]{img/jsonprint.png}}
 \begin{frame}\frametitle{Results \& Output}\framesubtitle{}
-JSON output
+\begin{center}
+\vskip -1.6cm
+\begin{tikzpicture}
+  \node (img1) {\shadowbox{\color{black!35}\includegraphics[height=4cm]{img/iono.eps}}};
+%   \pause
+  \node (img2) at (img1.north east) [yshift=-1cm,xshift=2.7cm] {\shadowbox{\color{black!35}\includegraphics[height=2cm]{img/baseline.eps}}};
+%   \pause
+  \node (img3) at (img2.south) [yshift=-1.5cm,xshift=-.5cm] {\shadowbox{\color{black!35}\includegraphics[height=2.6cm]{img/anop-raw.png}}};
+%   \pause
+%   \node (img4) at (img2.south west) [yshift=2cm] {\includegraphics[height=4cm]{img/dsoprint.png}};
+\end{tikzpicture}
+\end{center}
 \end{frame}
-
-\begin{frame}\frametitle{Velocity Field}\framesubtitle{}
- \begin{figure}
- \begin{center}
- \includegraphics[width=.8\textwidth]{img/testvel.jpg}
- \caption{Flowchart of the processing scheme.}
- \label{fig:dgrm}
- \end{center}
- \end{figure}
-\end{frame}
+}
 
 \section{Web Resources}
 
@@ -476,6 +506,13 @@ JSON output
     Papoutsis I., Papanikolaou X., Floyd M., Ji K. H., Kontoes C., Paradissis D., Zacharis V.
     \newblock Mapping inflation at Santorini volcano, Greece, using GPS and InSAR
     \newblock {\em Geophysical Research Letters}, 40(2):267-272, 2013
+    
+    %% papanikolaou
+    \bibitem{papanikolaou}
+     X. Papanikolaou, D. Anastasiou, A. Marinou, V. Zacharis, and D. Paradissis 
+    \newblock Routine Analysis of all available GNSS Stations in Greece: Data, products and preliminary results
+    \newblock {\em  The Volcanic and Geodynamic Field of the South Aegean, International Workshop, 20-22 May, Santorini, Greece}
+
 
     %% Sakkas, Kephalonia
     \bibitem{sakkas}
