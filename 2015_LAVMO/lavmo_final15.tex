@@ -73,11 +73,11 @@
 \newenvironment{conenv}{\only{\setbeamercolor{local structure}{fg=red}}}{}
 
 
-\title{Ανάπτυξη μοντέλου επικινδυνότητας κατολισθήσεων με χρήση μεθόδων Τηλεπισκόπισης και Συμβολομετρίας}
-\subtitle{Μετρήσεις μη μόνιμου δικτύου GPS}
+\title{ΘΑΛΗΣ - Landslide Vulnerability Model \\ LAVMO}
+\subtitle{Δορυφορική Γεωδαισία \\ Μετρήσεις μη μόνιμου δικτύου GPS}
 % \date{\today}
 \date{}
-\author{Δημήτρης Αναστασίου, Αγγελική Μαρίνου, Ξάνθος Παπανικολάου, Βαγγέλης Ζαχαρής, Θανάσης Ζησσόπουλος, Δημήτρης Παραδείσης}
+\author{Δημήτρης Αναστασίου, Αγγελική Μαρίνου,\\ Ξάνθος Παπανικολάου, Βαγγέλης Ζαχαρής, Θανάσης Ζησσόπουλος, Δημήτρης Παραδείσης}
 \institute{Εθνικό Μετσόβιο Πολυτεχνείο\\Κέντρο Δορυφόρων Διονύσου\\\url{http://dionysos.survey.ntua.gr}}
 
 \begin{document}
@@ -124,23 +124,64 @@
 
 \begin{frame}\frametitle{Υλοποίηση Δικτύου}\framesubtitle{}
 \begin{itemize}
-	\item Ίδρυση σημείων σε υπάρχουσες γεωτρήσεις και τεχνικά έργα.
+	\item Ίδρυση σημείων σε υπάρχουσες γεωτρήσεις και τεχνικά έργα (Σχήμα \ref{fig:PL05}, \ref{fig:PT03}).
 	\item Δυσκολίες στην ίδρυση λόγω της κλίσης και της πυκνής βλάστισης
 	\item  Παναγοπούλα:
 	\begin{itemize}
 		\item ίδρυση 6 σημείων
-		\item χρήση του Ν000 - υπάρχον σημείο που ανοίκει στο δίκτυο παρακολούθησης του Κορινθιακού Κόλπου
+		\item χρήση του Ν000 - υπάρχον σημείο που ανοίκει στο δίκτυο παρακολούθησης του Κορινθιακού Κόλπου (Σχήμα \ref{fig:N000})
 	\end{itemize}
 	\item Πλάτανος:
 	\begin{itemize}
 		\item ίδρυση 7 σημείων
-		\item PT07 - σημείο εκτός περιοχή κατολίσθησης
+		\item PT07 - σημείο εκτός περιοχή κατολίσθησης (Σχήμα \ref{fig:PT07}).
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Υλοποίηση Δικτύου}\framesubtitle{}
-\textcolor{red}{εδώ φωτο από την υλοποίηση των σημείων}
+% \textcolor{red}{εδώ φωτο από την υλοποίηση των σημείων}
+  \FourQuad
+  {
+  \begin{figure}
+ \begin{center}
+ \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.55\textwidth]{img/establish01.jpg}
+  \vskip -.2cm
+ \caption{PL05}
+ \label{fig:PL05}
+ \end{center}
+ \end{figure}  
+  }
+  {
+ \begin{figure}
+ \begin{center}
+ \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.55\textwidth]{img/establish02.jpg}
+  \vskip -.2cm
+ \caption{PT03}
+ \label{fig:PT03}
+ \end{center}
+ \end{figure}
+  }
+  {
+ \begin{figure}
+ \begin{center}
+ \includegraphics[trim={1cm 2.5cm 1cm 0cm},clip,width=.85\textwidth]{img/N000-photo.jpg}
+  \vskip -.2cm
+ \caption{N000}
+ \label{fig:N000}
+ \end{center}
+ \end{figure} 
+  }
+  {
+ \begin{figure}
+ \begin{center}
+ \includegraphics[trim={0cm 3cm 0cm 0cm},clip,width=.55\textwidth]{img/establishpt07.jpg}
+  \vskip -.2cm
+ \caption{PT07}
+ \label{fig:PT07}
+ \end{center}
+ \end{figure}
+  }
 \end{frame}
 
 
@@ -307,9 +348,9 @@ PT08    & TRM33429.00+GP  NONE & TRM4000SSI & PT081190.15o & 1.3570 \\
 \section{Επεξεργασία Δεδομένων}
 
 \begin{frame}\frametitle{Επεξεργασία Δεδομένων}\framesubtitle{}
-Η επεξεργασία των δεδομένων έγινε με το λογισμικό Bernese GNSS Software v5.2 ακολουθώντας τα παρακάτω πρότυπα:
+Η επεξεργασία των δεδομένων έγινε με το λογισμικό Bernese GNSS Software v5.2 \cite{bpe} ακολουθώντας τα παρακάτω πρότυπα:
 \begin{itemize}
-	\item Σύστημα αναφορά IGb2008,
+	\item Σύστημα αναφορά IGb2008 \cite{igb08},
 	\item Συμβάσεις IERS 2010,
 	\item Τελικά προϊόντα IGS,
 	\item Διορθώσεις ωκεάνιων παλλιροιων (FES2004),
@@ -533,7 +574,7 @@ PT08  & -0.017 & 0.002 & 0.025 \\
 \end{frame}
 
 \begin{frame}\frametitle{......}\framesubtitle{}
-\textcolor{red}{να γράψουμε κανα ψονψλθσιον?}
+\textcolor{red}{να γράψουμε κανα κονκλουσιον??}
 \end{frame}
 
 
@@ -895,13 +936,13 @@ PT08  & -0.017 & 0.002 & 0.025 \\
   \frametitle<presentation>{References}
   \begin{thebibliography}{10}
 
-% %  \beamertemplatebookbibitems
+%  \beamertemplatebookbibitems
 % %  \bibitem{Autor1990}
 % %    A.~Autor.
 % %    \newblock {\em Introduction to Giving Presentations}.
 % %    \newblock Klein-Verlag, 1990.
 % 
-%   \beamertemplatearticlebibitems
+  \beamertemplatearticlebibitems
 % 
     %% Bernese
     \bibitem{bpe}
