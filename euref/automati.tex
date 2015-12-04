@@ -1,0 +1,148 @@
+\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes,shapes.geometric, arrows}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib}   % Required to change bibliography style to APA
+\usepackage{amsmath}  % Required for some math elements
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{makeidx}
+\usepackage{gensymb}
+\usepackage[tikz]{bclogo} % Pretty formating of warning blocks
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+% warning box
+\definecolor{warningbackground}{RGB}{252,226,158}
+%\usepackage{floatflt}
+\newcommand{\alertwarningbox}[1]{
+    \centering
+    \colorbox{warningbackground}{\parbox{400pt} {
+            \vskip 10pt
+            \begin{floatingfigure}[l]{50pt}
+                \includegraphics[scale=.05]{img/danger.pdf}
+            \end{floatingfigure}
+            #1
+            \vskip 10pt
+        }
+    }
+}
+
+\title{Routine GNSS Processing for EUREF Densification\\ Dionysos Satellite Observatory, NTUA} % Title
+\author{Xanthos \textsc{Papanikolaou} \and Demitris \textsc{Anastasiou}}
+\date{\today} % Date for the report
+
+\makeindex
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+First Revision: & December 4, 2015 \\
+Library Uri:    & \url{http://dionysos.survey.ntua.gr} \\
+Version:        & v1.0-0
+\end{tabular}
+\end{center}
+
+\begin{abstract}
+{\small 
+This document describes the routine processing of GNSS data as performed 
+by Dionysos Satellite Observatory (DSO), of National Technical University of 
+Athens (NTUA) for EUREF Densification Project.
+}
+\end{abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{General}
+This document describes the routine processing of GNSS performed at DSO for
+the EUREF Densification Project.
+\clearpage
+
+\section{Data and Products}
+\subsection{RINEX files}
+The required RINEX files are downloaded on a daily basis from the respective
+data centers.
+\subsection{Products}
+We use the \texttt{final} products from Center for Orbit Determination in Europee
+(CODE). The required products are downloaded from CODE's ftp site, namely
+\url{ftp://ftp.unibe.ch/aiub/CODE/YYYY/}, where \texttt{YYYY} is the year.
+\begin{center}
+\begin{tabular}{l l l l}
+Product & Type & Directory & Notes\\
+\hline
+Satellite orbits & sp3 & \texttt{YYYY/} & \\
+Earth rotation parameters & erp & \texttt{YYYY/} & \\
+Ionospheric corrections & ion & \texttt{YYYY/} & Bernese - specific\\
+Code differential Bias & dcb & \texttt{YYYY/} & P1C1\\
+VMF1 grid files & & \texttt{DELAY/GRID/VMFG/YYYY} \footnote{at \url{http://ggosatm.hg.tuwien.ac.at}.} & six-hour grid files\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{A-priori Coordinates}
+For \texttt{igs} stations we use their published coordinates in \texttt{IGb08}.
+For EPN class A stations, we use their published coordinates, as extrapolated
+from \url{ftp://ftp.epncb.oma.be/pub/station/coord/EPN/EPN\_A\_IGb08.SSC}.
+\subsection{Ocean Loading}
+Ocean loading corrections applied according to the model \texttt{FES2004}. For
+EPN sites, displacements are extracted from \url{ftp://epncb.oma.be/pub/station/general/EPN\_FES2004.BLQ}.
+\subsection{Receiver \& Satellite Antennae Calibration}
+Corrections are extracted from the most recent EPN ANTEX file, i.e. 
+\url{ftp://ftp.epncb.oma.be/pub/station/general/epn\_08.atx}.
+\subsection{Excluded Stations}
+We use the EUREF produced exlusion list (\url{ftp://ftp.epncb.oma.be/pub/station/general/excluded/excluded.wwww}, where 'wwww' is the gps week). All stations mentioned
+therein are exluded from the processing.
+\subsection{Metadata}
+Station information are not extracted from the RINEX files; they are read from
+the most recent version of the file \url{ftp://ftp.epncb.oma.be/pub/station/general/EUREF52.STA}.
+\subsection{Reference Frame}
+The network is aligned to the frame \texttt{IGb08} via the 'minimum-constraint-conditions'
+approach. The sites used to that end are: \texttt{MISSING TEXT}.
+
+Any site (out of the reference list) with offsets larger than 10mm in the North,
+East or Up component, with respect to its published \texttt{IGb08} coordinates, is
+not used as reference site.
+\subsection{Elevation Angle \& Observation Weighting}
+We use an elevation cut-off angle of 3\degree. Elevation dependent weighting 
+of observations applied, according to the function \(1/cos^2(z)\).
+\subsection{Tropospheric Refraction}
+We use the VMF1 model; a priori ZHD extracted from the VMF grid files. ZWD estimated
+for each station in intervals of 1 hour. Relative constraints of 5 m are applied.
+
+Additionaly, horizontal delay gradient parameters are estimated for each station 
+in intervals of 24 hours, according to Chen and Herring (1997); relative constraints of
+5 m are applied.
+\subsection{Ambiguity Fixing}
+Ambiguity resolution is performed, using a baseline-length dependent scenario, 
+as proposed by CODE, i.e.
+\begin{description}
+\item[Code-Based Widelane (WL)] 
+For baselines shorter than 6000km, a Melbourne-Wuebbena wide-lane (after checking the residuals
+of the code observations for outliers) and a narrow-lane ambiguity resolution is performed. This approach only used for GPS observations.
+\item[Phase-Based Widelane (L5)] For baselines shorter than
+200km the code-based wide-lane ambiguity resolution is replaced by a phase-only wide-lane
+with a subsequent narrow-lane ambiguity resolution.
+\item[Quasi-Ionosphere-Free (QIF)] The QIF-strategy is applied on the remaining real-valued
+ambiguities for baselines shorter tahn 2000 km.
+\item[Direct L1/L2] A direct L1/L2 ambiguity resolution is applied instead of
+the above mentioned sequence of strategies on very short baselines, i.e. 20km.
+\end{description}
+\subsection{Satellite Systems}
+When available, GLONASS observations are included in the processing (a pure
+\clearpage
+
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}
