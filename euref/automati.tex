@@ -70,7 +70,7 @@ This document describes the routine processing of GNSS performed at DSO for
 the EUREF Densification Project.
 \clearpage
 
-\section{Data and Products}
+\section{Processing Options}
 \subsection{RINEX files}
 The required RINEX files are downloaded on a daily basis from the respective
 data centers.
@@ -139,8 +139,20 @@ ambiguities for baselines shorter tahn 2000 km.
 the above mentioned sequence of strategies on very short baselines, i.e. 20km.
 \end{description}
 \subsection{Satellite Systems}
-When available, GLONASS observations are included in the processing (a pure
+When available, GLONASS observations are included in the processing (a pure GPS-only
+solution shall also be available).
 \clearpage
+
+\section{Product Submission}
+Abbreviation for Analysis Centre : \texttt{DSO}.\\
+
+For the Densification Project, DSO will submit daily SINEX files, following the
+naming convention:\\
+\begin{center}
+\texttt{dsowwwwd.snx.Z}\\
+where \texttt{wwww} is the gps week\\
+and \texttt{d} is the day of gps week\\
+\end{center}
 
 \addcontentsline{toc}{chapter}{Index}
 \printindex
