@@ -11,6 +11,7 @@
 %\usepackage{enumitem}
 %\usepackage{makeidx}
 %\usepackage{gensymb}
+\usepackage[export]{adjustbox} %easy figure alignment
 
 \usepackage[utf8]{inputenc}
 \usepackage[greek,english]{babel}
@@ -22,12 +23,6 @@
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
-\addto\captionsgreek{% Replace "english" with the language you use
-  \renewcommand{\contentsname}%
-    {Περιεχόμενα}%
-}
-\renewcommand{\contentsname}{Περιεχόμενα}
-
 \title{Χρήση Σταθμών HEPOS για τις Ερευνητικές και Ακαδημαϊκές Δραστηριότητες του Κέντρου Δορυφόρων Διονύσου, Ε.Μ.Π.} % Title
 \author{Δημήτριος \textsc{Παραδείσης}, Καθ. Ε.Μ.Π.}
 \date{\today} % Date for the report
@@ -36,15 +31,57 @@
 
 \begin{document}
 
-\maketitle % Insert the title, author and date
+\makeatletter
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        \noindent\makebox[\linewidth]{\rule{\paperwidth}{1.5pt}}
+        
+        \begin{figure}[h]
+          \begin{subfigure}{0.2\textwidth}\includegraphics[width=0.9\linewidth, height=5cm,left]{../figures/DSOtrans.png}\end{subfigure}
+            %\includegraphics[width=.2\textwidth,left]{../figures/DSOtrans.png}
+            %\caption{left aligned image}
+          \begin{subfigure}{0.2\textwidth}\includegraphics[width=0.9\linewidth, height=5cm,left]{../figures/DSOtrans.png}\end{subfigure}
+        \end{figure}
+        
+        \noindent\makebox[\linewidth]{\rule{\paperwidth}{1.5pt}}
+        
+        \vspace{1.5cm}
+        
+        \textbf{\@title}
+        
+        \vspace{1.5cm}
+        
+        \textsc{\@author}
+        
+        \vspace{1.0cm}
+        
+        \@date
+        
+        \vspace{2.0cm}
+        
+      \begin{center}
+      \begin{tabular}{l r}
+      First Revision: & December 4, 2015 \\
+      Library Uri:    & \url{http://dionysos.survey.ntua.gr} \\
+      Version:        & ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ
+      \end{tabular}
+      \end{center}
+  
+  \end{center}
+\end{titlepage}
+\makeatother
 
-\begin{center}
-\begin{tabular}{l r}
-First Revision: & December 4, 2015 \\
-Library Uri:    & \url{http://dionysos.survey.ntua.gr} \\
-Version:        & ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ
-\end{tabular}
-\end{center}
+%\maketitle % Insert the title, author and date
+
+%\begin{center}
+%\begin{tabular}{l r}
+%First Revision: & December 4, 2015 \\
+%Library Uri:    & \url{http://dionysos.survey.ntua.gr} \\
+%Version:        & ΜΟΝΟ ΓΙΑ ΕΣΩΤΕΡΙΚΟ
+%\end{tabular}
+%\end{center}
 
 %\begin{abstract}
 %{\small 
