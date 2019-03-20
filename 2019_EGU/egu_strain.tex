@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% baposter Landscape Poster
+% LaTeX Template
+% Version 1.0 (11/06/13)
+%
+% baposter Class Created by:
+% Brian Amberg (baposter@brian-amberg.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[landscape,a0paper,fontscale=0.315]{baposter} % Adjust the font scale/size here
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Directory in which figures are stored
+
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+\usepackage{palatino} % Use the Palatino font
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{multicol} % Required for multiple columns
+\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+\setlength{\columnseprule}{0mm} % No horizontal rule between columns
+
+\usepackage{tikz} % Required for flow chart
+\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+
+\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+\setlength{\itemsep}{0.5pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}
+
+\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\definecolor{candyapplered}{rgb}{1.0, 0.03, 0.0}
+\definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+
+\begin{document}
+
+\begin{poster}
+{
+headerborder=closed, % Adds a border around the header of content boxes
+colspacing=1em, % Column spacing
+bgColorOne=white, % Background color for the gradient on the left side of the poster
+bgColorTwo=white, % Background color for the gradient on the right side of the poster
+borderColor=lightblue, % Border color
+headerColorOne=black, % Background color for the header in the content boxes (left side)
+headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
+headerFontColor=white, % Text color for the header text in the content boxes
+boxColorOne=white, % Background color of the content boxes
+textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+headerheight=0.1\textheight, % Height of the header
+headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+linewidth=0.75pt % Width of the border lines around content boxes
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+%
+{\includegraphics[height=6em]{../../logos/ntua.png} \includegraphics[height=6em]{../../logos/noa1.png}} % First university/lab logo on the left
+%\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015} \vspace{0.3em}}
+{\bf\textsc{Tectonic Strain Distribution over Europe from EPN data}\vspace{0.3em} } % Poster title
+{\large Dimitris Anastasiou \textsuperscript{1,2}, Athanassios Ganas \textsuperscript{2}, Julliet Legrand \textsuperscript{3}, Carine Bruyninx \textsuperscript{3}, Xanthos Papanikolaou \textsuperscript{1,2}, Varvara Tsironi \textsuperscript{2}, Vasilis Kapetanidis \textsuperscript{4} 
+{\small \par{\textsuperscript{1} National Technical University of Athens, Dionysos Satellite Observatory, Greece \(danast@mail.ntua.gr\) -- \textsuperscript{2} National Observatory of Athens, Institute of Geodynamics, Greece} 
+\par{\textsuperscript{3} Royal Observatory of Belgium, Brussels, Belgium --  \textsuperscript{4} National ana Kapodistrian University of Athens, Department of Geology, Greece. }} \vspace{0.3em}
+\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}} 
+ }
+{\includegraphics[height=6em]{../../logos/logo_orb.png} \includegraphics[height=6em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Introduction}{name=introduction,column=0,row=0}{
+
+
+% \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+%----------------------------------------------------------------------------------------
+%	DATASET
+%----------------------------------------------------------------------------------------
+
+\headerbox{Velocities dataset}{name=data,column=1,row=0,bottomaligned=introduction}{
+
+
+% \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 1
+%----------------------------------------------------------------------------------------
+
+\headerbox{Results}{name=results,column=2,span=2,row=0}{
+
+
+}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\headerbox{References}{name=references,column=0,above=bottom}{
+1 Shen, Z.-K., M. Wang, Y. Zeng, and F. Wang, \(2015\), Strain determination using spatially discrete geodetic data, Bull. Seismol. Soc. Am., 105\(4\), 2117-2127, doi: 10.1785/0120140247 \vspace{0.03em}
+2 Veis, G., Billiris, H., Nakos, B., and Paradissis, D. \(1992\), Tectonic strain in greece from geodetic measurements, C.R.Acad.Sci.Athens, 67:129--166
+}
+
+%----------------------------------------------------------------------------------------
+%	FUTURE RESEARCH
+%----------------------------------------------------------------------------------------
+
+\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ 
+
+}
+
+%----------------------------------------------------------------------------------------
+%	FUNDING
+%----------------------------------------------------------------------------------------
+
+\headerbox{FUNDING BY HELPOS - NSRF 14-20}{name=funding,column=3,aligned=references,above=bottom}{ 
+
+{\small We acknowledge support of this research by the project "HELPOS - Hellenic Plate Observing System" \(MIS
+5002697\) which is implemented under the Action "Reinforcement of the Research and Innovation Infrastructure",
+funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" \(NSRF 2014-2020\)
+and co-financed by Greece and the European Union \(European Regional Development Fund\).}
+}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 2
+%----------------------------------------------------------------------------------------
+
+\headerbox{Results and Validation}{name=resval,column=2,span=2,row=0,below=results,above=references}{
+
+
+
+}
+
+%----------------------------------------------------------------------------------------
+%	STRAIN TOOL
+%----------------------------------------------------------------------------------------
+
+\headerbox{StrainTool}{name=straintool,column=0,below=introduction,bottomaligned=resval}{ 
+
+
+}
+
+%----------------------------------------------------------------------------------------
+%	STRAIN ALGORITHMS
+%----------------------------------------------------------------------------------------
+
+\headerbox{algorithms}{name=algorithms,column=1,below=introduction,bottomaligned=resval}{ 
+
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{poster}
+
+\end{document}
