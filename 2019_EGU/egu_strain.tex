@@ -18,12 +18,16 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[landscape,a0paper,fontscale=0.315]{baposter} % Adjust the font scale/size here
+\documentclass[landscape,a0paper,fontscale=0.340]{baposter} % Adjust the font scale/size here
 % \documentclass[landscape,paperwidth=1978mm, paperheight=1183mm,fontscale=0.315]{baposter} % Adjust the font scale/size here
 
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Directory in which figures are stored
+\usepackage{wrapfig, lipsum} % wrap text round figure
+
+\usepackage{calc}
+
 
 \usepackage{hyperref} % \url, \href, etc ....
 
@@ -55,6 +59,8 @@
 \definecolor{candyapplered}{rgb}{1.0, 0.03, 0.0}
 \definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
 \definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+
 
 \begin{document}
 
@@ -64,9 +70,9 @@ headerborder=closed, % Adds a border around the header of content boxes
 colspacing=1em, % Column spacing
 bgColorOne=white, % Background color for the gradient on the left side of the poster
 bgColorTwo=white, % Background color for the gradient on the right side of the poster
-borderColor=lightblue, % Border color
+borderColor=babyblue, % Border color
 headerColorOne=black, % Background color for the header in the content boxes (left side)
-headerColorTwo=lightblue, % Background color for the header in the content boxes (right side)
+headerColorTwo=babyblue, % Background color for the header in the content boxes (right side)
 headerFontColor=white, % Text color for the header text in the content boxes
 boxColorOne=white, % Background color of the content boxes
 textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
@@ -120,7 +126,9 @@ and discussion on the implemented methodologies is available on the web, at
 %	DATASET
 %----------------------------------------------------------------------------------------
 
-\headerbox{Velocity field}{name=data,column=1,row=0,bottomaligned=introduction}{
+\headerbox{Velocity field}{name=data,column=2,row=0}{
+\vfill
+\includegraphics[height=12em]{vel_field.jpg}
 
 
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
@@ -130,7 +138,7 @@ and discussion on the implemented methodologies is available on the web, at
 %	RESULTS 1
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results}{name=results,column=2,span=2,row=0}{
+\headerbox{Different Models Setup}{name=results,column=3,span=1,row=0}{
 
 
 }
@@ -149,7 +157,13 @@ and discussion on the implemented methodologies is available on the web, at
 %----------------------------------------------------------------------------------------
 
 \headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ 
-
+blabla
+%------------------------------------------
+\begin{wrapfigure}{c}{1.5cm}
+\includegraphics[height=6em]{../../logos/graphic_egu_photo_yes.png}
+% \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
+\end{wrapfigure}
+%------------------------------------------
 }
 
 %----------------------------------------------------------------------------------------
@@ -168,9 +182,32 @@ and co-financed by Greece and the European Union.}
 %	RESULTS 2
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results and Validation}{name=resval,column=2,span=2,row=0,below=results,above=references}{
+\headerbox{Results and Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
+
+\begin{minipage}[b]{0.58\linewidth}
+left part
+
+\begin{minipage}[t]{0.48\linewidth}
+     \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+     \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
+
+\end{minipage}
 
 
+
+\end{minipage}\hfill
+\begin{minipage}[b]{0.38\linewidth}
+     \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+     
+     \includegraphics[width=\textwidth]{e14s050506-output_rot-S.jpg}
+     
+     \includegraphics[width=\textwidth]{e14s050506-output_gtot-S.jpg}
+
+     \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
+
+\end{minipage}
 
 }
 
@@ -189,20 +226,24 @@ or estimation of multiple Strain Tensors placed on a (regular) grid within the
 region limits. Grid formation details are fully customizable by the user.
 
 Estimation of the Strain Tensor parameters follows a Least Squares approach, based either
-on \textbf{Veis st al} or \textbf{Shen et al}. In the latter case, a sophisticated weighting
+on \textbf{Veis et al., 1992} or \textbf{Shen et al., 2015}. In the latter case, a sophisticated weighting
 scheme is used, controlled by the user via a list of command-line-options.
 
+% \lipsum[2]
 The estimated Strain Tensor parameters along with their corresponding \texttt{sigma}
 values can be visualized with the distributed shell scripts \texttt{gmtstrainplot.sh} 
 and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} \textbf{Ref here} to
 plot results, drived by a user-defined configuration file.
+
+
+
 }
 
 %----------------------------------------------------------------------------------------
 %	STRAIN ALGORITHMS
 %----------------------------------------------------------------------------------------
 
-\headerbox{algorithms}{name=algorithms,column=1,below=introduction,bottomaligned=resval}{ 
+\headerbox{algorithms}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
 
 Given a set of stations (aka point on earth's surface) with their
 corresponding east and north velocities, we can estimate (or compute)
