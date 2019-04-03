@@ -18,7 +18,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[landscape,a0paper,fontscale=0.340]{baposter} % Adjust the font scale/size here
+\documentclass[landscape,a0paper,fontscale=0.324]{baposter} % Adjust the font scale/size here
 % \documentclass[landscape,paperwidth=1978mm, paperheight=1183mm,fontscale=0.315]{baposter} % Adjust the font scale/size here
 
 
@@ -27,7 +27,6 @@
 \usepackage{wrapfig, lipsum} % wrap text round figure
 
 \usepackage{calc}
-
 
 \usepackage{hyperref} % \url, \href, etc ....
 
@@ -42,6 +41,7 @@
 \usepackage{multicol} % Required for multiple columns
 \setlength{\columnsep}{1.5em} % Slightly increase the space between columns
 \setlength{\columnseprule}{0mm} % No horizontal rule between columns
+
 
 \usepackage{tikz} % Required for flow chart
 \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
@@ -77,7 +77,7 @@ headerFontColor=white, % Text color for the header text in the content boxes
 boxColorOne=white, % Background color of the content boxes
 textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
 eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
-headerheight=0.12\textheight, % Height of the header
+headerheight=0.16\textheight, % Height of the header
 headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
 headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
 %textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
@@ -87,16 +87,18 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 %
-{\includegraphics[height=6em]{../../logos/ntua.png} \includegraphics[height=6em]{../../logos/noa1.png}} % First university/lab logo on the left
+{\includegraphics[height=6.5em]{../../logos/ntua.png} \includegraphics[height=6.5em]{../../logos/noa1.png}} % First university/lab logo on the left
 % {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
 {\bf\textsc{Tectonic Strain Distribution over Europe from EPN data}\vspace{0.3em} } % Poster title
 {\large Dimitris Anastasiou \textsuperscript{1,2}, Athanassios Ganas \textsuperscript{2}, Julliet Legrand \textsuperscript{3}, Carine Bruyninx \textsuperscript{3}, Xanthos Papanikolaou \textsuperscript{1,2}, Varvara Tsironi \textsuperscript{2}, Vasilis Kapetanidis \textsuperscript{4} 
 {\small \par{\textsuperscript{1} National Technical University of Athens, Dionysos Satellite Observatory, Greece (danast@mail.ntua.gr) -- \textsuperscript{2} National Observatory of Athens, Institute of Geodynamics, Greece} 
 \par{\textsuperscript{3} Royal Observatory of Belgium, Brussels, Belgium --  \textsuperscript{4} National ana Kapodistrian University of Athens, Department of Geology, Greece. }} \vspace{0.3em}
 \par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}} 
- }
-{\includegraphics[height=6em]{../../logos/logo_orb.png} \includegraphics[height=6em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
+\vskip 0.2cm
+{\includegraphics[height=2.5em]{../../logos/gein_logo.png} \includegraphics[height=2.5em]{../../logos/egu19_logo.png} \includegraphics[height=2.5em]{../../logos/epos_logo_big.jpg}} % Second university/lab logo on the right
 
+ }
+{\includegraphics[height=6.5em]{../../logos/logo_orb.png} \includegraphics[height=6.5em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
@@ -117,7 +119,7 @@ is a free and open-source software project, distributed under the \emph{MIT Lice
 
 A detailed introduction to \texttt{StrainTool}, a how-to guide, usage examples 
 and discussion on the implemented methodologies is available on the web, at 
-\url{https://dsolab.github.io/StrainTool/}.
+\texttt{https://dsolab.github.io/StrainTool/}.
 
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
@@ -126,44 +128,68 @@ and discussion on the implemented methodologies is available on the web, at
 %	DATASET
 %----------------------------------------------------------------------------------------
 
-\headerbox{Velocity field}{name=data,column=2,row=0}{
-\vfill
-\includegraphics[height=12em]{vel_field.jpg}
+\headerbox{Velocity field - ETRF14}{name=data,column=2, span=2,row=0}{
+% \vfill
+\begin{minipage}[c]{0.24\linewidth}
+  \includegraphics[height=13em]{vel_field.jpg}
+\end{minipage}
+\begin{minipage}[c]{0.74\linewidth}
+A total number of 302 GNSS stations of EUREF Permanent Network (EPN) were selected on the base of the following criteria: 
+a) station have observations time period longer than 3 years,
+b) one velocity per station and
+c) stations with largevelocity changes excluded.
+The stations positions are computed with several geodetic software packages and then we used CATREF to estimate multi-year positions and velocity solution. The available dataset comprises the velocity field extracted from the C2010 EPN solution.
+
+Reference frame of the velocity field is ETRF014 which is the realization of ETRS89 corresponding to ITRF14. According to EUREF Technical Report 1, the ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation from ITRF2014 to ETRF2014 the three translation components are set to zero and the rotational rates (Eurasia angular velocity components) are taken from \textbf{Altamimi et al. 2017}.
+\end{minipage}
 
 
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
-%----------------------------------------------------------------------------------------
-%	RESULTS 1
-%----------------------------------------------------------------------------------------
-
-\headerbox{Different Models Setup}{name=results,column=3,span=1,row=0}{
-
-
-}
+% %----------------------------------------------------------------------------------------
+% %	RESULTS 1
+% %----------------------------------------------------------------------------------------
+% 
+% \headerbox{Different Models Setup}{name=results,column=3,span=1,row=0}{
+% 
+% 
+% }
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references,column=0,above=bottom}{
-1 Shen, Z.-K., M. Wang, Y. Zeng, and F. Wang, (2015), Strain determination using spatially discrete geodetic data, Bull. Seismol. Soc. Am., 105(4), 2117-2127, doi: 10.1785/0120140247 \\
-2 Veis, G., Billiris, H., Nakos, B., and Paradissis, D. (1992), Tectonic strain in greece from geodetic measurements, C.R.Acad.Sci.Athens, 67:129--166
+\headerbox{References}{name=references,column=0, span=2, above=bottom}{
+\begin{minipage}[b]{0.92\linewidth}
+{\scriptsize
+\textbf{Altamimi Z.}, L. Métivier, P. Rebischung, H. Rouby, and X. Collilieux (2017) ITRF2014 plate motion model, Geophysical Journal International, Volume 209, Issue 3, 1 June 2017, Pages 1906-1912, https://doi.org/10.1093/gji/ggx136.
+
+\textbf{Shen, Z.-K.}, M. Wang, Y. Zeng, and F. Wang, (2015), Strain determination using spatially discrete geodetic data, Bull. Seismol. Soc. Am., 105(4), 2117-2127, doi: 10.1785/0120140247
+
+\textbf{Veis, G.}, Billiris, H., Nakos, B., and Paradissis, D. (1992), Tectonic strain in greece from geodetic measurements, C.R.Acad.Sci.Athens, 67:129--166
+
+\textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
+}
+\end{minipage}
+\begin{minipage}[b]{0.06\linewidth}
+%------------------------------------------
+% \begin{wrapfigure}{c}{1.5cm}
+\includegraphics[height=5em]{../../logos/graphic_egu_photo_yes.png}
+% \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
+% \end{wrapfigure}
+%------------------------------------------
+\end{minipage}
 }
 
 %----------------------------------------------------------------------------------------
 %	FUTURE RESEARCH
 %----------------------------------------------------------------------------------------
 
-\headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ 
-blabla
-%------------------------------------------
-\begin{wrapfigure}{c}{1.5cm}
-\includegraphics[height=6em]{../../logos/graphic_egu_photo_yes.png}
-% \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
-\end{wrapfigure}
-%------------------------------------------
+\headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
+lsngs
+
+slglsfg
 }
 
 %----------------------------------------------------------------------------------------
@@ -172,10 +198,11 @@ blabla
 
 \headerbox{FUNDING BY HELPOS}{name=funding,column=3,aligned=references,above=bottom}{ 
 
-{\small We acknowledge support of this research by the project "HELPOS - Hellenic Plate Observing System" (MIS
+{\footnotesize We acknowledge support of this research by the project "HELPOS - Hellenic Plate Observing System" (MIS
 5002697) which is implemented under the Action "Reinforcement of the Research and Innovation Infrastructure",
-funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" (NSRF 2014-2020)
-and co-financed by Greece and the European Union.}
+funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" (NSRF 2014-2020).  
+% and co-financed by Greece and the European Union.
+}
 }
 
 %----------------------------------------------------------------------------------------
@@ -184,29 +211,41 @@ and co-financed by Greece and the European Union.}
 
 \headerbox{Results and Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
 
-\begin{minipage}[b]{0.58\linewidth}
-left part
+\begin{minipage}[b]{0.62\linewidth}
+Strain-rate results from 302 permanent European GNSS stations present in these maps. The vertical velocity component is ignored in this stage and other sources of deformation (GIA, hydrological, anthropogenic et al.) are not considered in the preliminary interpretation. Different model setups (variable grid-size, deistance from cell-center, smoothing parameters etc.) were used for estimation of strain rates. We present results estimated using the following model:
 
-\begin{minipage}[t]{0.48\linewidth}
+\begin{center}
+\begin{tabular}{ c | c | c | c | c }
+\hline
+ grid-size & ltype & dmin & dmax & Wt \\ 
+% \hline
+  0.5$^{\circ} $x0.5$^{\circ} $ & gaussian & 1 km  & 500 km & 6 and 12   \\
+\hline
+ \end{tabular}
+\end{center}
+
+Overall, our first results reproduce the gross features of tectonic deformation in Southern Europe, such as NE-SW extension across the Apennines (Italy), NNW-SSE compression across the Alboran Sea (western Mediterranean) and N-S extension in mainland Greece. Large areas of central and Northern Europe show small strain rates (less than 10 ns/yr; 2nd invariant of the tensor).
+
+
+
+
+% \begin{minipage}[t]{0.48\linewidth}
      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.48\linewidth}
+%      \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
+
+% \end{minipage}
+
+
+
 \end{minipage}\hfill
-\begin{minipage}[t]{0.48\linewidth}
-     \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
-
-\end{minipage}
-
-
-
-\end{minipage}\hfill
-\begin{minipage}[b]{0.38\linewidth}
-     \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+\begin{minipage}[b]{0.36\linewidth}
+     \includegraphics[width=.93\textwidth]{e14np050506e-output_str.jpg}
      
-     \includegraphics[width=\textwidth]{e14s050506-output_rot-S.jpg}
+%      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
      
-     \includegraphics[width=\textwidth]{e14s050506-output_gtot-S.jpg}
-
-     \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
-
+     \includegraphics[width=.93\textwidth]{e14s050512-output_dil.jpg}
 \end{minipage}
 
 }
@@ -232,7 +271,7 @@ scheme is used, controlled by the user via a list of command-line-options.
 % \lipsum[2]
 The estimated Strain Tensor parameters along with their corresponding \texttt{sigma}
 values can be visualized with the distributed shell scripts \texttt{gmtstrainplot.sh} 
-and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} \textbf{Ref here} to
+and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} (\textbf{Wessel et al., 2013}) to
 plot results, drived by a user-defined configuration file.
 
 
@@ -281,7 +320,7 @@ Assuming that we have variance information for the station velocities (and a Gau
 we can add the covariance matrix \(C\) of the velocity data in the system.
 In the simplest case, \(C\) is a diagonal matrix, with the velocity component
 standard deviations as its elements.
-Shen et al, 2015</a>, propose a more elaborate approach, reconstructing the
+\textbf{Shen et al., 2015}, propose a more elaborate approach, reconstructing the
 covariance matrix by multiplying a weighting function to each of its diagonal terms.
 The weighting function \(G_i = L_i \cdot Z_i\), in which \(L_i\) and \(Z_i\)
 are functions of distance and spatial coverage dependent, respectively.
