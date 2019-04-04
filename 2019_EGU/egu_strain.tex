@@ -18,13 +18,13 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[landscape,a0paper,fontscale=0.324]{baposter} % Adjust the font scale/size here
+\documentclass[landscape,a0paper,fontscale=0.328]{baposter} % Adjust the font scale/size here
 % \documentclass[landscape,paperwidth=1978mm, paperheight=1183mm,fontscale=0.315]{baposter} % Adjust the font scale/size here
 
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Directory in which figures are stored
-\usepackage{wrapfig, lipsum} % wrap text round figure
+% \usepackage{wrapfig, lipsum} % wrap text round figure
 
 \usepackage{calc}
 
@@ -109,6 +109,8 @@ visualization of Strain Tensor parameters, given list of data points on the eart
 crust along with their respective tectonic velocities. It consists of three basic
 components:
 \begin{itemize}
+\setlength\itemsep{0.08em}
+
   \item a python package (library) \texttt{pystrain},
   \item a (main) program \texttt{StrainTensor.py} and
   \item a list of (shell) scripts to visualize results
@@ -149,7 +151,7 @@ of ETRS89 corresponding to ITRF14. According to EUREF Technical Report 1, the
 ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
 from ITRF2014 to ETRF2014 the three translation components are set to zero and 
 the rotational rates (Eurasia angular velocity components) are taken from 
-\textbf{Altamimi et al. 2017}.
+\textit{Altamimi et al. 2017}.
 \end{minipage}
 
 
@@ -196,21 +198,20 @@ the rotational rates (Eurasia angular velocity components) are taken from
 %----------------------------------------------------------------------------------------
 
 \headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
-
+{\footnotesize
 We consider \texttt{StrainTool} to be a work-in-progress; we plan on augmenting its
 functionality and provide further computation capabilities. Currentlly, we are 
 working on a twofold approach: 
-\begin{itemize} 
+\begin{itemize}
+\setlength\itemsep{0.07em}
+
   \item first, enable the formulation of non-regular grids. 
-  This will enable the construction of grids that are more dense in regions of high 
-  data density and sparser at regions that lack data points.
-  \item second, introduction of fault information. Faults can have a big impact
-  in strain tensors parameters as their existance could cause discontinuities; the
-  absence or mismodelling of such information, can result in non-realistic estimates.
+%   This will enable the construction of grids that are more dense in regions of high data density and sparser at regions that lack data points.
+  \item second, introduction of fault information.
+%   Faults can have a big impact  in strain tensors parameters as their existance could cause discontinuities; the absence or mismodelling of such information, can result in non-realistic estimates.
 \end{itemize}
 
-Our aim is to keep the software user-friendly and efficient and hope for its 
-adoption and wide usage within the scientific community.
+}
 }
 
 %----------------------------------------------------------------------------------------
@@ -291,15 +292,18 @@ or estimation of multiple Strain Tensors placed on a (regular) grid within the
 region limits. Grid formation details are fully customizable by the user.
 
 Estimation of the Strain Tensor parameters follows a Least Squares approach, based either
-on \textbf{Veis et al., 1992} or \textbf{Shen et al., 2015}. In the latter case, a sophisticated weighting
+on \textit{Veis et al., 1992} or \textit{Shen et al., 2015}. In the latter case, a sophisticated weighting
 scheme is used, controlled by the user via a list of command-line-options.
 
 % \lipsum[2]
 The estimated Strain Tensor parameters along with their corresponding \texttt{sigma}
 values can be visualized with the distributed shell scripts \texttt{gmtstrainplot.sh} 
-and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} (\textbf{Wessel et al., 2013}) to
+and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} (\textit{Wessel et al., 2013}) to
 plot results, drived by a user-defined configuration file.
 
+
+Our aim is to keep the software user-friendly and efficient and hope for its 
+adoption and wide usage within the scientific community.
 }
 
 %----------------------------------------------------------------------------------------
@@ -308,7 +312,7 @@ plot results, drived by a user-defined configuration file.
 
 \headerbox{algorithms}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
 
-Given a set of stations (aka points on earth's surface) with their
+Given a set of stations (points on earth's surface) with their
 corresponding east and north velocities, we can estimate (or compute)
 strain tensor parameters, by solving for the system
 \[
@@ -341,20 +345,20 @@ components between station \(i\) and the point \(R\). A minimum of 3 stations
 is required to compute the parameters; if more than 3 stations are used, then
 the parameters are estimated using a least squares approach.
 
-\texttt{StrainTool} offers two approaches for computing strain tensors. A first, 
-simple methodology is to split the region in Delaunay triangles, at the barycentre 
-of which a strain tensor is computed. Note that this approach only uses three points 
-to calculate tensor parameters, so the parameters are computed and not estimated.
+% \texttt{StrainTool} offers two approaches for computing strain tensors. A first, 
+% simple methodology is to split the region in Delaunay triangles, at the barycentre 
+% of which a strain tensor is computed. Note that this approach only uses three points 
+% to calculate tensor parameters, so the parameters are computed and not estimated.
+% 
+% A second more elaborate approach, uses covariance information and a sophistiacated
+% weighting scheme. A grid is constrcuted covering the study area and one strain 
+% tensor at the centre of each cell is estimated.
+% Assuming that we have variance information for the station velocities 
+% (and a Gaussian distribution), we can add the covariance matrix \(C\) of the 
+% velocity data in the system. In the simplest case, \(C\) is a diagonal matrix, 
+% with the velocity component standard deviations as its elements.
 
-A second more elaborate approach, uses covariance information and a sophistiacated
-weighting scheme. A grid is constrcuted covering the study area and one strain 
-tensor at the centre of each cell is estimated.
-Assuming that we have variance information for the station velocities 
-(and a Gaussian distribution), we can add the covariance matrix \(C\) of the 
-velocity data in the system. In the simplest case, \(C\) is a diagonal matrix, 
-with the velocity component standard deviations as its elements.
-
-\textbf{Shen et al., 2015}, propose a more elaborate approach, reconstructing the
+\textit{Shen et al., 2015}, propose a more elaborate approach, reconstructing the
 covariance matrix by multiplying a weighting function to each of its diagonal terms.
 The weighting function is given by \(G_i = L_i \cdot Z_i\), in which \(L_i\) and \(Z_i\)
 are functions of distance and spatial coverage dependent, respectively.
@@ -372,15 +376,26 @@ with respect to each of the remaining data points.
 Both of the approaches, result in the computation or estimation of the parameter vector 
 \([U_{x}, U_{y}, \omega, \tau_{x}, \tau_{xy}, \tau_{y}]^T\). In a second step, the
 following quantities are computed and reported:
-$$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $$
-$$ e_{max}  = e_{mean} + \tau_{max} $$
-$$ e_{min}  = e_{mean} - \tau_{max} $$
-$$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$
-$$ dilatation = \tau_{x} + \tau_{y} $$
-$$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+
+\begin{tabular}{l l}
+$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $\\
+ $ e_{max}  = e_{mean} + \tau_{max} $ & $ dil = \tau_{x} + \tau_{y} $ \\
+  $ e_{min}  = e_{mean} - \tau_{max} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$\\
+% $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+
+\end{tabular}
+% $$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $$
+% $$ e_{max}  = e_{mean} + \tau_{max} $$
+% $$ e_{min}  = e_{mean} - \tau_{max} $$
+% $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$
+% $$ dilatation = \tau_{x} + \tau_{y} $$
+% $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+\vskip .3cm
 where,
-$$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $$
-$$ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $$
+\begin{tabular}{c c}
+$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
+\end{tabular}
+
 }
 
 %----------------------------------------------------------------------------------------
