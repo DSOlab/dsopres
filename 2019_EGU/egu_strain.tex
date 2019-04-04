@@ -18,13 +18,15 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[landscape,a0paper,fontscale=0.328]{baposter} % Adjust the font scale/size here
+\documentclass[landscape,a0paper,fontscale=0.346]{baposter} % Adjust the font scale/size here
 % \documentclass[landscape,paperwidth=1978mm, paperheight=1183mm,fontscale=0.315]{baposter} % Adjust the font scale/size here
 
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Directory in which figures are stored
 % \usepackage{wrapfig, lipsum} % wrap text round figure
+\usepackage{tcolorbox}
+
 
 \usepackage{calc}
 
@@ -60,7 +62,7 @@
 \definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
 \definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
 \definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
-
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
 
 \begin{document}
 
@@ -90,9 +92,9 @@ linewidth=0.75pt % Width of the border lines around content boxes
 {\includegraphics[height=6.5em]{../../logos/ntua.png} \includegraphics[height=6.5em]{../../logos/noa1.png}} % First university/lab logo on the left
 % {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
 {\bf\textsc{Tectonic Strain Distribution over Europe from EPN data}\vspace{0.3em} } % Poster title
-{\large Dimitris Anastasiou \textsuperscript{1,2}, Athanassios Ganas \textsuperscript{2}, Julliet Legrand \textsuperscript{3}, Carine Bruyninx \textsuperscript{3}, Xanthos Papanikolaou \textsuperscript{1,2}, Varvara Tsironi \textsuperscript{2}, Vasilis Kapetanidis \textsuperscript{4} 
+{\large Dimitris Anastasiou \textsuperscript{1,2}, Athanassios Ganas \textsuperscript{2}, Juliette Legrand \textsuperscript{3}, Carine Bruyninx \textsuperscript{3}, Xanthos Papanikolaou \textsuperscript{1,2}, Varvara Tsironi \textsuperscript{2}, Vasilis Kapetanidis \textsuperscript{4} 
 {\small \par{\textsuperscript{1} National Technical University of Athens, Dionysos Satellite Observatory, Greece (danast@mail.ntua.gr) -- \textsuperscript{2} National Observatory of Athens, Institute of Geodynamics, Greece} 
-\par{\textsuperscript{3} Royal Observatory of Belgium, Brussels, Belgium --  \textsuperscript{4} National ana Kapodistrian University of Athens, Department of Geology, Greece. }} \vspace{0.3em}
+\par{\textsuperscript{3} Royal Observatory of Belgium, Brussels, Belgium --  \textsuperscript{4} National and Kapodistrian University of Athens, Department of Geology, Greece. }} \vspace{0.3em}
 \par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}} 
 \vskip 0.2cm
 {\includegraphics[height=2.5em]{../../logos/gein_logo.png} \includegraphics[height=2.5em]{../../logos/egu19_logo.png} \includegraphics[height=2.5em]{../../logos/epos_logo_big.jpg}} % Second university/lab logo on the right
@@ -122,7 +124,11 @@ is a free and open-source software project, distributed under the \emph{MIT Lice
 A detailed introduction to \texttt{StrainTool}, a how-to guide, usage examples 
 and discussion on the implemented methodologies is available on the web, at 
 \texttt{https://dsolab.github.io/StrainTool/}.
-
+\begin{center}
+\begin{tcolorbox}[height=2.5em,width=.7\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]    
+ \textbf{Abstract Number:  EGU2019-17444}
+\end{tcolorbox}  
+ \end{center}
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
@@ -130,12 +136,12 @@ and discussion on the implemented methodologies is available on the web, at
 %	DATASET
 %----------------------------------------------------------------------------------------
 
-\headerbox{Velocity field - ETRF14}{name=data,column=2, span=2,row=0}{
+\headerbox{Velocity field - ETRF2014}{name=data,column=2, span=2,row=0}{
 % \vfill
-\begin{minipage}[c]{0.24\linewidth}
-  \includegraphics[height=13em]{vel_field.jpg}
+\begin{minipage}[c]{0.27\linewidth}
+  \includegraphics[height=15em]{vel_field.jpg}
 \end{minipage}
-\begin{minipage}[c]{0.74\linewidth}
+\begin{minipage}[c]{0.71\linewidth}
 A total number of 302 GNSS stations belonging to the EUREF Permanent Network (EPN) 
 were selected on the basis of the following criteria: 
 a) station have an observation period longer than 3 years,
@@ -146,8 +152,8 @@ in a second step then CATREF software was used to estimate multi-year position
 and velocity solutions. The available dataset comprises the velocity field 
 extracted from the C2010 EPN solution.
 
-The reference frame of the velocity field is ETRF014 which is the realization 
-of ETRS89 corresponding to ITRF14. According to EUREF Technical Report 1, the 
+The reference frame of the velocity field is ETRF2014 which is the realization 
+of ETRS89 corresponding to ITRF2014. According to EUREF Technical Report 1, the 
 ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
 from ITRF2014 to ETRF2014 the three translation components are set to zero and 
 the rotational rates (Eurasia angular velocity components) are taken from 
@@ -174,7 +180,7 @@ the rotational rates (Eurasia angular velocity components) are taken from
 \headerbox{References}{name=references,column=0, span=2, above=bottom}{
 \begin{minipage}[b]{0.92\linewidth}
 {\scriptsize
-\textbf{Altamimi Z.}, L. Métivier, P. Rebischung, H. Rouby, and X. Collilieux (2017) ITRF2014 plate motion model, Geophysical Journal International, Volume 209, Issue 3, 1 June 2017, Pages 1906-1912, https://doi.org/10.1093/gji/ggx136.
+\textbf{Altamimi Z.}, L. M\'etivier, P. Rebischung, H. Rouby, and X. Collilieux (2017) ITRF2014 plate motion model, Geophysical Journal International, Volume 209, Issue 3, 1 June 2017, Pages 1906-1912, https://doi.org/10.1093/gji/ggx136.
 
 \textbf{Shen, Z.-K.}, M. Wang, Y. Zeng, and F. Wang, (2015), Strain determination using spatially discrete geodetic data, Bull. Seismol. Soc. Am., 105(4), 2117-2127, doi: 10.1785/0120140247
 
@@ -218,11 +224,11 @@ working on a twofold approach:
 %	FUNDING
 %----------------------------------------------------------------------------------------
 
-\headerbox{FUNDING BY HELPOS}{name=funding,column=3,aligned=references,above=bottom}{ 
+\headerbox{FUNDING BY HELPOS \& EPOS}{name=funding,column=3,aligned=references,above=bottom}{ 
 
-{\footnotesize We acknowledge support for this research by the project "HELPOS - Hellenic Plate Observing System" (MIS
-5002697) which is implemented under the Action "Reinforcement of the Research and Innovation Infrastructure",
-funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" (NSRF 2014-2020).  
+{\scriptsize We acknowledge support for this research by the project "HELPOS - Hellenic Plate Observing System" (MIS
+5002697),funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" (NSRF 2014-2020). \par
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement N$^{\circ}$ 676564 - EPOS
 % and co-financed by Greece and the European Union.
 }
 }
@@ -233,7 +239,7 @@ funded by the Operational Programme "Competitiveness, Entrepreneurship and Innov
 
 \headerbox{Results and Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
 
-\begin{minipage}[b]{0.62\linewidth}
+\begin{minipage}[b]{0.60\linewidth}
 Strain-rate results from 302 permanent European GNSS stations are presented in 
 the following maps. The vertical velocity component is ignored in this stage 
 and other sources of deformation (GIA, hydrological, anthropogenic et al.) are 
@@ -259,7 +265,7 @@ mainland Greece. Large areas of central and Northern Europe show small strain
 rates (less than 10 ns/yr; 2nd invariant of the tensor).
 
 % \begin{minipage}[t]{0.48\linewidth}
-     \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+     \includegraphics[width=1.07\textwidth]{e14s050506-output_str-S.jpg}
 % \end{minipage}\hfill
 % \begin{minipage}[t]{0.48\linewidth}
 %      \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
@@ -268,11 +274,11 @@ rates (less than 10 ns/yr; 2nd invariant of the tensor).
 
 \end{minipage}\hfill
 \begin{minipage}[b]{0.36\linewidth}
-     \includegraphics[width=.93\textwidth]{e14np050506e-output_str.jpg}
+     \includegraphics[width=.94\textwidth]{e14np050506e-output_str.jpg}
      
 %      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
      
-     \includegraphics[width=.93\textwidth]{e14s050512-output_dil.jpg}
+     \includegraphics[width=.94\textwidth]{e14s050512-output_dil.jpg}
 \end{minipage}
 
 }
@@ -376,11 +382,12 @@ with respect to each of the remaining data points.
 Both of the approaches, result in the computation or estimation of the parameter vector 
 \([U_{x}, U_{y}, \omega, \tau_{x}, \tau_{xy}, \tau_{y}]^T\). In a second step, the
 following quantities are computed and reported:
-
+\vskip .5cm
 \begin{tabular}{l l}
-$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $\\
- $ e_{max}  = e_{mean} + \tau_{max} $ & $ dil = \tau_{x} + \tau_{y} $ \\
-  $ e_{min}  = e_{mean} - \tau_{max} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$\\
+$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &\\
+ $ e_{max}  = e_{mean} + \tau_{max} $ & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
+  $ e_{min}  = e_{mean} - \tau_{max} $ & \\
+$ dil = \tau_{x} + \tau_{y} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$
 % $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
 
 \end{tabular}
@@ -392,6 +399,7 @@ $ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &$ Az_{e_{max}}  = 90 + \f
 % $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
 \vskip .3cm
 where,
+
 \begin{tabular}{c c}
 $ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
 \end{tabular}
