@@ -187,9 +187,21 @@ Reference frame of the velocity field is ETRF014 which is the realization of ETR
 %----------------------------------------------------------------------------------------
 
 \headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
-lsngs
 
-slglsfg
+We consider \texttt{StrainTool} to be a work-in-progress; we plan on augmenting its
+functionality and provide further computation capabilities. Currentlly, we are 
+working on a twofold approach: 
+\begin{itemize} 
+  \item first, enable the formulation of non-regular grids. 
+  This will enable the construction of grids that are more dense in regions of high 
+  data density and sparser at regions that lack data points.
+  \item second, introduction of fault information. Faults can have a big impact
+  in strain tensors parameters as their existance could cause discontinuities; the
+  absence or mismodelling of such information, can result in non-realistic estimates.
+\end{itemize}
+
+Our aim is to keep the software user-friendly and efficient and hope for its 
+adoption and wide usage within the scientific community.
 }
 
 %----------------------------------------------------------------------------------------
@@ -226,9 +238,6 @@ Strain-rate results from 302 permanent European GNSS stations present in these m
 
 Overall, our first results reproduce the gross features of tectonic deformation in Southern Europe, such as NE-SW extension across the Apennines (Italy), NNW-SSE compression across the Alboran Sea (western Mediterranean) and N-S extension in mainland Greece. Large areas of central and Northern Europe show small strain rates (less than 10 ns/yr; 2nd invariant of the tensor).
 
-
-
-
 % \begin{minipage}[t]{0.48\linewidth}
      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
 % \end{minipage}\hfill
@@ -236,8 +245,6 @@ Overall, our first results reproduce the gross features of tectonic deformation 
 %      \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
 
 % \end{minipage}
-
-
 
 \end{minipage}\hfill
 \begin{minipage}[b]{0.36\linewidth}
@@ -274,8 +281,6 @@ values can be visualized with the distributed shell scripts \texttt{gmtstrainplo
 and \texttt{gmtstatsplot.sh}. Both programs use \texttt{GMT} (\textbf{Wessel et al., 2013}) to
 plot results, drived by a user-defined configuration file.
 
-
-
 }
 
 %----------------------------------------------------------------------------------------
@@ -284,7 +289,7 @@ plot results, drived by a user-defined configuration file.
 
 \headerbox{algorithms}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
 
-Given a set of stations (aka point on earth's surface) with their
+Given a set of stations (aka points on earth's surface) with their
 corresponding east and north velocities, we can estimate (or compute)
 strain tensor parameters, by solving for the system
 \[
@@ -316,16 +321,47 @@ at any given location \(R\); \(\Delta_{x_i}\) and \(\Delta_{y_i}\) are the displ
 components between station \(i\) and the point \(R\). A minimum of 3 stations
 is required to compute the parameters; if more than 3 stations are used, then
 the parameters are estimated using a least squares approach.
-Assuming that we have variance information for the station velocities (and a Gaussian distribution),
-we can add the covariance matrix \(C\) of the velocity data in the system.
-In the simplest case, \(C\) is a diagonal matrix, with the velocity component
-standard deviations as its elements.
+
+\texttt{StrainTool} offers two approaches for computing strain tensors. A first, 
+simple methodology is to split the region in Delaunay triangles, at the barycentre 
+of which a strain tensor is computed. Note that this approach only uses three points 
+to calculate tensor parameters, so the parameters are computed and not estimated.
+
+A second more elaborate approach, uses covariance information and a sophistiacated
+weighting scheme. A grid is constrcuted covering the study area and one strain 
+tensor at the centre of each cell is estimated.
+Assuming that we have variance information for the station velocities 
+(and a Gaussian distribution), we can add the covariance matrix \(C\) of the 
+velocity data in the system. In the simplest case, \(C\) is a diagonal matrix, 
+with the velocity component standard deviations as its elements.
+
 \textbf{Shen et al., 2015}, propose a more elaborate approach, reconstructing the
 covariance matrix by multiplying a weighting function to each of its diagonal terms.
-The weighting function \(G_i = L_i \cdot Z_i\), in which \(L_i\) and \(Z_i\)
+The weighting function is given by \(G_i = L_i \cdot Z_i\), in which \(L_i\) and \(Z_i\)
 are functions of distance and spatial coverage dependent, respectively.
 The final covariance matrix becomes then, \(C = C \cdot G^{-1}\) or, since its diagonal,
 \(C_i = C_i \cdot {G_i}^{-1}\).
+\(L_i\) is a distance-dependent weighting formula, in which a spatial smoothing 
+parameter \(D\) is introduced and allows reduced weighting of the data as distance 
+increases. It can have two forms, namely quadratic or Gaussian depending on the
+spatial distribution of the data points. The the optimal smoothing parameter \(D\) 
+is either selected by the user (and regarded constant) or searched for at each 
+estimation.
+The spatial weighting function \(Z_i\) measures the azimuth span of each site 
+with respect to each of the remaining data points.
+
+Both of the approaches, result in the computation or estimation of the parameter vector 
+\([U_{x}, U_{y}, \omega, \tau_{x}, \tau_{xy}, \tau_{y}]^T\). In a second step, the
+following quantities are computed and reported:
+$$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $$
+$$ e_{max}  = e_{mean} + \tau_{max} $$
+$$ e_{min}  = e_{mean} - \tau_{max} $$
+$$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$
+$$ dilatation = \tau_{x} + \tau_{y} $$
+$$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+where,
+$$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $$
+$$ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $$
 }
 
 %----------------------------------------------------------------------------------------
