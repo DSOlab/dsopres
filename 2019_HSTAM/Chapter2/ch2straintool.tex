@@ -3,18 +3,100 @@
 % \graphicspath{Figs/}
 
 \begin{frame}
- \frametitle{Open Source Software \textbf{StrainTool v1.0}}
- \framesubtitle{}
- \label{ch2:straintool}
+  \frametitle{Open Source Software \textbf{StrainTool v1.0}}
+  \framesubtitle{}
+  \label{ch2:straintool}
+  
+  StrainTool has three basic components:
+  \begin{itemize}
+    \item \textbf{pystrain:} A python pachage.
+    \item \textbf{StrainTensor.py:} the main executable.
+    \item A list of shell scripts to plot results from StrainTensor.py
+  \end{itemize}
+  \textcolor{red}{TODO: structure design}
+  
+\end{frame}
+\note{}
+
+
+\begin{frame}
+  \frametitle{Python Package \texttt{pystrain}}
+  \framesubtitle{}
+  \label{ch2:}
+  
+  \texttt{pystrain} the core part of the project.
+  
+  Python functions and classes, enable computation of strain tensor.
+  
+  The package includes:
+  \begin{itemize}
+    \item \texttt{iotools}: input/output classes to parse ASCII files.
+    \item \texttt{geodesy}: functions for basic geodetic calculations.
+    \item \texttt{grid.py}: a simple grid generator
+    \item \texttt{strain.py}: main class and necessary functions for estimation of strain  tensor parameters
+  \end{itemize}
+  
+  
 
 \end{frame}
 \note{}
 
 
+\begin{frame}
+ \frametitle{Estimate strain tensor parameters}
+ \framesubtitle{}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+\begin{frame}
+ \frametitle{Shen Algorithm}
+ \framesubtitle{}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+
+\begin{frame}
+ \frametitle{Shen Algorithm}
+ \framesubtitle{Distance-dependent weighting}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+\begin{frame}
+ \frametitle{Shen Algorithm}
+ \framesubtitle{Optimal smoothin parameter D}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+\begin{frame}
+ \frametitle{Shen Algorithm}
+ \framesubtitle{Spatial weights}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+\begin{frame}
+ \frametitle{Veis Algorithm}
+ \framesubtitle{}
+ \label{ch2:}
+
+\end{frame}
+\note{}
+
+
+
 %\begin{frame}
-%  \frametitle{Συμπεράσματα}
-%  \framesubtitle{}
-%  \label{ch2:}
+%   \frametitle{}
+%   \framesubtitle{}
+%   \label{ch2:}
 
 %\end{frame}
 %\note{}

@@ -574,6 +574,13 @@ OUTPUT Chapter2/ch2straintool.aux
 INPUT Chapter2/ch2straintool.tex
 INPUT Chapter2/ch2straintool.tex
 INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
+INPUT Figs/back_str.png
 OUTPUT Chapter3/ch3dataresults.aux
 INPUT Chapter3/ch3dataresults.tex
 INPUT Chapter3/ch3dataresults.tex
