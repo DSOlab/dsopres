@@ -109,6 +109,18 @@
  \frametitle{Shen Algorithm}
  \framesubtitle{}
  \label{ch2:}
+ 
+ Shen et al. 2015, propose a more elaborate approach.
+ 
+ The weighing function
+ 
+ \[ G_{i} = L_{i} Z_{i}  \]
+ 
+ $ L_{i} $ : distance-dependent weighting
+ 
+ $ Z_{i} $ : spatial weighting
+ 
+ The final covariance matrix $ C_{i} = C_{i}G_{i}^{-1} $
 
 \end{frame}
 \note{}
@@ -123,29 +135,74 @@
 \note{}
 
 \begin{frame}
- \frametitle{Shen Algorithm}
- \framesubtitle{Optimal smoothin parameter D}
- \label{ch2:}
+  \frametitle{Shen Algorithm}
+  \framesubtitle{Optimal smoothin parameter D}
+  \label{ch2:}
+ 
+  Smoothing coefficient D neede to actually compute the distance-dependent weights  $L_{i}$.
+ 
+  \begin{itemize}
+    \item Either pass in the parameter value as a command line option, or
+    \item search for an optimal D value, given the range Dmin, Dmax, Dstep, and the limit value W
+  \end{itemize}
+  
+  Searching for an optimal D value
+  
+  \begin{enumerate}
+    \item If a Gaussian approach is selected, then Lmax = 2.15D (in km), while for the quadratic approach Lmax = 10D (in km).
+    \item Compute distance-dependent and spatial weights $ L_{i} $ and $ Z_{i} $ respectively, for every station
+    \item compute the summary $ W = 2\sum Z_{i} L_{i} $.
+    \item repeat the process for the next D value if absolute value W is smaller than Wt, else current D value is optimal.
+  \end{enumerate}
+ 
+ 
 
 \end{frame}
 \note{}
 
 \begin{frame}
- \frametitle{Shen Algorithm}
- \framesubtitle{Spatial weights}
- \label{ch2:}
-
+  \frametitle{Shen Algorithm}
+  \framesubtitle{Spatial weights}
+  \label{ch2:}
+  
 \end{frame}
 \note{}
 
 \begin{frame}
- \frametitle{Veis Algorithm}
- \framesubtitle{}
- \label{ch2:}
-
+  \frametitle{Veis Algorithm}
+  \framesubtitle{}
+  \label{ch2:}
+  
+  The region is split into delaunay triangles at the barycenter of which a strain tensor is computed.
+  
+  This approach uses only three points to calculate tensor parameters
+ 
 \end{frame}
 \note{}
 
+\begin{frame}
+  \frametitle{Strain Tensor parameters}
+  \framesubtitle{}
+  \label{ch2:}
+  
+  \begin{tabular}{l l}
+$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &\\
+ $ e_{max}  = e_{mean} + \tau_{max} $ & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
+  $ e_{min}  = e_{mean} - \tau_{max} $ & \\
+$ dil = \tau_{x} + \tau_{y} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$
+% $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+
+\end{tabular}
+
+\vskip .3cm
+where,
+
+\begin{tabular}{c c}
+$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
+\end{tabular}
+  
+\end{frame}
+\note{}
 
 
 %\begin{frame}
