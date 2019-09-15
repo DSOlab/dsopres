@@ -1,20 +1,26 @@
 \section{Open Source Software \textbf{StrainTool v1.0}}
  
-% \graphicspath{Figs/}
+\graphicspath{{Chapter2/Figs/}}
 
 \begin{frame}
   \frametitle{Open Source Software \textbf{StrainTool v1.0}}
   \framesubtitle{}
   \label{ch2:straintool}
   
-  StrainTool has three basic components:
-  \begin{itemize}
-    \item \textbf{pystrain:} A python pachage.
-    \item \textbf{StrainTensor.py:} the main executable.
-    \item A list of shell scripts to plot results from StrainTensor.py
-  \end{itemize}
-  \textcolor{red}{TODO: structure design}
-  
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      StrainTool has three basic components:
+      \begin{itemize}
+        \item \textbf{pystrain:} A python pachage.
+        \item \textbf{StrainTensor.py:} the main executable.
+        \item A list of shell scripts to plot results from StrainTensor.py
+      \end{itemize}
+      \textcolor{red}{TODO: structure design}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=0.8\textwidth]{StrainTool-flowchart.png} 
+    \end{column}
+  \end{columns}
 \end{frame}
 \note{}
 
@@ -176,7 +182,14 @@
   The region is split into delaunay triangles at the barycenter of which a strain tensor is computed.
   
   This approach uses only three points to calculate tensor parameters
- 
+  
+  \textbf{Assumptions:}
+  \begin{itemize}
+    \item 2-dimensional deformation of earth's crust in time
+    \item Crust is considered a thin deformable shell on a spherical earth
+    \item Mapping distortions are ignored for regions with radius of less than 5\textsuperscript{o}
+    \item Time (earthquakes) or space (faults) discontinuities are not incuded in the calculation
+  \end{itemize}
 \end{frame}
 \note{}
 
