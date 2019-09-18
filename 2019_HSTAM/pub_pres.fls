@@ -608,6 +608,17 @@ OUTPUT Chapter4/ch4results.aux
 INPUT Chapter4/ch4results.tex
 INPUT Chapter4/ch4results.tex
 INPUT Figs/back_str.png
+INPUT Chapter4/Figs/grmidas-output_str.jpg
+INPUT Chapter4/Figs/grmidas-output_rot.jpg
+INPUT Figs/back_str.png
+INPUT Chapter4/Figs/grmidas-output_gtot.jpg
+INPUT Chapter4/Figs/grmidas-output_dil.jpg
+INPUT Figs/back_str.png
+INPUT Chapter4/Figs/itmidas-output_str.jpg
+INPUT Chapter4/Figs/itmidas-output_rot.jpg
+INPUT Figs/back_str.png
+INPUT Chapter4/Figs/itmidas-output_gtot.jpg
+INPUT Chapter4/Figs/itmidas-output_dil.jpg
 INPUT Figs/back_str.png
 OUTPUT Chapter5/ch5conclusions.aux
 INPUT Chapter5/ch5conclusions.tex
