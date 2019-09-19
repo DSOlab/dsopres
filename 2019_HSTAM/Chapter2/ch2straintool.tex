@@ -53,7 +53,7 @@
  \framesubtitle{}
  \label{ch2:}
  
- Strain tensor parameters aestimated (or calculated) by solving for the system:
+ Strain tensor parameters estimated (or calculated) by solving for the system:
  
  \[
   \begin{bmatrix}
@@ -81,7 +81,7 @@
   \end{bmatrix}
   \]
   
-  $\Delta_{x_i}, \Delta_{y_i}$ are the displacement components between station i and the point.
+  $\Delta_{x_i}, \Delta_{y_i}$ are the displacement components between station i and cell center.
   
   A minimum of three stations is required to compute the parameters.
   
@@ -94,7 +94,7 @@
  \framesubtitle{}
  \label{ch2:}
  
- Assuming that there is a variance information for the station velocities (and a Gaussian distribution), we can add the covariance matrix C  of the velocity data in the system. In the simplest case, C is a diagonal matrix, with the velocity component standard deviations as its elements.
+ Assuming that there is variance information for the station velocities (and a Gaussian distribution), we can include the covariance matrix C  of the velocity data in the system. In the simplest case, C is a diagonal matrix, with the velocity component standard deviations as its elements.
  
  \[
  C = \sigma_{0}^{2} 
@@ -118,7 +118,7 @@
  
  Shen et al. 2015, propose a more elaborate approach.
  
- The weighing function
+ The weighting function
  
  \[ G_{i} = L_{i} Z_{i}  \]
  
@@ -142,10 +142,10 @@
 
 \begin{frame}
   \frametitle{Shen Algorithm}
-  \framesubtitle{Optimal smoothin parameter D}
+  \framesubtitle{Optimal smoothing parameter D}
   \label{ch2:}
  
-  Smoothing coefficient D neede to actually compute the distance-dependent weights  $L_{i}$.
+  Smoothing coefficient D needed to actually compute the distance-dependent weights  $L_{i}$.
  
   \begin{itemize}
     \item Either pass in the parameter value as a command line option, or
@@ -157,7 +157,7 @@
   \begin{enumerate}
     \item If a Gaussian approach is selected, then Lmax = 2.15D (in km), while for the quadratic approach Lmax = 10D (in km).
     \item Compute distance-dependent and spatial weights $ L_{i} $ and $ Z_{i} $ respectively, for every station
-    \item compute the summary $ W = 2\sum Z_{i} L_{i} $.
+    \item compute the sum $ W = 2\sum Z_{i} L_{i} $.
     \item repeat the process for the next D value if absolute value W is smaller than Wt, else current D value is optimal.
   \end{enumerate}
  

@@ -620,9 +620,16 @@ INPUT Figs/back_str.png
 INPUT Chapter4/Figs/itmidas-output_gtot.jpg
 INPUT Chapter4/Figs/itmidas-output_dil.jpg
 INPUT Figs/back_str.png
+INPUT Chapter4/Figs/grmidas-output_stats-sigma.jpg
+INPUT Chapter4/Figs/itmidas-output_stats-sigma.jpg
+INPUT Figs/back_str.png
+INPUT Chapter4/Figs/grmidas-output_stats-doptimal.jpg
+INPUT Chapter4/Figs/itmidas-output_stats-doptimal.jpg
+INPUT Figs/back_str.png
 OUTPUT Chapter5/ch5conclusions.aux
 INPUT Chapter5/ch5conclusions.tex
 INPUT Chapter5/ch5conclusions.tex
+INPUT Figs/back_str.png
 INPUT Figs/back_str.png
 INPUT Figs/back_str.png
 OUTPUT pub_pres.nav
