@@ -611,11 +611,17 @@ INPUT Figs/back_str.png
 INPUT Chapter4/Figs/grmidas-output_str.jpg
 INPUT Chapter4/Figs/grmidas-output_rot.jpg
 INPUT Figs/back_str.png
+INPUT Chapter4/Figs/grmidas-output_str.jpg
+INPUT Chapter4/Figs/floyd_greece.jpg
+INPUT Figs/back_str.png
 INPUT Chapter4/Figs/grmidas-output_gtot.jpg
 INPUT Chapter4/Figs/grmidas-output_dil.jpg
 INPUT Figs/back_str.png
 INPUT Chapter4/Figs/itmidas-output_str.jpg
 INPUT Chapter4/Figs/itmidas-output_rot.jpg
+INPUT Figs/back_str.png
+INPUT Chapter4/Figs/itmidas-output_str.jpg
+INPUT Chapter4/Figs/dagostino_italy.jpg
 INPUT Figs/back_str.png
 INPUT Chapter4/Figs/itmidas-output_gtot.jpg
 INPUT Chapter4/Figs/itmidas-output_dil.jpg

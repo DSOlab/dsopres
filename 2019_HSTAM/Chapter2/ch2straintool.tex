@@ -11,11 +11,11 @@
     \begin{column}{0.5\textwidth}
       StrainTool has three basic components:
       \begin{itemize}
-        \item \textbf{pystrain:} A python pachage.
+        \item \textbf{pystrain:} A python package.
         \item \textbf{StrainTensor.py:} the main executable.
         \item A list of shell scripts to plot results from StrainTensor.py
       \end{itemize}
-      \textcolor{red}{TODO: structure design}
+      \textcolor{red}{TODO: structure design, add strain\_stats.dat}
     \end{column}
     \begin{column}{0.5\textwidth}
       \includegraphics[width=0.8\textwidth]{StrainTool-flowchart.png} 
@@ -84,6 +84,8 @@
   $\Delta_{x_i}, \Delta_{y_i}$ are the displacement components between station i and cell center.
   
   A minimum of three stations is required to compute the parameters.
+  
+  \textcolor{red}{explain all parameters}
   
 
 \end{frame}
@@ -188,7 +190,7 @@
     \item 2-dimensional deformation of earth's crust in time
     \item Crust is considered a thin deformable shell on a spherical earth
     \item Mapping distortions are ignored for regions with radius of less than 5\textsuperscript{o}
-    \item Time (earthquakes) or space (faults) discontinuities are not incuded in the calculation
+    \item Time (earthquakes) or space (faults) discontinuities are not included in the calculation
   \end{itemize}
 \end{frame}
 \note{}
@@ -214,6 +216,7 @@ where,
 $ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
 \end{tabular}
   
+  \textcolor{red}{TODO: make a table with param and math equation}
 \end{frame}
 \note{}
 
