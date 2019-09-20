@@ -199,23 +199,29 @@
   \frametitle{Strain Tensor parameters}
   \framesubtitle{}
   \label{ch2:}
-  
+  \begin{center}
   \begin{tabular}{l l}
-$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &\\
- $ e_{max}  = e_{mean} + \tau_{max} $ & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
-  $ e_{min}  = e_{mean} - \tau_{max} $ & \\
-$ dil = \tau_{x} + \tau_{y} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$
+  \toprule
+    parameter & equation\\
+  \midrule
+    maximum shear & $ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ \\
+    extension & $ e_{max}  = e_{mean} + \tau_{max} $ \\
+    compression & $ e_{min}  = e_{mean} - \tau_{max} $ \\
+    Azimouth of emax & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
+    dilatation & $ dil = \tau_{x} + \tau_{y} $ \\
+    Second Invariand & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$\\
+  \bottomrule
 % $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
 
-\end{tabular}
+  \end{tabular}
 
-\vskip .3cm
-where,
+  \vskip .3cm
+  where,
 
-\begin{tabular}{c c}
-$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
-\end{tabular}
-  
+  \begin{tabular}{c c}
+  $ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
+  \end{tabular}
+  \end{center}
   \textcolor{red}{TODO: make a table with param and math equation}
 \end{frame}
 \note{}
