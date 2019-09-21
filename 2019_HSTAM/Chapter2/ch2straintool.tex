@@ -15,7 +15,6 @@
         \item \textbf{StrainTensor.py:} the main executable.
         \item A list of shell scripts to plot results from StrainTensor.py
       \end{itemize}
-      \textcolor{red}{TODO: structure design, add strain\_stats.dat}
     \end{column}
     \begin{column}{0.5\textwidth}
       \includegraphics[width=0.8\textwidth]{StrainTool-flowchart.png} 
@@ -81,11 +80,18 @@
   \end{bmatrix}
   \]
   
+  $V_{x,S_1}, V_{y,S_1}$ North-east velocity components for station $S_1$
+  
   $\Delta_{x_i}, \Delta_{y_i}$ are the displacement components between station i and cell center.
   
+  $ U_{x} U_{y} $ Displacement of solid body
+  
+  $\omega$ Rotation og solid bady
+  
+  $ \tau_{x}, \tau_{xy}, \tau_{y} $ strain components
   A minimum of three stations is required to compute the parameters.
   
-  \textcolor{red}{explain all parameters}
+%   \textcolor{red}{explain all parameters}
   
 
 \end{frame}
@@ -133,15 +139,6 @@
 \end{frame}
 \note{}
 
-
-\begin{frame}
- \frametitle{Shen Algorithm}
- \framesubtitle{Distance-dependent weighting}
- \label{ch2:}
-
-\end{frame}
-\note{}
-
 \begin{frame}
   \frametitle{Shen Algorithm}
   \framesubtitle{Optimal smoothing parameter D}
@@ -170,8 +167,31 @@
 
 \begin{frame}
   \frametitle{Shen Algorithm}
+  \framesubtitle{Distance-dependent weighting}
+  \label{ch2:}
+  
+  \begin{center}
+  Weighting for strain. parameter D = 50
+    \includegraphics[width=0.9\textwidth]{w_doptimal.png} 
+  \end{center}
+  Gaussian: $L_i = exp(-\Delta R^2/D^2) $ 
+  
+  Quadratic: $ L_i = 1/(1 + \Delta R^2/D^2) $
+ 
+\end{frame}
+\note{}
+
+\begin{frame}
+  \frametitle{Shen Algorithm}
   \framesubtitle{Spatial weights}
   \label{ch2:}
+  
+   
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{shen_spatial.png} 
+  \end{center}
+  
+  The azimuth span θi of geodetic data point ri relative to interpolation site R. Triangles denote locations of geodetic data points near the interpolation site R.
   
 \end{frame}
 \note{}

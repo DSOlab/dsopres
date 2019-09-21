@@ -580,7 +580,9 @@ INPUT Figs/back_str.png
 INPUT Figs/back_str.png
 INPUT Figs/back_str.png
 INPUT Figs/back_str.png
+INPUT Chapter2/Figs/w_doptimal.png
 INPUT Figs/back_str.png
+INPUT Chapter2/Figs/shen_spatial.png
 INPUT Figs/back_str.png
 INPUT Figs/back_str.png
 INPUT Figs/back_str.png
@@ -590,9 +592,6 @@ INPUT Chapter3/ch3datavalidation.tex
 INPUT Figs/back_str.png
 INPUT Chapter3/Figs/a1_map_strain_vectors.png
 INPUT Chapter3/Figs/a2_map_strain_vectors.png
-INPUT Figs/back_str.png
-INPUT Chapter3/Figs/b1_map_strain_dilatation.png
-INPUT Chapter3/Figs/b2_map_strain_dilatation.png
 INPUT Figs/back_str.png
 INPUT Chapter3/Figs/diff-emax-trend_VISR-vs-PyStrain.png
 INPUT Chapter3/Figs/diff-dilat_VISR-vs-PyStrain.png
