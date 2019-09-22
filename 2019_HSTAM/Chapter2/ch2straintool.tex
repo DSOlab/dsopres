@@ -4,7 +4,7 @@
 
 \begin{frame}
   \frametitle{Open Source Software \textbf{StrainTool v1.0}}
-  \framesubtitle{}
+  \framesubtitle{\citep{anastasiou2019}}
   \label{ch2:straintool}
   
   \begin{columns}
@@ -80,15 +80,16 @@
   \end{bmatrix}
   \]
   
-  $V_{x,S_1}, V_{y,S_1}$ North-east velocity components for station $S_1$
+  $V_{x,S_1}, V_{y,S_1}$ : North-east velocity components for station $S_1$
   
-  $\Delta_{x_i}, \Delta_{y_i}$ are the displacement components between station i and cell center.
+  $\Delta_{x_i}, \Delta_{y_i}$ : Displacement components between station i and cell center.
   
-  $ U_{x} U_{y} $ Displacement of solid body
+  $ U_{x},  U_{y} $ : Translation components.
   
-  $\omega$ Rotation og solid bady
+  $\omega$ : Total solid body rotation.
   
-  $ \tau_{x}, \tau_{xy}, \tau_{y} $ strain components
+  $ \tau_{x}, \tau_{xy}, \tau_{y} $ : Horizontal strain components.
+  
   A minimum of three stations is required to compute the parameters.
   
 %   \textcolor{red}{explain all parameters}
@@ -121,7 +122,7 @@
 
 \begin{frame}
  \frametitle{Shen Algorithm}
- \framesubtitle{}
+ \framesubtitle{\citep{Shen2015}}
  \label{ch2:}
  
  Shen et al. 2015, propose a more elaborate approach.
@@ -169,7 +170,7 @@
   \frametitle{Shen Algorithm}
   \framesubtitle{Distance-dependent weighting}
   \label{ch2:}
-  
+  \vskip -.5cm
   \begin{center}
   Weighting for strain. parameter D = 50
     \includegraphics[width=0.9\textwidth]{w_doptimal.png} 
@@ -189,16 +190,18 @@
    
   \begin{center}
     \includegraphics[width=0.5\textwidth]{shen_spatial.png} 
+    
+    \citep{Shen2015}
   \end{center}
   
-  The azimuth span θi of geodetic data point ri relative to interpolation site R. Triangles denote locations of geodetic data points near the interpolation site R.
+  The azimuth span $\theta_i$ of geodetic data point $r_i$ relative to interpolation site R. Triangles denote locations of geodetic data points near the interpolation site R.
   
 \end{frame}
 \note{}
 
 \begin{frame}
   \frametitle{Veis Algorithm}
-  \framesubtitle{}
+  \framesubtitle{\citep{Veis1992}}
   \label{ch2:}
   
   The region is split into delaunay triangles at the barycenter of which a strain tensor is computed.
@@ -222,13 +225,13 @@
   \begin{center}
   \begin{tabular}{l l}
   \toprule
-    parameter & equation\\
+    Parameter & Formula\\
   \midrule
-    maximum shear & $ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ \\
-    extension & $ e_{max}  = e_{mean} + \tau_{max} $ \\
-    compression & $ e_{min}  = e_{mean} - \tau_{max} $ \\
-    Azimouth of emax & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
-    dilatation & $ dil = \tau_{x} + \tau_{y} $ \\
+    Maximum shear strain & $ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ \\
+    Extension & $ e_{max}  = e_{mean} + \tau_{max} $ \\
+    Compression & $ e_{min}  = e_{mean} - \tau_{max} $ \\
+    Azimouth of $e_{max}$& $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
+    Dilatation & $ dil = \tau_{x} + \tau_{y} $ \\
     Second Invariand & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$\\
   \bottomrule
 % $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
@@ -242,7 +245,7 @@
   $ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
   \end{tabular}
   \end{center}
-  \textcolor{red}{TODO: make a table with param and math equation}
+%   \textcolor{red}{TODO: make a table with param and math equation}
 \end{frame}
 \note{}
 
