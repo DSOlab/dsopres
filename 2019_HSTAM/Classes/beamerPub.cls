@@ -595,7 +595,9 @@
   {\normalsize{\@presteam}}\par  
   \vspace*{.2cm}
   {\footnotesize{\@presorgn}}\par 
-
+  \vfill
+  \includegraphics[height=2.5em]{../logos/ntua.png}  \includegraphics[height=2.2em]{../logos/DSOtrans.png} \includegraphics[height=2.2em]{../logos/gein_logo.png}  \includegraphics[height=2.5em]{../logos/logo_uoa_blue.png} 
+  
   \vfill
   {\hfill \scriptsize\href{\@urlhome}{\faHome \@urlhome} \hfill  \href{mailto:\@contmail}{\faEnvelope \@contmail} \hfill}
   \begin{block}{}

@@ -561,6 +561,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
+INPUT ../logos/ntua.png
+INPUT ../logos/DSOtrans.png
+INPUT ../logos/gein_logo.png
+INPUT ../logos/logo_uoa_blue.png
 INPUT Figs/logo-12HSTAM.jpg
 INPUT Figs/back_str.png
 INPUT pub_pres.toc
