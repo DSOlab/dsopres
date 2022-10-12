@@ -97,21 +97,16 @@
 
 \begin{block}{Introduction}
 {\small
-Dionysos Satellite Observatory and Higher Geodesy Laboratory of National Technical University of Athens
+Dionysos Satellite Observatory of National Technical University of Athens
 have developed an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
 
-This daily analysis process has been implemented for the last three years,
-yielding results which help us further understand the complicated tectonic setting of Greece.
-
-In the last few months, within the SEISMO project(\cite{dsoseismo}), 
-this processing platform has been re-designed and upgraded to include more GNSS stations,
-new processing capabilities, automated archiving and publishing of results and products.
+As part of the operation of the EnCeladus Hellenic Supersite, DSO undertook the monitoring of the Corinth Gulf area through GPS/GNSS stations and the development of a multidisciplinary platform.
 
 Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2\cite{bernese}.
 
-In this study we present the final scheme of this platform, that includes data archiving, routine processing and dissemination of results and products.
+In this paper, data from 36 permanent GNSS stations, installed in the Gulf of Corinth, were analyzed. All available station data freely available from the providers have been used. Also, data from private organizations made available for the specific project have been used, for better coverage of the region and distribution of the stations. 
 
-Our goals for the near future include contributing to EUREF and expanding our research activities and capabilities.
+Finally, the results are available on the web portal that has been developed as part of the DSO website. 
 
 }
 \end{block}
@@ -153,18 +148,18 @@ This accounts for a more homogenous spatial distribution and computational effic
 %\begin{minipage}{.35\textwidth}
 \begin{figure}
   \centering
-  \includegraphics[width=0.75\onecolwid]{grnets.jpg}
-  \caption{cGNSS stations prosseced at DSO.}
+  \includegraphics[width=1\onecolwid]{gsg2022_sta.png}
+  \caption{GNSS stations prosseced at DSO.}
   \label{fig:grnets}
 %\end{minipage}
 \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\linewidth,height=.07\paperheight]{greece-freqs.png}
-    %\captionof{figure}{Another figure}
-    \caption{Data-span histogram for network GREECE.}
-    \label{fig:grfreq}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.7\linewidth,height=.07\paperheight]{greece-freqs.png}
+%     %\captionof{figure}{Another figure}
+%     \caption{Data-span histogram for network GREECE.}
+%     \label{fig:grfreq}
+% \end{figure}
 \end{block}
 
 %\bigskip
@@ -238,10 +233,10 @@ Specialities in each network are introduced; \emph{Santorini} network is aligned
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
+%	PRELIMINARY RESULTS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Results, Products \& Dissemination}
+\begin{block}{Preliminary Results}
 {\small
 Results of the processing include:\\
 \begin{itemize}
@@ -252,17 +247,25 @@ Results of the processing include:\\
 \end{itemize}
 
 \begin{figure}
+  \centering
+  \includegraphics[width=1\onecolwid]{gsg2022_vel.jpg}
+  \caption{GNSS stations prosseced at DSO.}
+  \label{fig:grnets}
+%\end{minipage}
+\end{figure}
+
+\begin{figure}
 \centering
 \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=.85\linewidth]{koko-5.eps}
+    \includegraphics[width=1\linewidth]{gsg2022_str.jpg}
     %\captionof{figure}{A figure}
     \caption{Snapshot of an ionospheric TEC map.} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
     \label{fig:ion}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=1.15\linewidth]{kith-mod.png}
+    \includegraphics[width=1\linewidth]{gsg2022_dil.jpg}
     %\captionof{figure}{Another figure}
     \caption{Raw time-series for GPS station kith; the fitted model is depicted in green.}
     \label{fig:modts}
@@ -288,8 +291,24 @@ phenomena of special insterest are analyzed with minimin latency, and results ar
 \begin{column}{\onecolwid} % The third column
 
 %----------------------------------------------------------------------------------------
+%	ONLINE PLATFORM
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Online Platform}
+testing
+
+\begin{figure}
+    \includegraphics[width=1\onecolwid]{gsg2022_ts1.png}
+    \caption{Times series analysis on platform.}
+    \label{fig:vels}
+\end{figure}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
+
 
 \begin{block}{Conclusion}
 {\small
@@ -317,8 +336,9 @@ both for the scientific community and the public.
 \bibliography{sample}\vspace{0.75in}}
 
 \textbf{Acknowledgments...}
-\par\textit{\footnotesize We would like to thank all the GNSS data providers for this study.Tree-Company SA and Metrica SA provide data from specific stations.}
-\par\textit{\footnotesize This work is financed by Earthquake Planing and Protection Organization}
+\par\textit{\footnotesize This project was funded by Earthquake Planning \& Protection Organisation (EPPO) within the framework of EnCeladus Hellenic Supersite. }
+\par\textit{\footnotesize The authors would like to thank you National Observatory of Athens, Corinth Rift Laboratory, Geodetic Observatory Pecny for making GNSS data freely available. We would also like to thank the private companies Tree Company SA, Metrica SA, and the public organization Hellenic Cadastre for making data from specific stations free available for this project.}
+\par\textit{\footnotesize All figures and maps produced using Generic Mapping Tools software (Wessel et al., 2019)}
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -328,6 +348,9 @@ both for the scientific community and the public.
 %\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 %\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 
+\begin{figure}
+\includegraphics[width=0.3\linewidth]{GSG2022_logo.png}
+\end{figure}
 \begin{alertblock}{Contact Information}
 \begin{itemize}
 \item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
@@ -335,9 +358,6 @@ both for the scientific community and the public.
 \end{itemize}
 \end{alertblock}
 
-\begin{figure}
-\includegraphics[width=1.0\linewidth]{ESPA-EKT-GSRT_Logo-EN.JPG}
-\end{figure}
 %\begin{figure}
 %\includegraphics[width=1.1\linewidth]{IUGG2015.png}
 %\end{figure}
