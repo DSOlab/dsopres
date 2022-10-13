@@ -109,14 +109,15 @@ In this paper, data from 36 permanent GNSS stations, installed in the Gulf of Co
 Finally, the results are available on the web portal that has been developed as part of the DSO website. 
 
 }
-\end{block}
-
 
 \begin{figure}
+    \centering
     \includegraphics[width=0.7\onecolwid]{eu-greece-15065-fin-proc.eps}
     \caption{Processed stations and baselines for a typical run of the processing scheme.}
     \label{fig:proc-net}
 \end{figure}
+
+\end{block}
 %----------------------------------------------------------------------------------------
 %           DATA
 %------------------------------------------------
@@ -225,7 +226,7 @@ lag of approximately 20 days, using final products.
 % made available via the GSAC platform, or to be used as a-priori input values for later processing.
 
 Coordinate estimates are inserted in respective time-series files, which are then processed to estimate tectonic velocities, 
-offsets and annual and semi-annual harmonic coefficients (see Figure \ref{fig:modts}).
+offsets and annual and semi-annual harmonic coefficients.
 }
 
 % \begin{figure}
@@ -260,7 +261,11 @@ offsets and annual and semi-annual harmonic coefficients (see Figure \ref{fig:mo
 
 \begin{block}{Preliminary Results}
 {\small
+Time series analysis follows an iterative process, where at each step one and/or more new parameters are tested based on their statistical significance.
 
+Tectonic velocities were estimated and the velocity field was produced, in principle with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
+
+The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameers of strain thw strain tensor on a grid with 0.25 deg. grid step.
 
 \begin{figure}
   \centering
@@ -308,7 +313,7 @@ offsets and annual and semi-annual harmonic coefficients (see Figure \ref{fig:mo
 
 \begin{block}{Online Platform}
 {\small
-The development of the website has been carried out with the programming tool (web framework) Django (djangoproject.com). At the same time, different parts of the website require the development of code in javascript, html and css, mainly for the visualization and formatting of the page.
+The development of the website has been carried out with the programming tool (web framework) Django (djangoproject.com). At the same time, different parts of the website require the development of code in javascript, html and css, mainly for the visualization and formatting of the page. The platform is accessible at \url{http://dionysos.survey.ntua.gr/dso/enceladus/} 
 
 The website presents the permanent GNSS stations whose data are available for processing by all networks.
 
@@ -335,7 +340,10 @@ Finally, separate sections of the platform have been developed where the velocit
 
 \begin{block}{Conclusion}
 {\small
-
+The main purpose of the project was to utilize all available GNSS data solution for the Corinthian Gulf region, to estimate the kinematic behavior.
+The use of a large number of stations installed in the area has created a dense network that is analyzed daily.
+A reliable velocity field has been produced from the time series analysis analysis, while correspondingly a primary strain field has been estimated.
+The online platform, connected to the website of the EnCeldus Supersite, is the hub for the distribution of the results of the analysis for all the available data. The scientific community can use the platform to enhance the research in different scientific fields.
 
 }
 % \begin{figure}
