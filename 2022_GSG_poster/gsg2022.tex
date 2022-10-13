@@ -69,7 +69,7 @@
 
 \title{Development of a monitoring platform for permanent GNSS stations analysis in the region of the EnCeladus Hellenic Supersite, preliminary results.} % Poster title
 % \subtitle{}
-\author{Dimitris Anastasiou, Xanthos Papanikolaou, Maria Tsakiri, Spyros Lalechos}% Author(s)
+\author{Dimitrios Anastasiou, Xanthos Papanikolaou, Maria Tsakiri, Spyros Lalechos}% Author(s)
 
 \institute{Dionysos Satellite Obseratory, School of Rural Surveying and Geomatics Engineering, NTUA\\ \vspace{0.3em} \par{Earthquake Planning and Protection Organization}} % Institution(s)
 
@@ -98,13 +98,13 @@
 \begin{block}{Introduction}
 {\small
 Dionysos Satellite Observatory (DSO) of National Technical University of Athens (NTUA)
-have developed an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
+has developed an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
 
 As part of the operation of the EnCeladus Hellenic Supersite, DSO undertook the monitoring of the Corinth Gulf area through GPS/GNSS stations and the development of a multidisciplinary platform.
 
 Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2\cite{bernese}.
 
-In this paper, data from 36 permanent GNSS stations, installed in the Gulf of Corinth, were analyzed. All available station data freely available from the providers have been used. Also, data from private organizations made available for the specific project have been used, for better coverage of the region and distribution of the stations. 
+In this paper, data from 36 permanent GNSS stations, installed in the Gulf of Corinth, was analyzed. All station data freely available from the providers has been used. We have also utilize data from private networks made available for the specific project, to obtaine better coverage of the region and distribution of the stations. 
 
 Finally, the results are available on the web portal that has been developed as part of the DSO website. 
 
@@ -220,13 +220,11 @@ checks are performed. The required products are retreived from CODE Analysis Cen
 All stations are processed in a single network, using the Bernese GNSS Software Version 5.2 \cite{bernese}, in baseline mode, 
 using a double-difference approach. In a last step, the networks are alligned to IGb14 \cite{igb14}.
 
-The processing of each network is performed twice for each day; first using ultra-rapid/rapid products and then, with a time 
-lag of approximately 20 days, using final products. 
+The processing of each network is performed twice for each day; first using ultra-rapid/rapid products and then, with a time lag of approximately 20 days, using final products. 
 % Estimates for parameters of interest are archived and saved to be later 
 % made available via the GSAC platform, or to be used as a-priori input values for later processing.
 
-Coordinate estimates are inserted in respective time-series files, which are then processed to estimate tectonic velocities, 
-offsets and annual and semi-annual harmonic coefficients.
+Coordinate estimates are inserted in respective time-series files, which are then processed to estimate tectonic velocities, offsets and annual and semi-annual harmonic coefficients.
 }
 
 % \begin{figure}
@@ -263,9 +261,9 @@ offsets and annual and semi-annual harmonic coefficients.
 {\small
 Time series analysis follows an iterative process, where at each step one and/or more new parameters are tested based on their statistical significance.
 
-Tectonic velocities were estimated and the velocity field was produced, in principle with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
+Tectonic velocities were estimated and the velocity field was produced, with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
 
-The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameers of strain thw strain tensor on a grid with 0.25 deg. grid step.
+The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameters of the strain tensor on a grid with 0.25 deg. grid step.
 
 \begin{figure}
   \centering
@@ -315,7 +313,7 @@ The StrainTool software is used with minor modifications \cite{straintool}, to e
 {\small
 The development of the website has been carried out with the programming tool (web framework) Django (djangoproject.com). At the same time, different parts of the website require the development of code in javascript, html and css, mainly for the visualization and formatting of the page. The platform is accessible at \url{http://dionysos.survey.ntua.gr/dso/enceladus/} 
 
-The website presents the permanent GNSS stations whose data are available for processing by all networks.
+The website presents the permanent GNSS stations whose data is available for processing by all networks.
 
 A dynamic page is created for each station that participates in the monitoring of the Gulf of Corinth. Each page includes the station's data and all the necessary hyperlinks so that the user can access the processing products and the results.
 
