@@ -71,7 +71,8 @@
 % \subtitle{}
 \author{Xanthos Papanikolaou, Maria Tsakiri, Samuel Nahmani, Arnaud Pollet}% Author(s)
 
-\institute{Dionysos Satellite Observatory, School of Rural, Surveying \& Geoinformatics Engineering \\ \vspace{0.15em} \par{National Technical University of Athens}} % Institution(s)
+%\institute{Dionysos Satellite Observatory, School of Rural, Surveying \& Geoinformatics Engineering \\ \vspace{0.5em} \par{National Technical University of Athens}} % Institution(s)
+\institute{Dionysos Satellite Observatory, School of Rural, Surveying \& Geoinformatics Engineering \\ \par{National Technical University of Athens}} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -97,70 +98,65 @@
 
 \begin{block}{Introduction}
 {\small
-Dionysos Satellite Observatory (DSO) of National Technical University of Athens (NTUA)
-has developed an automated processing scheme to accommodate the daily analysis of all available continuous GNSS stations in Greece.
+The \emph{Doppler Orbitography and Radiopositioning Integrated by Satellite} 
+(DORIS) system was designed and developed by the French Space Agency CNES, jointly with 
+the French National Geographic Institute (IGN) and the Research Group for Space 
+Geodesy (GRGS). It is  based upon the accurate measurement of the Doppler shift 
+of radio frequency signals transmitted from ground beacons and received on board 
+the satellite. Its ground segment includes about 60 ground stations, equally 
+distributed over the Earth and ensure a good coverage for orbit determination.
 
-As part of the operation of the EnCeladus Hellenic Supersite, DSO undertook the monitoring of the Corinth Gulf area through GPS/GNSS stations and the development of a multidisciplinary platform.
-
-Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2\cite{bernese}.
-
-In this paper, data from 36 permanent GNSS stations, installed in the Gulf of Corinth, was analyzed. All station data freely available from the providers has been used. We have also utilize data from private networks made available for the specific project, to obtaine better coverage of the region and distribution of the stations. 
-
-Finally, the results are available on the web portal that has been developed as part of the DSO website. 
-
+Dionysos Satellite Observatory (DSO) of the National Technical University of 
+Athens (NTUA) has been hosting a \emph{Doppler Orbitography and Radiopositioning 
+Integrated by Satellite} (DORIS) beacon since 1989, named \texttt{DIONYSOS/DIOB} 
+\ref{fig:dionysos-beacon}. Since 2021, DSO has made the decision to expand its 
+contribution to the DORIS community by developing its own, in-house processing 
+software for precise orbit determination and positioning using the DORIS system.
+%Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2\cite{bernese}.
 }
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.7\onecolwid]{sample}
-    \caption{Processed stations and baselines for a typical run of the processing scheme.}
-    \label{fig:proc-net}
+\begin{tikzpicture}
+  \node (img1) {\includegraphics[width=0.7\onecolwid]{DIOB_202103}};
+  \pause
+  \node (img2) at (img1.east) {\includegraphics[width=0.4\onecolwid]{DIOA}};
+\end{tikzpicture}
+  \caption{\texttt{DIONYSOS} DORIS beacon installed at DSO. First installed 
+  \texttt{DIOA} on the right, and the upgraded \texttt{DIOB} beacon on the 
+  left.}
+  \label{fig:dionysos-beacon}
 \end{figure}
 
 \end{block}
-%----------------------------------------------------------------------------------------
+%------------------------------------------------
 %           DATA
 %------------------------------------------------
-\begin{block}{Data}
+\begin{block}{Software Design}
 {\small
-In our daily processing scheme, we incorporate all GPS/GNSS stations placed in Greece, for which the data are made available. 
-These stations, are established and maintained by various institutions thus varying in quality, spatial distribution, hardware and 
-data aquisition methods and rates.
+Core software development will be performed using the \texttt{C++} programming 
+language, taking advantage of its speed and versatility. Various minor, 
+peripheral parts of the package will be developed using \texttt{Python}, 
+allowing development speed and ease of use (for end users).
 
-At the moment, we analyze data from over 36 stations in region of Corinth Gulf (Figure \ref{fig:sta}). 
-This accounts for a more homogenous spatial distribution and computational efficiency.
+The software is being developed in an ``open'' fashion, using public 
+repositories on \texttt{github}. Our intention is for the resulting software 
+to be free of charge and open-source, so that the community can benefit as 
+much as possible.
 
-%% EGU 2015 %%
-%% ----------------------------------
-%The four subnetworks, are:
-%\begin{enumerate}
-%\item Greece: covering most of Greece and spaning more than a decaede of data
-%\item Uranus: installed and maintaned by Tree Company; covers all of Greece
-%\item Santorini: a dense network placed on Santorini Island with special geophysical interest
-%\item Other: a collection of freely available stations installed by various institutions
-%\end{enumerate}
+At a first step, we are targeting the \emph{Joint Altimetry Satellite 
+Oceanography Network–3} (Jason-3) mission, using measured satellite attitude 
+(quaternion approach).
 
-% One of these subnetworks, includes all GNSS stations installed on the island of Santorini (South Aegean), which is of great
-% geodynamic and volcanic interest. All subnetworks, incorporate GNSS sites established in the South Aegean, a region of special 
-% tectonic interest, including the so-called \emph{Hellenic Arc}. The four subnetworks are \emph{Greece}, \emph{Uranus}, \emph{Santorini} 
-% and \emph{Other}.
+Modeling is based on the current Internation DORIS Service (IDS, \cite{10.1007/1345_2015_164} ) recomendations 
+for ITRF 2020 reprocessing (\cite{ids-itrf2020-recommendations}) and the 
+International Earth Rotation Service (IERS) standards (\cite{iers2010}).
 }
-%\end{minipage}%
-%\begin{minipage}{.35\textwidth}
-\begin{figure}
-  \centering
-  \includegraphics[width=1\onecolwid]{sample}
-  \caption{GNSS stations prosseced at DSO.}
-  \label{fig:sta}
-%\end{minipage}
-\end{figure}
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=.7\linewidth,height=.07\paperheight]{greece-freqs.png}
-%     %\captionof{figure}{Another figure}
-%     \caption{Data-span histogram for network GREECE.}
-%     \label{fig:grfreq}
-% \end{figure}
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=1\onecolwid]{sample}
+%  \caption{GNSS stations prosseced at DSO.}
+%  \label{fig:sta}
+%\end{figure}
 \end{block}
 
 %\bigskip
@@ -171,129 +167,185 @@ This accounts for a more homogenous spatial distribution and computational effic
 %\end{itemize}
 %\end{alertblock}
 
-%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------
 %	CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------
 
 %\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 %\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+\textbf{Acknowledgments}
+\par\textit{\footnotesize This project was funded by the National Technical 
+University of Athens (NTUA), via its Program for Basic Research (PEVE 2021), 
+within the framework of the \emph{Integrated Tropospheric Estimation in DORIS 
+Satellite Positioning} (INESTRO, 65/2321) project.}
 
-% \begin{figure}
-% \includegraphics[width=0.3\linewidth]{GSG2022_logo.png}
-% \end{figure}
-\textbf{Acknowledgments...}
-\par\textit{\footnotesize This project was funded by Earthquake Planning \& Protection Organisation (EPPO) within the framework of EnCeladus Hellenic Supersite. }
-\par\textit{\footnotesize The authors would like to thank you National Observatory of Athens, Corinth Rift Laboratory, Geodetic Observatory Pecny for making GNSS data freely available. We would also like to thank the private companies Tree Company SA, Metrica SA, and the public organization Hellenic Cadastre for making data from specific stations free available for this project.}
-\par\textit{\footnotesize All figures and maps produced using Generic Mapping Tools software \cite{gmt}}
+\par\textit{\footnotesize The authors would like to thank the International DORIS 
+Service for making data and technical resources publicly available. We would also 
+like to thank IDS members and especially Mr. Guilhem Moreaux for providing 
+feedback and information.}
 
 \begin{alertblock}{Contact Information}
 \begin{itemize}
 \item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
-\item Email: \href{danastasiout@mail.ntua.gr}{danastasiou@mail.ntua.gr}
+\item Email: \href{xanthos@mail.ntua.gr}{xanthos@mail.ntua.gr}
 \end{itemize}
 \end{alertblock}
 
 
 
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 \end{column} % End of the first column
-
 %\vrule{}
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+% Empty spacer column
+\begin{column}{\sepwid}\end{column}
 
-\begin{column}{\onecolwid} % Begin a column which is two columns wide (column 2)
+% Begin a column which is two columns wide (column 2)
+\begin{column}{\onecolwid} 
 
-%----------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 %	PROCESSING
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------
 
 \begin{block}{Processing \& Analysis}
 
+{\small
+DORIS data are extracted using the \texttt{RINEX DORIS 3.0} format 
+(\cite{DORISRNX3}). Observation equations are formed following the approach 
+outlined in \cite{lemoine-2016}:
+
+\begin{subequations} \label{eq:lem13}
+    \begin{align}
+        v_{measured} & = \frac{c}{f_{e_N}} (f_{e_N} - f_{r_T} -
+          \frac{N_{DOP}}{\Delta\tau_r}) + \Delta v_{REL} + 
+          \Delta v_{IONO} \label{eq:lem13a} \\
+        v_{theo} &= \frac{\rho_2 - \rho_1}{\Delta\tau_r} +
+          \Delta v_{TROPO} - \frac{c(\frac{N_{DOP}}{\Delta\tau_r} + 
+          f_{r_T})}{f_{e_N}} \frac{\Delta f_e}{f_{e_N}} \label{eq:lem13b}
+    \end{align}
+\end{subequations}
+
+where:
+
+\begin{description}
+  \item $_{e_N}$ is ``nominal'' frequency of the emmiter ($2GHz$),
+%
+  \item $N_{DOP}$ is the \emph{Doppler count}, i.e. the diﬀerence between two 
+  phase measurements done at diﬀerent time tags, in the proper time scale of 
+  the receiver (at the $2GHz$ carrier),
+%
+  \item $f_{r_T}$ is the ``true'' proper frequency of the receiver, obtained 
+  using the respective \texttt{RINEX} file, after performing a one-day linear 
+  smoothing,
+%
+  \item $\frac{\Delta f_e}{f_{e_N}}$ is the relative frequency oﬀset for the 
+  emmiter, accounting for differences between the nominal and true frequencies,
+%
+  \item $\Delta v_{REL} = \frac{1}{c} \left[ U_{r} - U_{e} + \frac{V^2_r - V^2_e}{2} \right]$ is computed using the $J_2$ contribution (\cite{lemoine-2016}),
+%
+  \item $\Delta v_{IONO}$ is the ionospheric correction, computed after 
+  converting to iono-free phase measurement on the $2GHz$ channel, via 
+  (\cite{lemoine-2016}):
+  \begin{equation}
+    \begin{aligned}
+      L_{iono-free-2GHz} &= \frac{\gamma L_{2GHz} -
+          \sqrt{\gamma}L_{400MHz}}{\gamma - 1} \\
+                     &= L_{2GHz} + \frac{L_{2GHz} -
+                        \sqrt{\gamma}L_{400MHz}}{\gamma - 1}
+    \end{aligned}
+  \end{equation}
+  and applying respective reductions for the beacon and satellite phase centers, 
+  using $\vec{r}_{iono-free-2GHz} = \frac{\vec{r}_{400MHz,2GHz}}{\gamma - 1}$
+
+  \item $\Delta v_{TROPO}$ accounts for the correction due to the signal's travel 
+  through the troposphere. For tropospheric path delay modeling, we use the 
+  well established formula:
+  \begin{equation}
+    \Delta _{trop} = L_{z}^{hyd} \cdot mf_{el}^{hyd} + L_{z}^{wet} \cdot mf_{el}^{wet}
+  \end{equation}
+  where $L_{z}$ is the zenith path delay and $mf_{el}$ are the mapping functions 
+  for the wet and hydrostatic parts respectively. We use the \texttt{GPT3/VMF3} 
+  (\cite{Landskron2018}) to compute atmospheric parameters and $mf_{el}^{hyd}$ 
+  values.
+
+\end{description}
+
+$\frac{\Delta f_e}{f_{e_N}}$ and $mf_{el}^{wet}$ are estimated during the 
+processing, per beacon and satellite pass; for the former, we use a linear 
+model approach. \hfill \break
+
+Parameter estimation is performed via the \emph{Extended Kalman Filter} 
+(e.g. \cite{ZHOU20201700}) algorithm, in ``one-pass'' mode, determining 
+values for the satellite state, beacon-specific and orbital parameters 
+(atmospheric drag and solar radiation pressure coefficients). \hfill \break
+
+An elevation-dependent data (down)weighting scheme is followed, using the 
+formula $1 / \sin (el)$. We use the RINEX-derived measurement flags to perform 
+a basic data screening of the observations, complemented by a running 
+$3\sigma$ test. \hfill \break
+
+We follow the ``Variational Equations'' approach to perform orbit integration, 
+solving for the initial value (ODE) problem using a slightly altered form of 
+the algorithm described in \cite{alma992703343902959}. \hfill \break
+
+We have chosen to use the \texttt{RINEX DORIS 3.0} format, to 
+\begin{itemize}
+  \item enable use of all modern features the format allows,
+  \item enable use of carrier-phase measurements (later on),
+  \item enable use of near real-time data files
+\end{itemize}
+}
+
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=0.7\onecolwid]{sample}
+%  \caption{Flowchart of processing work.}
+%  \label{fig:proc}
+%\end{figure}
+\end{block}
+
+%-------------------------------------------------------------------------
+%	PRELIMINARY RESULTS
+%-------------------------------------------------------------------------
+
+%\begin{block}{Preliminary Results}
+%{\small
+%Time series analysis follows an iterative process, where at each step one and/or more new parameters are tested based on their statistical significance.
+%
+%Tectonic velocities were estimated and the velocity field was produced, with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
+%
+%The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameters of the strain tensor on a grid with 0.25 deg. grid step.
+%
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=1\onecolwid]{sample}
+%  \caption{Velocity field}
+%  \label{fig:crvels}
+%%\end{minipage}
+%\end{figure}
+%
 %\begin{figure}
 %\centering
-%\begin{minipage}{.7\textwidth}
-{\small
-The processing routine (Figure \ref{fig:proc}) starts a few hours after the end of day (typically at 3 am). All available data are collected and quality 
-checks are performed. The required products are retreived from CODE Analysis Center \cite{codeac}.
-All stations are processed in a single network, using the Bernese GNSS Software Version 5.2 \cite{bernese}, in baseline mode, 
-using a double-difference approach. In a last step, the networks are alligned to IGb14 \cite{igb14}.
-
-The processing of each network is performed twice for each day; first using ultra-rapid/rapid products and then, with a time lag of approximately 20 days, using final products. 
-% Estimates for parameters of interest are archived and saved to be later 
-% made available via the GSAC platform, or to be used as a-priori input values for later processing.
-
-Coordinate estimates are inserted in respective time-series files, which are then processed to estimate tectonic velocities, offsets and annual and semi-annual harmonic coefficients.
-}
-
-% \begin{figure}
-% \centering
-% \begin{minipage}{.45\textwidth}
-%     \centering
-%     \includegraphics[width=.55\linewidth]{Diagram1.eps}
-%     %\captionof{figure}{A figure}
-%     \caption{Processing scheme.} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
-%     \label{fig:process}
-% \end{minipage}%
-% \begin{minipage}{.45\textwidth}
-%     \centering
-%     \includegraphics[width=.8\linewidth]{flowc.png}
-%     %\captionof{figure}{Another figure}
-%     \caption{Individual platform modules.}
-%     \label{fig:flowc}
-% \end{minipage}
-% \end{figure}
-\begin{figure}
-  \centering
-  \includegraphics[width=0.7\onecolwid]{sample}
-  \caption{Flowchart of processing work.}
-  \label{fig:proc}
+%\begin{minipage}{.5\textwidth}
+%    \centering
+%    \includegraphics[width=1\linewidth]{sample}
+%    %\captionof{figure}{A figure}
+%    \caption{Strain rates} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
+%    \label{fig:strain}
+%\end{minipage}%
+%\begin{minipage}{.5\textwidth}
+%    \centering
+%    \includegraphics[width=1\linewidth]{sample}
+%    %\captionof{figure}{Another figure}
+%    \caption{Dilatation.}
+%    \label{fig:dil}
 %\end{minipage}
-\end{figure}
-\end{block}
-
-%----------------------------------------------------------------------------------------
-%	PRELIMINARY RESULTS
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Preliminary Results}
-{\small
-Time series analysis follows an iterative process, where at each step one and/or more new parameters are tested based on their statistical significance.
-
-Tectonic velocities were estimated and the velocity field was produced, with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
-
-The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameters of the strain tensor on a grid with 0.25 deg. grid step.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=1\onecolwid]{sample}
-  \caption{Velocity field}
-  \label{fig:crvels}
-%\end{minipage}
-\end{figure}
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-    \centering
-    \includegraphics[width=1\linewidth]{sample}
-    %\captionof{figure}{A figure}
-    \caption{Strain rates} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
-    \label{fig:strain}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-    \centering
-    \includegraphics[width=1\linewidth]{sample}
-    %\captionof{figure}{Another figure}
-    \caption{Dilatation.}
-    \label{fig:dil}
-\end{minipage}
-\end{figure}
-
-
-}
-\end{block}
+%\end{figure}
+%
+%
+%}
+%\end{block}
 
 %----------------------------------------------------------------------------------------
 
@@ -323,11 +375,11 @@ Finally, separate sections of the platform have been developed where the velocit
 
 }
 
-\begin{figure}
-    \includegraphics[width=1\onecolwid]{sample}
-    \caption{Times series analysis on platform.}
-    \label{fig:vels}
-\end{figure}
+%\begin{figure}
+%    \includegraphics[width=1\onecolwid]{sample}
+%    \caption{Times series analysis on platform.}
+%    \label{fig:vels}
+%\end{figure}
 
 \end{block}
 
