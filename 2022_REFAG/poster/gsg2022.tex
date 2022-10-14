@@ -26,7 +26,6 @@
 
 \usepackage[scale=1.17]{beamerposter} % Use the beamerposter package for laying out the poster
 
-
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
 \setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
@@ -57,6 +56,10 @@
 \setlength{\threecolwid}{0.9040\paperwidth} % Width of three columns
 \setlength{\topmargin}{-0.5in} % Reduce the top margin size
 %-----------------------------------------------------------
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap, backgrounds, calc}
+\definecolor{Gold}{rgb}{0.64,0.54,0.29}
 
 \usepackage{graphicx}  % Required for including images
 \graphicspath{{figures/}} % Directory in which figures are stored
@@ -104,15 +107,14 @@ the French National Geographic Institute (IGN) and the Research Group for Space
 Geodesy (GRGS). It is  based upon the accurate measurement of the Doppler shift 
 of radio frequency signals transmitted from ground beacons and received on board 
 the satellite. Its ground segment includes about 60 ground stations, equally 
-distributed over the Earth and ensure a good coverage for orbit determination.
+distributed over the Earth and ensure a good coverage for orbit determination.\hfill \break
 
 Dionysos Satellite Observatory (DSO) of the National Technical University of 
-Athens (NTUA) has been hosting a \emph{Doppler Orbitography and Radiopositioning 
-Integrated by Satellite} (DORIS) beacon since 1989, named \texttt{DIONYSOS/DIOB} 
-\ref{fig:dionysos-beacon}. Since 2021, DSO has made the decision to expand its 
-contribution to the DORIS community by developing its own, in-house processing 
-software for precise orbit determination and positioning using the DORIS system.
-%Currently, we have focused our efforts in reprocessing all the available GNSS data up to date, via Bernese GNSS Software v5.2\cite{bernese}.
+Athens (NTUA) has been hosting a DORIS beacon in its facilities since 1989, 
+named \texttt{DIONYSOS/DIOB} (Fig. \ref{fig:dionysos-beacon}). Since 2021, DSO 
+has made the decision to expand its contribution to the DORIS community by 
+developing its own, in-house processing software for precise orbit determination 
+and positioning using the DORIS system. \hfill \break
 }
 
 \begin{figure}
@@ -136,16 +138,19 @@ software for precise orbit determination and positioning using the DORIS system.
 Core software development will be performed using the \texttt{C++} programming 
 language, taking advantage of its speed and versatility. Various minor, 
 peripheral parts of the package will be developed using \texttt{Python}, 
-allowing development speed and ease of use (for end users).
+allowing development speed and ease of use (for end users).\hfill \break
 
 The software is being developed in an ``open'' fashion, using public 
 repositories on \texttt{github}. Our intention is for the resulting software 
 to be free of charge and open-source, so that the community can benefit as 
-much as possible.
+much as possible. Software design follows a modular pattern, with different parts 
+(libraries) developed individually, serving specific needs, thus favoring 
+composability (see Fig. \ref{fig:software-design}). We strive for minimum 
+dependencies; when unavoidable, we only use open-source software. \hfill \break
 
 At a first step, we are targeting the \emph{Joint Altimetry Satellite 
 Oceanography Network–3} (Jason-3) mission, using measured satellite attitude 
-(quaternion approach).
+(quaternion approach). \hfill \break
 
 Modeling is based on the current Internation DORIS Service (IDS, \cite{10.1007/1345_2015_164} ) recomendations 
 for ITRF 2020 reprocessing (\cite{ids-itrf2020-recommendations}) and the 
@@ -363,23 +368,59 @@ We have chosen to use the \texttt{RINEX DORIS 3.0} format, to
 
 \begin{block}{Online Platform}
 {\small
-The development of the website has been carried out with the programming tool (web framework) Django (djangoproject.com). At the same time, different parts of the website require the development of code in javascript, html and css, mainly for the visualization and formatting of the page. The platform is accessible at \url{http://dionysos.survey.ntua.gr/dso/enceladus/} 
-
-The website presents the permanent GNSS stations whose data is available for processing by all networks.
-
-A dynamic page is created for each station that participates in the monitoring of the Gulf of Corinth. Each page includes the station's data and all the necessary hyperlinks so that the user can access the processing products and the results.
-
-For each solution day, at the end of the processing, the time series of the station is updated and the corresponding parameters obtained after the analysis of the position time series are given (Figure \ref{fig:vels}).
-
-Finally, separate sections of the platform have been developed where the velocity fields and the estimation of the strain tensors are presented.
-
 }
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=0.2, every node/.style={transform shape},
+    mindmap, every node/.style={concept}, grow cyclic, 
+    concept color=orange, text=white,
+    level 1/.append style={level distance=30cm, sibling angle=70, font=\footnotesize},
+    level 2/.append style={level distance=15cm, sibling angle=90}
+  ]
 
-%\begin{figure}
-%    \includegraphics[width=1\onecolwid]{sample}
-%    \caption{Times series analysis on platform.}
-%    \label{fig:vels}
-%\end{figure}
+  \node{\textbf{\small{Tools}}} [clockwise from=0]
+  child [concept color=red!30, text=black, font=\footnotesize, text width=] {
+      node {Geodesy} [clockwise from=60]
+      child [level distance=20cm, font=\tiny, text width=]{ node {R. Frames}}
+      child [level distance=25cm, font=\tiny, text width=]{ node {Transformations}}
+      child [font=\tiny, text width=]{ node {Units}}
+    }
+  child [concept color=blue!30, text=black, font=\footnotesize, text width=] {
+      node {Datetimes} [counterclockwise from=250]
+      child [level distance=20cm, font=\tiny, text width=] { node {Time-Scales}}
+      child [level distance=20cm, font=\tiny, text width=] { node {Parsing}}
+    }
+  child [level distance=25cm, concept color=teal, text=white, font=\footnotesize, text width=] {
+      node {Gravity} [clockwise from=270]
+      child [font=\tiny, text width=] { node {ICGEM}}
+      child { node {TVG}}
+    }
+  child [concept color=red, text=black, font=\footnotesize, text width=] {
+      node {Math} [counterclockwise from=140]
+      child { node {EKF}}
+      child [font=\tiny, text width=] { node {Algebra}}
+    }
+  child [level distance=23cm, concept color=magenta!60!black, text=white, font=\footnotesize, text width=] {
+      node {IERS} [counterclockwise from=60]
+      child [font=\tiny, text width=] { node {Standrads}}
+      child [font=\tiny, text width=] { node {Products}}
+    };
+  %child [concept color=purple] {
+  %    node {High-Energy} [counterclockwise from=80]
+  %    child { node {Quantum Field Theory}}
+  %    child { node {Particle Physics}}
+  %    child { node {Nuclear Physics}}
+  %  }
+  %child [concept color=DarkGreen] {
+  %    node {Cosmology} [counterclockwise from=40]
+  %    child { node {Astronomy}}
+  %    child { node {Early Universe}}
+  %  };
+\end{tikzpicture}
+\label{fig:software-design}
+\caption{Software design follows a modular approach, where independent components 
+are developed individually; indicative chart.}
+\end{figure}
 
 \end{block}
 
