@@ -4,12 +4,13 @@
 
 \begin{frame}\frametitle{DSO Recent Activity}\framesubtitle{}
 \vskip-1.5cm
-  Dionysos Satellite Observatory (DSO) and Higher Geodesy Laboratory of the 
-  National Technical University of Athens, have developed an automated processing
+  Dionysos Satellite Observatory (DSO) of the National Technical University of 
+  Athens (NTUA), has developed and maintains an automated processing
   scheme to accommodate the routine analysis of all available continuous GNSS 
   stations in Greece.
   \\
-  This daily analysis process, is implemented for the last two years, yielding 
+  This daily analysis process is implemented for over five years now (not 
+  always continuous though dues to various problems), yielding 
   results which help us further understand the complicated tectonic setting of 
   Greece and nearby regions.
   \\
@@ -19,33 +20,41 @@
     \item the 2014 \emph{Kefallonia} earthquakes (e.g. \cite{sarkefalonia}, \cite{sakkas})
   \end{itemize}
 \end{frame}
-
+%
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
-  Via our contribution to EUREF and interaction with its community, we hope to:
+  % Via our contribution to EUREF and interaction with its community, we hope to:
+  Routine GNSS processing and site/network monitoring is crucial, because:
   \begin{itemize}
-    \item expand \& modernize our research activity,
-    \item contribute to the GNSS community,
-    \item take part in ongoing/future projects,
-    \item expand our knowlegdbase,
+    \item Greece lies in a region of utmost tectonic and volcanic unrest (e.g. 
+      active volcano in Santorini isl.),
+    \item results \& products are important to a series of fields spanning 
+      the whole range of Geosciences,
+    \item helps us follow and apply state-of-the-art technologies in GNSS analysis 
+      \& Satellite Geodesy and expand \& modernize our research activity,
+    \item contribute to the GNSS community and be involved in ongoing/future projects,
     \item improve our academic services (NTUA is a University)
   \end{itemize}
+  Throughout the last years, routine preocessing \& monitoring has hepled us gain 
+  a more thorough view of the complex tectonic and volcanic setting of Greece.
 \end{frame}
-\note
 
 \section{GPS/GNSS Networks in Greece}
 
 \begin{frame}\frametitle{Densification Network Selection}\framesubtitle{}
 \vskip-1.5cm
-  To contribute to the Densification we have to establish a credible dataset
-  (network). This has proven to be rather challenging !\\
+  %To contribute to the Densification we have to establish a credible dataset
+  %(network). This has proven to be rather challenging !\\
+  Routine processing for precise positioning, assumes a well establihed, 
+  credible dataset (metadata). This has proven to be rather challenging! Lately, 
+  the introduction of \texttt{M3G} has provided assistance.\\
   \bigskip
   Currently we process whatever we can get our hands on \ldots\\
   Problems:
   \begin{itemize}
-    \item Inhomogenous dataset (\texttt{RINEX}, raw files, etc).
+    \item Inhomogenous dataset (\texttt{RINEX} of various versions, raw files, etc).
     \item Various maintainers, different mentalities.
     \item Different aquisition methods/rates.
-    \item Hardly any log files.
+    \item No log files for mainteners with no geodetic interest (e.g. surveying companies).
     \item Wide variety of equipment (not always included in \texttt{atx} files).
   \end{itemize}
 \end{frame}
@@ -153,15 +162,16 @@
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.28\textwidth}
-   The core tool/software is \texttt{Bernese GNSS Software
-v5.2}\cite{bpe}.\\
+   The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
    \medskip
    Integration with
    \begin{itemize}
-     \item \texttt{MySQL} database,
-     \item \texttt{Python} library
-     \item \texttt{GSAC}
-     \item wrappers (\texttt{shell})
+     \item \texbf{MySQL} database,
+     \item \texbf{Python} module (product/data downloading, pre-processing, 
+      driving cron jobs, parsing result files, etc)
+     \item \texbf{Time-series} analysis (in-house software, incorporated in 
+      routine processing on regular intervals)
+     \item \texbf{Strain Rates} via StrainTool (on user demand)
    \end{itemize}
 \end{column}%
 \hfill%
@@ -236,11 +246,12 @@ plots} }
     \item \texttt{IERS} Conventions 2010,
     \item \texttt{IGS}/\texttt{CODE} products,
     \item ocean loading corrections (\texttt{FES2004}),
-    \item atmospheric tidal loading corrections,
+    %\item atmospheric tidal loading corrections,
     \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
     \item \texttt{GMF} and/or \texttt{VMF1}; \texttt{Chen-Herring} gradient parameter,
     \item amiguities fixed (length-dependent algorithm),
     \item use \texttt{GLONASS} obs (when available)
+    \item ------------------ ATX/individual calibrations  -------------
   \end{itemize}
 \end{frame}
 
@@ -392,22 +403,4 @@ plots} }
 
 \end{frame}
 \note{}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
