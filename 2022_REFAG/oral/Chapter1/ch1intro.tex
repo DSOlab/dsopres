@@ -67,7 +67,7 @@
 %Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
 \begin{column}{.40\textwidth}
-  Network \texttt{Greece} includes the majority of the available dataset (~100)
+  Network \texttt{Greece} includes the majority of the available sites ($\approx$100)
   but not all of them are (always/currently) active. Various providers but all 
   with geodetic interest \& ecquipment.
 
@@ -106,7 +106,7 @@
 \begin{frame}\frametitle{Local Networks}\framesubtitle{}
 \vskip-.7cm
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
-  the \texttt{Corinth Rift.} network is centered around the Cortinth Gulf, a 
+  The \texttt{Corinth Rift} network is centered around the Cortinth Gulf, a 
   region of special tectonic interest. Larger site density compared to the 
   rest of Greece.
   \begin{itemize}
@@ -325,10 +325,20 @@ plots} }
   \label{}
   \vskip-1cm
   \begin{columns}[T]
-    \begin{column}{.3\textwidth}
- 	   
+    \begin{column}{.4\textwidth}
+      \footnotesize{
+      We analyze time-series using in-house software tools, to estimate:
+      \begin{itemize}
+        \item tectonic velocities (linear trends),
+        \item offsets/jumps due to miscellaneous reasons (e.g. instrumentation 
+          changes, earthquakes, etc); note that this step requires a-priori 
+          knowledge of such events (log-files, NOA earthquake catalogue)
+        \item harmonics signals (using periodograms),
+        \item velocity changes (e.g. inflation of Santorini isl.),
+        \item post-seismic decay (still under development)
+      \end{itemize}}
     \end{column}
-    \begin{column}{.7\textwidth}
+    \begin{column}{.6\textwidth}
       \begin{center}
         \includegraphics[width=\textwidth]{vlsm_ts.png}
       \end{center}
@@ -464,9 +474,19 @@ plots} }
   \framesubtitle{}
   \label{}
   \begin{itemize}\setlength\itemsep{1em}
-    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area
-    \item A dense velocity field for accurate estimation of tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
-    \item the continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other phenomena on smaller areas of interest
+    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
+    
+    \item Routine processing and monitoring are very important and revealing for 
+      Greece; products are requested by and disseminated to a wide range of Geoscientists.
+
+    \item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult 
+      task to model by Reference Systems (especially non-dynamic, such as the ones 
+      currently in use).
+
+    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
+    
+    \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks 
+      are of great help (even with instrumentation of non-geodetic accuracy).
   \end{itemize}
 \end{frame}
 \note{}
