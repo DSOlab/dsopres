@@ -16,8 +16,20 @@
 \headcommand {\beamer@subsectionpages {5}{7}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\sectionentry {3}{Processing}{8}{Processing}{0}}
-\headcommand {\beamer@partpages {1}{12}}
-\headcommand {\beamer@subsectionpages {8}{12}}
-\headcommand {\beamer@sectionpages {8}{12}}
-\headcommand {\beamer@documentpages {12}}
-\headcommand {\gdef \inserttotalframenumber {12}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {8}{10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {8}{10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {4}{Results \& Outputs}{11}{Results \& Outputs}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {11}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {11}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {5}{Discussion / Conclusions}{18}{Discussion / Conclusions}{0}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {18}{20}}
+\headcommand {\beamer@sectionpages {18}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\gdef \inserttotalframenumber {20}}

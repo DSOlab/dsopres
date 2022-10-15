@@ -3,7 +3,7 @@
 \section{Introduction}
 
 \begin{frame}\frametitle{DSO Recent Activity}\framesubtitle{}
-
+\vskip-1.5cm
   Dionysos Satellite Observatory (DSO) and Higher Geodesy Laboratory of the 
   National Technical University of Athens, have developed an automated processing
   scheme to accommodate the routine analysis of all available continuous GNSS 
@@ -35,6 +35,7 @@
 \section{GPS/GNSS Networks in Greece}
 
 \begin{frame}\frametitle{Densification Network Selection}\framesubtitle{}
+\vskip-1.5cm
   To contribute to the Densification we have to establish a credible dataset
   (network). This has proven to be rather challenging !\\
   \bigskip
@@ -51,19 +52,21 @@
 \note
 
 
-\begin{frame}\frametitle{COMET/NTUA Network}\framesubtitle{}
+\begin{frame}\frametitle{Network GREECE}\framesubtitle{}
+\vskip-1.5cm
+
 %Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
 \begin{column}{.40\textwidth}
   {\small
   \begin{itemize}
     \setlength\itemsep{.1em}
-    \item<pro@1-> established along the Hellenic Arc
-    \item<pro@1-> homogenous (geodetic type) equipment
-    \item<pro@1-> credible time-span (early 2004 - late 2011)
-    \item<con@1-> data aquisition stoped at late 2011
-    \item<con@1-> equipment is old \& GPS-only
-    \item<con@1-> needs repairing
+    \item<pro@1-> Region of Greece
+    \item<pro@1-> different (geodetic type) equipment
+    \item<pro@1-> credible time-span (early 2004 - late 2020)
+    \item<con@1-> All free available GNSS data
+%    \item<con@1-> 
+%    \item<con@1-> needs repairing
 \end{itemize}
 }
 \end{column}%
@@ -72,24 +75,24 @@
  \begin{figure}
  \begin{center}
  \vskip -.2cm
- \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{comet.eps} %1 2.2 0 0
- \vskip -.7cm
+ \includegraphics[width=.95\textwidth]{refag_greece_noref.png} %1 2.2 0 0
+ \vskip .7cm
 % \caption{COMET/NTUA network.}
+\href{http://83.212.76.4/abmaps/netmap_noref.php?network=greece}{Network GREECE}
  \label{fig:cometntua}
  \end{center}
  \end{figure}
 \end{column}%
 \end{columns}
-  \begin{block}{}
-    Can be used for EUREF densification ``as is''.
-  \end{block}
+%  \begin{block}{}
+%    Can be used for EUREF densification ``as is''.
+%  \end{block}
 \end{frame}
 
 
 \begin{frame}\frametitle{Local Networks}\framesubtitle{}
+\vskip-.7cm
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
-  \FourQuad
-  {
   \textbf{Corinth Rift.}
   \begin{itemize}
     \item<pro@1-> credible time-span
@@ -97,101 +100,135 @@
     \item<con@1-> inconsistent providers
     \item<con@1-> no log files \& equipment changes
   \end{itemize}
-  }
-  {
+
  \begin{figure}
  \begin{center}
- \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.95\textwidth]{crlnet.eps}
-  \vskip -.6cm
- \caption{CRLab network.}
+ \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.75\textwidth]{refag_crnet.png}
+%  \vskip .6cm
+% \caption{EnCeladus network. \url{http://dionysos.survey.ntua.gr/dso/enceladus/}}
+  \url{http://dionysos.survey.ntua.gr/dso/enceladus/}
  \label{fig:crlab}
  \end{center}
  \end{figure}
-  }
-  {
-  \textbf{Santorini Network.}
-  Most of the stations installed post-2011 to monitor the \textit{inflation episode}.
-  \begin{itemize}
-    \item<con@1-> localized
-    \item<con@1-> limited time-span
-  \end{itemize}
-  }
-  {
- \begin{figure}
- \begin{center}
- \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.85\textwidth]{sntrnet.eps}
-  \vskip -.6cm
- \caption{Santorini network.}
- \label{fig:sntrnet}
- \end{center}
- \end{figure}
-  }
+%
+%
+%  \FourQuad
+%  {
+%  \textbf{Corinth Rift.}
+%  \begin{itemize}
+%    \item<pro@1-> credible time-span
+%    \item<pro@1-> only covers the Corinth Rift
+%    \item<con@1-> inconsistent providers
+%    \item<con@1-> no log files \& equipment changes
+%  \end{itemize}
+%  }
+%  {
+%
+%  }
+%  {
+%  \textbf{Santorini Network.}
+%  Most of the stations installed post-2011 to monitor the \textit{inflation episode}.
+%  \begin{itemize}
+%    \item<con@1-> localized
+%    \item<con@1-> limited time-span
+%  \end{itemize}
+%  }
+%  {
+% \begin{figure}
+% \begin{center}
+% \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.85\textwidth]{sntrnet.eps}
+%  \vskip -.6cm
+% \caption{Santorini network.}
+% \label{fig:sntrnet}
+% \end{center}
+% \end{figure}
+%  }
+
+
 \end{frame}
 
 
 \section{Processing}
 
-%\begin{frame}\frametitle{The Scheme}\framesubtitle{}
+\begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.28\textwidth}
-  The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
-  \medskip
-  Integration with 
-  \begin{itemize}
-    \item \texttt{MySQL} database,
-    \item \texttt{Python} library
-    \item \texttt{GSAC}
-    \item wrappers (\texttt{shell})
-  \end{itemize}
+   The core tool/software is \texttt{Bernese GNSS Software
+v5.2}\cite{bpe}.\\
+   \medskip
+   Integration with
+   \begin{itemize}
+     \item \texttt{MySQL} database,
+     \item \texttt{Python} library
+     \item \texttt{GSAC}
+     \item wrappers (\texttt{shell})
+   \end{itemize}
 \end{column}%
 \hfill%
+
 \begin{column}{.68\textwidth}
 \vskip -1cm
-\begin{tikzpicture}[ every annotation/.style = {draw,
-                     fill = white, font = \large}]
+\begin{figure}
+\centering
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                      fill = white, font = \large}]
 
-  \path[mindmap,concept color=black!40,text=white,
-    every node/.style={concept,circular drop shadow, scale=.4},
-    root/.style = {concept color=black!40,
-      font=\normalsize\bfseries,text width=5em},
-    level 1 concept/.append style={font=\normalsize\bfseries,
-      sibling angle=50,text width=7.7em,
-    level distance=20mm,inner sep=0pt},
-    level 2 concept/.append style={font=\bfseries,level distance=15mm},
-  ]
+   \path[mindmap,concept color=black!30,text=white,
+     every node/.style={concept,circular drop shadow, scale=.4},
+     root/.style = {concept color=black!30!red!30,
+font=\normalsize\bfseries,text width=5em},
+     level 1 concept/.append style={
+       font=\normalsize\bfseries, sibling angle=70,text width=7.7em,
+       level distance=20mm,inner sep=0pt},
+     level 2 concept/.append style={font=\bfseries,level distance=15mm},
+   ]
 
-  node[root] {Bernese GNSS Software v5.2} [clockwise from=0]
-    child[concept color=blue!60] {
-      node {bernutils Python library} [clockwise from=90]
-      child { node[concept] {github repo} }
-      child { node[concept] {modules for Bernese output/control files} }
-      child { node[concept] {modules for products} }
-    }
-    child[concept color=blue] {
-      node[concept] {MySQL Database} [clockwise from=0]
-      child { node[concept] {Bernese .STA} }
-      child { node[concept] {IGS log files} }
-      child { node[concept] {stations/networks/products} }
-    }
-    child[concept color=red] {
-      node[concept] {/bin wrappers \& utils } [clockwise from=270]
-      child { node[concept] {glue everything together} }
-      child { node[concept] {various utilities \& formating} }
-    }
-    child[concept color=yellow!60!black] {
-      node[concept] { GSAC } [clockwise from=220]
-      child { node[concept] {RINEX} }
-      child { node[concept] {products} }
-    }
-    child[concept color=green!40!black] {
-      node[concept] { WebPage } [clockwise from=300]
-    }
-    \end{tikzpicture}
+   node[root] {Bernese GNSS Software v5.2} [clockwise from=0]
+     child[concept color=red!30] {
+       node {pyBern Module} [clockwise from=140]
+       child  [color=black!80] { node {github repo} }
+       child  { node {handle PCF, BPE, flow-control} }
+       child  { node {parsers\\formaters} }
+       child  { node {pre-processing \& editing} }
+       child  [level distance=13mm] { node {data/product downloading} }
+     }
+     child[concept color=blue!40] {
+       node[concept] {MySQL Database} [clockwise from=-10]
+       child { node[concept] {from/to .STA} }
+       child { node[concept] {stations/ networks/ products} }
+       child [level distance=17mm] { node[concept] {IGS log files} }
+     }
+     child[concept color=red!60] {
+       node[concept] {Cron Jobs} [clockwise from=-40]
+       child [level distance=13mm] { node[concept] {final ultra-rapid} }
+       child { node[concept] {update ATX, PCV } }
+       child { node[concept] {sync with AIUB} }
+       child [level distance=12mm, sibling angle=70] { node[concept]
+{sync with M3G} }
+     }
+     child[concept color=yellow!40!black!30] {
+       node[concept] { Analysis } [clockwise from=220]
+       child { node[concept] {Time-Series} }
+       child [text width=]{ node[concept] {StrainTool} }
+     }
+     child[concept color=green!50] {
+       node[concept] { WebPage } [clockwise from=180]
+       child [level distance=12mm, text width=] { node[concept] {d3.js
+plots} }
+     };
+\end{tikzpicture}
+
+
+
+\label{fig:software-design}
+\end{figure}
+
 \end{column}%
 \end{columns}
 \end{frame}
 
 \begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
+\vskip-1.5cm
   Processing is consistent with EUREFF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
   \begin{itemize}%%[label={\checkmark}]
     \item \texttt{SINEX} with required info/blocks,
@@ -243,9 +280,11 @@
 \end{frame}
 
 
+\section{Results \& Outputs}
 
 {
 \usebackgroundtemplate{\includegraphics[height=.9\paperheight,width=.9\paperwidth]{jsonprint.png}}
+\vskip-1.5cm
 \begin{frame}\frametitle{Results \& Output}\framesubtitle{}
 \begin{center}
 \vskip -1.6cm
@@ -262,16 +301,97 @@
 \end{frame}
 }
 
+% ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Cordinate estinmates - Time series analysis}
+  \framesubtitle{}
+  \label{}
+
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Velocity field in Greece}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+\begin{columns}[T]
+  \begin{column}{.3\textwidth}
+
+  \end{column}
+  \begin{column}{.7\textwidth}
+    \includegraphics[width=.95\textwidth]{testvel.jpg}
+  \end{column}
+\end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Focus on specific areas - Corinth Gulf}
+  \framesubtitle{}
+  \label{}
+  
+  \begin{center}
+    \includegraphics[width=.7\textwidth]{gsg2022_vel.jpg}  
+  \end{center}
+
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Recent Earthquakes}
+  \framesubtitle{}
+  \label{}
+
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Strain rates}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+\begin{columns}[T]
+  \begin{column}{.3\textwidth}
+
+  \end{column}
+  \begin{column}{.7\textwidth}
+      \includegraphics[width=.95\textwidth]{gr-output_str.jpg}
+  \end{column}
+\end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{}
+  \framesubtitle{}
+  \label{}
+
+\begin{center}
+  \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
+\end{center}
+
+\end{frame}
+\note{}
 
 
 
 
 
+\section{Discussion / Conclusions}
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Discussion / Conclusions}
+  \framesubtitle{}
+  \label{}
 
-
-
-
-
+\end{frame}
+\note{}
 
 
 
