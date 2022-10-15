@@ -4,8 +4,20 @@
 \headcommand {\beamer@subsectionpages {1}{2}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\sectionentry {1}{Introduction}{3}{Introduction}{0}}
-\headcommand {\beamer@partpages {1}{5}}
-\headcommand {\beamer@subsectionpages {3}{5}}
-\headcommand {\beamer@sectionpages {3}{5}}
-\headcommand {\beamer@documentpages {5}}
-\headcommand {\gdef \inserttotalframenumber {5}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {3}{4}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {3}{4}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {2}{GPS/GNSS Networks in Greece}{5}{GPS/GNSS Networks in Greece}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {5}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {5}{7}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {3}{Processing}{8}{Processing}{0}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@subsectionpages {8}{12}}
+\headcommand {\beamer@sectionpages {8}{12}}
+\headcommand {\beamer@documentpages {12}}
+\headcommand {\gdef \inserttotalframenumber {12}}
