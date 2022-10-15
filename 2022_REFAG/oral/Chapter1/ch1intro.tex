@@ -31,7 +31,7 @@
       the whole range of Geosciences,
     \item helps us follow and apply state-of-the-art technologies in GNSS analysis 
       \& Satellite Geodesy and expand \& modernize our research activity,
-    \item contribute to the GNSS community and be involved in ongoing/future projects,
+    \item contribute to the GNSS/EUREF community and be involved in ongoing/future projects,
     \item improve our academic services (NTUA is a University)
   \end{itemize}
   Throughout the last years, routine preocessing \& monitoring has hepled us gain 
@@ -40,7 +40,7 @@
 
 \section{GPS/GNSS Networks in Greece}
 
-\begin{frame}\frametitle{Densification Network Selection}\framesubtitle{}
+\begin{frame}\frametitle{The DataSet}\framesubtitle{}
 \vskip-1.5cm
   %To contribute to the Densification we have to establish a credible dataset
   %(network). This has proven to be rather challenging !\\
@@ -67,14 +67,18 @@
 %Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
 \begin{column}{.40\textwidth}
+  Network \texttt{Greece} includes the majority of the available dataset (~100)
+  but not all of them are (always/currently) active. Various providers but all 
+  with geodetic interest \& ecquipment.
+
   {\small
   \begin{itemize}
     \setlength\itemsep{.1em}
-    \item<pro@1-> Region of Greece
+    \item<pro@1-> covers all of Greece
     \item<pro@1-> different (geodetic type) equipment
-    \item<pro@1-> credible time-span (early 2004 - late 2020)
-    \item<con@1-> All free available GNSS data
-%    \item<con@1-> 
+    \item<pro@1-> credible time-span (early 2004 - now)
+    \item<pro@1-> all free available GNSS data
+    \item<con@1-> large data gaps \& inactive stations (?)
 %    \item<con@1-> needs repairing
 \end{itemize}
 }
@@ -102,11 +106,13 @@
 \begin{frame}\frametitle{Local Networks}\framesubtitle{}
 \vskip-.7cm
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
-  \textbf{Corinth Rift.}
+  the \texttt{Corinth Rift.} network is centered around the Cortinth Gulf, a 
+  region of special tectonic interest. Larger site density compared to the 
+  rest of Greece.
   \begin{itemize}
     \item<pro@1-> credible time-span
     \item<pro@1-> only covers the Corinth Rift
-    \item<con@1-> inconsistent providers
+    \item<con@1-> different providers (including surveying \& cadastral services)
     \item<con@1-> no log files \& equipment changes
   \end{itemize}
 
@@ -161,22 +167,22 @@
 
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
-\begin{column}{.28\textwidth}
-   The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
-   \medskip
+\begin{column}{.35\textwidth}
+   \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
+   %\medskip
    Integration with
    \begin{itemize}
-     \item \texbf{MySQL} database,
-     \item \texbf{Python} module (product/data downloading, pre-processing, 
-      driving cron jobs, parsing result files, etc)
-     \item \texbf{Time-series} analysis (in-house software, incorporated in 
-      routine processing on regular intervals)
-     \item \texbf{Strain Rates} via StrainTool (on user demand)
-   \end{itemize}
+    \setlength\itemsep{.5em}
+     \item \textbf{MySQL} database,
+     \item \textbf{Python} module (product/data downloading, pre-processing, 
+      driving cron jobs, etc)
+     \item \textbf{Time-series} analysis (integrated in routine processing on regular intervals)
+     \item \textbf{Strain Rates} via StrainTool (on user demand)
+   \end{itemize}}
 \end{column}%
 \hfill%
 
-\begin{column}{.68\textwidth}
+\begin{column}{.65\textwidth}
 \vskip -1cm
 \begin{figure}
 \centering
@@ -239,7 +245,7 @@ plots} }
 
 \begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
 \vskip-1.5cm
-  Processing is consistent with EUREFF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
+  Processing is consistent with EUREF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
   \begin{itemize}%%[label={\checkmark}]
     \item \texttt{SINEX} with required info/blocks,
     \item Reference frame \texttt{IGb14},
