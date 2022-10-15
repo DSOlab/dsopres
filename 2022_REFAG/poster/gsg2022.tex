@@ -130,6 +130,7 @@ and positioning using the DORIS system. \hfill \break
 \end{figure}
 
 \end{block}
+
 %------------------------------------------------
 %           DATA
 %------------------------------------------------
@@ -152,16 +153,10 @@ At a first step, we are targeting the \emph{Joint Altimetry Satellite
 Oceanography Network–3} (Jason-3) mission, using measured satellite attitude 
 (quaternion approach). \hfill \break
 
-Modeling is based on the current Internation DORIS Service (IDS, \cite{10.1007/1345_2015_164} ) recomendations 
+Modeling is based on the current International DORIS Service (IDS, \cite{10.1007/1345_2015_164} ) recommendations 
 for ITRF 2020 reprocessing (\cite{ids-itrf2020-recommendations}) and the 
 International Earth Rotation Service (IERS) standards (\cite{iers2010}).
 }
-%\begin{figure}
-%  \centering
-%  \includegraphics[width=1\onecolwid]{sample}
-%  \caption{GNSS stations prosseced at DSO.}
-%  \label{fig:sta}
-%\end{figure}
 \end{block}
 
 %\bigskip
@@ -234,9 +229,9 @@ outlined in \cite{lemoine-2016}:
 where:
 
 \begin{description}
-  \item $_{e_N}$ is ``nominal'' frequency of the emmiter ($2GHz$),
+  \item $_{e_N}$ is ``nominal'' frequency of the emitter ($2GHz$),
 %
-  \item $N_{DOP}$ is the \emph{Doppler count}, i.e. the diﬀerence between two 
+  \item $N_{DOP}$ is the \emph{Doppler count}, i.e. the difference between two 
   phase measurements done at diﬀerent time tags, in the proper time scale of 
   the receiver (at the $2GHz$ carrier),
 %
@@ -244,8 +239,8 @@ where:
   using the respective \texttt{RINEX} file, after performing a one-day linear 
   smoothing,
 %
-  \item $\frac{\Delta f_e}{f_{e_N}}$ is the relative frequency oﬀset for the 
-  emmiter, accounting for differences between the nominal and true frequencies,
+  \item $\frac{\Delta f_e}{f_{e_N}}$ is the relative frequency offset for the 
+  emitter, accounting for differences between the nominal and true frequencies,
 %
   \item $\Delta v_{REL} = \frac{1}{c} \left[ U_{r} - U_{e} + \frac{V^2_r - V^2_e}{2} \right]$ is computed using the $J_2$ contribution (\cite{lemoine-2016}),
 %
@@ -313,46 +308,10 @@ We have chosen to use the \texttt{RINEX DORIS 3.0} format, to
 %-------------------------------------------------------------------------
 %	PRELIMINARY RESULTS
 %-------------------------------------------------------------------------
-
 %\begin{block}{Preliminary Results}
 %{\small
-%Time series analysis follows an iterative process, where at each step one and/or more new parameters are tested based on their statistical significance.
-%
-%Tectonic velocities were estimated and the velocity field was produced, with respect to IGb2014 for stations with data availability greater than 2.5 years. A velocity field with respect to a stable Europe was estimated (Figure \ref{fig:crvels}) using the model Kreemer et al.(2014)\cite{kreemer14}.
-%
-%The StrainTool software is used with minor modifications \cite{straintool}, to estimate strian rates (Figure \ref{fig:strain}), dilatation (Figure \ref{fig:dil}) and the other parameters of the strain tensor on a grid with 0.25 deg. grid step.
-%
-%\begin{figure}
-%  \centering
-%  \includegraphics[width=1\onecolwid]{sample}
-%  \caption{Velocity field}
-%  \label{fig:crvels}
-%%\end{minipage}
-%\end{figure}
-%
-%\begin{figure}
-%\centering
-%\begin{minipage}{.5\textwidth}
-%    \centering
-%    \includegraphics[width=1\linewidth]{sample}
-%    %\captionof{figure}{A figure}
-%    \caption{Strain rates} %%\url{http://dionysos.survey.ntua.gr/dsoportal/_projects/IonoRemSens/}.}
-%    \label{fig:strain}
-%\end{minipage}%
-%\begin{minipage}{.5\textwidth}
-%    \centering
-%    \includegraphics[width=1\linewidth]{sample}
-%    %\captionof{figure}{Another figure}
-%    \caption{Dilatation.}
-%    \label{fig:dil}
-%\end{minipage}
-%\end{figure}
-%
-%
-%}
 %\end{block}
-
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 \end{column} % End of the second column
 
@@ -366,7 +325,7 @@ We have chosen to use the \texttt{RINEX DORIS 3.0} format, to
 %	ONLINE PLATFORM
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Online Platform}
+\begin{block}{}
 {\small
 }
 \begin{figure}
@@ -402,7 +361,7 @@ We have chosen to use the \texttt{RINEX DORIS 3.0} format, to
     }
   child [level distance=23cm, concept color=magenta!60!black, text=white, font=\footnotesize, text width=] {
       node {IERS} [counterclockwise from=60]
-      child [font=\tiny, text width=] { node {Standrads}}
+      child [font=\tiny, text width=] { node {Standards}}
       child [font=\tiny, text width=] { node {Products}}
     };
   %child [concept color=purple] {
@@ -417,31 +376,30 @@ We have chosen to use the \texttt{RINEX DORIS 3.0} format, to
   %    child { node {Early Universe}}
   %  };
 \end{tikzpicture}
-\label{fig:software-design}
 \caption{Software design follows a modular approach, where independent components 
 are developed individually; indicative chart.}
+\label{fig:software-design}
 \end{figure}
 
 \end{block}
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------
 %	CONCLUSION
-%----------------------------------------------------------------------------------------
-
-
-\begin{block}{Conclusion}
+%---------------------------------------------------------------------------
+\begin{block}{Current Status \& Future Work}
 {\small
-The main purpose of the project was to utilize all available GNSS data solution for the Corinthian Gulf region, to estimate the kinematic behavior.
-The use of a large number of stations installed in the area has created a dense network that is analyzed daily.
-A reliable velocity field has been produced from the time series analysis analysis, while correspondingly a primary strain field has been estimated.
-The online platform, connected to the website of the EnCeldus Supersite, is the hub for the distribution of the results of the analysis for all the available data. The scientific community can use the platform to enhance the research in different scientific fields.
-
+Currently the software is at an ever-changing state of heavy development, 
+constantly checking different algorithmic approaches, design patterns, accuracy 
+and efficiency. Our expectation is that within the next year we will be able 
+to perform Precise Orbit Determination for the Jason missions. In a next step 
+we will target Positioning and gradually incorporate additional DORIS-equipped 
+satellites. Our future goal is for the software to reach a product level 
+comparable to the IDS requirements and standards, thus enabling DSO's active 
+involvement within the DORIS community, hopefully acting as an Analysis Center.
+Furthermore, we hope for the software to make an impact to the DORIS and the 
+Satellite Geodesy communities through its efficiency and open-source \& free-of-charge 
+policy.
 }
-% \begin{figure}
-%     \includegraphics[width=.9\onecolwid]{testvel.jpg}
-%     \caption{Tectonic velocities of all processed GNSS stations wrt fixed Europe.}
-%     \label{fig:vels}
-% \end{figure}
 \end{block}
 
 %----------------------------------------------------------------------------------------
