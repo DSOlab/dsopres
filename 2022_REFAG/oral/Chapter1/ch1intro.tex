@@ -17,7 +17,7 @@
   Important results, include:
   \begin{itemize}
     \item the recent volcanic activity in \emph{Santorini} (e.g. \cite{papoutsis}),
-    \item the 2014 \emph{Kefallonia} earthquakes (e.g. \cite{sarkefalonia}, \cite{sakkas})
+    \item the 2014 \emph{Kefallonia} earthquakes (e.g. \cite{anastasioukef})
   \end{itemize}
 \end{frame}
 %
@@ -168,7 +168,7 @@
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.35\textwidth}
-   \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}\cite{bpe}.\\
+   \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}\citep{bernese}.\\
    %\medskip
    Integration with
    \begin{itemize}
@@ -320,22 +320,53 @@ plots} }
 
 % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Cordinate estinmates - Time series analysis}
+  \frametitle{Coordinate estimates - Time series analysis}
   \framesubtitle{}
   \label{}
-
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.3\textwidth}
+ 	   
+    \end{column}
+    \begin{column}{.7\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{vlsm_ts.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+ 
 \end{frame}
 \note{}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Velocity field in Greece}
+  \frametitle{Velocity field in Europe - Densfication project}
+  \framesubtitle{}
+  \label{}
+  \begin{center}
+    \includegraphics[width=.75\textwidth]{epndens_vel.png}
+    \url{https://epnd.sgo-penc.hu/velocities/}
+  \end{center}
+\end{frame}
+\note{}
+
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Velocity field in Greece wrt a stable Europe}
   \framesubtitle{}
   \label{}
   \vskip-1cm
 \begin{columns}[T]
   \begin{column}{.3\textwidth}
-
+    \begin{center}
+      \begin{itemize}\setlength\itemsep{1em}
+        \item \~ 100 station
+        \item data availability > 3 years
+        \item Velocity field w.r.t. a stable Europe \citep{kreemer14}
+      \end{itemize}
+      \includegraphics[width=.95\textwidth]{greece-freqs.png}
+    \end{center}
   \end{column}
   \begin{column}{.7\textwidth}
     \includegraphics[width=.95\textwidth]{testvel.jpg}
@@ -346,7 +377,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Focus on specific areas - Corinth Gulf}
+  \frametitle{Focus on specific regions - Corinth Gulf}
   \framesubtitle{}
   \label{}
   
@@ -362,7 +393,30 @@ plots} }
   \frametitle{Recent Earthquakes}
   \framesubtitle{}
   \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    \begin{center}
+ 	  \textbf{Thessaly 2021} 
+ 	  
+ 	  \includegraphics[width=.7\textwidth]{eq_elassona.jpg}    
 
+      \includegraphics[width=.9\textwidth]{klok_ts.png}
+
+    \end{center}
+
+    \end{column}
+    \textcolor{blue!40}{\vrule width 1pt}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{Itea 2022}
+        
+        \includegraphics[angle=-90,origin=c,width=.9\textwidth]{eq_itea221008.jpg}
+        \vskip-.5cm
+        \includegraphics[width=.9\textwidth]{ite3_ts.png}
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 \note{}
 
@@ -374,7 +428,10 @@ plots} }
   \vskip-1cm
 \begin{columns}[T]
   \begin{column}{.3\textwidth}
-
+    \begin{itemize}\setlength\itemsep{1em}
+      \item \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
+      \item grid step 0.5$^{\circ}$
+    \end{itemize}
   \end{column}
   \begin{column}{.7\textwidth}
       \includegraphics[width=.95\textwidth]{gr-output_str.jpg}
@@ -406,7 +463,11 @@ plots} }
   \frametitle{Discussion / Conclusions}
   \framesubtitle{}
   \label{}
-
+  \begin{itemize}\setlength\itemsep{1em}
+    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area
+    \item A dense velocity field for accurate estimation of tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
+    \item the continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other phenomena on smaller areas of interest
+  \end{itemize}
 \end{frame}
 \note{}
 
