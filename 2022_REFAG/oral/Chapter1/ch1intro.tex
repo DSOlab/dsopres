@@ -22,6 +22,7 @@
 \end{frame}
 %
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
+\vskip-1cm
   % Via our contribution to EUREF and interaction with its community, we hope to:
   Routine GNSS processing and site/network monitoring is crucial, because:
   \begin{itemize}
@@ -34,7 +35,7 @@
     \item contribute to the GNSS/EUREF community and be involved in ongoing/future projects,
     \item improve our academic services (NTUA is a University)
   \end{itemize}
-  Throughout the last years, routine preocessing \& monitoring has hepled us gain 
+  Throughout the last years, routine processing \& monitoring has hepled us gain 
   a more thorough view of the complex tectonic and volcanic setting of Greece.
 \end{frame}
 
@@ -44,7 +45,7 @@
 \vskip-1.5cm
   %To contribute to the Densification we have to establish a credible dataset
   %(network). This has proven to be rather challenging !\\
-  Routine processing for precise positioning, assumes a well establihed, 
+  Routine processing for precise positioning, assumes a well established, 
   credible dataset (metadata). This has proven to be rather challenging! Lately, 
   the introduction of \texttt{M3G} has provided assistance.\\
   \bigskip
@@ -78,7 +79,7 @@
     \item<pro@1-> different (geodetic type) equipment
     \item<pro@1-> credible time-span (early 2004 - now)
     \item<pro@1-> all free available GNSS data
-    \item<con@1-> large data gaps \& inactive stations (?)
+    \item<con@1-> large data gaps \& inactive stations
 %    \item<con@1-> needs repairing
 \end{itemize}
 }
@@ -168,6 +169,7 @@
 \begin{frame}\frametitle{The Scheme}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.35\textwidth}
+\vskip-.5cm
    \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}\citep{bernese}.\\
    %\medskip
    Integration with
@@ -183,13 +185,13 @@
 \hfill%
 
 \begin{column}{.65\textwidth}
-\vskip -1cm
+\vskip -.4cm
 \begin{figure}
 \centering
    \begin{tikzpicture}[ every annotation/.style = {draw,
                       fill = white, font = \large}]
 
-   \path[mindmap,concept color=black!30,text=white,
+   \path[mindmap,concept color=black!70,text=white,
      every node/.style={concept,circular drop shadow, scale=.4},
      root/.style = {concept color=black!30!red!30,
 font=\normalsize\bfseries,text width=5em},
@@ -244,7 +246,7 @@ plots} }
 \end{frame}
 
 \begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
-\vskip-1.5cm
+\vskip-1cm
   Processing is consistent with EUREF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
   \begin{itemize}%%[label={\checkmark}]
     \item \texttt{SINEX} with required info/blocks,
@@ -257,7 +259,7 @@ plots} }
     \item \texttt{GMF} and/or \texttt{VMF1}; \texttt{Chen-Herring} gradient parameter,
     \item amiguities fixed (length-dependent algorithm),
     \item use \texttt{GLONASS} obs (when available)
-    \item ------------------ ATX/individual calibrations  -------------
+    \item use \texttt{ATX} files - individual calibrations
   \end{itemize}
 \end{frame}
 
@@ -277,10 +279,11 @@ plots} }
 \begin{frame}\frametitle{Workflow}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
-  \texttt{\$>ddproces.sh --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
+  \texttt{\$>ddrun.sh       --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
 \end{column}
 \hfill%
 \begin{column}{.48\textwidth}
+\vskip-.5cm
   \scalebox{0.5}{
   \smartdiagram[priority descriptive diagram]{
     Download \texttt{RINEX} consulting \texttt{MySQL} db,
@@ -375,6 +378,7 @@ plots} }
         \item data availability > 3 years
         \item Velocity field w.r.t. a stable Europe \citep{kreemer14}
       \end{itemize}
+      \vskip1cm
       \includegraphics[width=.95\textwidth]{greece-freqs.png}
     \end{center}
   \end{column}
@@ -452,10 +456,14 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{}
+  \frametitle{Strain rates - focus on specific region}
   \framesubtitle{}
   \label{}
-
+  \vskip-1cm
+\begin{itemize}\setlength\itemsep{.2em}
+  \item 25 Permanent GNSS Station
+  \item grd step 0.25$^{\circ}$
+\end{itemize}
 \begin{center}
   \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
 \end{center}
@@ -473,7 +481,8 @@ plots} }
   \frametitle{Discussion / Conclusions}
   \framesubtitle{}
   \label{}
-  \begin{itemize}\setlength\itemsep{1em}
+  \vskip-.5cm
+  \begin{itemize}\setlength\itemsep{.5em}
     \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
     
     \item Routine processing and monitoring are very important and revealing for 
