@@ -111,6 +111,7 @@
 \newif\ifbeamer@frameswithnotesonly
 \newif\ifbeamer@ignorenonframe
 \newif\ifbeamer@autopdfinfo
+\newif\ifbeamer@onlytextwidth
 
 % Option management
 \RequirePackage{beamerbaseoptions}
