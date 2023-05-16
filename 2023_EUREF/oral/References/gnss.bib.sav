@@ -54,7 +54,7 @@ url = {https://doi.org/10.5281/zenodo.1297565},
 year = {2021}
 }
 
-@article{papoutsis,
+@article {papoutsis,
 author = {Papoutsis, I. and Papanikolaou, X. and Floyd, M. and Ji, K. H. and Kontoes, C. and Paradissis, D. and Zacharis, V.},
 title = {Mapping inflation at Santorini volcano, Greece, using GPS and InSAR},
 journal = {Geophysical Research Letters},
@@ -68,7 +68,7 @@ keywords = {Santorini, SBAS, PSI, GPS, Inflation},
 year = {2013},
 }
 
-@article{anastasioukef,
+@article {anastasioukef,
 author = {Anastasiou, D. and Chouliaras, G. and Papanikolaou, X. and Marinou, A. and Zacharis, V. and Galanis, J. and Drakatos, G.},
 title = {Geodetic and seismological analysis of the January 26, 2014 Cephalonia Island earthquake sequence},
 journal = {26th General Assembly of the IUGG,Prague, Czech Republic, 22/6 - 2/7.},
