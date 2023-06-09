@@ -2345,8 +2345,6 @@
     <bcf:datasource type="file" datatype="bibtex">References/gnss.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">anastasiou2019</bcf:citekey>
-    <bcf:citekey order="2">anastasiou2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
