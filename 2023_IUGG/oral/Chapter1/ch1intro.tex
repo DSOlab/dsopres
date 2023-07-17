@@ -7,10 +7,21 @@
   \frametitle{Corinth Rift}
   \framesubtitle{Geotectonic background}
   \label{}
-  \begin{center}
+  \begin{columns}[T]
+    \begin{column}{.3\textwidth}
+      \begin{itemize}\setlength\itemsep{.5em}
+         \item Narrowest and fastest extenting continental region.
+         \item one of the highest seismicity rates in the Euro-Mediterranean region.
+       \end{itemize} 
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{center}
 %  \vskip-.5cm
-    \includegraphics[width=.6\textwidth]{geotectonic.jpg}
-  \end{center}
+        \includegraphics[width=.97\textwidth]{geotectonic.jpg}
+      \end{center}     
+    \end{column}
+  \end{columns}
+
   \begin{footnotesize}
     \citep{FernandezBlanco2019}
   \end{footnotesize}
@@ -97,7 +108,7 @@ platform.
 %\end{frame}
 %\note{}
 
-\section{GPS/GNSS Networks in Greece}
+\section{Data set and processing scheme}
 
 \begin{frame}\frametitle{The Data Set}\framesubtitle{}
 \vskip-1.5cm
@@ -162,10 +173,10 @@ platform.
 %\end{frame}
 
 
-\begin{frame}\frametitle{Local Networks}\framesubtitle{}
+\begin{frame}\frametitle{Network EnCeladus}\framesubtitle{}
 \vskip-1cm
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
-  The \texttt{Corinth Rift} network is centered around the Cortinth Gulf, a 
+  The \texttt{Corinth Rift} network is centered around the Corinth Gulf, a 
   region of special tectonic interest. Larger site density compared to the 
   rest of Greece.
   \begin{columns}[T]
@@ -418,13 +429,13 @@ plots} }
   \begin{columns}[T]
     \begin{column}{.4\textwidth}
       \footnotesize{
-      We analyze time-series using in-house Hector Package \citep{Bos2012}, to estimate:
+      We analyze time-series using Hector Package \citep{Bos2012}, to estimate:
       \begin{itemize}
         \item tectonic velocities (linear trends),
         \item offsets/jumps due to miscellaneous reasons (e.g. instrumentation 
           changes, earthquakes, etc); note that this step requires a-priori 
           knowledge of such events (log-files, NOA earthquake catalogue)
-        \item harmonics signals (using periodograms),
+        \item harmonics signals (annual, semi-annual),
         \item velocity changes (e.g. inflation of Santorini isl.),
         \item post-seismic decay (not used)
       \end{itemize}}
@@ -439,6 +450,50 @@ plots} }
  
 \end{frame}
 \note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Time series analysis}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.25\textwidth}
+      \begin{center}
+      Station: 011A
+        \includegraphics[width=.97\textwidth]{011a_0_data.png}\\
+        \includegraphics[width=.97\textwidth]{011a_1_data.png}\\
+        \includegraphics[width=.97\textwidth]{011a_2_data.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.25\textwidth}
+      \begin{center}
+      Residuals
+        \includegraphics[width=.97\textwidth]{011a_0_res.png}\\
+        \includegraphics[width=.97\textwidth]{011a_1_res.png}\\
+        \includegraphics[width=.97\textwidth]{011a_2_res.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.25\textwidth}
+       \begin{center}
+       Station: EYPA
+        \includegraphics[width=.97\textwidth]{eypa_0_data.png}\\
+        \includegraphics[width=.97\textwidth]{eypa_1_data.png}\\
+        \includegraphics[width=.97\textwidth]{eypa_2_data.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.25\textwidth}
+      \begin{center}
+      Residuals
+        \includegraphics[width=.97\textwidth]{eypa_0_res.png}\\
+        \includegraphics[width=.97\textwidth]{eypa_1_res.png}\\
+        \includegraphics[width=.97\textwidth]{eypa_2_res.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
 
 % % ------------------------------------------------------------------------------
 %\begin{frame}
@@ -512,8 +567,8 @@ plots} }
         \toprule
           (mm/yr) & N & E & U\\
         \midrule
-         min & 2.0  & 13.0 & 1.0 \\
-         max & 15.0 & 12.2 & 1.5 \\
+         min & -13.0  & 7.5 & -9.0 \\
+         max & 7.2 & 17.0 & 5.0 \\
         \bottomrule
       \end{tabular*}
       \end{center}}
@@ -529,8 +584,8 @@ plots} }
         \toprule
           (mm/yr) & N & E & U\\
         \midrule
-         min & 2.0  & 13.0 & 1.0 \\
-         max & 15.0 & 12.2 & 1.5 \\
+         min & -8.1  & -7.2 & 9.0 \\
+         max & -28.0 & -17.7 & 5.0 \\
         \bottomrule
       \end{tabular*}
       \end{center}}
@@ -546,32 +601,32 @@ plots} }
   \frametitle{Kinematic fields -  fixed stations}
   \framesubtitle{}
   \label{}
-  \vskip-1cm
+  \vskip-1.2cm
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \begin{center}
-        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_flepe-output_vel.jpg}\\[.1em]
-        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_flido-output_vel.jpg}
+        \includegraphics[width=.89\textwidth, trim={0 0 0 1cm},clip]{cr_flepe-output_vel.jpg}\\[.1em]
+        \includegraphics[width=.89\textwidth, trim={0 0 0 1cm},clip]{cr_flido-output_vel.jpg}
       \end{center} 
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{center}
-        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_fkryo-output_vel.jpg}\\[.1em]
-        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_fpsar-output_vel.jpg}
+        \includegraphics[width=.89\textwidth, trim={0 0 0 1cm},clip]{cr_fkryo-output_vel.jpg}\\[.1em]
+        \includegraphics[width=.89\textwidth, trim={0 0 0 1cm},clip]{cr_fpsar-output_vel.jpg}
       \end{center} 
     \end{column}
   \end{columns}
 \end{frame}
 \note{}
 
- % ------------------------------------------------------------------------------
-\begin{frame}
-  \frametitle{Kinematic fields}
-  \framesubtitle{Estimate regional Euler Poles}
-  \label{}
-
-\end{frame}
-\note{}
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Kinematic fields}
+%  \framesubtitle{Estimate regional Euler Poles}
+%  \label{}
+%
+%\end{frame}
+%\note{}
 
 % % ------------------------------------------------------------------------------
 %\begin{frame}
@@ -607,42 +662,52 @@ plots} }
 %\end{frame}
 %\note{}
 
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Strain rates}
+%  \framesubtitle{}
+%  \label{}
+%%  \vskip-1cm
+%\begin{columns}[T]
+%  \begin{column}{.3\textwidth}
+%    \begin{itemize}\setlength\itemsep{1em}
+%      \item \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
+%      \item grid step 0.5$^{\circ}$
+%    \end{itemize}
+%  \end{column}
+%  \begin{column}{.7\textwidth}
+%    \begin{center}
+%    \vskip-1.2cm
+%      \includegraphics[width=.7\textwidth]{gr-output_str.jpg}
+%    \end{center}
+%  \end{column}
+%\end{columns}
+%\end{frame}
+%\note{}
+
  % ------------------------------------------------------------------------------
 \begin{frame}
   \frametitle{Strain rates}
   \framesubtitle{}
   \label{}
-%  \vskip-1cm
-\begin{columns}[T]
-  \begin{column}{.3\textwidth}
-    \begin{itemize}\setlength\itemsep{1em}
-      \item \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
-      \item grid step 0.5$^{\circ}$
-    \end{itemize}
-  \end{column}
-  \begin{column}{.7\textwidth}
-    \begin{center}
-    \vskip-1.2cm
-      \includegraphics[width=.7\textwidth]{gr-output_str.jpg}
-    \end{center}
-  \end{column}
-\end{columns}
-\end{frame}
-\note{}
+  %\vskip-.5cm
+  \begin{columns}[T]
+    \begin{column}{.3\textwidth}
+      \begin{itemize}\setlength\itemsep{.2em}
+        \item \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
+        \item 25 Permanent GNSS Station
+        \item grd step 0.25$^{\circ}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{.7\textwidth}
+      \begin{center}
+      \vskip-1cm
+        \includegraphics[width=.95\textwidth]{crfeu-output_str.jpg}
+      \end{center}
+    \end{column}
+  \end{columns}
 
- % ------------------------------------------------------------------------------
-\begin{frame}
-  \frametitle{Strain rates - focus on specific region}
-  \framesubtitle{}
-  \label{}
-  \vskip-1cm
-\begin{itemize}\setlength\itemsep{.2em}
-  \item 25 Permanent GNSS Station
-  \item grd step 0.25$^{\circ}$
-\end{itemize}
-\begin{center}
-  \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
-\end{center}
+
 
 \end{frame}
 \note{}
@@ -652,16 +717,21 @@ plots} }
   \frametitle{Online platform}
   \framesubtitle{}
   \label{}
-  \begin{columns}[T]
-    \begin{column}{.5\textwidth}
-     
-    \end{column}
-    \begin{column}{.5\textwidth}
-      \begin{center}
-          \includegraphics[width=.97\textwidth]{gsg2022_ts1.png}
-        \end{center}  
-    \end{column}
-  \end{columns}
+  \vskip-.5cm
+  \begin{center}
+    \includegraphics[width=.6\textwidth]{platform2.png}\\
+    \includegraphics[width=.6\textwidth]{gsg2022_ts1.png}
+  \end{center}
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%     
+%    \end{column}
+%    \begin{column}{.5\textwidth}
+%      \begin{center}
+%          \includegraphics[width=.97\textwidth]{gsg2022_ts1.png}
+%        \end{center}  
+%    \end{column}
+%  \end{columns}
   \begin{center}
     \href{http://dionysos.survey.ntua.gr/dso/enceladus/}{http://dionysos.survey.ntua.gr/dso/enceladus/}
   \end{center}
@@ -681,13 +751,13 @@ plots} }
     \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
     \item Routine processing and monitoring are very important and revealing for 
       Greece; products are requested by and disseminated to a wide range of Geoscientists.
-    \item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult 
-      task to model by Reference Systems (especially non-dynamic, such as the ones 
-      currently in use).
-    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
+%    \item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult 
+%      task to model by Reference Systems (especially non-dynamic, such as the ones 
+%      currently in use).
+    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a better understanding of complex kinematic field.
     \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks 
       are of great help (even with instrumentation of non-geodetic accuracy).
-      \item  Our plan: grow up our team and be more involved to the GNSS/EUREF community.
+      \item  Our plan: grow up our team and support monitoring in an operational manner..
   \end{itemize}
 \end{frame}
 \note{}
