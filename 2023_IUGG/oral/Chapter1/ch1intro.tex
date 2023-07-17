@@ -7,7 +7,14 @@
   \frametitle{Corinth Rift}
   \framesubtitle{Geotectonic background}
   \label{}
-
+  \begin{center}
+%  \vskip-.5cm
+    \includegraphics[width=.6\textwidth]{geotectonic.jpg}
+  \end{center}
+  \begin{footnotesize}
+    \citep{FernandezBlanco2019}
+  \end{footnotesize}
+  
 \end{frame}
 \note{}
 
@@ -16,12 +23,16 @@
   \frametitle{EnCeladus Hellenic Supersite}
   \framesubtitle{}
   \label{}
-
+  \begin{center}
+  \vskip-.5cm
+    \includegraphics[width=.8\textwidth]{supersite_intro.png}
+  \end{center}
+  \href{https://greeksupersite.eu/}{https://greeksupersite.eu/}
 \end{frame}
 \note{}
 
 \begin{frame}\frametitle{DSO Recent Activity and motivation}\framesubtitle{}\label{}
-\vskip-1.5cm
+\vskip-1cm
   Dionysos Satellite Observatory (DSO) of the National Technical University of 
   Athens (NTUA), has developed and maintains an automated processing
   scheme to accommodate the routine analysis of all available continuous GNSS 
@@ -33,7 +44,7 @@ GPS/GNSS stations and the development of a multidisciplinary
 platform.
   \\
   Routine GNSS processing and site/network monitoring is crucial, because:
-\begin{itemize}\setlength\itemsep{1em}
+\begin{itemize}\setlength\itemsep{.5em}
   \item Greece lies in a region of utmost tectonic and volcanic unrest (e.g. 
       active volcano in Santorini isl.),
   \item results \& products are important to a series of fields spanning 
@@ -486,50 +497,115 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Focus on specific regions - Corinth Gulf}
-  \framesubtitle{}
+  \frametitle{Corinth Gulf}
+  \framesubtitle{IGb14 || Stable Europe}
   \label{}
-  
-  \begin{center}
-    \includegraphics[width=.7\textwidth]{gsg2022_vel.jpg}  
-  \end{center}
+  \vskip-.5cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{cr_igb14-output_vel.jpg}  
+      \end{center}
+      \begin{table}[H]{\small
+      \begin{center}
+      \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c c}
+        \toprule
+          (mm/yr) & N & E & U\\
+        \midrule
+         min & 2.0  & 13.0 & 1.0 \\
+         max & 15.0 & 12.2 & 1.5 \\
+        \bottomrule
+      \end{tabular*}
+      \end{center}}
+      \end{table}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{cr_feu-output_vel.jpg}  
+      \end{center}
+            \begin{table}[H]{\small
+      \begin{center}
+      \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c c}
+        \toprule
+          (mm/yr) & N & E & U\\
+        \midrule
+         min & 2.0  & 13.0 & 1.0 \\
+         max & 15.0 & 12.2 & 1.5 \\
+        \bottomrule
+      \end{tabular*}
+      \end{center}}
+      \end{table}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 \note{}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Recent Earthquakes}
+  \frametitle{Kinematic fields -  fixed stations}
   \framesubtitle{}
   \label{}
   \vskip-1cm
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
-    \begin{center}
-    \vskip-.5cm
- 	  \textbf{Thessaly 2021} 
- 	  
- 	  \includegraphics[width=.55\textwidth]{eq_elassona.jpg}    
-%\vskip-.5cm
-      \includegraphics[width=.75\textwidth]{klok_ts.png}
-
-    \end{center}
-
+      \begin{center}
+        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_flepe-output_vel.jpg}\\[.1em]
+        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_flido-output_vel.jpg}
+      \end{center} 
     \end{column}
-    \textcolor{blue!40}{\vrule width 1pt}
     \begin{column}{.5\textwidth}
       \begin{center}
-      \vskip-.5cm
-        \textbf{Itea 2022}
-        
-        \includegraphics[angle=-90,origin=c,width=.8\textwidth]{eq_itea221008.jpg}
-        \vskip-1cm
-        \includegraphics[width=.8\textwidth]{ite3_ts.png}
-      \end{center}
+        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_fkryo-output_vel.jpg}\\[.1em]
+        \includegraphics[width=.97\textwidth, trim={0 0 0 1cm},clip]{cr_fpsar-output_vel.jpg}
+      \end{center} 
     \end{column}
   \end{columns}
 \end{frame}
 \note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Kinematic fields}
+  \framesubtitle{Estimate regional Euler Poles}
+  \label{}
+
+\end{frame}
+\note{}
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Recent Earthquakes}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%    \begin{center}
+%    \vskip-.5cm
+% 	  \textbf{Thessaly 2021} 
+% 	  
+% 	  \includegraphics[width=.55\textwidth]{eq_elassona.jpg}    
+%%\vskip-.5cm
+%      \includegraphics[width=.75\textwidth]{klok_ts.png}
+%
+%    \end{center}
+%
+%    \end{column}
+%    \textcolor{blue!40}{\vrule width 1pt}
+%    \begin{column}{.5\textwidth}
+%      \begin{center}
+%      \vskip-.5cm
+%        \textbf{Itea 2022}
+%        
+%        \includegraphics[angle=-90,origin=c,width=.8\textwidth]{eq_itea221008.jpg}
+%        \vskip-1cm
+%        \includegraphics[width=.8\textwidth]{ite3_ts.png}
+%      \end{center}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
@@ -576,7 +652,19 @@ plots} }
   \frametitle{Online platform}
   \framesubtitle{}
   \label{}
-
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+     
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+          \includegraphics[width=.97\textwidth]{gsg2022_ts1.png}
+        \end{center}  
+    \end{column}
+  \end{columns}
+  \begin{center}
+    \href{http://dionysos.survey.ntua.gr/dso/enceladus/}{http://dionysos.survey.ntua.gr/dso/enceladus/}
+  \end{center}
 \end{frame}
 \note{}
 

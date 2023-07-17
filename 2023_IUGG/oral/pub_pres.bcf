@@ -2183,10 +2183,11 @@
     <bcf:datasource type="file" datatype="bibtex">References/gnss.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">bernese</bcf:citekey>
-    <bcf:citekey order="2">Bos2012</bcf:citekey>
-    <bcf:citekey order="3">kreemer14</bcf:citekey>
-    <bcf:citekey order="4">straintool</bcf:citekey>
+    <bcf:citekey order="1">FernandezBlanco2019</bcf:citekey>
+    <bcf:citekey order="2">bernese</bcf:citekey>
+    <bcf:citekey order="3">Bos2012</bcf:citekey>
+    <bcf:citekey order="4">kreemer14</bcf:citekey>
+    <bcf:citekey order="5">straintool</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
