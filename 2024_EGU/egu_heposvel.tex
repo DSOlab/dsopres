@@ -1,0 +1,369 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% baposter Landscape Poster
+% LaTeX Template
+% Version 1.0 (11/06/13)
+%
+% baposter Class Created by:
+% Brian Amberg (baposter@brian-amberg.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[landscape,a0paper,fontscale=0.346]{baposter} % Adjust the font scale/size here
+%\documentclass[landscape,paperwidth=1978mm, paperheight=1183mm,fontscale=0.255]{baposter} % Adjust the font scale/size here
+
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Directory in which figures are stored
+% \usepackage{wrapfig, lipsum} % wrap text round figure
+\usepackage{tcolorbox}
+
+
+\usepackage{calc}
+
+\usepackage{hyperref} % \url, \href, etc ....
+
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+\usepackage{palatino} % Use the Palatino font
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{multicol} % Required for multiple columns
+\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+\setlength{\columnseprule}{0mm} % No horizontal rule between columns
+
+
+\usepackage{tikz} % Required for flow chart
+\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+
+\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+\setlength{\itemsep}{0.5pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}
+
+\definecolor{lightblue}{rgb}{0.145,0.6666,1} % Defines the color used for content box headers
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\definecolor{candyapplered}{rgb}{1.0, 0.03, 0.0}
+\definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+
+\begin{document}
+
+\begin{poster}
+{
+headerborder=closed, % Adds a border around the header of content boxes
+colspacing=1em, % Column spacing
+bgColorOne=white, % Background color for the gradient on the left side of the poster
+bgColorTwo=white, % Background color for the gradient on the right side of the poster
+borderColor=babyblue, % Border color
+headerColorOne=black, % Background color for the header in the content boxes (left side)
+headerColorTwo=babyblue, % Background color for the header in the content boxes (right side)
+headerFontColor=white, % Text color for the header text in the content boxes
+boxColorOne=white, % Background color of the content boxes
+textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+headerheight=0.16\textheight, % Height of the header
+headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+linewidth=0.75pt % Width of the border lines around content boxes
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+%
+{\includegraphics[height=6.5em]{../../logos/ntua.png}} %\includegraphics[height=6.5em]{../../logos/noa1.png}} % First university/lab logo on the left
+% {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
+{\bf\textsc{Velocity field estimated from HEPOS permanent GNSS network in Greece, preliminary results.}\vspace{0.3em} } % Poster title
+{\large Dimitrios Anastasiou, Xanthos Papanikolaou, Georgios Serelis, Maria Tsakiri 
+{\small \par{\textsuperscript{1} National Technical University of Athens, Dionysos Satellite Observatory, Greece (danastasiou@mail.ntua.gr)} 
+} \vspace{0.3em}
+\par{\textsc{European Geosciences Union General Assembly 2024 Vienna | Austria | 15 - 19 April 2024}} 
+\vskip 0.2cm
+%{\includegraphics[height=2.5em]{../../logos/gein_logo.png} \includegraphics[height=2.5em]{../../logos/egu19_logo.png} \includegraphics[height=2.5em]{../../logos/epos_logo_big.jpg}} % Second university/lab logo on the right
+
+ }
+{\includegraphics[height=6.5em]{../../logos/DSOtrans.png}} % \includegraphics[height=6.5em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Introduction}{name=introduction,column=0,row=0}{
+
+
+\begin{center}
+\begin{tcolorbox}[height=2.5em,width=.7\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]   
+ \textbf{Abstract Number:  EGU2024-17390}
+\end{tcolorbox}  
+ \end{center}
+% \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+%----------------------------------------------------------------------------------------
+%	VELOCITY FIELD
+%----------------------------------------------------------------------------------------
+
+\headerbox{Velocity field}{name=data,column=2, span=2,row=0}{
+% \vfill
+\begin{minipage}[c]{0.27\linewidth}
+%  \includegraphics[height=15em]{vel_field.jpg}
+\end{minipage}
+\begin{minipage}[c]{0.71\linewidth}
+%A total number of 302 GNSS stations belonging to the EUREF Permanent Network (EPN) 
+%were selected on the basis of the following criteria: 
+%a) station have an observation period longer than 3 years,
+%b) only one velocity solution is computed per station and
+%c) stations with large velocity changes excluded.
+%The station positions are estimated using several geodetic software packages and 
+%in a second step then CATREF software was used to estimate multi-year position 
+%and velocity solutions. The available dataset comprises the velocity field 
+%extracted from the C2010 EPN solution.
+%
+%The reference frame of the velocity field is ETRF2014 which is the realization 
+%of ETRS89 corresponding to ITRF2014. According to EUREF Technical Report 1, the 
+%ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
+%from ITRF2014 to ETRF2014 the three translation components are set to zero and 
+%the rotational rates (Eurasia angular velocity components) are taken from 
+%\textit{Altamimi et al. 2017}.
+\end{minipage}
+
+
+% \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+% %----------------------------------------------------------------------------------------
+% %	RESULTS 1
+% %----------------------------------------------------------------------------------------
+% 
+% \headerbox{Different Models Setup}{name=results,column=3,span=1,row=0}{
+% 
+% 
+% }
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\headerbox{References}{name=references,column=0, span=2, above=bottom}{
+\begin{minipage}[b]{0.92\linewidth}
+{\scriptsize
+\textbf{Bos, M. S.,}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
+
+\textbf{Dach, R.,}, Lutz, P. Walser, P. Fridez (Eds); 2015: Bernese GNSS Software Version 5.2. User manual, Astronomical Institute, University of Bern, Bern Open Publishing. DOI: 10.7892/boris.72297; ISBN: 978-3-906813-05-9.
+
+\textbf{Veis, G.}, Billiris, H., Nakos, B., and Paradissis, D. (1992), Tectonic strain in greece from geodetic measurements, C.R.Acad.Sci.Athens, 67:129--166
+
+\textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
+}
+\end{minipage}
+\begin{minipage}[b]{0.06\linewidth}
+%------------------------------------------
+% \begin{wrapfigure}{c}{1.5cm}
+\includegraphics[height=5em]{../../logos/graphic_egu_photo_yes.png}
+% \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
+% \end{wrapfigure}
+%------------------------------------------
+\end{minipage}
+}
+
+%----------------------------------------------------------------------------------------
+%	FUTURE RESEARCH
+%----------------------------------------------------------------------------------------
+
+\headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
+{\footnotesize
+
+test
+
+}
+}
+
+%----------------------------------------------------------------------------------------
+%	FUNDING
+%----------------------------------------------------------------------------------------
+
+\headerbox{FUNDING BY Hellenic Cadastre}{name=funding,column=3,aligned=references,above=bottom}{ 
+
+{\scriptsize We acknowledge support for this research by the project "HELPOS - Hellenic Plate Observing System" (MIS
+5002697),funded by the Operational Programme "Competitiveness, Entrepreneurship and Innovation" (NSRF 2014-2020). \par
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement N$^{\circ}$ 676564 - EPOS
+% and co-financed by Greece and the European Union.
+}
+}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 2
+%----------------------------------------------------------------------------------------
+
+\headerbox{Results and Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
+
+%\begin{minipage}[b]{0.60\linewidth}
+%Strain-rate results from 302 permanent European GNSS stations are presented in 
+%the following maps. The vertical velocity component is ignored in this stage 
+%and other sources of deformation (GIA, hydrological, anthropogenic et al.) are 
+%not considered in this preliminary interpretation. Different model setups (variable 
+%grid-size, distance from cell-center, smoothing parameters etc.) were used for 
+%estimation of strain rates. We present results obtained using the following input 
+%parameters:
+%
+%\begin{center}
+%\begin{tabular}{ c | c | c | c | c }
+%\hline
+% grid-size & ltype & dmin & dmax & Wt \\ 
+%% \hline
+%  0.5$^{\circ} $x0.5$^{\circ} $ & gaussian & 1 km  & 500 km & 6 and 12   \\
+%\hline
+% \end{tabular}
+%\end{center}
+%
+%Overall, our first results reproduce the gross features of tectonic deformation 
+%in Southern Europe, such as NE-SW extension across the Apennines (Italy), NNW-SSE 
+%compression across the Alboran Sea (western Mediterranean) and N-S extension in 
+%mainland Greece. Large areas of central and Northern Europe show small strain 
+%rates (less than 10 ns/yr; 2nd invariant of the tensor).
+%
+%% \begin{minipage}[t]{0.48\linewidth}
+%     \includegraphics[width=1.07\textwidth]{e14s050506-output_str-S.jpg}
+%% \end{minipage}\hfill
+%% \begin{minipage}[t]{0.48\linewidth}
+%%      \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
+%
+%% \end{minipage}
+%
+%\end{minipage}\hfill
+%\begin{minipage}[b]{0.36\linewidth}
+%     \includegraphics[width=.94\textwidth]{e14np050506e-output_str.jpg}
+%     
+%%      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
+%     
+%     \includegraphics[width=.94\textwidth]{e14s050512-output_dil.jpg}
+%\end{minipage}
+
+}
+
+%----------------------------------------------------------------------------------------
+%	HEPOS NETWORK
+%----------------------------------------------------------------------------------------
+
+\headerbox{HEPOS Network}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
+
+
+
+}
+
+%----------------------------------------------------------------------------------------
+%	STRAIN ALGORITHMS
+%----------------------------------------------------------------------------------------
+
+\headerbox{Data Analysis}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
+
+%Given a set of stations (points on earth's surface) with their
+%corresponding east and north velocities, we can estimate (or compute)
+%strain tensor parameters, by solving for the system
+%\[
+%\begin{bmatrix}
+%  V_{x,S_1} \\ 
+%  V_{y,S_1} \\ 
+%  \cdots \\ 
+%  V_{x,S_n} \\ 
+%  V_{y,S_n} \\ 
+%\end{bmatrix}
+%=
+%\begin{bmatrix}
+%  1 & 0 & \Delta_{y_1}  & \Delta_{x_1} & \Delta_{y_1} & 0 \\
+%  0 & 1 & -\Delta_{x_1} &  0           & \Delta_{x_1} & \Delta_{y_1} \\
+%  \cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
+%  1 & 0 & \Delta_{y_n}  & \Delta_{x_n} & \Delta_{y_n} & 0 \\
+%  0 & 1 & -\Delta_{x_n} &  0           & \Delta_{x_n} & \Delta_{y_n} \\
+%\end{bmatrix}
+%\begin{bmatrix}
+%  U_{x} \\ 
+%  U_{y} \\ 
+%  \omega \\ 
+%  \tau_{x} \\ 
+%  \tau_{xy} \\ 
+%  \tau_{y} \\ 
+%\end{bmatrix}
+%\]
+%at any given location \(R\); \(\Delta_{x_i}\) and \(\Delta_{y_i}\) are the displacement
+%components between station \(i\) and the point \(R\). A minimum of 3 stations
+%is required to compute the parameters; if more than 3 stations are used, then
+%the parameters are estimated using a least squares approach.
+%
+%% \texttt{StrainTool} offers two approaches for computing strain tensors. A first, 
+%% simple methodology is to split the region in Delaunay triangles, at the barycentre 
+%% of which a strain tensor is computed. Note that this approach only uses three points 
+%% to calculate tensor parameters, so the parameters are computed and not estimated.
+%% 
+%% A second more elaborate approach, uses covariance information and a sophistiacated
+%% weighting scheme. A grid is constrcuted covering the study area and one strain 
+%% tensor at the centre of each cell is estimated.
+%% Assuming that we have variance information for the station velocities 
+%% (and a Gaussian distribution), we can add the covariance matrix \(C\) of the 
+%% velocity data in the system. In the simplest case, \(C\) is a diagonal matrix, 
+%% with the velocity component standard deviations as its elements.
+%
+%\textit{Shen et al., 2015}, propose a more elaborate approach, reconstructing the
+%covariance matrix by multiplying a weighting function to each of its diagonal terms.
+%The weighting function is given by \(G_i = L_i \cdot Z_i\), in which \(L_i\) and \(Z_i\)
+%are functions of distance and spatial coverage dependent, respectively.
+%The final covariance matrix becomes then, \(C = C \cdot G^{-1}\) or, since its diagonal,
+%\(C_i = C_i \cdot {G_i}^{-1}\).
+%\(L_i\) is a distance-dependent weighting formula, in which a spatial smoothing 
+%parameter \(D\) is introduced and allows reduced weighting of the data as distance 
+%increases. It can have two forms, namely quadratic or Gaussian depending on the
+%spatial distribution of the data points. The the optimal smoothing parameter \(D\) 
+%is either selected by the user (and regarded constant) or searched for at each 
+%estimation.
+%The spatial weighting function \(Z_i\) measures the azimuth span of each site 
+%with respect to each of the remaining data points.
+%
+%Both of the approaches, result in the computation or estimation of the parameter vector 
+%\([U_{x}, U_{y}, \omega, \tau_{x}, \tau_{xy}, \tau_{y}]^T\). In a second step, the
+%following quantities are computed and reported:
+%\vskip .5cm
+%\begin{tabular}{l l}
+%$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $ &\\
+% $ e_{max}  = e_{mean} + \tau_{max} $ & $ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $ \\ 
+%  $ e_{min}  = e_{mean} - \tau_{max} $ & \\
+%$ dil = \tau_{x} + \tau_{y} $ & $ 2nd\_inv = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$
+%% $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$ & $$ dilatation = \tau_{x} + \tau_{y} $$ & $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+%
+%\end{tabular}
+%% $$ \tau_{max}= \sqrt{ {\tau_{xy}}^2 + {e_{diff}}^2 } $$
+%% $$ e_{max}  = e_{mean} + \tau_{max} $$
+%% $$ e_{min}  = e_{mean} - \tau_{max} $$
+%% $$ Az_{e_{max}}  = 90 + \frac{-atan2(\tau_{xy}, e_{diff})}{2} $$
+%% $$ dilatation = \tau_{x} + \tau_{y} $$
+%% $$ second invariant = \sqrt{ {\tau_{x}}^2 + {\tau_{y}}^2 + 2{\tau_{xy}}^2  }$$
+%\vskip .3cm
+%where,
+%
+%\begin{tabular}{c c}
+%$ e_{mean} = \frac{\tau_{x}+\tau_{y}}{2} $ & $ e_{diff} = \frac{\tau_{x}-\tau_{y}}{2} $
+%\end{tabular}
+
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{poster}
+
+\end{document}
