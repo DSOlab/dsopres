@@ -46,7 +46,8 @@
 
 
 \usepackage{tikz} % Required for flow chart
-\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+\usetikzlibrary{shapes,arrows,mindmap,shadows} % Tikz libraries required for the flow chart in the template
+\usepackage{smartdiagram}
 
 \newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
 \setlength{\itemsep}{0.5pt}
@@ -89,7 +90,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 %
-{\includegraphics[height=6.5em]{../../logos/ntua.png}} %\includegraphics[height=6.5em]{../../logos/noa1.png}} % First university/lab logo on the left
+{\includegraphics[height=6.5em]{../../logos/ntua.png} \hspace*{0.5cm}\includegraphics[height=6em]{../../logos/DSOtrans.png}} %\includegraphics[height=6.5em]{../../logos/noa1.png}} % First university/lab logo on the left
 % {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
 {\bf\textsc{Velocity field estimated from HEPOS permanent GNSS network in Greece, preliminary results.}\vspace{0.3em} } % Poster title
 {\large Dimitrios Anastasiou, Xanthos Papanikolaou, Georgios Serelis, Maria Tsakiri 
@@ -100,7 +101,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %{\includegraphics[height=2.5em]{../../logos/gein_logo.png} \includegraphics[height=2.5em]{../../logos/egu19_logo.png} \includegraphics[height=2.5em]{../../logos/epos_logo_big.jpg}} % Second university/lab logo on the right
 
  }
-{\includegraphics[height=6.5em]{../../logos/DSOtrans.png}} % \includegraphics[height=6.5em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
+{\includegraphics[height=6em]{../../logos/egu24_logo.png}} % \includegraphics[height=6.5em]{../../logos/logo_uoa_blue.png}} % Second university/lab logo on the right
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
@@ -288,56 +289,53 @@ Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
      \item \textbf{Strain Rates} via StrainTool (on user demand)
    \end{itemize}}
    
-%\begin{figure}
-%\centering
-%   \begin{tikzpicture}[ every annotation/.style = {draw,
-%                      fill = white, font = \large}]
-%
-%   \path[mindmap,concept color=black!70,text=white,
-%     every node/.style={concept,circular drop shadow, scale=.4},
-%     root/.style = {concept color=black!30!red!30,
-%font=\normalsize\bfseries,text width=5em},
-%     level 1 concept/.append style={
-%       font=\normalsize\bfseries, sibling angle=70,text width=7.7em,
-%       level distance=20mm,inner sep=0pt},
-%     level 2 concept/.append style={font=\bfseries,level distance=15mm},
-%   ]
-%
-%   node[root] {Bernese GNSS Software v5.2} [clockwise from=0]
-%     child[concept color=red!30] {
-%       node {pyBern Module} [clockwise from=140]
-%       child  [color=black!80] { node {github repo} }
-%       child  { node {handle PCF, BPE, flow-control} }
-%       child  { node {parsers\\formaters} }
-%       child  { node {pre-processing \& editing} }
-%       child  [level distance=13mm] { node {data/product downloading} }
-%     }
-%     child[concept color=blue!40] {
-%       node[concept] {MySQL Database} [clockwise from=-10]
-%       child { node[concept] {from/to .STA} }
-%       child { node[concept] {stations/ networks/ products} }
-%       child [level distance=17mm] { node[concept] {IGS log files} }
-%     }
-%     child[concept color=red!60] {
-%       node[concept] {Cron Jobs} [clockwise from=-40]
-%       child [level distance=13mm] { node[concept] {final ultra-rapid} }
-%       child { node[concept] {update ATX, PCV } }
-%       child { node[concept] {sync with AIUB} }
-%       child [level distance=12mm, sibling angle=70] { node[concept]
-%{sync with M3G} }
-%     }
-%     child[concept color=yellow!40!black!30] {
-%       node[concept] { Analysis } [clockwise from=220]
-%       child { node[concept] {Time-Series} }
-%       child [text width=]{ node[concept] {StrainTool} }
-%     }
-%     child[concept color=green!50] {
-%       node[concept] { WebPage } [clockwise from=180]
-%       child [level distance=12mm, text width=] { node[concept] {d3.js
-%plots} }
-%     };
-%\end{tikzpicture}
-%\end{figure}
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                      fill = white, font = \large}]
+
+   \path[mindmap,concept color=black!70,text=white,
+     every node/.style={concept,circular drop shadow, scale=.4},
+     root/.style = {concept color=black!30!red!30,
+font=\normalsize\bfseries,text width=5em},
+     level 1 concept/.append style={
+       font=\normalsize\bfseries, sibling angle=70,text width=7.7em,
+       level distance=20mm,inner sep=0pt},
+     level 2 concept/.append style={font=\bfseries,level distance=15mm},
+   ]
+
+   node[root] {Bernese GNSS Software v5.2} [clockwise from=0]
+     child[concept color=red!30] {
+       node {pyBern Module} [clockwise from=140]
+       child  [color=black!80] { node {github repo} }
+       child  { node {handle PCF, BPE, flow-control} }
+       child  { node {parsers\\formaters} }
+       child  { node {pre-processing \& editing} }
+       child  [level distance=13mm] { node {data/product downloading} }
+     }
+     child[concept color=blue!40] {
+       node[concept] {MySQL Database} [clockwise from=-10]
+       child { node[concept] {from/to .STA} }
+       child { node[concept] {stations/ networks/ products} }
+       child [level distance=17mm] { node[concept] {IGS log files} }
+     }
+     child[concept color=red!60] {
+       node[concept] {Cron Jobs} [clockwise from=-40]
+       child [level distance=13mm] { node[concept] {final ultra-rapid} }
+       child { node[concept] {update ATX, PCV } }
+       child { node[concept] {sync with AIUB} }
+       child [level distance=12mm, sibling angle=70] { node[concept]
+{sync with M3G} }
+     }
+     child[concept color=yellow!40!black!30] {
+       node[concept] { Analysis } [clockwise from=220]
+       child { node[concept] {Time-Series} }
+       child [text width=]{ node[concept] {StrainTool} }
+     }
+     child[concept color=green!50] {
+       node[concept] { WebPage } [clockwise from=180]
+       child [level distance=12mm, text width=] { node[concept] {d3.js
+plots} }
+     };
+\end{tikzpicture}
 
  Processing is consistent with EUREF standards (Guidelines for Analysis Centres).
   \begin{itemize}%%[label={\checkmark}]
