@@ -107,7 +107,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 
 \headerbox{Introduction}{name=introduction,column=0,row=0}{
-
+In this study we present preliminarily results of an ongoing research project between Dionysos Satellite Observatory (DSO) and the Hellenic Cadastre. The latter, has installed since 2007 a dense national network of 98 GPS/GNSS sites, spatially covering the whole country. Selected datasets of the network data were incorporated into the automatic processing infrastructure developed and maintained by DSO to perform an in-depth study and monitoring of the geodynamic and seismic setting of Hellenic region. Further collaboration and integration of both historic and contemporary data can signifficantly strengthen our understanding of the complicated geotectonic setting in one of the most actively tectonic regions of the world.
 
 \begin{center}
 \begin{tcolorbox}[height=2.5em,width=.7\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]   
@@ -121,30 +121,57 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %	VELOCITY FIELD
 %----------------------------------------------------------------------------------------
 
-\headerbox{Velocity field estimation}{name=data,column=2, span=2,row=0}{
+\headerbox{Estimation of Velocity Field}{name=data,column=2, span=2,row=0}{
 % \vfill
-\begin{minipage}[c]{0.33\linewidth}
-  The daily position estimates of the stations are automatically logged into suitable files, from which position time series are generated. Time series analysis use to estimate coordinates (within a specified Reference Frame IGb14), tectonic velocities, harmonic signals, co-seismic displacements and volocity changes. The analysis was conducted using the Free Software/Open Source Software Hector (Bos, 2013), with requisite adjustments made as necessary.
+\begin{minipage}[c]{0.31\linewidth}
+Following the estimation of daily site coordinates, position time-series were stacked for every site of the network. The latter wre in turn analyzed using the Hector software (Bos et al., 2013) for the estimation of tectonic velocities and harmonic signals. The time span of more than ten years allows estimation of site velocities, yet the temporal density of data could inhibit the accuracy that can be obtained.
+
+%  The daily position estimates of the stations are automatically logged into suitable files, from which position time series are generated. Time series analysis use to estimate coordinates (within a specified Reference Frame IGb14), tectonic velocities, harmonic signals, co-seismic displacements and volocity changes. The analysis was conducted using the Free Software/Open Source Software Hector (Bos, 2013), with requisite adjustments made as necessary.
+\end{minipage}
+\begin{minipage}[c]{0.02\linewidth}
+
 \end{minipage}
 \begin{minipage}[c]{0.33\linewidth}
-  sdf
+   Time series analysis of three different station are presented.
+   Velocity field with respect to IGb14 presented on the following map.\\[.4em]
+  Velocities vary per component:
+  \begin{center}
+  \vskip-.3cm
+  \begin{tabular}{ c  c  c }
+    \hline
+      comp & min (mm/yr) & max (mm/yr)\\
+    \hline
+        North & -17.9 & 15.5 \\
+        East & 2.4 & 26.0\\
+        Up & -5.5 & 4.7 \\
+    \hline
+  \end{tabular}
+  \end{center}
+
+%  
+%  North Greece WNW dir
+
+%  Central GR Aegrean SW
+    
 \end{minipage}
 \begin{minipage}[c]{0.34\linewidth}
-  \includegraphics[width=.97\textwidth]{hepos22-output_vel.jpg}
+  \begin{center}
+  \includegraphics[width=.9\textwidth]{hepos22-output_vel.jpg}
+  \end{center}
 \end{minipage}
 
 \begin{minipage}[c]{0.34\linewidth}
 \begin{center}
 098A
 \end{center}
-\vfill
-\rotatebox{90}{{\tiny North}}
+%\vfill
+\rotatebox{90}{\scriptsize ~~~~~~~~~~North}
   \includegraphics[height=5em]{098a_0_data.png}~\includegraphics[height=5em]{098a_0_res.png}\\
-\rotatebox{90}{{\tiny East}}
+\rotatebox{90}{\scriptsize ~~~~~~~~~~~~East}
   \includegraphics[height=5em]{098a_1_data.png}~\includegraphics[height=5em]{098a_1_res.png}\\
-\rotatebox{90}{{\tiny Up}}
+\rotatebox{90}{\scriptsize ~~~~~~~~~~~~~~Up}
   \includegraphics[height=5em]{098a_2_data.png}~\includegraphics[height=5em]{098a_2_res.png}
-\vfill
+%\vfill
 \end{minipage}
 \begin{minipage}[c]{0.33\linewidth}
 \begin{center}
@@ -227,8 +254,11 @@ linewidth=0.75pt % Width of the border lines around content boxes
 
 \headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
 {\footnotesize
-
-test
+We consider this study to be a work-in-progress; we plan to go on with data analysis for all the available years. Currently, we are working on :
+\begin{itemize}\setlength\itemsep{.1em}
+  \item the analysis of vertical velocities
+  \item the investigation of the deformation field in smaller areas
+\end{itemize}
 
 }
 }
@@ -239,10 +269,17 @@ test
 
 \headerbox{FUNDING BY Hellenic Cadastre}{name=funding,column=3,aligned=references,above=bottom}{ 
 
+\begin{minipage}[c]{0.69\linewidth}
 {\scriptsize We acknowledge support for this research by the project "Support of Permanent GNSS station Network of Hellenic Cadastre" funded by the \textbf{Hellenic Cadastre}. \par
 Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
 % and co-financed by Greece and the European Union.
 }
+\end{minipage}
+\hspace*{5pt}
+\begin{minipage}[c]{0.25\linewidth}
+  \includegraphics[width=.97\textwidth]{../../logos/Hellenic_cadastre.png}
+\end{minipage}
+
 }
 
 %----------------------------------------------------------------------------------------
@@ -251,7 +288,7 @@ Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
 
 \headerbox{Strain and Rotational Rates}{name=resval,column=2,span=2,row=0,below=data,above=references}{
 \begin{minipage}[c]{0.34\linewidth}
-Strain and rotational rates from 98 stations of HEPOS Network presented in the following maps. We present results obtained using StrainTool Software (Anastasiou et al., 2021) and the following input parameters:
+Strain and rotational rates presented in the following maps. We present results obtained using StrainTool Software (Anastasiou et al., 2021) and the following input parameters:
 \begin{center}
 \begin{tabular}{ c | c | c }
 \hline
@@ -261,7 +298,11 @@ Strain and rotational rates from 98 stations of HEPOS Network presented in the f
 \hline
  \end{tabular}
 \end{center}     
-
+Overall, our first results reproduce the gross features of tectonic deformation in Greece such as N-S Extension in mainland Greeece and clockwise rotational rates on the west.
+%\begin{itemize}\setlength\itemsep{.1em}
+%  \item N-S Extension in mainland Greeece 
+%  \item Clockwise rotational rates dominate
+%\end{itemize}
 \end{minipage}
 \begin{minipage}[c]{0.33\linewidth}
   \includegraphics[width=.97\textwidth]{hepos22-output_str.jpg}
@@ -322,10 +363,28 @@ Strain and rotational rates from 98 stations of HEPOS Network presented in the f
 %----------------------------------------------------------------------------------------
 
 \headerbox{HEPOS Network}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
-\begin{center}
+Hellenic Cadastre has since 2007 established a network of 98 continuous GPS sites,spatially
+covering the whole country. The network is since maintened by the office, and its products and data used for surveying and supporting national infrastructure.
+~\\[1em]
+\begin{minipage}[c]{0.49\linewidth}
   \fbox{\includegraphics[width=.97\textwidth]{hepos.png}}
-\end{center}
+\end{minipage}
+\begin{minipage}[c]{0.02\linewidth}
 
+\end{minipage}
+\begin{minipage}[c]{0.47\linewidth}
+  In 2020, Hellenic Cadastre successefully concluded a large-scale upgrade of its network,     introducing a full switch to multi-GNSS. All network sites were equiped with modernized firmware and hardware to support all major GNSS systems (GPS, Glonass, Galileo and Beidou).
+\end{minipage}
+%In 2020, Hellenic Cadastre successefully concluded a large-scale upgrade of its network, introducing a full switch to multi-GNSS. All network sites were ecquiped with modernized firmware and hardware to support all major GNSS systems (GPS, Glonass, Galileo and Beidou).
+~\\[1em]
+For this study we analyzed daily RINEX (v.2) files of four individual years, namely 2011, 2015, 2021 and 2022. The data were provided under a special agreement from Hellenic Cadastre to DSO and were selected in a way that could enable the estimation of tectonic behaviour on the one hand, yet require minimum effort and align with the needs and interests of the cadastral office.
+
+
+
+%\begin{center}
+%  \fbox{\includegraphics[width=.97\textwidth]{hepos.png}}
+%\end{center}
+%
 
 }
 
@@ -335,24 +394,29 @@ Strain and rotational rates from 98 stations of HEPOS Network presented in the f
 
 \headerbox{Data Analysis}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
 
-    \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}.\\
-   %\medskip
-   Integration with
-   \begin{itemize}
-    \setlength\itemsep{.5em}
-     \item \textbf{MySQL} database,
-     \item \textbf{Python} module (product/data downloading, pre-processing, 
-      driving cron jobs, etc)\\
-%      \url{https://github.com/DSOlab/autobern}
-     \item \textbf{Time-series} analysis (integrated in routine processing on regular intervals)
-     \item \textbf{Strain Rates} via StrainTool (on user demand)
-   \end{itemize}}
-   
-   \begin{tikzpicture}[ every annotation/.style = {draw,
+The data described above were analyzed using the Bernese GNSS Software (v. 5.2) (Dach et al., 2015). Both GPS and GLONASS
+observation were used when available (most of 2021 and 2022). IGb14 was used as the frame of reference, using a set of 19 IGS stations for alignment. CODE final products were incorporated in the analysis, consistent with the frame of choice. The key parameter of interest was station coordinates.
+
+
+
+%    \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}.\\
+%   %\medskip
+%   Integration with
+%   \begin{itemize}
+%    \setlength\itemsep{.5em}
+%     \item \textbf{MySQL} database,
+%     \item \textbf{Python} module (product/data downloading, pre-processing, 
+%      driving cron jobs, etc)\\
+%%      \url{https://github.com/DSOlab/autobern}
+%     \item \textbf{Time-series} analysis (integrated in routine processing on regular intervals)
+%     \item \textbf{Strain Rates} via StrainTool (on user demand)
+%   \end{itemize}}
+ \begin{center}
+    \begin{tikzpicture}[ every annotation/.style = {draw,
                       fill = white, font = \large}]
 
    \path[mindmap,concept color=black!70,text=white,
-     every node/.style={concept,circular drop shadow, scale=.4},
+     every node/.style={concept,circular drop shadow, scale=.42},
      root/.style = {concept color=black!30!red!30,
 font=\normalsize\bfseries,text width=5em},
      level 1 concept/.append style={
@@ -395,9 +459,9 @@ font=\normalsize\bfseries,text width=5em},
 plots} }
      };
 \end{tikzpicture}
-
+ \end{center}
  Processing is consistent with EUREF standards (Guidelines for Analysis Centres).
-  \begin{itemize}%%[label={\checkmark}]
+  \begin{itemize}\setlength\itemsep{.1em}
     \item \texttt{SINEX} with required info/blocks,
     \item Reference frame \texttt{\textcolor{red}{IGb14}},
     \item \texttt{IERS} Conventions 2010,
@@ -425,9 +489,9 @@ plots} }
 %  $\Rightarrow$  
 %  $\Rightarrow$ Reprocess all available data from late '90s up to now
   
-  \begin{center}
-    \includegraphics[width=.7\textwidth]{igs.png}
-  \end{center}
+%  \begin{center}
+%    \includegraphics[width=.7\textwidth]{igs.png}
+%  \end{center}
 
  
 }
