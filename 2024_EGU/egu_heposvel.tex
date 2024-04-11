@@ -94,7 +94,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 % {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
 {\bf\textsc{Velocity field estimated from HEPOS permanent GNSS network in Greece, preliminary results.}\vspace{0.3em} } % Poster title
 {\large Dimitrios Anastasiou, Xanthos Papanikolaou, Georgios Serelis, Maria Tsakiri 
-{\small \par{\textsuperscript{1} National Technical University of Athens, Dionysos Satellite Observatory, Greece (danastasiou@mail.ntua.gr)} 
+{\small \par{National Technical University of Athens, School of Rural, Surveying and Geoinformatics Engineering, Dionysos Satellite Observatory, Greece (danastasiou@mail.ntua.gr)} 
 } \vspace{0.3em}
 \par{\textsc{European Geosciences Union General Assembly 2024 Vienna | Austria | 15 - 19 April 2024}} 
 \vskip 0.2cm
@@ -121,29 +121,65 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %	VELOCITY FIELD
 %----------------------------------------------------------------------------------------
 
-\headerbox{Velocity field}{name=data,column=2, span=2,row=0}{
+\headerbox{Velocity field estimation}{name=data,column=2, span=2,row=0}{
 % \vfill
-\begin{minipage}[c]{0.27\linewidth}
-%  \includegraphics[height=15em]{vel_field.jpg}
+\begin{minipage}[c]{0.33\linewidth}
+  The daily position estimates of the stations are automatically logged into suitable files, from which position time series are generated. Time series analysis use to estimate coordinates (within a specified Reference Frame IGb14), tectonic velocities, harmonic signals, co-seismic displacements and volocity changes. The analysis was conducted using the Free Software/Open Source Software Hector (Bos, 2013), with requisite adjustments made as necessary.
 \end{minipage}
-\begin{minipage}[c]{0.71\linewidth}
-%A total number of 302 GNSS stations belonging to the EUREF Permanent Network (EPN) 
-%were selected on the basis of the following criteria: 
-%a) station have an observation period longer than 3 years,
-%b) only one velocity solution is computed per station and
-%c) stations with large velocity changes excluded.
-%The station positions are estimated using several geodetic software packages and 
-%in a second step then CATREF software was used to estimate multi-year position 
-%and velocity solutions. The available dataset comprises the velocity field 
-%extracted from the C2010 EPN solution.
-%
-%The reference frame of the velocity field is ETRF2014 which is the realization 
-%of ETRS89 corresponding to ITRF2014. According to EUREF Technical Report 1, the 
-%ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
-%from ITRF2014 to ETRF2014 the three translation components are set to zero and 
-%the rotational rates (Eurasia angular velocity components) are taken from 
-%\textit{Altamimi et al. 2017}.
+\begin{minipage}[c]{0.33\linewidth}
+  sdf
 \end{minipage}
+\begin{minipage}[c]{0.34\linewidth}
+  \includegraphics[width=.97\textwidth]{hepos22-output_vel.jpg}
+\end{minipage}
+
+\begin{minipage}[c]{0.34\linewidth}
+\begin{center}
+098A
+\end{center}
+\vfill
+\rotatebox{90}{{\tiny North}}
+  \includegraphics[height=5em]{098a_0_data.png}~\includegraphics[height=5em]{098a_0_res.png}\\
+\rotatebox{90}{{\tiny East}}
+  \includegraphics[height=5em]{098a_1_data.png}~\includegraphics[height=5em]{098a_1_res.png}\\
+\rotatebox{90}{{\tiny Up}}
+  \includegraphics[height=5em]{098a_2_data.png}~\includegraphics[height=5em]{098a_2_res.png}
+\vfill
+\end{minipage}
+\begin{minipage}[c]{0.33\linewidth}
+\begin{center}
+057A (co-seismic displacement)
+\end{center}
+  \includegraphics[height=5em]{057a_0_data.png}~\includegraphics[height=5em]{057a_0_res.png}\\
+  \includegraphics[height=5em]{057a_1_data.png}~\includegraphics[height=5em]{057a_1_res.png}\\
+  \includegraphics[height=5em]{057a_2_data.png}~\includegraphics[height=5em]{057a_2_res.png}
+\end{minipage}
+\begin{minipage}[c]{0.33\linewidth}
+\begin{center}
+  040A (Santorini volcano inflation)
+\end{center}
+  \includegraphics[height=5em]{048a_0_data.png}~\includegraphics[height=5em]{048a_0_res.png}\\
+  \includegraphics[height=5em]{048a_1_data.png}~\includegraphics[height=5em]{048a_1_res.png}\\
+  \includegraphics[height=5em]{048a_2_data.png}~\includegraphics[height=5em]{048a_2_res.png}
+\end{minipage}
+%\begin{minipage}[c]{0.71\linewidth}
+%%A total number of 302 GNSS stations belonging to the EUREF Permanent Network (EPN) 
+%%were selected on the basis of the following criteria: 
+%%a) station have an observation period longer than 3 years,
+%%b) only one velocity solution is computed per station and
+%%c) stations with large velocity changes excluded.
+%%The station positions are estimated using several geodetic software packages and 
+%%in a second step then CATREF software was used to estimate multi-year position 
+%%and velocity solutions. The available dataset comprises the velocity field 
+%%extracted from the C2010 EPN solution.
+%%
+%%The reference frame of the velocity field is ETRF2014 which is the realization 
+%%of ETRS89 corresponding to ITRF2014. According to EUREF Technical Report 1, the 
+%%ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
+%%from ITRF2014 to ETRF2014 the three translation components are set to zero and 
+%%the rotational rates (Eurasia angular velocity components) are taken from 
+%%\textit{Altamimi et al. 2017}.
+%\end{minipage}
 
 
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
@@ -165,11 +201,12 @@ linewidth=0.75pt % Width of the border lines around content boxes
 \headerbox{References}{name=references,column=0, span=2, above=bottom}{
 \begin{minipage}[b]{0.92\linewidth}
 {\scriptsize
-\textbf{Bos, M. S.,}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
 
-\textbf{Dach, R.,}, Lutz, P. Walser, P. Fridez (Eds); 2015: Bernese GNSS Software Version 5.2. User manual, Astronomical Institute, University of Bern, Bern Open Publishing. DOI: 10.7892/boris.72297; ISBN: 978-3-906813-05-9.
+\textbf{Anastasiou D.}, Papanikolaou P., Ganas A., and Paradissis D. (2021). “StrainTool: A software package to estimate strain tensor parameters (v1.0-r1)”. In: Zenodo. DOi:10.5281/zenodo.1297565. URL: https://doi.org/10.5281/zenodo.1297565
 
-\textbf{Veis, G.}, Billiris, H., Nakos, B., and Paradissis, D. (1992), Tectonic strain in greece from geodetic measurements, C.R.Acad.Sci.Athens, 67:129--166
+\textbf{Bos, M. S.}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
+
+\textbf{Dach, R.}, Lutz, P. Walser, P. Fridez (Eds); 2015: Bernese GNSS Software Version 5.2. User manual, Astronomical Institute, University of Bern, Bern Open Publishing. DOI: 10.7892/boris.72297; ISBN: 978-3-906813-05-9.
 
 \textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
 }
@@ -212,7 +249,29 @@ Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
 %	RESULTS 2
 %----------------------------------------------------------------------------------------
 
-\headerbox{Results and Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
+\headerbox{Strain and Rotational Rates}{name=resval,column=2,span=2,row=0,below=data,above=references}{
+\begin{minipage}[c]{0.34\linewidth}
+Strain and rotational rates from 98 stations of HEPOS Network presented in the following maps. We present results obtained using StrainTool Software (Anastasiou et al., 2021) and the following input parameters:
+\begin{center}
+\begin{tabular}{ c | c | c }
+\hline
+ grid-size & ltype  & Wt \\ 
+% \hline
+  0.5$^{\circ} $x0.5$^{\circ} $ & gaussian & 24   \\
+\hline
+ \end{tabular}
+\end{center}     
+
+\end{minipage}
+\begin{minipage}[c]{0.33\linewidth}
+  \includegraphics[width=.97\textwidth]{hepos22-output_str.jpg}
+\end{minipage}
+\begin{minipage}[c]{0.33\linewidth}
+  \includegraphics[width=.97\textwidth]{hepos22-output_rot.jpg}
+\end{minipage}
+
+
+
 
 %\begin{minipage}[b]{0.60\linewidth}
 %Strain-rate results from 302 permanent European GNSS stations are presented in 
