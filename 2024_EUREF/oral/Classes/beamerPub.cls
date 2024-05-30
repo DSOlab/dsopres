@@ -632,6 +632,7 @@
     \color{blue!20}\rule{0.6\textwidth}{1pt}\par  
     \vskip.2cm
     \textcolor{red!85}{\Large\textbf{\@thankutext}}
+      \includegraphics[width=1cm]{Figs/gr_palaistine.png}
     \color{blue!20}\rule{0.7\textwidth}{1pt}\par
     \color{blue!30}\rule{0.55\textwidth}{1pt}\par
     \color{blue!40}\rule{0.4\textwidth}{1pt}\par
