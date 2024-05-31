@@ -159,13 +159,42 @@
 \end{frame}
 
  % ------------------------------------------------------------------------------
- \begin{frame}
-   \frametitle{Network HEPOS (new processing)}
-   \framesubtitle{}
-   \label{}
- 
- \end{frame}
- \note{} 
+\begin{frame}
+  \frametitle{Network HEPOS (new processing)}
+  \framesubtitle{}
+  \label{}
+ \begin{columns}[T] % align columns
+	\begin{column}{.50\textwidth}
+	  Network \texttt{HEPOS} 
+	
+	  {\small
+	  \begin{itemize}
+	    \setlength\itemsep{.1em}
+	    \item<pro@1-> covers all of Greece
+	    \item<pro@1-> equipment
+	    \item<pro@1-> credible time-span (early 2004 - now)
+	    \item<pro@1-> 
+	    \item<con@1-> large data gaps \& inactive stations
+	%    \item<con@1-> needs repairing
+	\end{itemize}
+	}
+	\end{column}%
+	\hfill%
+	\begin{column}{.50\textwidth}
+	 \begin{figure}
+	 \begin{center}
+	 \vskip -.2cm
+	 \includegraphics[width=.95\textwidth]{hepos.png} %1 2.2 0 0
+	% \vskip-.7cm
+	% \caption{COMET/NTUA network.}
+	\href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}{->> Network HEPOS}
+	 \label{fig:cometntua}
+	 \end{center}
+	 \end{figure}
+	\end{column}%
+	\end{columns}
+\end{frame}
+\note{} 
 
 \section{Processing}
 
@@ -355,17 +384,17 @@ plots} }
   \begin{columns}[T]
     \begin{column}{.4\textwidth}
       \footnotesize{
-      We analyze time-series using in-house software tools, to estimate:
+      We analyze time-series using Hector Package \citep{Bos2012}, to estimate:
       \begin{itemize}
         \item tectonic velocities (linear trends),
         \item offsets/jumps due to miscellaneous reasons (e.g. instrumentation 
           changes, earthquakes, etc); note that this step requires a-priori 
           knowledge of such events (log-files, NOA earthquake catalogue)
-        \item harmonics signals (using periodograms),
+        \item harmonics signals,
         \item velocity changes (e.g. inflation of Santorini isl.),
         \item post-seismic decay (still under development)
       \end{itemize}}
-      New time series analysis in progress using Hector Package \citep{Bos2012}
+%      New time series analysis in progress using Hector Package \citep{Bos2012}
     \end{column}
     \begin{column}{.6\textwidth}
       \begin{center}
@@ -379,12 +408,182 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Add Time series from HEPOS Network}
+  \frametitle{Συσχετισμός ασυνεχειών με σεισμούς}
   \framesubtitle{}
   \label{}
-
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{table}[H]{\small
+      \begin{center}
+      \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} c c c c}
+        \toprule
+         date & Δn & Δe & Δu\\
+              & \multicolumn{3}{c}{(mm)}\\
+        \midrule
+        \multicolumn{4}{l}{Station: 040A}\\
+        26.01.2014 & -43.1 & 25.2 & 2.2 \\
+        17.11.2015 & -10.8 & 1.7 & 3.1\\
+        \midrule
+        \multicolumn{4}{l}{Station: 057A}\\
+        03.03.2021 & 47.9 & 27.6 & 14.0\\
+        \bottomrule
+      \end{tabular*}
+      \end{center}}
+      \end{table}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{040A}\\
+         \includegraphics[width=.75\textwidth]{040a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{040a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{040a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{057A}\\
+         \includegraphics[width=.75\textwidth]{057a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{057a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{057a_2_data.png}
+       \end{center} 
+    \end{column}
+  \end{columns}
 \end{frame}
 \note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Αρμονική ανάλυση}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{align*}
+        \sum_{i=0}^{n_F} s_{i} sin(\omega_{i}t) + c_{i} cos(\omega_{i}t)
+      \end{align*}
+      Παράδειγμα αποτελεσμάτων:
+       \begin{center}
+         \includegraphics[width=.8\textwidth]{098a_0_lsfout.png}
+       \end{center}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{098A}\\
+         \includegraphics[width=.75\textwidth]{098a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{098a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{098a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{098A}\\
+         \includegraphics[width=.75\textwidth]{098a_0_res.png}\\
+         \includegraphics[width=.75\textwidth]{098a_1_res.png}\\
+         \includegraphics[width=.75\textwidth]{098a_2_res.png}
+       \end{center} 
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Ειδικές περιπτώσεις - Σαντορίνη}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%  \begin{columns}[T]
+%    \begin{column}{.33\textwidth}
+%    \vskip.5cm
+%    Εκτίμηση αλλαγή ταχυτήτων στον σταθμό της Σαντορίνης:
+%%    \begin{table}[H]{\small
+%%    \begin{center}
+%%    \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c}
+%%      \toprule
+%%        comp & < $\sim$2013 & > $\sim$ 2013\\
+%%             & \multicolumn{2}{c}{(mm/yr)}\\
+%%      \midrule
+%%        north & -30.1 & -17.5 \\
+%%        east  &  31.3 & 7.0 \\
+%%        up    &  17.2 & 2.1 \\
+%%      \bottomrule
+%%    \end{tabular*}
+%%    \end{center}}
+%%    \end{table}
+%
+%
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%      Station:\textbf{048A}\\
+%         \includegraphics[width=.75\textwidth]{048a_0_data_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_1_data_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_2_data_nomod.png}
+%       \end{center} 
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%      Residuals:\textbf{048A}\\
+%         \includegraphics[width=.75\textwidth]{048a_0_res_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_1_res_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_2_res_nomod.png}
+%       \end{center} 
+%      
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Ειδικές περιπτώσεις - Σαντορίνη}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+    \vskip.5cm
+    Εκτίμηση αλλαγή ταχυτήτων στον σταθμό της Σαντορίνης:
+    \begin{table}[H]{\small
+    \begin{center}
+    \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c}
+      \toprule
+        comp & < $\sim$2013 & > $\sim$ 2013\\
+             & \multicolumn{2}{c}{(mm/yr)}\\
+      \midrule
+        north & -30.1 & -17.5 \\
+        east  &  31.3 & 7.0 \\
+        up    &  17.2 & 2.1 \\
+      \bottomrule
+    \end{tabular*}
+    \end{center}}
+    \end{table}
+
+
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{048A}\\
+         \includegraphics[width=.75\textwidth]{048a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{048a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{048a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Residuals:\textbf{048A}\\
+         \includegraphics[width=.75\textwidth]{048a_0_res.png}\\
+         \includegraphics[width=.75\textwidth]{048a_1_res.png}\\
+         \includegraphics[width=.75\textwidth]{048a_2_res.png}
+       \end{center} 
+      
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
 
 % % ------------------------------------------------------------------------------
 %\begin{frame}
@@ -450,6 +649,61 @@ plots} }
 \end{frame}
 \note{}
 
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Velocity Field }
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    Η ταχύτητες κυμαίνονται ανά συνιστώσα:
+    \begin{table}[H]{\small
+    \begin{center}
+    \begin{tabular*}{.8\linewidth}{@{\extracolsep{\fill}} l c c}
+      \toprule
+        comp & min & max \\
+             & \multicolumn{2}{c}{(mm/yr)}\\
+      \midrule
+        north & -17.9 & 15.5 \\
+        east & 2.4 & 26.0\\
+        up & -5.5 & 4.7 \\
+      \bottomrule
+    \end{tabular*}
+    \end{center}}
+    \end{table}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+             \includegraphics[width=.97\textwidth]{hepos3-output_vel.jpg}
+           \end{center}     
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Compare velocity field of different networks}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    \begin{center}
+      \texttt{DSO\_GRC\_2021}\\
+      \includegraphics[width=.97\textwidth]{gr-output_vel.jpg}
+    \end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \texttt{DSO\_HPS\_2022}\\
+        \includegraphics[width=.97\textwidth]{hepos3-output_vel.jpg}
+      \end{center}    
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
 
 %
 % % ------------------------------------------------------------------------------
@@ -524,20 +778,64 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Strain rates - focus on specific region}
+  \frametitle{High rate (1Hz) PPP processing}
   \framesubtitle{}
   \label{}
+  PRIDE PROCESSING
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Effect from Turkey eq 230206}
+  \framesubtitle{}
+  \label{}\
   \vskip-1cm
-\begin{itemize}\setlength\itemsep{.2em}
-  \item 25 Permanent GNSS Station
-  \item grd step 0.25$^{\circ}$
-\end{itemize}
-\begin{center}
-  \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
-\end{center}
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{center}
+         \includegraphics[width=.97\textwidth]{kin_2023037_rodo.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{kin_2023037_sant.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{kin_2023037_ores.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Focus on stations}
+  \framesubtitle{}
+  \label{}
 
 \end{frame}
 \note{}
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Strain rates - focus on specific region}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%\begin{itemize}\setlength\itemsep{.2em}
+%  \item 25 Permanent GNSS Station
+%  \item grd step 0.25$^{\circ}$
+%\end{itemize}
+%\begin{center}
+%  \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
+%\end{center}
+%
+%\end{frame}
+%\note{}
 
 
 
