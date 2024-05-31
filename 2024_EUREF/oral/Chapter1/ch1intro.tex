@@ -2,7 +2,7 @@
 
 \section{Introduction}
 
-\begin{frame}\frametitle{DSO Recent Activity}\framesubtitle{}\label{}
+\begin{frame}\frametitle{DSO last year}\framesubtitle{}\label{}
 \vskip-1.5cm
   Dionysos Satellite Observatory (DSO) of the National Technical University of 
   Athens (NTUA), has developed and maintains an automated processing
@@ -14,10 +14,11 @@
   results which help us further understand the complicated tectonic setting of 
   Greece and nearby regions.
   \\
-  Important results, include:
+  Updates:
   \begin{itemize}
-    \item the recent volcanic activity in \emph{Santorini} (e.g. \cite{papoutsis}),
-    \item the 2014 \emph{Kefallonia} earthquakes (e.g. \cite{anastasioukef})
+    \item archive old data (from 1995) for reprocessing,
+    \item add PPP PRIDE near real time processing for high rate
+    \item start updateting for strain Tool
   \end{itemize}
 \end{frame}
 %
@@ -50,6 +51,7 @@
         \item Start our contribution from 2016
         \item Proccessing and upload daily SINEX files including 78 station
         \item Data processing from GPS week 1400 up to 2238 on IGb14 
+        \item Change to IGS20 (old Bernese)
       \end{itemize}  
     \end{column}
     \begin{column}{.5\textwidth}
@@ -154,44 +156,16 @@
       
     \end{column}
   \end{columns}
- 
-%
-%
-%  \FourQuad
-%  {
-%  \textbf{Corinth Rift.}
-%  \begin{itemize}
-%    \item<pro@1-> credible time-span
-%    \item<pro@1-> only covers the Corinth Rift
-%    \item<con@1-> inconsistent providers
-%    \item<con@1-> no log files \& equipment changes
-%  \end{itemize}
-%  }
-%  {
-%
-%  }
-%  {
-%  \textbf{Santorini Network.}
-%  Most of the stations installed post-2011 to monitor the \textit{inflation episode}.
-%  \begin{itemize}
-%    \item<con@1-> localized
-%    \item<con@1-> limited time-span
-%  \end{itemize}
-%  }
-%  {
-% \begin{figure}
-% \begin{center}
-% \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.85\textwidth]{sntrnet.eps}
-%  \vskip -.6cm
-% \caption{Santorini network.}
-% \label{fig:sntrnet}
-% \end{center}
-% \end{figure}
-%  }
-
-
 \end{frame}
 
+ % ------------------------------------------------------------------------------
+ \begin{frame}
+   \frametitle{Network HEPOS (new processing)}
+   \framesubtitle{}
+   \label{}
+ 
+ \end{frame}
+ \note{} 
 
 \section{Processing}
 
@@ -275,61 +249,61 @@ plots} }
 \end{columns}
 \end{frame}
 
+%
+%\begin{frame}\frametitle{Workflow}\framesubtitle{}
+%\begin{columns}[T] % align columns
+%\begin{column}{.48\textwidth}
+%  \texttt{\$>ddrun.sh       --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
+%\end{column}
+%\hfill%
+%\begin{column}{.48\textwidth}
+%\vskip-.5cm
+%  \scalebox{0.5}{
+%  \smartdiagram[priority descriptive diagram]{
+%    Download \texttt{RINEX} consulting \texttt{MySQL} db,
+%    Download products,
+%    Validate \texttt{.STA}; synchronize \texttt{/GEN},
+%    Set variables in the Protocol Control File (\texttt{.PCF}),
+%    Process the dataset,
+%    Check for errors,
+%    Save Products \& Update database records,
+%    Compile Report (\texttt{json} | \texttt{html})
+%}}
+%\end{column}
+%\end{columns}
+%\end{frame}
+%
 
-\begin{frame}\frametitle{Workflow}\framesubtitle{}
-\begin{columns}[T] % align columns
-\begin{column}{.48\textwidth}
-  \texttt{\$>ddrun.sh       --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
-\end{column}
-\hfill%
-\begin{column}{.48\textwidth}
-\vskip-.5cm
-  \scalebox{0.5}{
-  \smartdiagram[priority descriptive diagram]{
-    Download \texttt{RINEX} consulting \texttt{MySQL} db,
-    Download products,
-    Validate \texttt{.STA}; synchronize \texttt{/GEN},
-    Set variables in the Protocol Control File (\texttt{.PCF}),
-    Process the dataset,
-    Check for errors,
-    Save Products \& Update database records,
-    Compile Report (\texttt{json} | \texttt{html})
-}}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
-\vskip-1cm
-  Processing is consistent with EUREF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
-  \begin{itemize}%%[label={\checkmark}]
-    \item \texttt{SINEX} with required info/blocks,
-    \item Reference frame \texttt{\textcolor{red}{IGb14}},
-    \item \texttt{IERS} Conventions 2010,
-    \item \texttt{IGS}/\texttt{CODE} products,
-    \item ocean loading corrections (\texttt{\textcolor{red}{FES2004}}),
-    %\item atmospheric tidal loading corrections,
-    \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
-    \item \texttt{GMF} and/or \texttt{\textcolor{red}{VMF1}}; \texttt{Chen-Herring} gradient parameter,
-    \item amiguities fixed (length-dependent algorithm),
-    \item use \texttt{GLONASS} obs (when available)
-    \item use \texttt{ATX} files  (\textcolor{red}{epn\_14.atx}) - \textcolor{red}{individual calibrations}
-  \end{itemize}
-\end{frame}
-
-%  \begin{itemize}
-%    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
-%    \item synchronize \texttt{GEN/} directory
-%    \item closely follow \texttt{RNX2SNX.PCF}
-%    \begin{itemize}
-%      \item variabes in PCF are set by external tools (genericity)
-%      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
-%    \end{itemize}
-%    \item update database
-%    \item customize output (\texttt{html, json})
+%\begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
+%\vskip-1cm
+%  Processing is consistent with EUREF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
+%  \begin{itemize}%%[label={\checkmark}]
+%    \item \texttt{SINEX} with required info/blocks,
+%    \item Reference frame \texttt{\textcolor{red}{IGb14}},
+%    \item \texttt{IERS} Conventions 2010,
+%    \item \texttt{IGS}/\texttt{CODE} products,
+%    \item ocean loading corrections (\texttt{\textcolor{red}{FES2004}}),
+%    %\item atmospheric tidal loading corrections,
+%    \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
+%    \item \texttt{GMF} and/or \texttt{\textcolor{red}{VMF1}}; \texttt{Chen-Herring} gradient parameter,
+%    \item amiguities fixed (length-dependent algorithm),
+%    \item use \texttt{GLONASS} obs (when available)
+%    \item use \texttt{ATX} files  (\textcolor{red}{epn\_14.atx}) - \textcolor{red}{individual calibrations}
 %  \end{itemize}
-% \end{frame}
+%\end{frame}
+%
+%%  \begin{itemize}
+%%    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
+%%    \item synchronize \texttt{GEN/} directory
+%%    \item closely follow \texttt{RNX2SNX.PCF}
+%%    \begin{itemize}
+%%      \item variabes in PCF are set by external tools (genericity)
+%%      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
+%%    \end{itemize}
+%%    \item update database
+%%    \item customize output (\texttt{html, json})
+%%  \end{itemize}
+%% \end{frame}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
@@ -403,6 +377,15 @@ plots} }
 \end{frame}
 \note{}
 
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Add Time series from HEPOS Network}
+  \framesubtitle{}
+  \label{}
+
+\end{frame}
+\note{}
+
 % % ------------------------------------------------------------------------------
 %\begin{frame}
 %  \frametitle{Time series analysis}
@@ -460,50 +443,61 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Focus on specific regions - Corinth Gulf}
+  \frametitle{Velocity field of HEPOS Network}
   \framesubtitle{}
   \label{}
-  
-  \begin{center}
-    \includegraphics[width=.7\textwidth]{gsg2022_vel.jpg}  
-  \end{center}
 
 \end{frame}
 \note{}
 
- % ------------------------------------------------------------------------------
-\begin{frame}
-  \frametitle{Recent Earthquakes}
-  \framesubtitle{}
-  \label{}
-  \vskip-1cm
-  \begin{columns}[T]
-    \begin{column}{.5\textwidth}
-    \begin{center}
-    \vskip-.5cm
- 	  \textbf{Thessaly 2021} 
- 	  
- 	  \includegraphics[width=.55\textwidth]{eq_elassona.jpg}    
-%\vskip-.5cm
-      \includegraphics[width=.75\textwidth]{klok_ts.png}
 
-    \end{center}
-
-    \end{column}
-    \textcolor{blue!40}{\vrule width 1pt}
-    \begin{column}{.5\textwidth}
-      \begin{center}
-      \vskip-.5cm
-        \textbf{Itea 2022}
-        
-        \includegraphics[angle=-90,origin=c,width=.8\textwidth]{eq_itea221008.jpg}
-        \vskip-1cm
-        \includegraphics[width=.8\textwidth]{ite3_ts.png}
-      \end{center}
-    \end{column}
-  \end{columns}
-\end{frame}
-\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Focus on specific regions - Corinth Gulf}
+%  \framesubtitle{}
+%  \label{}
+%  
+%  \begin{center}
+%    \includegraphics[width=.7\textwidth]{gsg2022_vel.jpg}  
+%  \end{center}
+%
+%\end{frame}
+%\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Recent Earthquakes}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%    \begin{center}
+%    \vskip-.5cm
+% 	  \textbf{Thessaly 2021} 
+% 	  
+% 	  \includegraphics[width=.55\textwidth]{eq_elassona.jpg}    
+%%\vskip-.5cm
+%      \includegraphics[width=.75\textwidth]{klok_ts.png}
+%
+%    \end{center}
+%
+%    \end{column}
+%    \textcolor{blue!40}{\vrule width 1pt}
+%    \begin{column}{.5\textwidth}
+%      \begin{center}
+%      \vskip-.5cm
+%        \textbf{Itea 2022}
+%        
+%        \includegraphics[angle=-90,origin=c,width=.8\textwidth]{eq_itea221008.jpg}
+%        \vskip-1cm
+%        \includegraphics[width=.8\textwidth]{ite3_ts.png}
+%      \end{center}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
