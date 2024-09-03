@@ -1,0 +1,134 @@
+\documentclass{beamer}
+\mode<presentation>{}
+
+\graphicspath{ {./figures/} }
+\usepackage{enumitem,xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shadows,arrows.meta,positioning,backgrounds,fit}
+\usepackage{subcaption}
+\usepackage{fontawesome5} %% nice little symbols ...
+\usepackage{natbib} %% for bibliography
+%\bibliographystyle{plainnat}
+\bibliographystyle{apalike}
+
+%\setbeamertemplate{footline}[frame number]
+%\setbeamertemplate{headline}{}
+\setbeamertemplate
+ {footline}{\quad\hfill\insertframenumber/\inserttotalframenumber\strut\quad}
+
+% colored underline, with Beamer overlay support
+% usage: \cul{x} or \cul[blue]{x} or \cul<2->{x} or \cul<2->[blue]{x}
+\newcommand<>{\cul}[2][red]{%
+  % change underline dimentions: https://tex.stackexchange.com/a/167957/25264
+  \fontdimen6\textfont3=0.75pt%
+  % colored underline: https://tex.stackexchange.com/a/9477/25264
+  % transparent underline: https://tex.stackexchange.com/a/45601/25264
+  % switch between colored and transparent: http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf sections 9.3 and 9.6.1
+  \alt#3%
+      {\color{#1}\underline{{\color{black}#2}}\color{black}}%
+      {\transparent{0.0}\underline{{\transparent{1.0}#2}}\transparent{1.0}} %
+}
+
+% so that the captions are numerated
+\setbeamertemplate{caption}[numbered]
+
+% when issuing \appendinx in the deocument, these extra slides will not be 
+% counted
+\renewcommand{\appendixname}{\texorpdfstring{\translate{Appendix}}{Appendix}}
+
+%% Tikz Stuff
+% Define block styles
+\tikzset{%
+  materia/.style={draw, fill=blue!10, text width=4.0em, text centered, minimum height=1.5em,drop shadow},
+  etape/.style={materia, text width=6em, minimum width=7em, minimum height=2em, rounded corners, drop shadow},
+  texto/.style={above, text width=4em, text centered},
+  linepart/.style={draw, thick, color=black!50, -LaTeX, dashed},
+  line/.style={draw, thick, color=black!50, -LaTeX},
+  ur/.style={draw, text centered, minimum height=0.01em},
+  back group/.style={fill=yellow!20,rounded corners, draw=black!50, dashed, inner xsep=15pt, inner ysep=10pt},
+}
+\newcommand{\etape}[2]{node (p#1) [etape] {#2}}
+\newcommand{\transreceptor}[4]{%
+  \path [linepart] (#1.#4) -- node [above] {\scriptsize \textcolor{red!40}{#2}} (#3);}
+%% DOne with Tikz stuff !!
+
+%% For verbatim
+\newenvironment{VerbExample}
+{\semiverbatim}
+{\endsemiverbatim}
+
+\title{DSO DORIS Analysis Software Intermediate Outcomes}
+\author{G. ~Serelis\inst{1} \and D. ~Anastasiou\inst{1} 
+  \and X. ~Papanikolaou\inst{1} \and M. ~Tsakiri\inst{1} 
+  \and V. ~Zacharis\inst{1} \and V. ~Krey\inst{1}}
+\institute
+{
+  \inst{1}%
+  Dionysos Satellite Observatory\\
+  School of Rural, Surveying \& Geoinformatics Engineering\\
+  National Technical University of Athens
+}
+
+\date{{\color{red!30} IDS Workshop,\\ 
+  30 Years of Progress in Radar Altimetry Symposium,\\
+  2-7 September 2024, Montpellier, France}}
+
+% Top left and top right  Position of a logo in beamer
+\titlegraphic {
+\begin{tikzpicture}[overlay,remember picture]
+\node[right=0.08cm] at (current page.150){
+    \includegraphics[width=1cm]{DSOtrans}
+  };
+\node[left=0.08cm] at (current page.30){
+    \includegraphics[width=1cm]{ntua}
+  };
+\end{tikzpicture}
+}
+
+\begin{document}
+  
+\parskip=10pt
+
+\begin{frame}[noframenumbering, plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  DSO is developing its own, in-house software for POD via DORIS.
+
+  \cul[red!40]{Problem Statement:}\\
+  How do we go about testing the software?
+\end{frame}
+
+\begin{frame}
+  \frametitle{Software Testing}
+  \framesubtitle{Testing is hard \dots}
+  \begin{itemize}[label=\textcolor{blue!40}{\textbullet}]
+    \item hundreds of thousands of LOC,
+    \item different modules, performing different tasks, in different repositories,
+    \item different kinds of errors: programming, bugs, implementation, models,
+    \item different magnitudes and effects,
+    \item 
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Thank you}
+  \centering
+  \textbf{Thank you for your attention!\\}
+  %\vspace{1cm}
+  \centering
+  %\includegraphics[width=0.1\textwidth]{gr_palaistine}
+
+  \includegraphics[width=0.2\textwidth]{ntua}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+    \bibliography{doris}
+\end{frame}
+
+\appendix %do not count the following slides for the total number
+
+\end{document}
