@@ -1,0 +1,37 @@
+\frametitle{Config File (\texttt{yaml})}
+    \fontsize{6pt}{7.2}\selectfont
+    \begin{center}
+    \begin{VerbExample}
+        ---
+      data:
+        doris-rinex: data/Jason-3/ja3rx22248.001
+        sp3: data/Jason-3/ssaja320.b22238.e22258.DG_.sp3.001
+      reference-frame:
+        station-coordinates: data/dpod2020_01.snx
+      eop-info:
+        eop-file: data/eopc0420.1962-now
+      naif-kernels:
+        spk: data/jpl/de421.bsp
+        pck: data/jpl/gm_de431.tpc
+        lsk: data/jpl/naif0012.tls
+      ocean-tides:
+        harmonics: data/oceanTide_FES2014b.potential.iers.txt
+        degree: 120
+        order: 120
+        blq: data/fes14b.blq
+      pole-tide:
+        model: data/desaiscopolecoef.txt
+        degree: 80
+        order: 80
+      gravity:
+        # model: data/gfc/GOCO02s.gfc
+        model: data/gfc/EIGEN-GRGS.RL04.MEAN-FIELD.gfc
+        degree: 120
+        order: 120
+      troposphere:
+        gpt3:
+          grid: data/gpt3_5.grd
+        vmf3:
+          grid: data/2022248.v3gr_d
+    \end{VerbExample}
+    \end{center}
