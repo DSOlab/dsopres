@@ -104,23 +104,72 @@
 
 \begin{block}{Introduction}
 {\small
-test
- \break
+
 }
-\vspace*{30cm}
+\vspace*{20cm}
 test
 \end{block}
 
 %------------------------------------------------
 %    SOFTWARE DESING
 %------------------------------------------------
-\begin{block}{Software Design}
+\begin{block}{Network \& Data processing}
 {\small
-TEST
+57 continuously operating GNSS stations in distances ranging from 900km to 1400km from the epicenter
+Receiver type: LEICA
+
+- most of them GR30
+
+- also GRX1200GGPRO / GRX1200+GNSS
+
+Antenna type LEICA
+
+- LEIAR10 / LEIAS10
+
+- few stations: LEIAX1202GG
+
+Observation interval: 1s
+
+Precise Point Positioning w Ambiguity Resolution
+
+Sat systems:
+
+GPS / GLO / GAL / BDS-2/3
+
+Elevation angle: 7 deg
+
+--Kinematic mode
+
+Reference Frame: IGS20
+
+Final IGS Products for satellite:
+
+- Orbits (.SP3)
+
+- Clocks (.CLK)
+
+- Earth Orientation Parameters (.ERP)
+
+- Attitude (.OBX)
+
+- Bias (.BIA)
+
+ANTEX File: IGS20\_2247
+
+For Tropospheric modeling: VMF1
 }
-\vspace*{48cm}
-test
+%\begin{center}
+%  \includegraphics[width=.97\textwidth]{figures/gnss_network.png}
+%\end{center}
+%\vspace*{48cm}
 \end{block}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=.97\textwidth]{figures/gnss_network.png}
+\end{center}
+    \caption{Processed stations.}
+    \label{fig:proc-net}
+\end{figure}      
 
 %\bigskip
 %\begin{alertblock}{Contact Information}
@@ -140,19 +189,6 @@ test
 \begin{center}
   \includegraphics[width=.97\textwidth]{figures/ESC2024_webheader.png}
 \end{center}
-
-%\begin{center}
-%\textbf{Acknowledgments}
-%\end{center}
-%\par\textit{\footnotesize This project was funded by the National Technical 
-%University of Athens (NTUA), via its Program for Basic Research (PEVE 2021), 
-%within the framework of the \emph{Integrated Tropospheric Estimation in DORIS 
-%Satellite Positioning} (INESTRO, 65/2321) project.}
-%
-%\par\textit{\footnotesize The authors would like to thank the International DORIS 
-%Service for making data and technical resources publicly available. We would also 
-%like to thank IDS members and especially Mr. Guilhem Moreaux for providing 
-%feedback and information.}
 \end{minipage}
 %
 %\begin{alertblock}{Contact Information}
@@ -244,7 +280,23 @@ Currently
 
 \end{block}
 
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
 
+%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
+\begin{alertblock}{Contact Information}
+\begin{itemize}
+\item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
+\item Email: \href{danastasiou@mail.ntua.gr}{danastasiou@mail.ntua.gr}
+\end{itemize}
+\end{alertblock}
+%
+%\begin{figure}
+%\includegraphics[width=1.0\linewidth]{ESPA-EKT-GSRT_Logo-EN.JPG}
+%\end{figure}                                                            
 
 %----------------------------------------------------------------------------------------
 
