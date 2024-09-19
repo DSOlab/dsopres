@@ -104,11 +104,8 @@
 
 \begin{block}{Introduction}
 {\small
-
+On February 6th, 2023 at 01:17:35 UTC the Mw 7.8 Nurdağı-Pazarcık earthquake nucleated \~15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234° E, 37.2444° N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed and a little over 9 hours after the first event, at 10:24:49 UTC, the Mw 7.6 \cite{Melgar_2023}
 }
-\vspace*{10cm}
-test
-
 \begin{figure}
 \begin{center}
   \includegraphics[width=.54\textwidth]{figures/eqturk23_tect.png}
@@ -128,7 +125,7 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 \begin{itemize}\setlength\itemsep{.3em}
   \item Receiver type: LEICA\\
     (most of them GR30, also GRX1200GGPRO / GRX1200+GNSS)
-  \item Antenna type LEI CA\\
+  \item Antenna type LEICA\\
     LEIAR10 / LEIAS10 (few stations: LEIAX1202GG)
   \item Observation interval: 1s
 \end{itemize}
@@ -180,11 +177,18 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 
 \begin{figure}
 \begin{center}
-  \includegraphics[width=.97\textwidth]{figures/gnss_network.png}
+  \includegraphics[width=.75\textwidth]{figures/gnss_network.png}
 \end{center}
     \caption{Distribution of permanent GNSS stations analyzed.}
     \label{fig:proc-net}
-\end{figure}      
+\end{figure} 
+\begin{center}
+\vskip-.5cm
+{\footnotesize \textbf{Acknowledgments} to Metrica SA for the free availability of the 1Hz GNSS data of HxGN SmartNet for this study.}
+\hspace*{1cm}
+  \includegraphics[width=.4\textwidth]{logo_HXgn.png}
+  \includegraphics[width=.2\textwidth]{logo_metrica.png}
+\end{center}     
 \end{block}
 %\bigskip
 %\begin{alertblock}{Contact Information}
@@ -193,12 +197,14 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 %\item Email: \href{xanthos@mail.ntua.gr}{xanthos@mail.ntua.gr}
 %\end{itemize}
 %\end{alertblock}
-\vfill
+
+%\vfill
 %----------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------
 %\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 %\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+\vskip-1.5cm
 \begin{minipage}{\threecolwid}
   \begin{column}{\twocolwid}
 		\vspace*{1.0\baselineskip}
@@ -206,7 +212,7 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 		  \includegraphics[width=.97\textwidth]{figures/ESC2024_webheader.png}
 		\end{center}
   \end{column}
-%  \begin{column}{\sepwid}\end{column}
+%  \begin{column}{.1\sepwid}\end{column}
   \begin{column}{\onecolwid}
   \vspace*{1.0\baselineskip}
     \begin{alertblock}{Contact Information}
@@ -275,7 +281,7 @@ For the noise level estimation of the filtered neu time-series, we computed the 
   \textcolor{blue!40}{\vrule width 1pt}
   \fbox{\includegraphics[width=.32\textwidth]{figures/sfak_NEU_nofilter_vs_filtered_010.jpg}}
 \end{center}
-    \caption{Raw and filtered time series analysis for six (6) station.}
+    \caption{Raw and filtered time series analysis for six (6) stations.}
     \label{fig:proc-net}
 \end{figure}      
 
@@ -310,16 +316,16 @@ For the noise level estimation of the filtered neu time-series, we computed the 
 \vskip-3cm
 \begin{columns}[t]
 \begin{column}{\onecolwid}
-%\begin{block}{Peak Ground Displacement}
+\begin{block}{}
 	\begin{figure}
 	\begin{center}
-	\vskip1cm
+	\vskip.2cm
 	  \includegraphics[width=.97\textwidth]{figures/PGD_maxnoise_vs_distance_2.jpg}
 	\end{center}
-	    \caption{Processed stations.}
+	    \caption{Diagrams of PGD maximum noise vs distance of all the stations for the two seismic events.}
 	    \label{fig:proc-net}
 	\end{figure}      
-%\end{block}
+\end{block}
 \end{column}
 
 
