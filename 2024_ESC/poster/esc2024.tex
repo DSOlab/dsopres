@@ -106,71 +106,86 @@
 {\small
 
 }
-\vspace*{20cm}
+\vspace*{10cm}
 test
-\end{block}
 
+\begin{figure}
+\begin{center}
+  \includegraphics[width=.54\textwidth]{figures/eqturk23_tect.png}
+  \includegraphics[width=.44\textwidth]{figures/eqturk23_fm.png}
+\end{center}
+    \caption{Tectonic backround (a) and Focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.}
+    \label{fig:proc-net}
+\end{figure} 
+\end{block}
 %------------------------------------------------
 %    SOFTWARE DESING
 %------------------------------------------------
-\begin{block}{Network \& Data processing}
+\begin{block}{GNSS Network \& Data processing}
 {\small
-57 continuously operating GNSS stations in distances ranging from 900km to 1400km from the epicenter
-Receiver type: LEICA
+Data from 57 continuously operating GNSS stations in distances ranging from 800km to 1400km from the epicenter were analyzed.\\
+\textbf{Station Equipment:}
+\begin{itemize}\setlength\itemsep{.3em}
+  \item Receiver type: LEICA\\
+    (most of them GR30, also GRX1200GGPRO / GRX1200+GNSS)
+  \item Antenna type LEI CA\\
+    LEIAR10 / LEIAS10 (few stations: LEIAX1202GG)
+  \item Observation interval: 1s
+\end{itemize}
 
-- most of them GR30
+\textbf{Processing scheme:}
+\begin{itemize}\setlength\itemsep{.3em}
+  \item Precise Point Positioning with Ambiguity Resolution using PRIDE-PPPAR Software \cite{Geng_2019}.
+  \item Satellite systems: GPS / GLO / GAL / BDS-2/3
+  \item Elevation angle: 7 deg
+  \item Kinematic mode
+  \item Reference Frame: IGS20
+  \item Final IGS Products for satellite
+  \item ANTEX File: IGS20\_2247
+  \item Tropospheric modeling: VMF1
+\end{itemize}
 
-- also GRX1200GGPRO / GRX1200+GNSS
-
-Antenna type LEICA
-
-- LEIAR10 / LEIAS10
-
-- few stations: LEIAX1202GG
-
-Observation interval: 1s
-
-Precise Point Positioning w Ambiguity Resolution
-
-Sat systems:
-
-GPS / GLO / GAL / BDS-2/3
-
-Elevation angle: 7 deg
-
---Kinematic mode
-
-Reference Frame: IGS20
-
-Final IGS Products for satellite:
-
-- Orbits (.SP3)
-
-- Clocks (.CLK)
-
-- Earth Orientation Parameters (.ERP)
-
-- Attitude (.OBX)
-
-- Bias (.BIA)
-
-ANTEX File: IGS20\_2247
-
-For Tropospheric modeling: VMF1
+%Precise Point Positioning w Ambiguity Resolution
+%
+%Sat systems:
+%
+%GPS / GLO / GAL / BDS-2/3
+%
+%Elevation angle: 7 deg
+%
+%--Kinematic mode
+%
+%Reference Frame: IGS20
+%
+%Final IGS Products for satellite:
+%
+%- Orbits (.SP3)
+%
+%- Clocks (.CLK)
+%
+%- Earth Orientation Parameters (.ERP)
+%
+%- Attitude (.OBX)
+%
+%- Bias (.BIA)
+%
+%ANTEX File: IGS20\_2247
+%
+%For Tropospheric modeling: VMF1
 }
 %\begin{center}
 %  \includegraphics[width=.97\textwidth]{figures/gnss_network.png}
 %\end{center}
 %\vspace*{48cm}
-\end{block}
+
 \begin{figure}
 \begin{center}
   \includegraphics[width=.97\textwidth]{figures/gnss_network.png}
 \end{center}
-    \caption{Processed stations.}
+    \caption{Distribution of permanent GNSS stations analyzed.}
     \label{fig:proc-net}
 \end{figure}      
-
+\end{block}
 %\bigskip
 %\begin{alertblock}{Contact Information}
 %\begin{itemize}
@@ -184,12 +199,27 @@ For Tropospheric modeling: VMF1
 %----------------------------------------------------------------------------
 %\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 %\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
-\begin{minipage}{\twocolwid}
-\vspace*{1.0\baselineskip}
-\begin{center}
-  \includegraphics[width=.97\textwidth]{figures/ESC2024_webheader.png}
-\end{center}
+\begin{minipage}{\threecolwid}
+  \begin{column}{\twocolwid}
+		\vspace*{1.0\baselineskip}
+		\begin{center}
+		  \includegraphics[width=.97\textwidth]{figures/ESC2024_webheader.png}
+		\end{center}
+  \end{column}
+%  \begin{column}{\sepwid}\end{column}
+  \begin{column}{\onecolwid}
+  \vspace*{1.0\baselineskip}
+    \begin{alertblock}{Contact Information}
+    {\small
+  		\begin{itemize}
+	  		\item P. Psimoulis (\href{Panagiotis.Psimoulis@nottingham.ac.uk}{Panagiotis.Psimoulis@nottingham.ac.uk})
+		  	\item D. Anastasiou (\href{danastasiou@mail.ntua.gr}{danastasiou@mail.ntua.gr})
+		  \end{itemize}
+		  }
+  	\end{alertblock}
+  \end{column}
 \end{minipage}
+
 %
 %\begin{alertblock}{Contact Information}
 %\begin{itemize}
@@ -209,25 +239,65 @@ For Tropospheric modeling: VMF1
 \begin{column}{\sepwid}\end{column}
 
 % Begin a column which is two columns wide (column 2)
-\begin{column}{\onecolwid} 
+\begin{column}{\twocolwid} 
 
 %--------------------------------------------------------------------------
 %	PROCESSING
 %---------------------------------------------------------------------------
 
-\begin{block}{Processing \& Analysis}
+\begin{block}{Data Analysis}
 
 {\small
-TEST
+The low-frequency noise of the gnss stations which could be due to various error sources (multipath error, unmitigated troposphere effect, etc.), potential seismic displacement of the gnss stations was masked. Since no co-seismic displacement was expected at the stations (>800km distance from epicentres), we applied a high-pass 'Butterworth' filter with cut-off frequency of 0.1Hz to remove any low-frequency noise of the gnss data and without affecting significantly the potential dynamic displacement of the gnss stations.
+
+The time interval of the transient seismic response of each gnss was defined with starting time the time of the seismic event plus the required time of P-waves (with velocity of 6km/s) to travel at the respective gnss station and covering a period of 400 seconds to ensure that all the transient response is captured.
+
+For the defined period, the Peak Ground Displacemet of neu was defined as the max values of the respective time-series.
+
+For the noise level estimation of the filtered neu time-series, we computed the standard deviation for the 10-minute period before the first seismic event. We defined as the noise level, the rather conservative 3$\sigma$ value to ensure that any potential response larger than this threshold corresponds to the transient seismic response.
 }
 
+
+\begin{figure}
+\begin{center}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/rodo_NEU_nofilter_vs_filtered_010.jpg}}
+  \textcolor{blue!40}{\vrule width 1pt}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/sant_NEU_nofilter_vs_filtered_010.jpg}}
+  \textcolor{blue!40}{\vrule width 1pt}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/siti_NEU_nofilter_vs_filtered_010.jpg}}
+\end{center}
+\vskip-1cm
+\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+\begin{center}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/samo_NEU_nofilter_vs_filtered_010.jpg}}
+  \textcolor{blue!40}{\vrule width 1pt}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/serr_NEU_nofilter_vs_filtered_010.jpg}}
+  \textcolor{blue!40}{\vrule width 1pt}
+  \fbox{\includegraphics[width=.32\textwidth]{figures/sfak_NEU_nofilter_vs_filtered_010.jpg}}
+\end{center}
+    \caption{Raw and filtered time series analysis for six (6) station.}
+    \label{fig:proc-net}
+\end{figure}      
+
 %\begin{figure}
-%  \centering
-%  \includegraphics[width=0.7\onecolwid]{sample}
-%  \caption{Flowchart of processing work.}
-%  \label{fig:proc}
-%\end{figure}
+%\begin{center}
+%  \includegraphics[width=.47\textwidth]{figures/rodo_NEU_nofilter_vs_filtered_010.jpg}
+%  \textcolor{blue!40}{\vrule width 1pt}
+%  \includegraphics[width=.47\textwidth]{figures/sant_NEU_nofilter_vs_filtered_010.jpg}
+%%  \includegraphics[width=.32\textwidth]{figures/siti_NEU_nofilter_vs_filtered_010.jpg}
+%\end{center}
+%\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+%\begin{center}
+%  \includegraphics[width=.47\textwidth]{figures/samo_NEU_nofilter_vs_filtered_010.jpg}
+%  \textcolor{blue!40}{\vrule width 1pt}
+%  \includegraphics[width=.47\textwidth]{figures/serr_NEU_nofilter_vs_filtered_010.jpg}
+%%  \includegraphics[width=.32\textwidth]{figures/sfak_NEU_nofilter_vs_filtered_010.jpg}
+%\end{center}
+%    \caption{Processed stations.}
+%    \label{fig:proc-net}
+%\end{figure}      
 \end{block}
+
 
 %-------------------------------------------------------------------------
 %	PRELIMINARY RESULTS
@@ -237,70 +307,130 @@ TEST
 %\end{block}
 %-----------------------------------------------------------------------------
 
-\end{column} % End of the second column
+\vskip-3cm
+\begin{columns}[t]
+\begin{column}{\onecolwid}
+%\begin{block}{Peak Ground Displacement}
+	\begin{figure}
+	\begin{center}
+	\vskip1cm
+	  \includegraphics[width=.97\textwidth]{figures/PGD_maxnoise_vs_distance_2.jpg}
+	\end{center}
+	    \caption{Processed stations.}
+	    \label{fig:proc-net}
+	\end{figure}      
+%\end{block}
+\end{column}
+
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
-%\vrule{}
-
-\begin{column}{\onecolwid} % The third column
-
-%----------------------------------------------------------------------------------------
-%	ONLINE PLATFORM
-%----------------------------------------------------------------------------------------
-
-\begin{block}{}
+\begin{column}{\onecolwid}
+\begin{block}{Discussion}
 {\small
+
+From the first analysis of the PGD values the following points are observed:
+
+\begin{itemize}\setlength\itemsep{1em}
+  \item For both seismic events, in the northing component is observed the highest values of PGD indicating that the this direction is affacted by the propagation of the seismic waves.
+  \item The second seismic event has larger far-field impact probably due to the geometry of the seismic fault and the directivity of the seismic waves propagation.
+  \item The Up component is not affacted by the seismic events potentially due to the small impact that the S-waves may have for far-field stations.
+  \item The PGD values tend to rdecrease with the distance from the epicetres. ?However it is obvious the impact of the directivity of the propagation of the seismic waves and the orientation of the seismic faults, as the PGD values of gnss stations of similar distance from the epicentres has large range. For instance, the PGD values of the northing component of gnss stations with ~1000km epicentre distance for the second seismic event range between 20 to 60cm.
+\end{itemize}
 }
 
 
 
 \end{block}
-
-%---------------------------------------------------------------------------
-%	CONCLUSION
-%---------------------------------------------------------------------------
-\begin{block}{Current Status \& Future Work}
-{\small
-Currently 
-
-}
-\end{block}
+\end{column}
+\end{columns}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\begin{block}{References}
+\begin{block}{\vspace*{-3ex}}
 
 \nocite{*} % Insert publications even if they are not cited in the poster
-\footnotesize{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{0.75in}}
+\tiny{\bibliographystyle{unsrt}
+\bibliography{sample}\vspace{0.15in}}
 
 
 \end{block}
 
-%----------------------------------------------------------------------------------------
-%	CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
 
-%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
-%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 
-\begin{alertblock}{Contact Information}
-\begin{itemize}
-\item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
-\item Email: \href{danastasiou@mail.ntua.gr}{danastasiou@mail.ntua.gr}
-\end{itemize}
-\end{alertblock}
+
+
+
+
+
+\end{column} % End of the second column
+
+%\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+%\vrule{}
+
+%\begin{column}{\onecolwid} % The third column
 %
-%\begin{figure}
-%\includegraphics[width=1.0\linewidth]{ESPA-EKT-GSRT_Logo-EN.JPG}
-%\end{figure}                                                            
+%%----------------------------------------------------------------------------------------
+%%	ONLINE PLATFORM
+%%----------------------------------------------------------------------------------------
+%
+%\begin{block}{}
+%{\small
+%}
+%
+%
+%
+%\end{block}
+%
+%%---------------------------------------------------------------------------
+%%	CONCLUSION
+%%---------------------------------------------------------------------------
+%\begin{block}{Current Status \& Future Work}
+%{\small
+%Currently 
+%
+%}
+%\end{block}
+%
+%%----------------------------------------------------------------------------------------
+%%	REFERENCES
+%%----------------------------------------------------------------------------------------
+%
+%\begin{block}{References}
+%
+%\nocite{*} % Insert publications even if they are not cited in the poster
+%\footnotesize{\bibliographystyle{unsrt}
+%\bibliography{sample}\vspace{0.75in}}
+%
+%
+%\end{block}
+%
+%%%----------------------------------------------------------------------------------------
+%%%	CONTACT INFORMATION
+%%%----------------------------------------------------------------------------------------
+%%
+%%%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+%%%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+%%
+%%\begin{alertblock}{Contact Information}
+%%\begin{itemize}
+%%\item Web: \href{http://dionysos.survey.ntua.gr}{dionysos.survey.ntua.gr}
+%%\item Email: \href{danastasiou@mail.ntua.gr}{danastasiou@mail.ntua.gr}
+%%\end{itemize}
+%%\end{alertblock}
+%%
+%%\begin{figure}
+%%\includegraphics[width=1.0\linewidth]{ESPA-EKT-GSRT_Logo-EN.JPG}
+%%\end{figure}                                                            
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of the third column
+%\end{column} % End of the third column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \end{columns} % End of all the columns in the poster
 
