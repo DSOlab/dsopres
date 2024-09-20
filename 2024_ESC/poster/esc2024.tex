@@ -67,6 +67,9 @@
 \usepackage{booktabs} % Top and bottom rules for tables
 
 \usepackage{multicol}
+
+%\usepackage{fontspec}
+%\setmainfont[]{arial}
 %-----------------------------------------------------------------------------
 %	TITLE SECTION 
 %----------------------------------------------------------------------------
@@ -74,10 +77,10 @@
 \title{Assessing GNSS-derived displacements at the near and far-field of the 2023 Turkey earthquake doublet} % Poster title
 % \subtitle{}
 
-\author{Panagiotis Psimoulis\textsuperscript{a}, \underline{Dimitrios Anastasiou}\textsuperscript{b}, Xanthos Papanikolaou\textsuperscript{b}, Maria Tsakiri\textsuperscript{b}}% Author(s)
+\author{Panos Psimoulis\textsuperscript{a}, \underline{Dimitrios Anastasiou}\textsuperscript{b}, Xanthos Papanikolaou\textsuperscript{b}, Maria Tsakiri\textsuperscript{b}}% Author(s)
 
 %\institute{Dionysos Satellite Observatory, School of Rural, Surveying \& Geoinformatics Engineering \\ \vspace{0.5em} \par{National Technical University of Athens}} % Institution(s)
-\institute{\textsuperscript{a} Faculty of Engineering,  University of Nottigham \\
+\institute{\textsuperscript{a} Nottingham Geospatial Institute \\
 \textsuperscript{b} School of Rural, Surveying \& Geoinformatics Engineering, National Technical University of Athens} % Institution(s)
 
 %----------------------------------------------------------------------------------------
@@ -92,6 +95,7 @@
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
+\vspace*{-1cm}
 \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
@@ -104,17 +108,19 @@
 
 \begin{block}{Introduction}
 {\small
-On February 6th, 2023 at 01:17:35 UTC the Mw 7.8 Nurdağı-Pazarcık earthquake nucleated \~15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234° E, 37.2444° N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed and a little over 9 hours after the first event, at 10:24:49 UTC, the Mw 7.6 \cite{Melgar_2023}
+On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık earthquake nucleated $\sim$15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234$^{\circ}$ E, 37.2444$^{\circ}$ N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed and a little over 9 hours after the first event, at 10:24:49 UTC, the M$_\text{w}$ 7.6 \cite{Melgar_2023}
 }
 \begin{figure}
 \begin{center}
   \includegraphics[width=.54\textwidth]{figures/eqturk23_tect.png}
   \includegraphics[width=.44\textwidth]{figures/eqturk23_fm.png}
 \end{center}
-    \caption{Tectonic backround (a) and Focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.}
+    \caption{Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.}
     \label{fig:proc-net}
 \end{figure} 
 \end{block}
+
+\vspace*{-1.5cm}
 %------------------------------------------------
 %    SOFTWARE DESING
 %------------------------------------------------
@@ -183,12 +189,17 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
     \label{fig:proc-net}
 \end{figure} 
 \begin{center}
-\vskip-.5cm
-{\footnotesize \textbf{Acknowledgments} to Metrica SA for the free availability of the 1Hz GNSS data of HxGN SmartNet for this study.}
+\vspace*{-1.7cm}
+\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+{\footnotesize \textit{\textbf{Acknowledgments} to Metrica SA for the free availability of\\ the 1Hz GNSS data of HxGN SmartNet for this study.}}
+
 \hspace*{1cm}
-  \includegraphics[width=.4\textwidth]{logo_HXgn.png}
+  \includegraphics[width=.3\textwidth]{logo_HXgn.png}
   \includegraphics[width=.2\textwidth]{logo_metrica.png}
-\end{center}     
+\end{center}   
+\vspace*{-1.2cm}
+\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+    
 \end{block}
 %\bigskip
 %\begin{alertblock}{Contact Information}
@@ -204,18 +215,14 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 %----------------------------------------------------------------------------
 %\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 %\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
-\vskip-1.5cm
-\begin{minipage}{\threecolwid}
-  \begin{column}{\twocolwid}
+\vspace*{-1.9cm}
+\begin{minipage}{\onecolwid}
+  \begin{column}{\onecolwid}
 		\vspace*{1.0\baselineskip}
 		\begin{center}
-		  \includegraphics[width=.97\textwidth]{figures/ESC2024_webheader.png}
+		  \includegraphics[width=\textwidth]{figures/ESC2024_webheader.png}
 		\end{center}
-  \end{column}
-%  \begin{column}{.1\sepwid}\end{column}
-  \begin{column}{\onecolwid}
-  \vspace*{1.0\baselineskip}
-    \begin{alertblock}{Contact Information}
+		\begin{alertblock}{Contact Information}
     {\small
   		\begin{itemize}
 	  		\item P. Psimoulis (\href{Panagiotis.Psimoulis@nottingham.ac.uk}{Panagiotis.Psimoulis@nottingham.ac.uk})
@@ -224,6 +231,18 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 		  }
   	\end{alertblock}
   \end{column}
+%  \begin{column}{.1\sepwid}\end{column}
+%  \begin{column}{\onecolwid}
+%  \vspace*{1.0\baselineskip}
+%    \begin{alertblock}{Contact Information}
+%    {\small
+%  		\begin{itemize}
+%	  		\item P. Psimoulis (\href{Panagiotis.Psimoulis@nottingham.ac.uk}{Panagiotis.Psimoulis@nottingham.ac.uk})
+%		  	\item D. Anastasiou (\href{danastasiou@mail.ntua.gr}{danastasiou@mail.ntua.gr})
+%		  \end{itemize}
+%		  }
+%  	\end{alertblock}
+%  \end{column}
 \end{minipage}
 
 %
@@ -254,15 +273,15 @@ Data from 57 continuously operating GNSS stations in distances ranging from 800k
 \begin{block}{Data Analysis}
 
 {\small
-The low-frequency noise of the gnss stations which could be due to various error sources (multipath error, unmitigated troposphere effect, etc.), potential seismic displacement of the gnss stations was masked. Since no co-seismic displacement was expected at the stations (>800km distance from epicentres), we applied a high-pass 'Butterworth' filter with cut-off frequency of 0.1Hz to remove any low-frequency noise of the gnss data and without affecting significantly the potential dynamic displacement of the gnss stations.
+The low-frequency noise of the GNSS stations which could be due to various error sources (multipath error, unmitigated troposphere effect, etc.), potential seismic displacement of the GNSS stations was masked. Since no co-seismic displacement was expected at the stations (>800km distance from epicentres), we applied a high-pass 'Butterworth' filter with cut-off frequency of 0.1Hz to remove any low-frequency noise of the GNSS data and without affecting significantly the potential dynamic displacement of the GNSS stations.
 
-The time interval of the transient seismic response of each gnss was defined with starting time the time of the seismic event plus the required time of P-waves (with velocity of 6km/s) to travel at the respective gnss station and covering a period of 400 seconds to ensure that all the transient response is captured.
+The time interval of the transient seismic response of each GNSS was defined with starting time the time of the seismic event plus the required time of P-waves (assuming P-waves velocity of 6km/s) to travel at the respective GNSS station and covering a period of 400 seconds to ensure that all the transient response is captured.
 
-For the defined period, the Peak Ground Displacemet of neu was defined as the max values of the respective time-series.
+For the defined period, the Peak Ground Displacement (PGD) of neu was defined as the max values of the respective time-series.
 
 For the noise level estimation of the filtered neu time-series, we computed the standard deviation for the 10-minute period before the first seismic event. We defined as the noise level, the rather conservative 3$\sigma$ value to ensure that any potential response larger than this threshold corresponds to the transient seismic response.
 }
-
+\vspace*{.2cm}
 
 \begin{figure}
 \begin{center}
@@ -313,7 +332,7 @@ For the noise level estimation of the filtered neu time-series, we computed the 
 %\end{block}
 %-----------------------------------------------------------------------------
 
-\vskip-3cm
+\vspace*{-3.4cm}
 \begin{columns}[t]
 \begin{column}{\onecolwid}
 \begin{block}{}
@@ -337,11 +356,11 @@ For the noise level estimation of the filtered neu time-series, we computed the 
 
 From the first analysis of the PGD values the following points are observed:
 
-\begin{itemize}\setlength\itemsep{1em}
-  \item For both seismic events, in the northing component is observed the highest values of PGD indicating that the this direction is affacted by the propagation of the seismic waves.
+\begin{itemize}\setlength\itemsep{.6em} \justifying
+  \item For both seismic events, in the northing component is observed the highest values of PGD indicating that the this direction is affected by the propagation of the seismic waves.
   \item The second seismic event has larger far-field impact probably due to the geometry of the seismic fault and the directivity of the seismic waves propagation.
-  \item The Up component is not affacted by the seismic events potentially due to the small impact that the S-waves may have for far-field stations.
-  \item The PGD values tend to rdecrease with the distance from the epicetres. ?However it is obvious the impact of the directivity of the propagation of the seismic waves and the orientation of the seismic faults, as the PGD values of gnss stations of similar distance from the epicentres has large range. For instance, the PGD values of the northing component of gnss stations with ~1000km epicentre distance for the second seismic event range between 20 to 60cm.
+  \item The Up component is not affected by the seismic events potentially due to the small impact that the S-waves may have for far-field stations.
+  \item The PGD values tend to decrease with the distance from the epicetres. However it is obvious the impact of the directivity of the propagation of the seismic waves and the orientation of the seismic faults, as the PGD values of GNSS stations of similar distance from the epicentres has large range. For instance, the PGD values of the northing component of GNSS stations with ~1000km epicentre distance for the second seismic event range between 20 to 60cm.
 \end{itemize}
 }
 
@@ -351,20 +370,33 @@ From the first analysis of the PGD values the following points are observed:
 \end{column}
 \end{columns}
 
+\vspace*{-2.6cm}
+\begin{block}{Next steps}
+{\small
+\begin{itemize}\setlength\itemsep{.5em}
+  \item[$\sphericalangle$] Investigate the far field of the directivity effect of the propagation seismic waves through the PGD of the GNSS stations.
+  \item[$\sphericalangle$] Investigate the frequency context of the seismic waves and its potential variation with the distance from the epicentre.
+  \item[$\sphericalangle$] Estimate of the seismic waves velocity as detected through the network GNSS stations displacement.
+\end{itemize}
+}
+
+\end{block}
+
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-
-\begin{block}{\vspace*{-3ex}}
+\begin{column}{\twocolwid}
+\vspace*{-2.9cm}
+\begin{block}{\vspace*{-4ex}}
 
 \nocite{*} % Insert publications even if they are not cited in the poster
-\tiny{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{0.15in}}
+\scriptsize{\bibliographystyle{unsrt}
+\bibliography{sample}\vspace{0.1in}}
 
 
 \end{block}
 
-
+\end{column}
 
 
 
