@@ -2362,6 +2362,13 @@
     <bcf:datasource type="file" datatype="bibtex">References/gnss.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1" intorder="1">Bernese</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">PRIDE</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">GipsyX</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Bos2012</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">gmt</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">etopo1</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">noafaults</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
