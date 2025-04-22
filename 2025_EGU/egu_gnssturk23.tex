@@ -64,6 +64,7 @@
 \definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
 \definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{custred}{rgb}{0.80,0.2,0}
 
 \begin{document}
 
@@ -75,7 +76,7 @@ bgColorOne=white, % Background color for the gradient on the left side of the po
 bgColorTwo=white, % Background color for the gradient on the right side of the poster
 borderColor=babyblue, % Border color
 headerColorOne=black, % Background color for the header in the content boxes (left side)
-headerColorTwo=babyblue, % Background color for the header in the content boxes (right side)
+headerColorTwo=auburn, % Background color for the header in the content boxes (right side)
 headerFontColor=white, % Text color for the header text in the content boxes
 boxColorOne=white, % Background color of the content boxes
 textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
@@ -108,7 +109,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 
 \headerbox{Introduction}{name=introduction,column=0,row=0}{
-
+\label{intro}
 On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık earthquake nucleated $\sim$15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234$^{\circ}$ E, 37.2444$^{\circ}$ N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed and a little over 9 hours after the first event, at 10:24:49 UTC, the M$_\text{w}$ 7.6 \cite{Melgar_2023}
 
 %\begin{figure}
@@ -145,7 +146,7 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 %----------------------------------------------------------------------------------------
 
 \headerbox{Estimation of Velocity Field}{name=data,column=2, span=2,row=0}{
-% \vfill
+\label{vel_fil}
 \begin{minipage}[c]{0.31\linewidth}
 Following the estimation of daily site coordinates, position time-series were stacked for every site of the network. The latter wre in turn analyzed using the Hector software (Bos et al., 2013) for the estimation of tectonic velocities and harmonic signals. The time span of more than ten years allows estimation of site velocities, yet the temporal density of data could inhibit the accuracy that can be obtained.
 
@@ -247,23 +248,36 @@ Following the estimation of daily site coordinates, position time-series were st
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
+\renewcommand{\refname}{}
+\let\oldthebibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\itemsep}{0.3ex} % Less space between refs
+  \setlength{\baselineskip}{0.9\baselineskip} % Optional line spacing tweak
+}
 
 \headerbox{References}{name=references,column=0, span=2, above=bottom}{
+\label{refs}
 \begin{minipage}[b]{0.92\linewidth}
 {\scriptsize
+%\vspace*{-.5cm}
+\nocite{*} % Insert publications even if they are not cited in the poster
+\scriptsize{\bibliographystyle{unsrt}
+\bibliography{sample}\vspace{0.01cm}} 
 
-\textbf{Anastasiou D.}, Papanikolaou P., Ganas A., and Paradissis D. (2021). “StrainTool: A software package to estimate strain tensor parameters (v1.0-r1)”. In: Zenodo. DOi:10.5281/zenodo.1297565. URL: https://doi.org/10.5281/zenodo.1297565
-
-\textbf{Bos, M. S.}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
-
-\textbf{Dach, R.}, Lutz, P. Walser, P. Fridez (Eds); 2015: Bernese GNSS Software Version 5.2. User manual, Astronomical Institute, University of Bern, Bern Open Publishing. DOI: 10.7892/boris.72297; ISBN: 978-3-906813-05-9.
-
-\textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
+%\textbf{Anastasiou D.}, Papanikolaou P., Ganas A., and Paradissis D. (2021). “StrainTool: A software package to estimate strain tensor parameters (v1.0-r1)”. In: Zenodo. DOi:10.5281/zenodo.1297565. URL: https://doi.org/10.5281/zenodo.1297565
+%
+%\textbf{Bos, M. S.}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
+%
+%\textbf{Dach, R.}, Lutz, P. Walser, P. Fridez (Eds); 2015: Bernese GNSS Software Version 5.2. User manual, Astronomical Institute, University of Bern, Bern Open Publishing. DOI: 10.7892/boris.72297; ISBN: 978-3-906813-05-9.
+%
+%\textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
 }
 \end{minipage}
 \begin{minipage}[b]{0.06\linewidth}
 %------------------------------------------
 % \begin{wrapfigure}{c}{1.5cm}
+\vspace*{-.5cm}
 \includegraphics[height=5em]{../../logos/graphic_egu_photo_yes.png}
 % \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
 % \end{wrapfigure}
@@ -276,6 +290,7 @@ Following the estimation of daily site coordinates, position time-series were st
 %----------------------------------------------------------------------------------------
 
 \headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
+\label{future_research}
 {\footnotesize
 We consider this study to be a work-in-progress; we plan to go on with data analysis for all the available years. Currently, we are working on :
 \begin{itemize}\setlength\itemsep{.1em}
@@ -290,8 +305,8 @@ We consider this study to be a work-in-progress; we plan to go on with data anal
 %	FUNDING
 %----------------------------------------------------------------------------------------
 
-\headerbox{FUNDING BY Hellenic Cadastre}{name=funding,column=3,aligned=references,above=bottom}{ 
-
+\headerbox{Aknowledgment}{name=funding,column=3,aligned=references,above=bottom}{ 
+\label{aknowledgment}
 \begin{minipage}[c]{0.69\linewidth}
 {\scriptsize We acknowledge support for this research by the project "Support of Permanent GNSS station Network of Hellenic Cadastre" funded by the \textbf{Hellenic Cadastre}. \par
 Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
@@ -385,22 +400,16 @@ Overall, our first results reproduce the gross features of tectonic deformation 
 %	HEPOS NETWORK
 %----------------------------------------------------------------------------------------
 
-\headerbox{HEPOS Network}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
-Hellenic Cadastre has since 2007 established a network of 98 continuous GPS sites,spatially
-covering the whole country. The network is since maintened by the office, and its products and data used for surveying and supporting national infrastructure.
-~\\[1em]
-\begin{minipage}[c]{0.49\linewidth}
-  \fbox{\includegraphics[width=.97\textwidth]{hepos.png}}
-\end{minipage}
-\begin{minipage}[c]{0.02\linewidth}
+\headerbox{GNSS stations}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
+\label{datanet}
 
-\end{minipage}
-\begin{minipage}[c]{0.47\linewidth}
-  In 2020, Hellenic Cadastre successefully concluded a large-scale upgrade of its network,     introducing a full switch to multi-GNSS. All network sites were equiped with modernized firmware and hardware to support all major GNSS systems (GPS, Glonass, Galileo and Beidou).
-\end{minipage}
-%In 2020, Hellenic Cadastre successefully concluded a large-scale upgrade of its network, introducing a full switch to multi-GNSS. All network sites were ecquiped with modernized firmware and hardware to support all major GNSS systems (GPS, Glonass, Galileo and Beidou).
+Different 
+
 ~\\[1em]
-For this study we analyzed daily RINEX (v.2) files of four individual years, namely 2011, 2015, 2021 and 2022. The data were provided under a special agreement from Hellenic Cadastre to DSO and were selected in a way that could enable the estimation of tectonic behaviour on the one hand, yet require minimum effort and align with the needs and interests of the cadastral office.
+\begin{minipage}[c]{0.97\linewidth}
+  \fbox{\includegraphics[width=\textwidth]{allstations.png}}
+\end{minipage}
+
 
 
 
