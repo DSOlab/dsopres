@@ -116,13 +116,12 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 \begin{center}
   \includegraphics[width=.54\textwidth]{figures/eqturk23_tect.png}
   \includegraphics[width=.44\textwidth]{figures/eqturk23_fm.png}\\
-  Fig.1:Tectonic backround (a) and focal mechanisms (b) of
-2023 Turkey earthquake doublet
+%  Fig.1:Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet
 \end{center}
 %    \caption{Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.}
 %    \label{fig:proc-net}
 %\end{figure} 
-
+%\vspace*{-.5cm}
 \begin{minipage}[c]{.78\linewidth}
 \begin{center}
 \begin{tcolorbox}[height=2.5em,width=.97\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]   
@@ -145,95 +144,83 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 %	VELOCITY FIELD
 %----------------------------------------------------------------------------------------
 
-\headerbox{Estimation of Velocity Field}{name=data,column=2, span=2,row=0}{
-\label{vel_fil}
-\begin{minipage}[c]{0.31\linewidth}
-Following the estimation of daily site coordinates, position time-series were stacked for every site of the network. The latter wre in turn analyzed using the Hector software (Bos et al., 2013) for the estimation of tectonic velocities and harmonic signals. The time span of more than ten years allows estimation of site velocities, yet the temporal density of data could inhibit the accuracy that can be obtained.
-
-%  The daily position estimates of the stations are automatically logged into suitable files, from which position time series are generated. Time series analysis use to estimate coordinates (within a specified Reference Frame IGb14), tectonic velocities, harmonic signals, co-seismic displacements and volocity changes. The analysis was conducted using the Free Software/Open Source Software Hector (Bos, 2013), with requisite adjustments made as necessary.
-\end{minipage}
-\begin{minipage}[c]{0.02\linewidth}
-
-\end{minipage}
-\begin{minipage}[c]{0.33\linewidth}
-   Time series analysis of three different station are presented.
-   Velocity field with respect to IGb14 presented on the following map.\\[.4em]
-  Velocities vary per component:
+\headerbox{Time series Analysis}{name=data,column=2, span=2,row=0}{
+\label{ts_analysis}
+\begin{minipage}{\textwidth}
+\begin{minipage}{0.49\textwidth}
   \begin{center}
-  \vskip-.3cm
-  \begin{tabular}{ c  c  c }
-    \hline
-      comp & min (mm/yr) & max (mm/yr)\\
-    \hline
-        North & -17.9 & 15.5 \\
-        East & 2.4 & 26.0\\
-        Up & -5.5 & 4.7 \\
-    \hline
-  \end{tabular}
+    \textbf{Near field stations}
   \end{center}
-
-%  
-%  North Greece WNW dir
-
-%  Central GR Aegrean SW
-    
 \end{minipage}
-\begin{minipage}[c]{0.34\linewidth}
+\begin{minipage}{0.49\textwidth}
   \begin{center}
-  \includegraphics[width=.9\textwidth]{hepos22-output_vel.jpg}
+    \textbf{Far field stations}
   \end{center}
 \end{minipage}
 
-\begin{minipage}[c]{0.34\linewidth}
-\begin{center}
-098A
-\end{center}
-%\vfill
-\rotatebox{90}{\scriptsize ~~~~~~~~~~North}
-  \includegraphics[height=5em]{098a_0_data.png}~\includegraphics[height=5em]{098a_0_res.png}\\
-\rotatebox{90}{\scriptsize ~~~~~~~~~~~~East}
-  \includegraphics[height=5em]{098a_1_data.png}~\includegraphics[height=5em]{098a_1_res.png}\\
-\rotatebox{90}{\scriptsize ~~~~~~~~~~~~~~Up}
-  \includegraphics[height=5em]{098a_2_data.png}~\includegraphics[height=5em]{098a_2_res.png}
-%\vfill
+\begin{minipage}{0.24\textwidth}
+  \begin{center}
+    \includegraphics[width=.97\textwidth]{mly1_eq1.png}\\
+    \includegraphics[width=.97\textwidth]{tuf1_eq1.png}\\
+    \includegraphics[width=.97\textwidth]{kis1_eq1.png}\\
+    %\includegraphics[width=.97\textwidth]{aksr_eq1.png}\\
+  \end{center}
 \end{minipage}
-\begin{minipage}[c]{0.33\linewidth}
-\begin{center}
-057A (co-seismic displacement)
-\end{center}
-  \includegraphics[height=5em]{057a_0_data.png}~\includegraphics[height=5em]{057a_0_res.png}\\
-  \includegraphics[height=5em]{057a_1_data.png}~\includegraphics[height=5em]{057a_1_res.png}\\
-  \includegraphics[height=5em]{057a_2_data.png}~\includegraphics[height=5em]{057a_2_res.png}
+\begin{minipage}{0.24\textwidth}
+  \begin{center}
+    \includegraphics[width=.97\textwidth]{mly1_eq2.png}\\
+    \includegraphics[width=.97\textwidth]{tuf1_eq2.png}\\
+    \includegraphics[width=.97\textwidth]{kis1_eq2.png}\\
+   % \includegraphics[width=.97\textwidth]{aksr_eq2.png}\\
+  \end{center}
 \end{minipage}
-\begin{minipage}[c]{0.33\linewidth}
-\begin{center}
-  040A (Santorini volcano inflation)
-\end{center}
-  \includegraphics[height=5em]{048a_0_data.png}~\includegraphics[height=5em]{048a_0_res.png}\\
-  \includegraphics[height=5em]{048a_1_data.png}~\includegraphics[height=5em]{048a_1_res.png}\\
-  \includegraphics[height=5em]{048a_2_data.png}~\includegraphics[height=5em]{048a_2_res.png}
+\begin{minipage}{0.24\textwidth}
+  \begin{center}
+    \includegraphics[width=.97\textwidth]{rodo_eq1.png}\\
+    \includegraphics[width=.97\textwidth]{samo_eq1.png}\\
+    \includegraphics[width=.97\textwidth]{serr_eq1.png}\\
+    %\includegraphics[width=.97\textwidth]{siti_eq1.png}\\
+  \end{center}
 \end{minipage}
-%\begin{minipage}[c]{0.71\linewidth}
-%%A total number of 302 GNSS stations belonging to the EUREF Permanent Network (EPN) 
-%%were selected on the basis of the following criteria: 
-%%a) station have an observation period longer than 3 years,
-%%b) only one velocity solution is computed per station and
-%%c) stations with large velocity changes excluded.
-%%The station positions are estimated using several geodetic software packages and 
-%%in a second step then CATREF software was used to estimate multi-year position 
-%%and velocity solutions. The available dataset comprises the velocity field 
-%%extracted from the C2010 EPN solution.
-%%
-%%The reference frame of the velocity field is ETRF2014 which is the realization 
-%%of ETRS89 corresponding to ITRF2014. According to EUREF Technical Report 1, the 
-%%ETRS89 is fixed to the stable part of Eurasia tectonic plate. For the transformation 
-%%from ITRF2014 to ETRF2014 the three translation components are set to zero and 
-%%the rotational rates (Eurasia angular velocity components) are taken from 
-%%\textit{Altamimi et al. 2017}.
+\begin{minipage}{0.24\textwidth}
+  \begin{center}
+    \includegraphics[width=.97\textwidth]{rodo_eq2.png}\\
+    \includegraphics[width=.97\textwidth]{samo_eq2.png}\\
+    \includegraphics[width=.97\textwidth]{serr_eq2.png}\\
+    %\includegraphics[width=.97\textwidth]{siti_eq2.png}\\
+  \end{center}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{.29\textwidth}
+
+\end{minipage}
+
+%%\vfill
+%\rotatebox{90}{\scriptsize ~~~~~~~~~~North}
+%  \includegraphics[height=5em]{098a_0_data.png}~\includegraphics[height=5em]{098a_0_res.png}\\
+%\rotatebox{90}{\scriptsize ~~~~~~~~~~~~East}
+%  \includegraphics[height=5em]{098a_1_data.png}~\includegraphics[height=5em]{098a_1_res.png}\\
+%\rotatebox{90}{\scriptsize ~~~~~~~~~~~~~~Up}
+%  \includegraphics[height=5em]{098a_2_data.png}~\includegraphics[height=5em]{098a_2_res.png}
+%%\vfill
+%\end{minipage}
+%\begin{minipage}[c]{0.33\linewidth}
+%\begin{center}
+%057A (co-seismic displacement)
+%\end{center}
+%  \includegraphics[height=5em]{057a_0_data.png}~\includegraphics[height=5em]{057a_0_res.png}\\
+%  \includegraphics[height=5em]{057a_1_data.png}~\includegraphics[height=5em]{057a_1_res.png}\\
+%  \includegraphics[height=5em]{057a_2_data.png}~\includegraphics[height=5em]{057a_2_res.png}
+%\end{minipage}
+%\begin{minipage}[c]{0.33\linewidth}
+%\begin{center}
+%  040A (Santorini volcano inflation)
+%\end{center}
+%  \includegraphics[height=5em]{048a_0_data.png}~\includegraphics[height=5em]{048a_0_res.png}\\
+%  \includegraphics[height=5em]{048a_1_data.png}~\includegraphics[height=5em]{048a_1_res.png}\\
+%  \includegraphics[height=5em]{048a_2_data.png}~\includegraphics[height=5em]{048a_2_res.png}
 %\end{minipage}
 
-
-% \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
 % %----------------------------------------------------------------------------------------
@@ -252,7 +239,7 @@ Following the estimation of daily site coordinates, position time-series were st
 \let\oldthebibliography\thebibliography
 \renewcommand{\thebibliography}[1]{%
   \oldthebibliography{#1}%
-  \setlength{\itemsep}{0.3ex} % Less space between refs
+  \setlength{\itemsep}{0.2ex} % Less space between refs
   \setlength{\baselineskip}{0.9\baselineskip} % Optional line spacing tweak
 }
 
@@ -260,7 +247,7 @@ Following the estimation of daily site coordinates, position time-series were st
 \label{refs}
 \begin{minipage}[b]{0.92\linewidth}
 {\scriptsize
-%\vspace*{-.5cm}
+\vspace*{-.4cm}
 \nocite{*} % Insert publications even if they are not cited in the poster
 \scriptsize{\bibliographystyle{unsrt}
 \bibliography{sample}\vspace{0.01cm}} 
@@ -277,8 +264,8 @@ Following the estimation of daily site coordinates, position time-series were st
 \begin{minipage}[b]{0.06\linewidth}
 %------------------------------------------
 % \begin{wrapfigure}{c}{1.5cm}
-\vspace*{-.5cm}
-\includegraphics[height=5em]{../../logos/graphic_egu_photo_yes.png}
+\vspace*{-2cm}
+\includegraphics[height=6em]{../../logos/graphic_egu_photo_yes.png}
 % \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
 % \end{wrapfigure}
 %------------------------------------------
@@ -292,10 +279,11 @@ Following the estimation of daily site coordinates, position time-series were st
 \headerbox{Future Research}{name=futureresearch,column=2,aligned=references,above=bottom}{ 
 \label{future_research}
 {\footnotesize
-We consider this study to be a work-in-progress; we plan to go on with data analysis for all the available years. Currently, we are working on :
+%We consider this study to be a work-in-progress; we plan to go on with data analysis for all the available years. Currently, we are working on :
 \begin{itemize}\setlength\itemsep{.1em}
-  \item the analysis of vertical velocities
-  \item the investigation of the deformation field in smaller areas
+  \item Investigate the far field of the directivity effect of the propagation seismic waves through the PGD of the GNSS stations.
+  \item Investigate the frequency context of the seismic waves and its potential variation with the distance from the epicentre.
+  \item Estimate of the seismic waves velocity as detected through the network GNSS stations displacement.
 \end{itemize}
 
 }
@@ -305,18 +293,10 @@ We consider this study to be a work-in-progress; we plan to go on with data anal
 %	FUNDING
 %----------------------------------------------------------------------------------------
 
-\headerbox{Aknowledgment}{name=funding,column=3,aligned=references,above=bottom}{ 
-\label{aknowledgment}
-\begin{minipage}[c]{0.69\linewidth}
-{\scriptsize We acknowledge support for this research by the project "Support of Permanent GNSS station Network of Hellenic Cadastre" funded by the \textbf{Hellenic Cadastre}. \par
-Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
-% and co-financed by Greece and the European Union.
-}
-\end{minipage}
-\hspace*{5pt}
-\begin{minipage}[c]{0.25\linewidth}
-  \includegraphics[width=.97\textwidth]{../../logos/Hellenic_cadastre.png}
-\end{minipage}
+\headerbox{Contact Information}{name=funding,column=3,aligned=references,above=bottom}{ 
+\label{Contact information}
+
+TBU
 
 }
 
@@ -324,75 +304,47 @@ Authors want to thank you Hellenic Cadastre providing the data of HEPOS Network.
 %	RESULTS 2
 %----------------------------------------------------------------------------------------
 
-\headerbox{Strain and Rotational Rates}{name=resval,column=2,span=2,row=0,below=data,above=references}{
-\begin{minipage}[c]{0.34\linewidth}
-Strain and rotational rates presented in the following maps. We present results obtained using StrainTool Software (Anastasiou et al., 2021) and the following input parameters:
-\begin{center}
-\begin{tabular}{ c | c | c }
-\hline
- grid-size & ltype  & Wt \\ 
-% \hline
-  0.5$^{\circ} $x0.5$^{\circ} $ & gaussian & 24   \\
-\hline
- \end{tabular}
-\end{center}     
-Overall, our first results reproduce the gross features of tectonic deformation in Greece such as N-S Extension in mainland Greeece and clockwise rotational rates on the west.
-%\begin{itemize}\setlength\itemsep{.1em}
-%  \item N-S Extension in mainland Greeece 
-%  \item Clockwise rotational rates dominate
-%\end{itemize}
-\end{minipage}
-\begin{minipage}[c]{0.33\linewidth}
-  \includegraphics[width=.97\textwidth]{hepos22-output_str.jpg}
-\end{minipage}
-\begin{minipage}[c]{0.33\linewidth}
-  \includegraphics[width=.97\textwidth]{hepos22-output_rot.jpg}
+\headerbox{Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
+\label{discussion}
+
+\begin{minipage}{0.6\textwidth}
+\begin{minipage}{\textwidth}
+  \begin{minipage}{0.48\textwidth}
+    \begin{center}
+    \textbf{Near field}
+      \includegraphics[width=.97\textwidth]{PGD_eq1tr.png}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.48\textwidth}
+    \begin{center}
+    \textbf{Far field}
+      \includegraphics[width=.97\textwidth]{PGD_eq1gr.png}
+    \end{center}
+  \end{minipage}
 \end{minipage}
 
-
-
-
-%\begin{minipage}[b]{0.60\linewidth}
-%Strain-rate results from 302 permanent European GNSS stations are presented in 
-%the following maps. The vertical velocity component is ignored in this stage 
-%and other sources of deformation (GIA, hydrological, anthropogenic et al.) are 
-%not considered in this preliminary interpretation. Different model setups (variable 
-%grid-size, distance from cell-center, smoothing parameters etc.) were used for 
-%estimation of strain rates. We present results obtained using the following input 
-%parameters:
-%
-%\begin{center}
-%\begin{tabular}{ c | c | c | c | c }
-%\hline
-% grid-size & ltype & dmin & dmax & Wt \\ 
-%% \hline
-%  0.5$^{\circ} $x0.5$^{\circ} $ & gaussian & 1 km  & 500 km & 6 and 12   \\
-%\hline
-% \end{tabular}
-%\end{center}
-%
-%Overall, our first results reproduce the gross features of tectonic deformation 
-%in Southern Europe, such as NE-SW extension across the Apennines (Italy), NNW-SSE 
-%compression across the Alboran Sea (western Mediterranean) and N-S extension in 
-%mainland Greece. Large areas of central and Northern Europe show small strain 
-%rates (less than 10 ns/yr; 2nd invariant of the tensor).
-%
-%% \begin{minipage}[t]{0.48\linewidth}
-%     \includegraphics[width=1.07\textwidth]{e14s050506-output_str-S.jpg}
-%% \end{minipage}\hfill
-%% \begin{minipage}[t]{0.48\linewidth}
-%%      \includegraphics[width=\textwidth]{e14s050506-output_2inv-S.jpg}
-%
-%% \end{minipage}
-%
-%\end{minipage}\hfill
-%\begin{minipage}[b]{0.36\linewidth}
-%     \includegraphics[width=.94\textwidth]{e14np050506e-output_str.jpg}
-%     
-%%      \includegraphics[width=\textwidth]{e14s050506-output_str-S.jpg}
-%     
-%     \includegraphics[width=.94\textwidth]{e14s050512-output_dil.jpg}
-%\end{minipage}
+\begin{minipage}{\textwidth}
+  \begin{minipage}{0.48\textwidth}
+    \begin{center}
+      \includegraphics[width=.97\textwidth]{PGD_eq2tr.png}
+    \end{center}
+  \end{minipage}
+  \begin{minipage}{0.48\textwidth}
+    \begin{center}
+      \includegraphics[width=.97\textwidth]{PGD_eq2gr.png}
+    \end{center}
+  \end{minipage}
+ \end{minipage} 
+\end{minipage}
+\begin{minipage}{.395\textwidth}
+From the first analysis of the PGD values the following points are observed:
+\begin{itemize}\setlength\itemsep{.2em}
+  \item For both seismic events, in the northing component is observed the highest values of PGD indicating that the this direction is affected by the propagation of the seismic waves.
+  \item The second seismic event has larger far-field impact probably due to the geometry of the seismic fault and the directivity of the seismic waves propagation.
+  \item The Up component is not affected by the seismic events potentially due to the small impact that the S-waves may have for far-field stations.
+%  \item The PGD values tend to decrease with the distance from the epicetres. However it is obvious the impact of the directivity of the propagation of the seismic waves and the orientation of the seismic faults, as the PGD values of GNSS stations of similar distance from the epicentres has large range. For instance, the PGD values of the northing component of GNSS stations with ~1000km epicentre distance for the second seismic event range between 20 to 60cm.
+\end{itemize}
+\end{minipage}
 
 }
 
@@ -402,21 +354,25 @@ Overall, our first results reproduce the gross features of tectonic deformation 
 
 \headerbox{GNSS stations}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
 \label{datanet}
+ 41 continuously operating stations located near the earthquake sequence in southwest Turkey (<500km distance from epicentre), and an additional 54 far-field stations distributed across the Aegean Sea and mainland Greece in a distance of 500 to 1000km from the two earthquakes epicentre. 
 
-Different 
-
-~\\[1em]
 \begin{minipage}[c]{0.97\linewidth}
   \fbox{\includegraphics[width=\textwidth]{allstations.png}}
 \end{minipage}
 
+\begin{center}
+\vspace*{-.1cm}
+\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+{\footnotesize \textit{\textbf{Acknowledgments} to Metrica SA for the free availability of\\ the 1Hz GNSS data of HxGN SmartNet for this study, and TUSAGA-Aktif provide GNSS data of Turkish GNSS stations }}
 
-
-
-%\begin{center}
-%  \fbox{\includegraphics[width=.97\textwidth]{hepos.png}}
-%\end{center}
-%
+\hspace*{.2cm}
+  \includegraphics[width=.3\textwidth]{logo_HXgn.png}~~
+  \includegraphics[width=.2\textwidth]{logo_metrica.png}~~
+  \includegraphics[width=.1\textwidth]{logo_hgm.png}~~
+  \includegraphics[width=.1\textwidth]{logo_tkgm.png}
+\end{center}   
+\vspace*{-1.2cm}
+%\textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
 
 }
 
@@ -424,110 +380,36 @@ Different
 %	STRAIN ALGORITHMS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Data Analysis}{name=algorithms,column=1,row=0,bottomaligned=resval}{ 
+\headerbox{Data Analysis}{name=algorithms,column=1,row=0}{ 
+\label{dataanalysis}
+Data from all available operating stations were analysed.\\
 
-The data described above were analyzed using the Bernese GNSS Software (v. 5.2) (Dach et al., 2015). Both GPS and GLONASS
-observation were used when available (most of 2021 and 2022). IGb14 was used as the frame of reference, using a set of 19 IGS stations for alignment. CODE final products were incorporated in the analysis, consistent with the frame of choice. The key parameter of interest was station coordinates.
+\textbf{Processing scheme:}
+\begin{itemize}\setlength\itemsep{.3em}
+  \item Precise Point Positioning with Ambiguity Resolution using PRIDE-PPPAR Software \cite{Geng_2019}.
+  \item Satellite systems: GPS / GLO / GAL / BDS-2/3
+  \item Elevation angle: 7 deg
+  \item Kinematic mode
+  \item Reference Frame: IGS20
+  \item Final IGS Products for satellite
+  \item ANTEX File: IGS20\_2247
+  \item Tropospheric modeling: VMF1
+\end{itemize}
 
-
-
-%    \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.2}.\\
-%   %\medskip
-%   Integration with
-%   \begin{itemize}
-%    \setlength\itemsep{.5em}
-%     \item \textbf{MySQL} database,
-%     \item \textbf{Python} module (product/data downloading, pre-processing, 
-%      driving cron jobs, etc)\\
-%%      \url{https://github.com/DSOlab/autobern}
-%     \item \textbf{Time-series} analysis (integrated in routine processing on regular intervals)
-%     \item \textbf{Strain Rates} via StrainTool (on user demand)
-%   \end{itemize}}
- \begin{center}
-    \begin{tikzpicture}[ every annotation/.style = {draw,
-                      fill = white, font = \large}]
-
-   \path[mindmap,concept color=black!70,text=white,
-     every node/.style={concept,circular drop shadow, scale=.42},
-     root/.style = {concept color=black!30!red!30,
-font=\normalsize\bfseries,text width=5em},
-     level 1 concept/.append style={
-       font=\normalsize\bfseries, sibling angle=70,text width=7.7em,
-       level distance=20mm,inner sep=0pt},
-     level 2 concept/.append style={font=\bfseries,level distance=15mm},
-   ]
-
-   node[root] {Bernese GNSS Software v5.2} [clockwise from=0]
-     child[concept color=red!30] {
-       node {pyBern Module} [clockwise from=140]
-       child  [color=black!80] { node {github repo} }
-       child  { node {handle PCF, BPE, flow-control} }
-       child  { node {parsers\\formaters} }
-       child  { node {pre-processing \& editing} }
-       child  [level distance=13mm] { node {data/product downloading} }
-     }
-     child[concept color=blue!40] {
-       node[concept] {MySQL Database} [clockwise from=-10]
-       child { node[concept] {from/to .STA} }
-       child { node[concept] {stations/ networks/ products} }
-       child [level distance=17mm] { node[concept] {IGS log files} }
-     }
-     child[concept color=red!60] {
-       node[concept] {Cron Jobs} [clockwise from=-40]
-       child [level distance=13mm] { node[concept] {final ultra-rapid} }
-       child { node[concept] {update ATX, PCV } }
-       child { node[concept] {sync with AIUB} }
-       child [level distance=12mm, sibling angle=70] { node[concept]
-{sync with M3G} }
-     }
-     child[concept color=yellow!40!black!30] {
-       node[concept] { Analysis } [clockwise from=220]
-       child { node[concept] {Time-Series} }
-       child [text width=]{ node[concept] {StrainTool} }
-     }
-     child[concept color=green!50] {
-       node[concept] { WebPage } [clockwise from=180]
-       child [level distance=12mm, text width=] { node[concept] {d3.js
-plots} }
-     };
-\end{tikzpicture}
- \end{center}
- Processing is consistent with EUREF standards (Guidelines for Analysis Centres).
-  \begin{itemize}\setlength\itemsep{.1em}
-    \item \texttt{SINEX} with required info/blocks,
-    \item Reference frame \texttt{\textcolor{red}{IGb14}},
-    \item \texttt{IERS} Conventions 2010,
-    \item \texttt{IGS}/\texttt{CODE} products,
-    \item ocean loading corrections (\texttt{\textcolor{red}{FES2004}}),
-    %\item atmospheric tidal loading corrections,
-    \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
-    \item \texttt{GMF} and/or \texttt{\textcolor{red}{VMF1}}; \texttt{Chen-Herring} gradient parameter,
-    \item amiguities fixed (length-dependent algorithm),
-    \item use \texttt{GLONASS} obs (when available)
-    \item use \texttt{ATX} files  (\textcolor{red}{epn\_14.atx}) - \textcolor{red}{individual calibrations}
-  \end{itemize}
-
-
-%  $\Rightarrow$ New release Bernese GNSS Software \textcolor{blue}{v5.4}\\[1em]
-%  New values on processing options:
-%  \begin{itemize}\setlength\itemsep{.5em}
-%    \item Reference frame \texttt{\textcolor{blue}{IGS20}}
-%    \item Oceans loading corrections (\texttt{\textcolor{blue}{FES2014}})
-%    \item \texttt{\textcolor{blue}{VMF3}} for tropospheric modeling
-%    \item \texttt{ATX} file: \texttt{\textcolor{blue}{igs20.atx}}
-%    \item \textcolor{blue}{Long filename of products} according to new IGS convention
-%  \end{itemize}
-%  ~\\[.2em]
-%  $\Rightarrow$  
-%  $\Rightarrow$ Reprocess all available data from late '90s up to now
-  
-%  \begin{center}
-%    \includegraphics[width=.7\textwidth]{igs.png}
-%  \end{center}
-
- 
 }
 
+\headerbox{TS1}{name=tsa1,column=1,row=0, below=algorithms, bottomalign=resval}{ 
+\label{tsanalysis1}
+
+
+\textbf{1. Pre-processing and Filtering of GNSS Data}
+
+Low-frequency noise in the GNSS data—likely caused by multipath effects, unmitigated tropospheric delays, and other sources—was suppressed using a high-pass Butterworth filter with a cut-off frequency of 0.1 Hz. This filter effectively removed slow variations without significantly affecting any potential dynamic displacements. Since the GNSS stations were located more than 800 km from the earthquake epicenters, no co-seismic displacements were expected.
+
+\textbf{2. Transient Response Detection and Noise Estimation}
+
+The transient seismic response window for each GNSS station was defined as starting at the arrival time of the P-waves—calculated assuming a velocity of 6 km/s—and spanning 400 seconds to ensure the full signal was captured. Peak Ground Displacement (PGD) in the neu components was identified as the maximum value within this interval. To estimate the noise level, we calculated the standard deviation of the filtered neu time series over a 10-minute window prior to the first seismic event. A conservative threshold of 3$\sigma$ was used to distinguish real transient responses from background noise.
+}
 %----------------------------------------------------------------------------------------
 
 \end{poster}
