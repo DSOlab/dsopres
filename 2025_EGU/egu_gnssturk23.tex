@@ -95,7 +95,7 @@ linewidth=0.75pt % Width of the border lines around content boxes
 % {\par{\textsc{European Geosciences Union General Assembly 2019 Vienna | Austria | 7 - 12 April 2015}}}
 {\bf\textsc{Near and far-field deformation from the 2023 Turkey earthquakes using GNSS Data.}\vspace{0.3em} } % Poster title
 {\large Dimitrios Anastasiou$^{1}$, Panos Psimoulis$^{2}$, Xanthos Papanikolaou$^{1}$, Maria Tsakiri$^{1}$ \vspace{0.2em}
-{\small \par{$^{1}$National Technical University of Athens, School of Rural, Surveying and Geoinformatics Engineering, Greece (danastasiou@mail.ntua.gr)}
+{\small \par{$^{1}$National Technical University of Athens, School of Rural, Surveying and Geoinformatics Engineering, Greece }
 \par{$^{2}$Nottingham Geospatial Institute, University of Nottingham, UK} 
 } \vspace{0.3em}
 \par{\textsc{European Geosciences Union General Assembly 2025 Vienna | Austria | 27 Apr. - 02 May 2025}} 
@@ -107,10 +107,9 @@ linewidth=0.75pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-
 \headerbox{Introduction}{name=introduction,column=0,row=0}{
 \label{intro}
-On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık earthquake nucleated $\sim$15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234$^{\circ}$ E, 37.2444$^{\circ}$ N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed and a little over 9 hours after the first event, at 10:24:49 UTC, the M$_\text{w}$ 7.6 \cite{Melgar_2023}
+On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık earthquake nucleated $\sim$15 km southeast of the mapped trace of the East Anatolian Fault Zone. Relocations  place the hypocenter at (37.0234$^{\circ}$ E, 37.2444$^{\circ}$ N, depth=12 km) and analyses of teleseismic data show a left-lateral source mechanism on a vertical or near vertical fault. A vigorous aftershock sequence followed a little over 9 hours after the first event, at 10:24:49 UTC, the M$_\text{w}$ 7.6 \cite{Melgar_2023}
 
 %\begin{figure}
 \begin{center}
@@ -118,20 +117,10 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
   \includegraphics[width=.44\textwidth]{figures/eqturk23_fm.png}\\
 %  Fig.1:Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet
 \end{center}
-%    \caption{Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.}
+Tectonic backround (a) and focal mechanisms (b) of 2023 Turkey earthquake doublet \cite{Liu_2023}.
 %    \label{fig:proc-net}
 %\end{figure} 
 %\vspace*{-.5cm}
-\begin{minipage}[c]{.78\linewidth}
-\begin{center}
-\begin{tcolorbox}[height=2.5em,width=.97\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]   
- \textbf{Abstract Number:  EGU2025-18416}
-\end{tcolorbox}  
- \end{center}
-\end{minipage}
-\begin{minipage}[c]{.18\linewidth}
-  \includegraphics[width=.97\textwidth]{egu25-18416-qr.png}
-\end{minipage}
 
 
 % \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
@@ -144,17 +133,17 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 %	VELOCITY FIELD
 %----------------------------------------------------------------------------------------
 
-\headerbox{Time series Analysis}{name=data,column=2, span=2,row=0}{
-\label{ts_analysis}
+\headerbox{Analysis Results}{name=data,column=2, span=2,row=0}{
+\label{Analysis_Results}
 \begin{minipage}{\textwidth}
 \begin{minipage}{0.49\textwidth}
   \begin{center}
-    \textbf{Near field stations}
+    \textbf{Near-field stations}
   \end{center}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
   \begin{center}
-    \textbf{Far field stations}
+    \textbf{Far-field stations}
   \end{center}
 \end{minipage}
 
@@ -174,6 +163,7 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
    % \includegraphics[width=.97\textwidth]{aksr_eq2.png}\\
   \end{center}
 \end{minipage}
+\textcolor{blue!40}{\vrule width 1pt}
 \begin{minipage}{0.24\textwidth}
   \begin{center}
     \includegraphics[width=.97\textwidth]{rodo_eq1.png}\\
@@ -245,13 +235,13 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 
 \headerbox{References}{name=references,column=0, span=2, above=bottom}{
 \label{refs}
+\vspace*{-.3cm}
 \begin{minipage}[b]{0.92\linewidth}
 {\scriptsize
-\vspace*{-.4cm}
+%\vspace*{-.4cm}
 \nocite{*} % Insert publications even if they are not cited in the poster
 \scriptsize{\bibliographystyle{unsrt}
 \bibliography{sample}\vspace{0.01cm}} 
-
 %\textbf{Anastasiou D.}, Papanikolaou P., Ganas A., and Paradissis D. (2021). “StrainTool: A software package to estimate strain tensor parameters (v1.0-r1)”. In: Zenodo. DOi:10.5281/zenodo.1297565. URL: https://doi.org/10.5281/zenodo.1297565
 %
 %\textbf{Bos, M. S.}, Fernandes, R. M. S., Williams, S. D. P., and Bastos, L. (2013). Fast Error Analysis of Continuous GNSS Observations with Missing Data.J. Geod., Vol. 87(4), 351–360, doi:10.1007/s00190-012-0605-0.
@@ -261,10 +251,10 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 %\textbf{Wessel, P.}, W. H. F. Smith, R. Scharroo, J. F. Luis, and F. Wobbe, Generic Mapping Tools: Improved version released, EOS Trans. AGU, 94, 409-410, 2013
 }
 \end{minipage}
-\begin{minipage}[b]{0.06\linewidth}
+\begin{minipage}{0.06\linewidth}
 %------------------------------------------
 % \begin{wrapfigure}{c}{1.5cm}
-\vspace*{-2cm}
+\vspace*{-2.6cm}
 \includegraphics[height=6em]{../../logos/graphic_egu_photo_yes.png}
 % \caption{A wrapped figure going nicely inside the text.}\label{wrap-fig:1}
 % \end{wrapfigure}
@@ -280,12 +270,15 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 \label{future_research}
 {\footnotesize
 %We consider this study to be a work-in-progress; we plan to go on with data analysis for all the available years. Currently, we are working on :
-\begin{itemize}\setlength\itemsep{.1em}
+\begin{itemize}
+\setlength\itemindent{0pt}
+\setlength\leftskip{-16pt}
+\setlength\itemsep{.01em}
+  \item Investigate the co-seismic displacements of  the near-field GNSS stations.
   \item Investigate the far field of the directivity effect of the propagation seismic waves through the PGD of the GNSS stations.
   \item Investigate the frequency context of the seismic waves and its potential variation with the distance from the epicentre.
   \item Estimate of the seismic waves velocity as detected through the network GNSS stations displacement.
 \end{itemize}
-
 }
 }
 
@@ -295,8 +288,23 @@ On February 6th, 2023 at 01:17:35 UTC the M$_\text{w}$ 7.8 Nurdağı-Pazarcık e
 
 \headerbox{Contact Information}{name=funding,column=3,aligned=references,above=bottom}{ 
 \label{Contact information}
+\begin{minipage}[c]{.7\linewidth}
+\begin{center}
+\begin{tcolorbox}[height=2.5em,width=.97\textwidth,colback={airforceblue}, colupper=white,  boxrule=0pt]   
+ \textbf{Abstract Number:  EGU2025-18416}
+\end{tcolorbox}  
+ \end{center}
+ \vspace*{-.2cm}
+ \textbf{Dimitrios Anastasiou}\\
+ \textit{Assistant Professor NTUA}\\
+ danastasiou@mail.ntua.gr
+\end{minipage}
+\begin{minipage}[c]{.27\linewidth}
+\begin{center}
+  \includegraphics[width=.93\textwidth]{egu25-18416-qr.png}
+\end{center}
+\end{minipage}
 
-TBU
 
 }
 
@@ -307,17 +315,17 @@ TBU
 \headerbox{Discussion}{name=resval,column=2,span=2,row=0,below=data,above=references}{
 \label{discussion}
 
-\begin{minipage}{0.6\textwidth}
+\begin{minipage}{0.603\textwidth}
 \begin{minipage}{\textwidth}
   \begin{minipage}{0.48\textwidth}
     \begin{center}
-    \textbf{Near field}
+    \textbf{Near-field}
       \includegraphics[width=.97\textwidth]{PGD_eq1tr.png}
     \end{center}
   \end{minipage}
   \begin{minipage}{0.48\textwidth}
     \begin{center}
-    \textbf{Far field}
+    \textbf{Far-field}
       \includegraphics[width=.97\textwidth]{PGD_eq1gr.png}
     \end{center}
   \end{minipage}
@@ -337,15 +345,20 @@ TBU
  \end{minipage} 
 \end{minipage}
 \begin{minipage}{.395\textwidth}
-From the first analysis of the PGD values the following points are observed:
-\begin{itemize}\setlength\itemsep{.2em}
-  \item For both seismic events, in the northing component is observed the highest values of PGD indicating that the this direction is affected by the propagation of the seismic waves.
-  \item The second seismic event has larger far-field impact probably due to the geometry of the seismic fault and the directivity of the seismic waves propagation.
+Preliminary results from PGD values:\\[-.6cm]
+\begin{itemize}
+\setlength\itemindent{0pt}
+\setlength\leftskip{-24pt}
+\setlength\itemsep{.01em}
+  \item The highest PGD values (up to 60 cm) are observed at near-field stations located within 300 km of the epicenters.
+  \item PGD values generally decrease with distance from the epicenters. However, due to the directivity of seismic wave propagation and fault orientation.
+  \item The highest PGD values are observed at the North component for both seismic events, indicating that the North-South direction is mostly affected by the propagation of the seismic waves.
+  \item The second seismic event has a larger far-field impact, probably due to the geometry of the seismic fault and the directivity of the seismic waves propagation.
   \item The Up component is not affected by the seismic events potentially due to the small impact that the S-waves may have for far-field stations.
 %  \item The PGD values tend to decrease with the distance from the epicetres. However it is obvious the impact of the directivity of the propagation of the seismic waves and the orientation of the seismic faults, as the PGD values of GNSS stations of similar distance from the epicentres has large range. For instance, the PGD values of the northing component of GNSS stations with ~1000km epicentre distance for the second seismic event range between 20 to 60cm.
 \end{itemize}
 \end{minipage}
-
+\vskip.4cm
 }
 
 %----------------------------------------------------------------------------------------
@@ -354,7 +367,11 @@ From the first analysis of the PGD values the following points are observed:
 
 \headerbox{GNSS stations}{name=heposnet,column=0,below=introduction,bottomaligned=resval}{ 
 \label{datanet}
- 41 continuously operating stations located near the earthquake sequence in southwest Turkey (<500km distance from epicentre), and an additional 54 far-field stations distributed across the Aegean Sea and mainland Greece in a distance of 500 to 1000km from the two earthquakes epicentre. 
+A network of 95 continuous GNSS stations was utilized for this study, comprising:
+a) 41 continuously operating stations located near the earthquake sequence in
+southwest Turkey (<700km distance from epicentre, red points) and b) 54 far-field stations
+distributed across the Aegean Sea and mainland Greece, located 800 to 1600 km
+from the epicentres of the two earthquakes (blue points). 
 
 \begin{minipage}[c]{0.97\linewidth}
   \fbox{\includegraphics[width=\textwidth]{allstations.png}}
@@ -366,9 +383,9 @@ From the first analysis of the PGD values the following points are observed:
 {\footnotesize \textit{\textbf{Acknowledgments} to Metrica SA for the free availability of\\ the 1Hz GNSS data of HxGN SmartNet for this study, and TUSAGA-Aktif provide GNSS data of Turkish GNSS stations }}
 
 \hspace*{.2cm}
-  \includegraphics[width=.3\textwidth]{logo_HXgn.png}~~
-  \includegraphics[width=.2\textwidth]{logo_metrica.png}~~
-  \includegraphics[width=.1\textwidth]{logo_hgm.png}~~
+  \includegraphics[width=.3\textwidth]{logo_HXgn.png}~~~
+  \includegraphics[width=.2\textwidth]{logo_metrica.png}~~~
+  \includegraphics[width=.1\textwidth]{logo_hgm.png}~~~
   \includegraphics[width=.1\textwidth]{logo_tkgm.png}
 \end{center}   
 \vspace*{-1.2cm}
@@ -380,35 +397,42 @@ From the first analysis of the PGD values the following points are observed:
 %	STRAIN ALGORITHMS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Data Analysis}{name=algorithms,column=1,row=0}{ 
+\headerbox{GNSS Data Processing}{name=algorithms,column=1,row=0}{ 
 \label{dataanalysis}
-Data from all available operating stations were analysed.\\
+Data collected from the selected network of 95 GNSS sites were processed using the
+well known PPP-AR approach, in pseudo-kinematic mode, estimating site cordinates at every measurement epoch.
+Below, we summarize analysis options and products used: 
 
+\vspace*{.1cm}
 \textbf{Processing scheme:}
-\begin{itemize}\setlength\itemsep{.3em}
-  \item Precise Point Positioning with Ambiguity Resolution using PRIDE-PPPAR Software \cite{Geng_2019}.
+\begin{itemize}\setlength\itemsep{.1em}
+  \item Precise Point Positioning with Ambiguity Resolution using PRIDE-PPPAR Software (v3.1.2) \cite{Geng_2019}.
   \item Satellite systems: GPS / GLO / GAL / BDS-2/3
   \item Elevation angle: 7 deg
-  \item Kinematic mode
+  \item Sampling interval: 1s
+  \item Coordinates estimated in pseudo-kinematic mode
   \item Reference Frame: IGS20
-  \item Final IGS Products for satellite
+  \item Final IGS Products for satellite orbits and EOPs
   \item ANTEX File: IGS20\_2247
   \item Tropospheric modeling: VMF1
 \end{itemize}
 
 }
 
-\headerbox{TS1}{name=tsa1,column=1,row=0, below=algorithms, bottomalign=resval}{ 
+\headerbox{Time Series Analysis}{name=tsa1,column=1,row=0, below=algorithms, bottomaligned=resval}{ 
 \label{tsanalysis1}
 
 
 \textbf{1. Pre-processing and Filtering of GNSS Data}
 
-Low-frequency noise in the GNSS data—likely caused by multipath effects, unmitigated tropospheric delays, and other sources—was suppressed using a high-pass Butterworth filter with a cut-off frequency of 0.1 Hz. This filter effectively removed slow variations without significantly affecting any potential dynamic displacements. Since the GNSS stations were located more than 800 km from the earthquake epicenters, no co-seismic displacements were expected.
+Co-seismic displacements were estimated only for GNSS stations located within 800 km of the earthquake epicenters. For stations situated at distances greater than 800 km, no significant co-seismic displacements were expected.
 
-\textbf{2. Transient Response Detection and Noise Estimation}
+Low-frequency noise in the GNSS data—likely caused by multipath effects, unmitigated tropospheric delays, and other sources—was suppressed using a high-pass Butterworth filter with a cut-off frequency of 0.1 Hz. This filtering effectively eliminated slow-varying noise components without significantly altering potential dynamic displacements
+~\\[-.2cm]
 
-The transient seismic response window for each GNSS station was defined as starting at the arrival time of the P-waves—calculated assuming a velocity of 6 km/s—and spanning 400 seconds to ensure the full signal was captured. Peak Ground Displacement (PGD) in the neu components was identified as the maximum value within this interval. To estimate the noise level, we calculated the standard deviation of the filtered neu time series over a 10-minute window prior to the first seismic event. A conservative threshold of 3$\sigma$ was used to distinguish real transient responses from background noise.
+\textbf{2. Peak Ground Displacement and Noise Estimation}
+
+The transient seismic response window for each GNSS station was defined as starting at the arrival time of the P-waves—calculated assuming a velocity of 6 km/s—and spanning 400 seconds to ensure the full signal was captured. Peak Ground Displacement (PGD) in the NEU components was identified as the maximum value within this interval. To estimate the noise level, we calculated the standard deviation of the filtered neu time series over a 10-minute window prior to the first seismic event. A conservative threshold of 3$\sigma$ was used to distinguish real transient responses from background noise.
 }
 %----------------------------------------------------------------------------------------
 
