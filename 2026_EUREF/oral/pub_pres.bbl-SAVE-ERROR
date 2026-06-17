@@ -1,0 +1,177 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{straintool}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=203f98935f86d6554c0b7b07ee8f3f67}{%
+           family={Anastasiou},
+           familyi={A\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=297d4d549b70ee2c58c498745a8c7491}{%
+           family={Papanikolaou},
+           familyi={P\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ceb158f7c11b0e60ddd53a6abf9c737e}{%
+           family={Ganas},
+           familyi={G\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=51a5dbceda80b13c53e8ce9954cc46a1}{%
+           family={.D},
+           familyi={.\bibinitperiod},
+           given={Paradissis},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{af792043912628cc20fba9a896745bdb}
+      \strng{fullhash}{211fabbae60dd6995fe4c06e94bff631}
+      \strng{bibnamehash}{211fabbae60dd6995fe4c06e94bff631}
+      \strng{authorbibnamehash}{211fabbae60dd6995fe4c06e94bff631}
+      \strng{authornamehash}{af792043912628cc20fba9a896745bdb}
+      \strng{authorfullhash}{211fabbae60dd6995fe4c06e94bff631}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zenodo}
+      \field{title}{StrainTool: A software package to estimate strain tensor parameters (v1.0-r1)}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.5281/zenodo.1297565
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.5281/zenodo.1297565
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.5281/zenodo.1297565
+      \endverb
+    \endentry
+    \entry{Bos2012}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=61ae6ef61d9f8a9ac735d5ebf1654fc7}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b6c04ddc4c3da839c29810299c42a46}{%
+           family={Fernandes},
+           familyi={F\bibinitperiod},
+           given={R.\bibnamedelimi M.\bibnamedelimi S.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=49401f6e027a3d8f84b8deafcf106fed}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={S.\bibnamedelimi D.\bibnamedelimi P.},
+           giveni={S\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74972fbfcd6cf41cda8832cf668638e4}{%
+           family={Bastos},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Springer Science}%
+        {Business Media {LLC}}%
+      }
+      \strng{namehash}{111dc204c5548d71235b5c6f51b6c2cd}
+      \strng{fullhash}{bf62f5f0b9912eaf6ae0ce81527e5744}
+      \strng{bibnamehash}{bf62f5f0b9912eaf6ae0ce81527e5744}
+      \strng{authorbibnamehash}{bf62f5f0b9912eaf6ae0ce81527e5744}
+      \strng{authornamehash}{111dc204c5548d71235b5c6f51b6c2cd}
+      \strng{authorfullhash}{bf62f5f0b9912eaf6ae0ce81527e5744}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geodesy}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Fast error analysis of continuous {GNSS} observations with missing data}
+      \field{volume}{87}
+      \field{year}{2012}
+      \field{pages}{351\bibrangedash 360}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s00190-012-0605-0
+      \endverb
+    \endentry
+    \entry{bernese}{book}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=0a4e4e2ba13c9f13a9dfb5b86f070628}{%
+           family={Dach},
+           familyi={D\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc2391e5ee5588e6aea1b646864d8937}{%
+           family={Hugentobler},
+           familyi={H\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=023f840dec96477431e035a622887d09}{%
+           family={Fridez},
+           familyi={F\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=671eaae277c4c55ae5fc852ebab57427}{%
+           family={Meindl},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Astronomical Institute, University of Bern}%
+      }
+      \strng{namehash}{4ab1bc59b561e4fb82aa0cfcb5324f34}
+      \strng{fullhash}{a97df5bd6ec9894074dc5cb3b1f7e3fe}
+      \strng{bibnamehash}{a97df5bd6ec9894074dc5cb3b1f7e3fe}
+      \strng{authorbibnamehash}{a97df5bd6ec9894074dc5cb3b1f7e3fe}
+      \strng{authornamehash}{4ab1bc59b561e4fb82aa0cfcb5324f34}
+      \strng{authorfullhash}{a97df5bd6ec9894074dc5cb3b1f7e3fe}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bernese GPS Software Version 5.0}
+      \field{year}{2007}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

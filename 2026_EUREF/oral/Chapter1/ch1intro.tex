@@ -1,0 +1,1006 @@
+\graphicspath{{Chapter1/Figs/}}
+
+\section{Introduction}
+% ------------------------------------------------------------------------------
+%\begin{frame}\frametitle{DSO last year}\framesubtitle{}\label{}
+%\vskip-1.5cm
+%  Dionysos Satellite Observatory (DSO) of the National Technical University of 
+%  Athens (NTUA), has developed and maintains an automated processing
+%  scheme to accommodate the routine analysis of all available continuous GNSS 
+%  stations in Greece.
+%  \\
+%  This daily analysis process is implemented for over ten years now (not 
+%  always continuous though dues to various problems), yielding 
+%  results which help us further understand the complicated tectonic setting of 
+%  Greece and nearby regions.
+%  \\
+%  Updates:
+%  \begin{itemize}
+%    \item archive old data (from 1995) for reprocessing,
+%    \item new network processing (HEPOS) 
+%    \item develop PPP-AR PRIDE near real time processing for high rate available data
+%    \item start updating for Strain Tool 
+%  \end{itemize}
+%\end{frame}
+%
+% ------------------------------------------------------------------------------
+\begin{frame}\frametitle{Motivation}\framesubtitle{}
+\vskip-1cm
+  % Via our contribution to EUREF and interaction with its community, we hope to:
+  Routine GNSS processing and site/network monitoring is crucial, because:
+  \begin{itemize}
+    \item Greece lies in a region of utmost tectonic and volcanic unrest (e.g. 
+      active volcano in Santorini isl.),
+    \item results \& products are important to a series of fields spanning 
+      the whole range of Geosciences,
+    \item helps us follow and apply state-of-the-art technologies in GNSS analysis 
+      \& Satellite Geodesy and expand \& modernize our research activity,
+    \item contribute to the GNSS/EUREF community and be involved in ongoing/future projects,
+    \item develop new features for high rate processing.
+    \item improve our academic services (NTUA is a University)
+  \end{itemize}
+  Throughout the last years, routine processing \& monitoring has hepled us gain 
+  a more thorough view of the complex tectonic and volcanic setting of Greece.
+\end{frame}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Contribution to EPN Densification up to now}
+%  \framesubtitle{\textcolor{red}{remove}}
+%  \label{}
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%      \begin{itemize}\setlength\itemsep{.5em}
+%        \item Start our contribution from 2016
+%        \item Proccessing and upload daily SINEX files including 78 station
+%        \item Data processing from GPS week 1400 up to 2238 on IGb14 
+%        \item Change to IGS20 (old Bernese)
+%      \end{itemize}  
+%    \end{column}
+%    \begin{column}{.5\textwidth}
+%      \begin{center}
+%        \includegraphics[width=.97\textwidth]{DSOdensmap.png}
+%      \end{center}     
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
+
+\section{GPS/GNSS Networks in Greece}
+% ------------------------------------------------------------------------------
+\begin{frame}\frametitle{The Data Set}\framesubtitle{}
+\vskip-1.5cm
+  %To contribute to the Densification we have to establish a credible dataset
+  %(network). This has proven to be rather challenging !\\
+  Routine processing for precise positioning, assumes a well established, 
+  credible dataset (metadata). \\
+  \bigskip
+  Currently we process whatever we can get our hands on \ldots\\
+  Problems:
+  \begin{itemize}
+    \item Inhomogenous dataset (\texttt{RINEX} of various versions, raw files, etc).
+    \item Various maintainers, different mentalities.
+    \item Different aquisition methods/rates.
+    \item No log files for mainteners with no geodetic interest (e.g. surveying companies).
+    \item Wide variety of equipment (not always included in \texttt{atx} files).
+  \end{itemize}
+\end{frame}
+\note
+
+% ------------------------------------------------------------------------------
+\begin{frame}\frametitle{Network GREECE}\framesubtitle{}
+\vskip-1cm
+
+%Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
+\begin{columns}[T] % align columns
+\begin{column}{.50\textwidth}
+  Network \texttt{Greece} includes the majority of the available sites ($\approx$100)
+  but not all of them are (always/currently) active. Various providers but all 
+  with geodetic interest \& ecquipment.
+
+  {\small
+  \begin{itemize}
+    \setlength\itemsep{.1em}
+    \item<pro@1-> covers all of Greece
+    \item<pro@1-> different (geodetic type) equipment
+    \item<pro@1-> credible time-span (early 2004 - now)
+    \item<pro@1-> all free available GNSS data
+    \item<con@1-> large data gaps \& inactive stations
+%    \item<con@1-> needs repairing
+\end{itemize}
+}
+\end{column}%
+\hfill%
+\begin{column}{.50\textwidth}
+ \begin{figure}
+ \begin{center}
+ \vskip -.2cm
+ \includegraphics[width=.95\textwidth]{refag_greece_noref.png} %1 2.2 0 0
+% \vskip-.7cm
+% \caption{COMET/NTUA network.}
+\href{http://83.212.76.4/abmaps/netmap_noref.php?network=greece}{->> Network GREECE}
+ \label{fig:cometntua}
+ \end{center}
+ \end{figure}
+\end{column}%
+\end{columns}
+%  \begin{block}{}
+%    Can be used for EUREF densification ``as is''.
+%  \end{block}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+\begin{frame}\frametitle{Network Santorini}\framesubtitle{}
+\vskip-1cm
+  %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
+  The \texttt{Santorini Volcano} ...
+  \begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item<pro@1-> credible time-span
+        \item<pro@1-> only covers the Corinth Rift
+        \item<con@1-> different providers (including surveying \& cadastral services)
+        \item<con@1-> no log files \& equipment changes
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{figure}
+      \begin{center}
+        \includegraphics[trim={0cm 2.5cm 0cm 0cm},clip,width=.97\textwidth]{refag_crnet.png}
+%  \vskip .6cm
+% \caption{EnCeladus network. \url{http://dionysos.survey.ntua.gr/dso/enceladus/}}
+      \href{http://dionysos.survey.ntua.gr/dso/enceladus/}{->> Network EnCeladus}
+     \label{fig:crlab}
+     \end{center}
+ \end{figure}
+      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Network HEPOS}
+  \framesubtitle{}
+  \label{}
+ \begin{columns}[T] % align columns
+	\begin{column}{.50\textwidth}
+	  Network \texttt{HEPOS} 
+	
+	  {\small
+	  \begin{itemize}
+	    \setlength\itemsep{.1em}
+	    \item<pro@1-> covers all of Greece
+	    \item<pro@1-> homogeneous equipment
+	    \item<pro@1-> credible time-span (mid 2007 - now)
+	    \item<con@1-> only four years available for processing up to now
+	%    \item<con@1-> needs repairing
+	\end{itemize}
+	}
+	\begin{columns}[T]
+	  \begin{column}{.5\textwidth}
+	    \begin{center}
+	    \vskip.5cm
+	    {\small \textit{Data availability and funding from\\ Hellenic Cadastre}}
+	    \end{center}
+	  \end{column}
+	  \begin{column}{.5\textwidth}
+	     \begin{center}
+	       \includegraphics[width=.97\textwidth]{../../logos/Hellenic_cadastre.png}
+	     \end{center}
+	  \end{column}
+	\end{columns}
+	\end{column}%
+	\hfill%
+	\begin{column}{.50\textwidth}
+	 \begin{figure}
+	 \begin{center}
+	 \vskip -.7cm
+	 \includegraphics[width=.95\textwidth]{hepos.png} %1 2.2 0 0
+%	 \vskip-.7cm
+	% \caption{COMET/NTUA network.}
+	\href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}{->> Network HEPOS}
+	 \label{fig:cometntua}
+	 \end{center}
+	 \end{figure}
+	\end{column}%
+	\end{columns}
+\end{frame}
+\note{} 
+
+\section{Processing}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{GNSS data analysis at DSO}
+  \framesubtitle{}
+  \label{}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    \textbf{GNSS data analysis}
+      \begin{itemize}\setlength\itemsep{1em}
+         \item Bernese v5.4 \citep{Bernese}
+         \item PRIDE-PPPAR \citep{PRIDE}
+         \item GipsyX \citep{GipsyX}
+       \end{itemize} 
+    \textbf{Time series analysis}
+    \begin{itemize}\setlength\itemsep{1em}
+      \item Hector v2.1 \citep{Bos2012}
+      \item Python/C++ routines
+    \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \textbf{Solutions}
+      \begin{itemize}\setlength\itemsep{1em}
+        \item Daily solution
+          \begin{itemize}\setlength\itemsep{1em}
+            \item Rapid solution - 1 day after
+            \item Final solution - 12 days after
+          \end{itemize}
+        \item High-rate analysis (>1Hz)
+          \begin{itemize}\setlength\itemsep{1em}
+            \item data from network HEPOS - 1Hz
+          \end{itemize}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{columns}[T]
+    \begin{column}{.1\textwidth}
+      \begin{center}
+        \includegraphics[width=.7\textwidth]{logo_Bernese.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.2\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{logo_PRIDE.png}
+      \end{center}      
+    \end{column}
+    \begin{column}{.2\textwidth}
+      \begin{center}
+        \includegraphics[width=.8\textwidth]{logo_gipsyX.png}
+      \end{center}      
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+
+      \end{center}      
+    \end{column}    
+    
+  \end{columns}
+\end{frame}
+\note{}
+
+% ------------------------------------------------------------------------------
+\begin{frame}\frametitle{The Scheme}\framesubtitle{}
+\begin{columns}[T] % align columns
+\begin{column}{.35\textwidth}
+\vskip-.5cm
+   \footnotesize{The core tool/software is \texttt{Bernese GNSS Software v5.4}\citep{bernese}.\\
+   %\medskip
+   Integration with
+   \begin{itemize}
+    \setlength\itemsep{.5em}
+     \item \textbf{PostgreSQL} database,
+     \item \textbf{Python} module (product/data downloading, pre-processing, 
+      driving cron jobs, etc)\\
+      \url{https://github.com/DSOlab/autobern}
+     \item \textbf{Time-series} analysis (integrated in routine processing on regular intervals)
+     \item \textbf{Strain Rates} via StrainTool (on user demand)
+   \end{itemize}}
+\end{column}%
+\hfill%
+
+\begin{column}{.65\textwidth}
+\vskip -.4cm
+\begin{figure}
+\centering
+   \begin{tikzpicture}[ every annotation/.style = {draw,
+                      fill = white, font = \large}]
+
+   \path[mindmap,concept color=black!70,text=white,
+     every node/.style={concept,circular drop shadow, scale=.4},
+     root/.style = {concept color=black!30!red!30,
+font=\normalsize\bfseries,text width=5em},
+     level 1 concept/.append style={
+       font=\normalsize\bfseries, sibling angle=70,text width=7.7em,
+       level distance=20mm,inner sep=0pt},
+     level 2 concept/.append style={font=\bfseries,level distance=15mm},
+   ]
+
+   node[root] {Bernese GNSS Software v5.4} [clockwise from=0]
+     child[concept color=red!30] {
+       node {pyBern Module} [clockwise from=140]
+       child  [color=black!80] { node {github repo} }
+       child  { node {handle PCF, BPE, flow-control} }
+       child  { node {parsers\\formaters} }
+       child  { node {pre-processing \& editing} }
+       child  [level distance=13mm] { node {data/product downloading} }
+     }
+     child[concept color=blue!40] {
+       node[concept] {PostrgreSQL Database} [clockwise from=-10]
+       child { node[concept] {from/to .STA} }
+       child { node[concept] {stations/ networks/ products} }
+       child [level distance=17mm] { node[concept] {IGS log files} }
+     }
+     child[concept color=red!60] {
+       node[concept] {Cron Jobs} [clockwise from=-40]
+       child [level distance=13mm] { node[concept] {final ultra-rapid} }
+       child { node[concept] {update ATX, PCV } }
+       child { node[concept] {sync with AIUB} }
+       child [level distance=12mm, sibling angle=70] { node[concept]
+{sync with M3G} }
+     }
+     child[concept color=yellow!40!black!30] {
+       node[concept] { Analysis } [clockwise from=220]
+       child { node[concept] {Time-Series} }
+       child [text width=]{ node[concept] {StrainTool} }
+     }
+     child[concept color=green!50] {
+       node[concept] { WebPage } [clockwise from=180]
+       child [level distance=12mm, text width=] { node[concept] {d3.js
+plots} }
+     };
+\end{tikzpicture}
+
+
+
+\label{fig:software-design}
+\end{figure}
+
+\end{column}%
+\end{columns}
+\end{frame}
+
+%
+%\begin{frame}\frametitle{Workflow}\framesubtitle{}
+%\begin{columns}[T] % align columns
+%\begin{column}{.48\textwidth}
+%  \texttt{\$>ddrun.sh       --year= --doy= --session= --bern-loadgps= --campaign= --satellite-system= --solution-id= --save-dir= --analysis-center= --use-ntua-products= --append-suffix= --elevation-angle= --update= --pcv= --apply-exclude-list}
+%\end{column}
+%\hfill%
+%\begin{column}{.48\textwidth}
+%\vskip-.5cm
+%  \scalebox{0.5}{
+%  \smartdiagram[priority descriptive diagram]{
+%    Download \texttt{RINEX} consulting \texttt{MySQL} db,
+%    Download products,
+%    Validate \texttt{.STA}; synchronize \texttt{/GEN},
+%    Set variables in the Protocol Control File (\texttt{.PCF}),
+%    Process the dataset,
+%    Check for errors,
+%    Save Products \& Update database records,
+%    Compile Report (\texttt{json} | \texttt{html})
+%}}
+%\end{column}
+%\end{columns}
+%\end{frame}
+%
+
+%\begin{frame}\frametitle{Compliance wrt EUREF standards}\framesubtitle{}
+%\vskip-1cm
+%  Processing is consistent with EUREF standards (\href{http://www.epncb.oma.be/_documentation/guidelines/guidelines_analysis_centres.pdf}{Guidelines for Analysis Centres}).
+%  \begin{itemize}%%[label={\checkmark}]
+%    \item \texttt{SINEX} with required info/blocks,
+%    \item Reference frame \texttt{\textcolor{red}{IGb14}},
+%    \item \texttt{IERS} Conventions 2010,
+%    \item \texttt{IGS}/\texttt{CODE} products,
+%    \item ocean loading corrections (\texttt{\textcolor{red}{FES2004}}),
+%    %\item atmospheric tidal loading corrections,
+%    \item $3^{\circ}$ elevation cut-off angle; elevation dependent weighting,
+%    \item \texttt{GMF} and/or \texttt{\textcolor{red}{VMF1}}; \texttt{Chen-Herring} gradient parameter,
+%    \item amiguities fixed (length-dependent algorithm),
+%    \item use \texttt{GLONASS} obs (when available)
+%    \item use \texttt{ATX} files  (\textcolor{red}{epn\_14.atx}) - \textcolor{red}{individual calibrations}
+%  \end{itemize}
+%\end{frame}
+%
+%%  \begin{itemize}
+%%    \item check station information file consistency (against the provided in \texttt{CODE}'s ftp)
+%%    \item synchronize \texttt{GEN/} directory
+%%    \item closely follow \texttt{RNX2SNX.PCF}
+%%    \begin{itemize}
+%%      \item variabes in PCF are set by external tools (genericity)
+%%      \item skip copying/moving/removing; replace with tools that interconnect with \texttt{MySQL}
+%%    \end{itemize}
+%%    \item update database
+%%    \item customize output (\texttt{html, json})
+%%  \end{itemize}
+%% \end{frame}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Switch to IGS20}
+  \framesubtitle{}
+  \label{}
+  $\Rightarrow$ New release Bernese GNSS Software \textcolor{blue}{v5.4}\\[1em]
+  New values on processing options:
+  \begin{itemize}\setlength\itemsep{.5em}
+    \item Reference frame \texttt{\textcolor{blue}{IGS20}}
+    \item Oceans loading corrections (\texttt{\textcolor{blue}{FES2014}})
+    \item \texttt{\textcolor{blue}{VMF3}} for tropospheric modeling
+    \item \texttt{ATX} file: \texttt{\textcolor{blue}{igs20.atx}}
+    \item \textcolor{blue}{Long filename of products} according to new IGS convention
+  \end{itemize}
+  ~\\[.2em]
+  $\Rightarrow$  
+  $\Rightarrow$ Reprocess all available data from late '90s up to now
+\end{frame}
+\note{}
+
+\section{Results \& Outputs}
+
+{
+\usebackgroundtemplate{\includegraphics[height=.9\paperheight,width=.9\paperwidth]{jsonprint.png}}
+\vskip-1.5cm
+\begin{frame}\frametitle{Results \& Output}\framesubtitle{}
+\begin{center}
+\vskip -1.6cm
+\begin{tikzpicture}
+  \node (img1) {\shadowbox{\color{black!35}\includegraphics[height=4cm]{iono.eps}}};
+%   \pause
+  \node (img2) at (img1.north east) [yshift=-1cm,xshift=2.7cm] {\shadowbox{\color{black!35}\includegraphics[height=2cm]{baseline.eps}}};
+%   \pause
+  \node (img3) at (img2.south) [yshift=-1.5cm,xshift=-.5cm] {\shadowbox{\color{black!35}\includegraphics[height=2.6cm]{anop-raw.png}}};
+%   \pause
+%   \node (img4) at (img2.south west) [yshift=2cm] {\includegraphics[height=4cm]{img/dsoprint.png}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+}
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Coordinate estimates - Time series analysis}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \footnotesize{
+      We analyze time-series using Hector Package \citep{Bos2012}, to estimate:
+      \begin{itemize}
+        \item tectonic velocities (linear trends),
+        \item offsets/jumps due to miscellaneous reasons (e.g. instrumentation 
+          changes, earthquakes, etc); note that this step requires a-priori 
+          knowledge of such events (log-files, NOA earthquake catalogue)
+        \item harmonics signals,
+        \item velocity changes (e.g. inflation of Santorini isl.),
+        \item post-seismic decay (still under development)
+      \end{itemize}}
+%      New time series analysis in progress using Hector Package \citep{Bos2012}
+    \end{column}
+    \begin{column}{.3\textwidth}
+      \begin{center}
+      Station: \textbf{DION}\\
+         \includegraphics[width=.80\textwidth]{dion_0_data.png}\\
+         \includegraphics[width=.80\textwidth]{dion_1_data.png}\\
+         \includegraphics[width=.80\textwidth]{dion_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.3\textwidth}
+      \begin{center}
+      Residuals\\
+         \includegraphics[width=.80\textwidth]{dion_0_res.png}\\
+         \includegraphics[width=.80\textwidth]{dion_1_res.png}\\
+         \includegraphics[width=.80\textwidth]{dion_2_res.png}
+       \end{center} 
+    \end{column}
+
+
+
+%    \begin{column}{.6\textwidth}
+%      \begin{center}
+%        \includegraphics[width=\textwidth]{vlsm_ts.png}
+%      \end{center}
+%    \end{column}
+  \end{columns}
+ 
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Earthquakes, co-seismic offsets}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{table}[H]{\small
+      \begin{center}
+      \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} c c c c}
+        \toprule
+         date & Δn & Δe & Δu\\
+              & \multicolumn{3}{c}{(mm)}\\
+        \midrule
+        \multicolumn{4}{l}{Station: 040A}\\
+        26.01.2014 & -43.1 & 25.2 & 2.2 \\
+        17.11.2015 & -10.8 & 1.7 & 3.1\\
+        \midrule
+        \multicolumn{4}{l}{Station: 057A}\\
+        03.03.2021 & 47.9 & 27.6 & 14.0\\
+        \bottomrule
+      \end{tabular*}
+      \end{center}}
+      \end{table}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{040A}\\
+         \includegraphics[width=.75\textwidth]{040a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{040a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{040a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{057A}\\
+         \includegraphics[width=.75\textwidth]{057a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{057a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{057a_2_data.png}
+       \end{center} 
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Harmonic signals}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{align*}
+        \sum_{i=0}^{n_F} s_{i} sin(\omega_{i}t) + c_{i} cos(\omega_{i}t)
+      \end{align*}
+      Results:
+       \begin{center}
+         \includegraphics[width=.8\textwidth]{098a_0_lsfout.png}
+       \end{center}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{098A}\\
+         \includegraphics[width=.75\textwidth]{098a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{098a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{098a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{098A}\\
+         \includegraphics[width=.75\textwidth]{098a_0_res.png}\\
+         \includegraphics[width=.75\textwidth]{098a_1_res.png}\\
+         \includegraphics[width=.75\textwidth]{098a_2_res.png}
+       \end{center} 
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Ειδικές περιπτώσεις - Σαντορίνη}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%  \begin{columns}[T]
+%    \begin{column}{.33\textwidth}
+%    \vskip.5cm
+%    Εκτίμηση αλλαγή ταχυτήτων στον σταθμό της Σαντορίνης:
+%%    \begin{table}[H]{\small
+%%    \begin{center}
+%%    \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c}
+%%      \toprule
+%%        comp & < $\sim$2013 & > $\sim$ 2013\\
+%%             & \multicolumn{2}{c}{(mm/yr)}\\
+%%      \midrule
+%%        north & -30.1 & -17.5 \\
+%%        east  &  31.3 & 7.0 \\
+%%        up    &  17.2 & 2.1 \\
+%%      \bottomrule
+%%    \end{tabular*}
+%%    \end{center}}
+%%    \end{table}
+%
+%
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%      Station:\textbf{048A}\\
+%         \includegraphics[width=.75\textwidth]{048a_0_data_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_1_data_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_2_data_nomod.png}
+%       \end{center} 
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%      Residuals:\textbf{048A}\\
+%         \includegraphics[width=.75\textwidth]{048a_0_res_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_1_res_nomod.png}\\
+%         \includegraphics[width=.75\textwidth]{048a_2_res_nomod.png}
+%       \end{center} 
+%      
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Specific case - Santorini}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+    \vskip.5cm
+    Estimate velocity changes in Santorini station:
+    \begin{table}[H]{\small
+    \begin{center}
+    \begin{tabular*}{.97\linewidth}{@{\extracolsep{\fill}} l c c}
+      \toprule
+        comp & < $\sim$2013 & > $\sim$ 2013\\
+             & \multicolumn{2}{c}{(mm/yr)}\\
+      \midrule
+        north & -30.1 & -17.5 \\
+        east  &  31.3 & 7.0 \\
+        up    &  17.2 & 2.1 \\
+      \bottomrule
+    \end{tabular*}
+    \end{center}}
+    \end{table}
+
+
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Station:\textbf{048A}\\
+         \includegraphics[width=.75\textwidth]{048a_0_data.png}\\
+         \includegraphics[width=.75\textwidth]{048a_1_data.png}\\
+         \includegraphics[width=.75\textwidth]{048a_2_data.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      Residuals:\textbf{048A}\\
+         \includegraphics[width=.75\textwidth]{048a_0_res.png}\\
+         \includegraphics[width=.75\textwidth]{048a_1_res.png}\\
+         \includegraphics[width=.75\textwidth]{048a_2_res.png}
+       \end{center} 
+      
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Time series analysis}
+%  \framesubtitle{}
+%  \label{}
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%       
+%    \end{column}
+%    \begin{column}{.5\textwidth}
+%      
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
+
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Velocity field in Europe - Densfication project}
+%  \framesubtitle{}
+%  \label{}
+%  \begin{center}
+%    \includegraphics[width=.75\textwidth]{epndens_vel.png}
+%    \url{https://epnd.sgo-penc.hu/velocities/}
+%  \end{center}
+%\end{frame}
+%\note{}
+
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Velocity field in Greece wrt a stable Europe}
+%  \framesubtitle{\textcolor{red}{REMOVE?}}
+%  \label{}
+%  \vskip-.5cm
+%\begin{columns}[T]
+%  \begin{column}{.4\textwidth}
+%    \begin{center}
+%      \begin{itemize}\setlength\itemsep{1em}
+%        \item \~ 100 station
+%        \item data availability > 3 years
+%        \item Velocity field w.r.t. a stable Europe \citep{kreemer14}
+%      \end{itemize}
+%      \vskip1cm
+%      \includegraphics[width=.95\textwidth]{greece-freqs.png}
+%    \end{center}
+%  \end{column}
+%  \begin{column}{.6\textwidth}
+%    \includegraphics[width=.85\textwidth]{testvel.jpg}
+%  \end{column}
+%\end{columns}
+%\end{frame}
+%\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Velocity Field of HEPOS Network}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    Estimated velocities (IGb14) vary:
+    \begin{table}[H]{\small
+    \begin{center}
+    \begin{tabular*}{.8\linewidth}{@{\extracolsep{\fill}} l c c}
+      \toprule
+        comp & min & max \\
+             & \multicolumn{2}{c}{(mm/yr)}\\
+      \midrule
+        north & -17.9 & 15.5 \\
+        east & 2.4 & 26.0\\
+        up & -5.5 & 4.7 \\
+      \bottomrule
+    \end{tabular*}
+    \end{center}}
+    \end{table}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+             \includegraphics[width=.97\textwidth]{hepos22-output_vel.jpg}
+           \end{center}     
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Compare velocity field of different networks}
+  \framesubtitle{}
+  \label{}
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    \begin{center}
+      \texttt{DSO\_GRC\_2023}\\
+      \includegraphics[width=.97\textwidth]{gr-output_vel.jpg}
+    \end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \texttt{DSO\_HPS\_2022}\\
+        \includegraphics[width=.97\textwidth]{hepos22-output_vel.jpg}
+      \end{center}    
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Focus on specific regions - Corinth Gulf}
+%  \framesubtitle{}
+%  \label{}
+%  
+%  \begin{center}
+%    \includegraphics[width=.7\textwidth]{gsg2022_vel.jpg}  
+%  \end{center}
+%
+%\end{frame}
+%\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Recent Earthquakes}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%  \begin{columns}[T]
+%    \begin{column}{.5\textwidth}
+%    \begin{center}
+%    \vskip-.5cm
+% 	  \textbf{Thessaly 2021} 
+% 	  
+% 	  \includegraphics[width=.55\textwidth]{eq_elassona.jpg}    
+%%\vskip-.5cm
+%      \includegraphics[width=.75\textwidth]{klok_ts.png}
+%
+%    \end{center}
+%
+%    \end{column}
+%    \textcolor{blue!40}{\vrule width 1pt}
+%    \begin{column}{.5\textwidth}
+%      \begin{center}
+%      \vskip-.5cm
+%        \textbf{Itea 2022}
+%        
+%        \includegraphics[angle=-90,origin=c,width=.8\textwidth]{eq_itea221008.jpg}
+%        \vskip-1cm
+%        \includegraphics[width=.8\textwidth]{ite3_ts.png}
+%      \end{center}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Strain rates}
+  \framesubtitle{}
+  \label{}
+  \vskip-.5cm
+  \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
+%  \vskip-1cm
+\begin{columns}[T]
+  \begin{column}{.5\textwidth}
+  \begin{center}
+      \texttt{DSO\_GRC\_2023}\\
+      \includegraphics[width=.8\textwidth]{gr-output_str.jpg}
+    \end{center}
+%    \begin{itemize}\setlength\itemsep{1em}
+%      \item \textbf{StrainTool} software used to estimate strain tensor parameters \citep{straintool}
+%      \item grid step 0.5$^{\circ}$
+%    \end{itemize}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{center}
+      \texttt{DSO\_HPS\_2022}\\
+      \includegraphics[width=.8\textwidth]{hepos22-output_str.jpg}
+    \end{center}
+  \end{column}
+\end{columns}
+\end{frame}
+\note{}
+%
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{High rate (1Hz) PPP processing}
+%  \framesubtitle{}
+%  \label{}
+%  PRIDE PROCESSING
+%\end{frame}
+%\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{PPP processing for High-rate data}
+  \framesubtitle{effect from Turkey earthquake (06.02.2023)}
+  \label{}\
+  \vskip-1cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{center}
+         \texttt{RODO\_2023\_037}\\
+         \includegraphics[width=.97\textwidth]{kin_2023037_rodo.png}
+       \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \texttt{SANT\_2023\_037}\\
+        \includegraphics[width=.97\textwidth]{kin_2023037_sant.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \texttt{ORES\_2023\_037}\\
+        \includegraphics[width=.97\textwidth]{kin_2023037_ores.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \begin{columns}[T]
+    \begin{column}{.2\textwidth}
+      \begin{center}
+        \includegraphics[width=.97\textwidth]{../../logos/PRIDE.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.8\textwidth}
+    \vskip.5cm
+      \begin{itemize}\setlength\itemsep{.1em}
+        \item 1Hz data available, $\sim$50 stations from Metrica SmartNET.
+        \item PPP-AR analysis for 3 days (DOY: 036, 037, 038)
+      \end{itemize}
+ 
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Focus on stations}
+  \framesubtitle{}
+  \label{}
+  \vskip-1.3cm
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq1_rodo_ne.jpg}
+      \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq1_sant_ne.jpg}
+      \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq1_ores_ne.jpg}
+      \end{center} 
+    \end{column}
+  \end{columns}
+  \textcolor{blue!40}{\rule{\textwidth}{1pt}}\\
+  \vskip-.8cm
+   \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq2_rodo_ne.jpg}
+      \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq2_sant_ne.jpg}
+      \end{center} 
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+        \includegraphics[trim={3cm 2.5cm 3cm 0cm},clip,width=.97\textwidth]{eq2_ores_ne.jpg}
+      \end{center} 
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Strain rates - focus on specific region}
+%  \framesubtitle{}
+%  \label{}
+%  \vskip-1cm
+%\begin{itemize}\setlength\itemsep{.2em}
+%  \item 25 Permanent GNSS Station
+%  \item grd step 0.25$^{\circ}$
+%\end{itemize}
+%\begin{center}
+%  \includegraphics[width=.65\textwidth]{crfeu-output_str.jpg}
+%\end{center}
+%
+%\end{frame}
+%\note{}
+
+
+
+
+
+\section{Discussion / Conclusions}
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Discussion / Conclusions}
+  \framesubtitle{}
+  \label{}
+  \vskip-.5cm
+  \begin{itemize}\setlength\itemsep{.5em}
+    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
+    \item Routine processing and monitoring are very important and revealing for 
+      Greece; products are requested by and disseminated to a wide range of Geoscientists.
+   %\item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult       task to model by Reference Systems (especially non-dynamic, such as the ones       currently in use).
+    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
+    \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks are of great help (even with instrumentation of non-geodetic accuracy).
+    \item DSO is upgrading its scientific output and processing activity via new datasets and real time processing.
+      \item  Our plan: grow up our team and be more involved to the GNSS/EUREF community.
+  \end{itemize}
+\end{frame}
+\note{}
+
