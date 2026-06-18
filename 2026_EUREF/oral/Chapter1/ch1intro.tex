@@ -25,22 +25,35 @@
 %
 % ------------------------------------------------------------------------------
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
-\vskip-1cm
-  % Via our contribution to EUREF and interaction with its community, we hope to:
-  Routine GNSS processing and site/network monitoring is crucial, because:
-  \begin{itemize}
-    \item Greece lies in a region of utmost tectonic and volcanic unrest (e.g. 
-      active volcano in Santorini isl.),
-    \item results \& products are important to a series of fields spanning 
-      the whole range of Geosciences,
-    \item helps us follow and apply state-of-the-art technologies in GNSS analysis 
-      \& Satellite Geodesy and expand \& modernize our research activity,
-    \item contribute to the GNSS/EUREF community and be involved in ongoing/future projects,
-    \item develop new features for high rate processing.
-    \item improve our academic services (NTUA is a University)
-  \end{itemize}
-  Throughout the last years, routine processing \& monitoring has hepled us gain 
-  a more thorough view of the complex tectonic and volcanic setting of Greece.
+\vskip-0.7cm
+\begin{block}{Geodynamic context}
+Greece is one of the most active geodynamic regions in Europe, affected by
+tectonic deformation, strong earthquakes, and volcanic activity, such as in
+Santorini.
+\end{block}
+
+%\vskip0.1cm
+
+Routine GNSS processing and site/network monitoring allow us to:
+
+\begin{itemize}
+  \item produce reliable and repeatable geodetic products for geodesy,
+        seismology, volcanology, and broader Geoscience applications;
+  \item estimate long-term station velocities and detect transient deformation,
+        offsets, and post-seismic or volcanic signals;
+  \item maintain processing strategies consistent with modern GNSS standards,
+        reference frames, and EUREF/IGS practices;
+  \item develop an automated platform for rapid, final, and high-rate GNSS
+        solutions, supporting both research and academic services.
+\end{itemize}
+
+\vfill
+
+\begin{alertblock}{Key idea}
+Routine processing transforms heterogeneous GNSS observations into consistent
+time series and deformation products for a complex geodynamic region.
+\end{alertblock}
+
 \end{frame}
 %
 % % ------------------------------------------------------------------------------
@@ -68,21 +81,20 @@
 
 \section{GPS/GNSS Networks in Greece}
 % ------------------------------------------------------------------------------
-\begin{frame}\frametitle{The Data Set}\framesubtitle{}
+\begin{frame}\frametitle{The Data Set and metadata challenges}\framesubtitle{}
 \vskip-1.5cm
   %To contribute to the Densification we have to establish a credible dataset
   %(network). This has proven to be rather challenging !\\
-  Routine processing for precise positioning, assumes a well established, 
-  credible dataset (metadata). \\
+  Routine processing for precise positioning requires a well-established and reliable data set with complete metadata. \\
   \bigskip
   Currently we process whatever we can get our hands on \ldots\\
   Problems:
   \begin{itemize}
-    \item Inhomogenous dataset (\texttt{RINEX} of various versions, raw files, etc).
+    \item Inhomogeneous dataset (\texttt{RINEX} of various versions, raw files, etc).
     \item Various maintainers, different mentalities.
-    \item Different aquisition methods/rates.
-    \item No log files for mainteners with no geodetic interest (e.g. surveying companies).
-    \item Wide variety of equipment (not always included in \texttt{atx} files).
+    \item Different acquisition methods/rates.
+    \item No log files for maintainers with no geodetic interest (e.g. surveying companies).
+    \item Wide variety of equipment (not always included in \texttt{ATX} files).
   \end{itemize}
 \end{frame}
 \note
@@ -96,7 +108,7 @@
 \begin{column}{.50\textwidth}
   Network \texttt{Greece} includes the majority of the available sites ($\approx$100)
   but not all of them are (always/currently) active. Various providers but all 
-  with geodetic interest \& ecquipment.
+  with geodetic interest \& equipment.
 
   {\small
   \begin{itemize}
@@ -104,7 +116,7 @@
     \item<pro@1-> covers all of Greece
     \item<pro@1-> different (geodetic type) equipment
     \item<pro@1-> credible time-span (early 2004 - now)
-    \item<pro@1-> all free available GNSS data
+    \item<pro@1-> all freely available GNSS data
     \item<con@1-> large data gaps \& inactive stations
 %    \item<con@1-> needs repairing
 \end{itemize}
@@ -130,7 +142,7 @@
 \end{frame}
 
 % ------------------------------------------------------------------------------
-\begin{frame}\frametitle{Network Santorini}\framesubtitle{}
+\begin{frame}\frametitle{Network SANTORINI}\framesubtitle{}
 \vskip-1cm
   %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
   The \texttt{Santorini Volcano} ...
@@ -138,7 +150,7 @@
     \begin{column}{.4\textwidth}
       \begin{itemize}
         \item<pro@1-> credible time-span
-        \item<pro@1-> only covers the Corinth Rift
+        \item<pro@1-> only covers the wider area of Santorini Volcano
         \item<con@1-> different providers (including surveying \& cadastral services)
         \item<con@1-> no log files \& equipment changes
       \end{itemize}
@@ -215,7 +227,7 @@
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{GNSS data analysis at DSO}
+  \frametitle{GNSS data processing and analysis at DSO}
   \framesubtitle{}
   \label{}
   \begin{columns}[T]
@@ -274,7 +286,7 @@
 \note{}
 
 % ------------------------------------------------------------------------------
-\begin{frame}\frametitle{The Scheme}\framesubtitle{}
+\begin{frame}\frametitle{Automation Workflow}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.35\textwidth}
 \vskip-.5cm
@@ -412,7 +424,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Switch to IGS20 -  REPRO2026}
+  \frametitle{IGS20 transition for REPRO2026}
   \framesubtitle{}
   \label{}
   \vspace*{-.5cm}
@@ -447,12 +459,13 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Turn to new DB}
+  \frametitle{Transition to the New PostgreSQL Database Schema}
   \framesubtitle{}
   \label{}
   \begin{center}
-    \vskip-1cm
-    \includegraphics[width=.9\textwidth]{procsta_public_diagram.png}
+    \vskip-.5cm
+    \includegraphics[width=.9\textwidth]{procsta_public_diagram.png}\\
+    Time-series analysis $\Leftarrow$ \hspace*{5cm} $\Rightarrow$BPE54\hspace*{2cm}
   \end{center}
 \end{frame}
 \note{
@@ -510,7 +523,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Platform flowchart}
+  \frametitle{Platform Workflow}
   \framesubtitle{}
   \label{}
 \resizebox{0.94\textwidth}{!}{%
@@ -550,7 +563,7 @@ plots} }
       top color=green!25,
       bottom color=green!5] (api)
       at (10,0)
-      {\textbf{Timeseries analysis}};
+      {\textbf{Time-series analysis}};
 
 \node[
   cylinder,
@@ -577,7 +590,7 @@ plots} }
       bottom color=red!10]
       (bpe)
       at (10,-5.2)
-      {\textbf{BPE54}\\GNSS Data Source};
+      {\textbf{BPE54}\\GNSS DD Processing};
 
 % Flow arrows
 \draw[->, ultra thick, blue!70]
@@ -605,30 +618,23 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Presentation Layer - Main Application Screen}
+  \frametitle{Web Interface: Station Selection and Filtering}
   \framesubtitle{}
   \label{}
   \vspace{-.8cm}
   \begin{columns}[T]
     \begin{column}{.45\textwidth}
-      \begin{itemize}
-
+      \begin{itemize}\setlength\itemsep{.5em}
 				\item User entry point to the application.
-				
-				\vspace{0.25cm}
-				
 				\item Selection of basic parameters:
 				\begin{itemize}
 				\setbeamertemplate{itemize subitem}{$\diamond$}
 				\item GNSS station
 				\item Solution type
+				\item Software
 				\item Reference frame
 				\end{itemize}
-				
-				\vspace{0.35cm}
-				
 				\item Filtering and reordering capability
-				
       \end{itemize}
       \textbf{Live app (beta version):}
       \begin{center}
@@ -655,7 +661,7 @@ plots} }
 {
 \usebackgroundtemplate{\includegraphics[height=.9\paperheight,width=.9\paperwidth]{jsonprint.png}}
 \vskip-1.5cm
-\begin{frame}\frametitle{Results \& Output}\framesubtitle{}
+\begin{frame}\frametitle{Processing Outputs and Products}\framesubtitle{}
 \begin{center}
 \vskip -1.6cm
 \begin{tikzpicture}
@@ -673,17 +679,20 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Online results}
+  \frametitle{Online Time-Series Products}
   \framesubtitle{}
   \label{}
+  \vspace*{-.3cm}
   \begin{columns}[T]
     \begin{column}{.33\textwidth}
       \begin{center}
+      Times-series\\
         \includegraphics[width=.97\textwidth]{ater_ts.png}
       \end{center}
     \end{column}
     \begin{column}{.33\textwidth}
       \begin{center}
+      Linear regression residuals\\
         \includegraphics[width=.97\textwidth]{ater_res.png}
       \end{center}
     \end{column}
@@ -694,6 +703,7 @@ plots} }
 %    \end{column}
     \begin{column}{.33\textwidth}
       \begin{center}
+      Monthly average\\
         \includegraphics[width=.97\textwidth]{ater_monthly.png}
       \end{center}
     \end{column}
@@ -705,8 +715,8 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Time series analysis}
-  \framesubtitle{Linear+Seasonal+PSD}
+  \frametitle{Time series Model}
+  \framesubtitle{Linear+Seasonal+PSD Terms}
   \label{}
 \begin{align*}
     y(\delta t) &= A \delta t + B + C_1 \sin(\omega_1 \delta t) + D_1 \cos(\omega_1 \delta t)
@@ -715,14 +725,27 @@ plots} }
     + \sum_{i=1}^{n} A_i' \log\!\left(1 + \frac{\delta t}{T_i'}\right)
     + \sum_{j=1}^{n} A_j \left(1 - e^{-\frac{\delta t}{\tau_j}}\right)
 \end{align*}
+\begin{scriptsize}
 
+\begin{itemize}
+    \item[$\delta \tau$] $(= \tau - \tau_0)$: time elapsed since the central epoch $\tau_0$ [yr] 
+    \item[$A$]:	station velocity [m/yr] 
+    \item[$B$]:	position intercept at $\tau_0$ [m] 
+    \item[$C_k,	D_k$]: sine and cosine amplitudes at angular frequency $\omega_k$[m], with $\omega_1 = 2π rad/yr$ (annual) and $\omega_2= 4π rad/yr$ (semi-annual) 
+    \item[$J_k$]: magnitude of the k-th step offset [m], modelled by the Heaviside function $H(\tau − \tau_k)$ activating at epoch $\tau_k$;	ν is the total number of offsets 
+    \item[$A_i^l, 	A_i^e$]: amplitudes of the i-th logarithmic and exponential PSD terms [m]
+    \item[$\tau_I^l, \tau_i^e$]: relaxation time constants of the i-th logarithmic and exponential PSD terms [yr] 
+    \item[$\Delta t_i$] $( = t − t_i^e q > 0)$: time elapsed since the i-th earthquake epoch $t_i^e q$; all PSD terms are zero before the earthquake 
+    \item[$nₗ, 	nₑ$]: number of logarithmic and exponential PSD terms 
+\end{itemize}
+\end{scriptsize}
 \end{frame}
 \note{}
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Preliminary Results in Greece}
-  \framesubtitle{}
+  \frametitle{Impact of PSD Modelling on Greek GNSS Time Series}
+  \framesubtitle{Preliminary results}
   \label{}
   \vspace*{-1cm}
   \begin{columns}[T]
@@ -740,8 +763,9 @@ plots} }
     \end{column}
      \begin{column}{.33\textwidth}
       \begin{center}
-        \includegraphics[width=.97\textwidth]{VLSM_ts.png}\\
-        \includegraphics[width=.97\textwidth]{VLSM_res.png} 
+        [ToDO] Differences in PSd parameters....
+%        \includegraphics[width=.97\textwidth]{VLSM_ts.png}\\
+%        \includegraphics[width=.97\textwidth]{VLSM_res.png} 
       \end{center}      
     \end{column}
   \end{columns}
@@ -752,7 +776,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Specific case - Santorini}
+  \frametitle{Complex station displacements - Santorini Island}
   \framesubtitle{}
   \label{}
   \vskip-1cm
@@ -840,20 +864,20 @@ plots} }
  % ------------------------------------------------------------------------------
 \begin{frame}
   \frametitle{PPP processing for High-rate data}
-  \framesubtitle{effect Santorini Volcano crisis (05.02.2025)}
+  \framesubtitle{Santorini Volcano crisis (02.2025)}
   \label{}\
   \vskip-1cm
   \begin{columns}[T]
     \begin{column}{.49\textwidth}
       \begin{center}
          \texttt{048A\_2025\_035}\\
-         \includegraphics[width=.97\textwidth]{048a_25035.png}
+         \includegraphics[width=.9\textwidth]{048a_25035.png}
        \end{center} 
     \end{column}
     \begin{column}{.49\textwidth}
       \begin{center}
         \texttt{048A\_2025\_036}\\
-        \includegraphics[width=.97\textwidth]{048a_25036.png}
+        \includegraphics[width=.9\textwidth]{048a_25036.png}
       \end{center}
     \end{column}
   \end{columns}
@@ -866,7 +890,7 @@ plots} }
     \begin{column}{.8\textwidth}
     \vskip.5cm
       \begin{itemize}\setlength\itemsep{.1em}
-        \item 1Hz data available, $\sim$50 stations from HEPOS Netowk.
+        \item 1Hz data available, $\sim$5 stations from HEPOS Network.
         \item PPP-AR analysis for 2 days (DOY: 035, 036)
       \end{itemize}
  
@@ -878,20 +902,20 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{REPRO2026:Compare velocity field of different networks}
+  \frametitle{REPRO2026: Preliminary Velocity Fields and Network Comparison}
   \framesubtitle{}
   \label{}
   \vskip-1cm
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
     \begin{center}
-      \texttt{DSO\_GRC\_2026}\\
+      \texttt{DSO\_GRC\_2026}(2020-2026)\\
       \includegraphics[width=.97\textwidth]{gr-output_vel.jpg}
     \end{center}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{center}
-        \texttt{DSO\_HPS\_2026}\\
+        \texttt{DSO\_HPS\_2023}\\
         \includegraphics[width=.97\textwidth]{hepos22-output_vel.jpg}
       \end{center}    
     \end{column}
@@ -905,19 +929,25 @@ plots} }
 \section{Discussion / Conclusions}
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Discussion / Conclusions}
+  \frametitle{Conclusions and Future work}
   \framesubtitle{}
   \label{}
   \vskip-.5cm
   \begin{itemize}\setlength\itemsep{.5em}
-    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
-    \item Routine processing and monitoring are very important and revealing for 
-      Greece; products are requested by and disseminated to a wide range of Geoscientists.
-   %\item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult       task to model by Reference Systems (especially non-dynamic, such as the ones       currently in use).
-    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
-    \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks are of great help (even with instrumentation of non-geodetic accuracy).
-    \item DSO is upgrading its scientific output and processing activity via new datasets and real time processing.
-      \item  Our plan: grow up our team and be more involved to the GNSS/EUREF community.
+%%%    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
+%%%    \item Routine processing and monitoring are very important and revealing for 
+%%%      Greece; products are requested by and disseminated to a wide range of Geoscientists.
+%%%   %\item Greece's crustal dynamics are evidently complex and inhomogenous; a difficult       task to model by Reference Systems (especially non-dynamic, such as the ones       currently in use).
+%%%    \item A dense velocity field for accurate estimation of ground/tectonic motions in the region will help to develop a stable local reference frame and the connection of the region with the global and European reference systems.
+%%%    \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks are of great help (even with instrumentation of non-geodetic accuracy).
+%%%    \item DSO is upgrading its scientific output and processing activity via new datasets and real time processing.
+%%%      \item  Our plan: grow up our team and be more involved to the GNSS/EUREF community.
+      \item Greece's complex tectonic and volcanic setting requires continuous and reliable GNSS monitoring.
+       \item Routine GNSS processing provides consistent time series, station velocities, and deformation products for Geoscience applications.
+       \item The upgraded DSO platform automates data handling, processing, database storage, time-series analysis, and visualization.
+         \item Including post-seismic deformation (PSD) terms in time-series analysis is essential to separate transient signals from long-term tectonic velocities and avoid biased deformation estimates.
+       \item Dense GNSS networks improve the realization of a stable local reference frame and help detect earthquakes, volcanic signals, and other transient phenomena.
+       \item Future work focuses on expanding the datasets, supporting rapid and high-rate solutions, and strengthening DSO's contribution to the GNSS/EUREF community.
   \end{itemize}
 \end{frame}
 \note{}
