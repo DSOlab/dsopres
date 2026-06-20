@@ -81,7 +81,7 @@ time series and deformation products for a complex geodynamic region.
 
 \section{GPS/GNSS Networks in Greece}
 % ------------------------------------------------------------------------------
-\begin{frame}\frametitle{The Data Set and metadata challenges}\framesubtitle{}
+\begin{frame}\frametitle{Data set and metadata challenges}\framesubtitle{}
 \vskip-1.5cm
   %To contribute to the Densification we have to establish a credible dataset
   %(network). This has proven to be rather challenging !\\
@@ -106,7 +106,7 @@ time series and deformation products for a complex geodynamic region.
 %Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
 \begin{columns}[T] % align columns
 \begin{column}{.50\textwidth}
-  Network \texttt{Greece} includes the majority of the available sites ($\approx$100)
+  Network \texttt{GREECE} includes the majority of the available sites ($\approx$100)
   but not all of them are (always/currently) active. Various providers but all 
   with geodetic interest \& equipment.
 
@@ -286,7 +286,7 @@ time series and deformation products for a complex geodynamic region.
 \note{}
 
 % ------------------------------------------------------------------------------
-\begin{frame}\frametitle{Automation Workflow}\framesubtitle{}
+\begin{frame}\frametitle{Automation workflow}\framesubtitle{}
 \begin{columns}[T] % align columns
 \begin{column}{.35\textwidth}
 \vskip-.5cm
@@ -459,7 +459,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Transition to the New PostgreSQL Database Schema}
+  \frametitle{Transition to the new PostgreSQL Database Schema}
   \framesubtitle{}
   \label{}
   \begin{center}
@@ -523,7 +523,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Platform Workflow}
+  \frametitle{Platform workflow}
   \framesubtitle{}
   \label{}
 \resizebox{0.94\textwidth}{!}{%
@@ -618,7 +618,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Web Interface: Station Selection and Filtering}
+  \frametitle{Web Interface: station selection and filtering}
   \framesubtitle{}
   \label{}
   \vspace{-.8cm}
@@ -661,7 +661,7 @@ plots} }
 {
 \usebackgroundtemplate{\includegraphics[height=.9\paperheight,width=.9\paperwidth]{jsonprint.png}}
 \vskip-1.5cm
-\begin{frame}\frametitle{Processing Outputs and Products}\framesubtitle{}
+\begin{frame}\frametitle{Processing outputs and products}\framesubtitle{}
 \begin{center}
 \vskip -1.6cm
 \begin{tikzpicture}
@@ -679,7 +679,7 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Online Time-Series Products}
+  \frametitle{Online time-series products}
   \framesubtitle{}
   \label{}
   \vspace*{-.3cm}
@@ -712,42 +712,46 @@ plots} }
 \note{}
 
 
-
- % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Time series Model}
+  \frametitle{Time series model}
   \framesubtitle{Linear+Seasonal+PSD Terms}
   \label{}
 \begin{align*}
-    y(\delta t) &= A \delta t + B + C_1 \sin(\omega_1 \delta t) + D_1 \cos(\omega_1 \delta t)
-    + C_2 \sin(\omega_2 \delta t) + D_2 \cos(\omega_2 \delta t) \\
-   & + \sum_{k=1}^{n} J_k H(t - t_k)
-    + \sum_{i=1}^{n} A_i' \log\!\left(1 + \frac{\delta t}{T_i'}\right)
-    + \sum_{j=1}^{n} A_j \left(1 - e^{-\frac{\delta t}{\tau_j}}\right)
+    y(\delta t) &=
+      A \delta t +
+      + B
+      + C_1 \sin(\omega_1 \delta t)
+      + D_1 \cos(\omega_1 \delta t)
+      + C_2 \sin(\omega_2 \delta t)
+      + D_2 \cos(\omega_2 \delta t) \\
+      & + \sum_{k=1}^{n} J_k H(t - t_k)
+      + \sum_{i=1}^{n_l} A_i^l \log\!\left(1 + \frac{\delta t}{\tau_i^l}\right)
+      + \sum_{j=1}^{n_e} A_j^e \left(1 - e^{-\frac{\delta t}{\tau_j^e}}\right)
 \end{align*}
 \begin{scriptsize}
 
 \begin{itemize}
-    \item[$\delta \tau$] $(= \tau - \tau_0)$: time elapsed since the central epoch $\tau_0$ [yr] 
-    \item[$A$]:	station velocity [m/yr] 
-    \item[$B$]:	position intercept at $\tau_0$ [m] 
-    \item[$C_k,	D_k$]: sine and cosine amplitudes at angular frequency $\omega_k$[m], with $\omega_1 = 2π rad/yr$ (annual) and $\omega_2= 4π rad/yr$ (semi-annual) 
-    \item[$J_k$]: magnitude of the k-th step offset [m], modelled by the Heaviside function $H(\tau − \tau_k)$ activating at epoch $\tau_k$;	ν is the total number of offsets 
-    \item[$A_i^l, 	A_i^e$]: amplitudes of the i-th logarithmic and exponential PSD terms [m]
-    \item[$\tau_I^l, \tau_i^e$]: relaxation time constants of the i-th logarithmic and exponential PSD terms [yr] 
-    \item[$\Delta t_i$] $( = t − t_i^e q > 0)$: time elapsed since the i-th earthquake epoch $t_i^e q$; all PSD terms are zero before the earthquake 
-    \item[$nₗ, 	nₑ$]: number of logarithmic and exponential PSD terms 
+    \item[$\delta t$] $(= t - t_0)$: time elapsed since the central epoch $t_0$ [yr]
+    \item[$A$]:	station velocity [m/yr]
+    \item[$B$]:	position intercept at $t_0$ [m]
+    \item[$C_k$, $D_k$]: sine and cosine amplitudes at angular frequency $\omega_k$[m], with $\omega_1 = 2π rad/yr$ (annual) and $\omega_2= 4π rad/yr$ (semi-annual)
+    \item[$J_k$]: magnitude of the k-th step offset [m], modeled by the Heaviside function $H(t − t_k)$ activating at epoch $t_k$;	ν is the total number of offsets
+    \item[$A_i^l$, $A_j^e$]: amplitudes of the i-th logarithmic and j-th exponential PSD terms [m]
+    \item[$\tau_i^l, \tau_j^e$]: relaxation time constants of the i-th logarithmic and j-th exponential PSD terms [yr]
+    \item[$\Delta t_i$] $(= t − t_i^e q > 0)$: time elapsed since the i-th earthquake epoch $t_i^e q$; all PSD terms are zero before the earthquake
+    \item[$n_l$, $n_e$]: number of logarithmic and exponential PSD terms
 \end{itemize}
 \begin{flushright}
-\citep{itrf2020}
+  \citep{itrf2020}
 \end{flushright}
 \end{scriptsize}
 \end{frame}
 \note{}
+                
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Impact of PSD Modelling on Greek GNSS Time Series}
+  \frametitle{Impact of PSD modelling on Greek GNSS stations}
   \framesubtitle{Preliminary results}
   \label{}
   \vspace*{-1cm}
@@ -766,9 +770,8 @@ plots} }
     \end{column}
      \begin{column}{.33\textwidth}
       \begin{center}
-        [ToDO] Differences in PSd parameters....
-%        \includegraphics[width=.97\textwidth]{VLSM_ts.png}\\
-%        \includegraphics[width=.97\textwidth]{VLSM_res.png} 
+        \includegraphics[width=.97\textwidth]{PONT_ts.png}\\
+        \includegraphics[width=.97\textwidth]{PONT_res.png} 
       \end{center}      
     \end{column}
   \end{columns}
@@ -905,14 +908,14 @@ plots} }
 
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{REPRO2026: Preliminary Velocity Fields and Network Comparison}
+  \frametitle{REPRO2026: Preliminary velocity fields and network comparison}
   \framesubtitle{}
   \label{}
   \vskip-1cm
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
     \begin{center}
-      \texttt{DSO\_GRC\_2026}(2020-2026)\\
+      \texttt{DSO\_GRC\_2026} (2020-2026)\\
       \includegraphics[width=.97\textwidth]{gr-output_vel.jpg}
     \end{center}
     \end{column}
