@@ -10,7 +10,10 @@
 *.alg
 *.bbl
 *.blg
+*.bcf
 *.dvi
+*.fdb_latexmk
+*.fls
 *.glg
 *.gls
 *.ilg
@@ -20,7 +23,11 @@
 *.maf
 *.mtc
 *.mtc1
+*.nav
 *.out
+*.pdf
+*.run.xml
+*.snm
 *.synctex.gz
 *.asdf
 *.xdv
