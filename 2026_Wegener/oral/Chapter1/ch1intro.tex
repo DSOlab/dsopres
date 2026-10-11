@@ -27,31 +27,35 @@
 \begin{frame}\frametitle{Motivation}\framesubtitle{}
 \vskip-0.7cm
 \begin{block}{Geodynamic context}
-Greece is one of the most active geodynamic regions in Europe, affected by
-tectonic deformation, strong earthquakes, and volcanic activity, such as in
-Santorini.
+Greece is one of Europe's most tectonically active regions, characterized 
+by strong earthquakes, continuous crustal deformation, and volcanic activity.
 \end{block}
 
 %\vskip0.1cm
+Why GNSS for earthquake monitoring?
+\begin{itemize}\setlength\itemsep{.1em}
+  \item Provides direct measurements of ground displacement during and after earthquakes.
+  \item Complements seismic observations by capturing permanent coseismic deformation.
+  \item Enables the detection and quantification of coseismic offsets and postseismic transients.
+  \item Supports the characterization of earthquake-induced deformation across regional GNSS networks.
+\end{itemize}
+
 
 Routine GNSS processing and site/network monitoring allow us to:
-
 \begin{itemize}
-  \item produce reliable and repeatable geodetic products for geodesy,
-        seismology, volcanology, and broader Geoscience applications;
-  \item estimate long-term station velocities and detect transient deformation,
-        offsets, and post-seismic or volcanic signals;
-  \item maintain processing strategies consistent with modern GNSS standards,
-        reference frames, and EUREF/IGS practices;
-  \item develop an automated platform for rapid, final, and high-rate GNSS
-        solutions, supporting both research and academic services.
+  \item Automated processing transforms continuous GNSS observations 
+        into consistent coordinate time series and deformation products;
+  \item Rapid and high-rate GNSS solutions provide a basis for faster 
+        earthquake-induced displacement assessment;
+  \item Integration with seismic and accelerometric observations offers potential 
+        for future rapid-alert and early-warning applications;
 \end{itemize}
 
 \vfill
 
 \begin{alertblock}{Key idea}
-Routine processing transforms heterogeneous GNSS observations into consistent
-time series and deformation products for a complex geodynamic region.
+Bridging high-precision GNSS monitoring and operational earthquake response 
+through automated processing and deformation analysis.
 \end{alertblock}
 
 \end{frame}
@@ -224,6 +228,83 @@ time series and deformation products for a complex geodynamic region.
 \note{} 
 
 \section{Processing}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{From GNSS Observations to Deformation Products}
+  \framesubtitle{}
+  \label{}
+  \vskip-.7cm
+\begin{columns}[T,onlytextwidth]
+
+% LEFT COLUMN
+\begin{column}{0.48\textwidth}
+
+\begin{block}{\textbf{GNSS Observations \& Processing}}
+\begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Continuous observations from
+          \textbf{100+ stations} across Greece.
+    \item Automated processing using
+          \textbf{Bernese, PRIDE-PPPAR and GipsyX}.
+    \item Independent strategies for robust
+          and consistent positioning solutions.
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+
+\begin{block}{\textbf{Time-Series Analysis}}
+\begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Station velocities and seasonal signals.
+    \item Coseismic offsets and transient deformation.
+    \item Postseismic displacement evolution.
+\end{itemize}
+\end{block}
+
+\end{column}
+
+% RIGHT COLUMN
+\begin{column}{0.48\textwidth}
+
+\begin{block}{\textbf{Deformation Products}}
+\begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Coordinate time series and displacement estimates.
+    \item Regional velocity and deformation fields.
+    \item Quality metrics and derived parameters.
+\end{itemize}
+\end{block}
+
+\vspace{0.3cm}
+
+\begin{block}{\textbf{Database \& Dissemination}}
+\begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Automated PostgreSQL integration.
+    \item Online visualization and data access.
+    \item Continuously updated deformation products.
+\end{itemize}
+\end{block}
+
+\end{column}
+\end{columns}
+
+\vfill
+
+\begin{center}
+\begin{beamercolorbox}[wd=\textwidth,sep=7pt,center,
+    rounded=true]{block title}
+\textbf{Continuous GNSS monitoring $\rightarrow$
+Automated analysis $\rightarrow$
+Earthquake response}
+\end{beamercolorbox}
+\end{center}
+
+\end{frame}
+\note{}
+
 
  % ------------------------------------------------------------------------------
 \begin{frame}
@@ -711,6 +792,96 @@ plots} }
 \end{frame}
 \note{}
 
+                
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{Offset detections}
+  \framesubtitle{}
+  \label{}
+  \vskip-.5cm
+  \begin{footnotesize}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    \begin{center}
+    \textbf{PELT (Pruned Exact Linear Time) }
+    \end{center}
+        \begin{align*}
+          \sum_{i=1}^{m+1}
+          \left[
+             C\left(\hat{\mathbf{y}}_{(\tau_{i-1}+1):\tau_i}\right)
+          \right]
+        + bf(m) = min
+      \end{align*}
+      \begin{itemize}\setlength\itemsep{1em}
+        \item[\(m\)]: Number of change points (segments: \(m+1\)).
+        \item[\(\tau_i\)]: Change-point positions.
+        \item[\(C(\cdot)\)]: Segment cost function.
+        \item[\(\hat{\mathbf y}\)]: Observed data.
+        \item[\(bf(m)\)]: Penalty term to prevent overfitting.
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+%    Cost models
+  \textcolor{red}{Linear model}
+      \begin{align*}
+        C_{\mathrm{linear}}(y_{a:b}) =
+        \sum_{t=a+1}^{b}
+        \left(y_t - (\hat{a}t + \hat{b})\right)^2
+      \end{align*}
+  \textcolor{red}{Radial Basisi Function (RBF)​}
+      \begin{align*}
+        k(x,y) = (b-a) -
+        \frac{1}{b-a}
+        \sum_{t=a+1}^{b}
+        \exp\left(-\gamma \|x-y\|^2\right)
+      \end{align*}
+  \textcolor{red}{L1 cost model}
+      \begin{align*}
+        C_{L_1}(y_{a:b}) = \sum_{t=a+1}^{b}
+                           \left\| y_t - \operatorname{median}(y_{a:b}) \right\|_1
+      \end{align*}
+ \textcolor{red}{ L2 cost model}
+      \begin{align*}
+        C_{L_2}(y_{a:b}) = \sum_{t=a+1}^{b}
+                            \left\| y_t - \bar{y}_{a:b} \right\|_2^2
+      \end{align*}
+      
+    \end{column}
+  \end{columns}
+   
+\end{footnotesize}
+  
+\end{frame}
+\note{}
+
+ % ------------------------------------------------------------------------------
+\begin{frame}
+  \frametitle{PELT fine-tuning and control experiments}
+  \framesubtitle{}
+  \label{}
+  \begin{columns}[T]
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      \textbf{MIZU}
+          \includegraphics[width=.97\textwidth]{mizu.png}
+      \end{center}  
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      \textbf{SPAN}
+          \includegraphics[width=.97\textwidth]{span.png}
+        \end{center}  
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \begin{center}
+      \textbf{J140}
+        \includegraphics[width=.97\textwidth]{j140.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+\note{}
+
 
 \begin{frame}
   \frametitle{Time series model}
@@ -747,7 +918,6 @@ plots} }
 \end{scriptsize}
 \end{frame}
 \note{}
-                
 
  % ------------------------------------------------------------------------------
 \begin{frame}
@@ -935,7 +1105,7 @@ plots} }
 \section{Discussion / Conclusions}
  % ------------------------------------------------------------------------------
 \begin{frame}
-  \frametitle{Conclusions and Future work}
+  \frametitle{Conclusion and Future work}
   \framesubtitle{}
   \label{}
   \vskip-.5cm
@@ -948,12 +1118,17 @@ plots} }
 %%%    \item The continuous monitoring of the networks gives useful results for the effect of strong earthquakes or other ``abrupt'' phenomena; small, dense networks are of great help (even with instrumentation of non-geodetic accuracy).
 %%%    \item DSO is upgrading its scientific output and processing activity via new datasets and real time processing.
 %%%      \item  Our plan: grow up our team and be more involved to the GNSS/EUREF community.
-      \item Greece's complex tectonic and volcanic setting requires continuous and reliable GNSS monitoring.
-       \item Routine GNSS processing provides consistent time series, station velocities, and deformation products for Geoscience applications.
-       \item The upgraded DSO platform automates data handling, processing, database storage, time-series analysis, and visualization.
-         \item Including post-seismic deformation (PSD) terms in time-series analysis is essential to separate transient signals from long-term tectonic velocities and avoid biased deformation estimates.
-       \item Dense GNSS networks improve the realization of a stable local reference frame and help detect earthquakes, volcanic signals, and other transient phenomena.
-       \item Future work focuses on expanding the datasets, supporting rapid and high-rate solutions, and strengthening DSO's contribution to the GNSS/EUREF community.
+%      \item Greece's complex tectonic and volcanic setting requires continuous and reliable GNSS monitoring.
+%       \item Routine GNSS processing provides consistent time series, station velocities, and deformation products for Geoscience applications.
+%       \item The upgraded DSO platform automates data handling, processing, database storage, time-series analysis, and visualization.
+%         \item Including post-seismic deformation (PSD) terms in time-series analysis is essential to separate transient signals from long-term tectonic velocities and avoid biased deformation estimates.
+%       \item Dense GNSS networks improve the realization of a stable local reference frame and help detect earthquakes, volcanic signals, and other transient phenomena.
+%       \item Future work focuses on expanding the datasets, supporting rapid and high-rate solutions, and strengthening DSO's contribution to the GNSS/EUREF community.
+    \item Automated GNSS monitoring: An integrated framework processes observations from more than 100 GNSS stations across Greece using complementary geodetic processing strategies.
+    \item Deformation signal characterization: Automated time-series analysis enables the estimation of station velocities, offsets, seasonal variations, and transient deformation, including coseismic and postseismic signals.
+    \item Continuous product dissemination: Processing results and derived deformation parameters are integrated into a unified database and made accessible through an online platform.
+    \item Toward operational earthquake response: Rapid processing and high-rate GNSS capabilities provide a foundation for faster earthquake-induced displacement assessment.
+    \item Future developments: Reduced processing latency, automated event-triggered analysis, and integration with seismic and accelerometric observations could support future rapid-alert and earthquake early-warning applications.
   \end{itemize}
 \end{frame}
 \note{}
