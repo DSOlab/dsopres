@@ -103,129 +103,274 @@ through automated processing and deformation analysis.
 \end{frame}
 \note
 
-% ------------------------------------------------------------------------------
-\begin{frame}\frametitle{Network GREECE}\framesubtitle{}
-\vskip-1cm
+% -------------------------------------------------------
+\begin{frame}{GNSS Processed Networks}
 
-%Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
-\begin{columns}[T] % align columns
-\begin{column}{.50\textwidth}
-  Network \texttt{GREECE} includes the majority of the available sites ($\approx$100)
-  but not all of them are (always/currently) active. Various providers but all 
-  with geodetic interest \& equipment.
+\centering
+\vspace{0.15cm}
 
-  {\small
-  \begin{itemize}
-    \setlength\itemsep{.1em}
-    \item<pro@1-> covers all of Greece
-    \item<pro@1-> different (geodetic type) equipment
-    \item<pro@1-> credible time-span (early 2004 - now)
-    \item<pro@1-> all freely available GNSS data
-    \item<con@1-> large data gaps \& inactive stations
-%    \item<con@1-> needs repairing
-\end{itemize}
-}
-\end{column}%
-\hfill%
-\begin{column}{.50\textwidth}
- \begin{figure}
- \begin{center}
- \vskip -.2cm
- \includegraphics[width=.95\textwidth]{refag_greece_noref.png} %1 2.2 0 0
-% \vskip-.7cm
-% \caption{COMET/NTUA network.}
-\href{http://dionysos.survey.ntua.gr/dsoportal/_dataanalysis/BERN52PROC/netprocinfo.php?network=greece}{->> Network GREECE}
- \label{fig:cometntua}
- \end{center}
- \end{figure}
-\end{column}%
+\begin{columns}[T,onlytextwidth]
+
+% ---------------- GREECE ----------------
+\begin{column}{0.3\textwidth}
+    \centering
+
+    {\color{blue}\bfseries Network GREECE}
+
+    \vspace{0.25cm}
+
+    \includegraphics[
+        width=\linewidth,
+        height=0.55\textheight,
+        keepaspectratio
+    ]{refag_greece_noref.png}
+
+    \vfill
+
+    \vspace{0.15cm}
+
+    {\scriptsize
+    \href{http://dionysos.survey.ntua.gr/dsoportal/_dataanalysis/BERN52PROC/netprocinfo.php?network=greece}
+    {\color{blue}$\rightarrow$ Network details}
+    }
+
+\end{column}
+
+% ---------------- SANTORINI ----------------
+\begin{column}{0.38\textwidth}
+    \centering
+
+    {\color{blue}\bfseries Network SANTORINI}
+
+    \vspace{0.25cm}
+
+    \begin{tikzpicture}
+        \node[inner sep=0] (main) {
+            \includegraphics[
+                width=\linewidth,
+                height=0.55\textheight,
+                keepaspectratio
+            ]{net_santo1.png}
+        };
+
+        % Santorini inset
+        \node[
+            anchor=south west,
+            fill=white,
+            inner sep=1pt,
+            draw=gray!60,
+            line width=0.4pt
+        ] at ([xshift=0.05cm,yshift=0.05cm]
+              main.south west) {
+            \includegraphics[
+                width=0.30\linewidth
+            ]{net_santo2.png}
+        };
+    \end{tikzpicture}
+
+    \vfill
+
+    \vspace{0.15cm}
+
+    {\scriptsize
+    \href{http://dionysos.survey.ntua.gr/dsoportal/_projects/supersites/santorini/}
+    {\color{blue}$\rightarrow$ Network details}
+    }
+
+\end{column}
+
+% ---------------- HEPOS ----------------
+\begin{column}{0.3\textwidth}
+    \centering
+
+    {\color{blue}\bfseries Network HEPOS}
+
+    \vspace{0.25cm}
+
+    \includegraphics[
+        width=\linewidth,
+        height=0.55\textheight,
+        keepaspectratio
+    ]{hepos.png}
+
+    \vfill
+
+    \vspace{0.15cm}
+
+    {\scriptsize
+    \href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}
+    {\color{blue}$\rightarrow$ Network details}
+    }
+
+\end{column}
+
 \end{columns}
-%  \begin{block}{}
-%    Can be used for EUREF densification ``as is''.
-%  \end{block}
+
+\vfill
+
+\begin{center}
+    \footnotesize
+    \textbf{Multi-network GNSS monitoring across Greece,
+    supporting continuous deformation analysis.}
+\end{center}
+
 \end{frame}
 
-% ------------------------------------------------------------------------------
-\begin{frame}\frametitle{Network SANTORINI}\framesubtitle{}
-\vskip-1cm
-  %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
-  The \texttt{Santorini Volcano} ...
-  \begin{columns}[T]
-    \begin{column}{.4\textwidth}
-      \begin{itemize}
-        \item<pro@1-> credible time-span
-        \item<pro@1-> only covers the wider area of Santorini Volcano
-        \item<con@1-> different providers (including surveying \& cadastral services)
-        \item<con@1-> no log files \& equipment changes
-      \end{itemize}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \begin{figure}
-      \begin{center}
-        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.97\textwidth]{net_santo1.png}\\
-        \vskip-2.5cm \hspace{-6cm}
-        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.35\textwidth]{net_santo2.png}
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{GNSS Processed Networks}
+%  \framesubtitle{}
+%  \label{}
+%  \begin{columns}[T]
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%        \vskip -.2cm
+%        \includegraphics[width=.95\textwidth]{refag_greece_noref.png} %1 2.2 0 0
+%        \href{http://dionysos.survey.ntua.gr/dsoportal/_dataanalysis/BERN52PROC/netprocinfo.php?network=greece}{->> Network GREECE}
+%      \end{center}
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.97\textwidth]{net_santo1.png}\\
+%        \vskip-2.5cm \hspace{-6cm}
+%        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.35\textwidth]{net_santo2.png}
+%        \href{http://dionysos.survey.ntua.gr/dsoportal/_projects/supersites/santorini/}{->> Network Santorini}
+%      \end{center}      
+%    \end{column}
+%    \begin{column}{.33\textwidth}
+%      \begin{center}
+%      \vskip -.7cm
+%      \includegraphics[width=.95\textwidth]{hepos.png} %1 2.2 0 0
+%     	\href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}{->> Network HEPOS}
+%    \end{center}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%\note{}
 
-%  \vskip .6cm
-% \caption{EnCeladus network. \url{http://dionysos.survey.ntua.gr/dso/enceladus/}}
-      \href{http://dionysos.survey.ntua.gr/dsoportal/_projects/supersites/santorini/}{->> Network Santorini}
-     \label{fig:crlab}
-     \end{center}
- \end{figure}
-      
-    \end{column}
-  \end{columns}
-\end{frame}
-
-% ------------------------------------------------------------------------------
-\begin{frame}
-  \frametitle{Network HEPOS}
-  \framesubtitle{}
-  \label{}
- \begin{columns}[T] % align columns
-	\begin{column}{.50\textwidth}
-	  Network \texttt{HEPOS} 
-	
-	  {\small
-	  \begin{itemize}
-	    \setlength\itemsep{.1em}
-	    \item<pro@1-> covers all of Greece
-	    \item<pro@1-> homogeneous equipment
-	    \item<pro@1-> credible time-span (mid 2007 - now)
-	    \item<con@1-> only four years available for processing up to now
-	%    \item<con@1-> needs repairing
-	\end{itemize}
-	}
-	\begin{columns}[T]
-	  \begin{column}{.5\textwidth}
-	    \begin{center}
-	    \vskip.5cm
-	    {\small \textit{Data availability and funding from\\ Hellenic Cadastre}}
-	    \end{center}
-	  \end{column}
-	  \begin{column}{.5\textwidth}
-	     \begin{center}
-	       \includegraphics[width=.97\textwidth]{../../logos/Hellenic_cadastre.png}
-	     \end{center}
-	  \end{column}
-	\end{columns}
-	\end{column}%
-	\hfill%
-	\begin{column}{.50\textwidth}
-	 \begin{figure}
-	 \begin{center}
-	 \vskip -.7cm
-	 \includegraphics[width=.95\textwidth]{hepos.png} %1 2.2 0 0
-%	 \vskip-.7cm
-	% \caption{COMET/NTUA network.}
-	\href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}{->> Network HEPOS}
-	 \label{fig:cometntua}
-	 \end{center}
-	 \end{figure}
-	\end{column}%
-	\end{columns}
-\end{frame}
-\note{} 
+%% ------------------------------------------------------------------------------
+%\begin{frame}\frametitle{Network GREECE}\framesubtitle{}
+%\vskip-1cm
+%
+%%Network installed/maintained by \texttt{COMET}\footnote{Center for Observation and Modeling of Earthquakes, \url{http://comet.nerc.ac.uk/}} \& \texttt{NTUA}.
+%\begin{columns}[T] % align columns
+%\begin{column}{.50\textwidth}
+%  Network \texttt{GREECE} includes the majority of the available sites ($\approx$100)
+%  but not all of them are (always/currently) active. Various providers but all 
+%  with geodetic interest \& equipment.
+%
+%  {\small
+%  \begin{itemize}
+%    \setlength\itemsep{.1em}
+%    \item<pro@1-> covers all of Greece
+%    \item<pro@1-> different (geodetic type) equipment
+%    \item<pro@1-> credible time-span (early 2004 - now)
+%    \item<pro@1-> all freely available GNSS data
+%    \item<con@1-> large data gaps \& inactive stations
+%%    \item<con@1-> needs repairing
+%\end{itemize}
+%}
+%\end{column}%
+%\hfill%
+%\begin{column}{.50\textwidth}
+% \begin{figure}
+% \begin{center}
+% \vskip -.2cm
+% \includegraphics[width=.95\textwidth]{refag_greece_noref.png} %1 2.2 0 0
+%% \vskip-.7cm
+%% \caption{COMET/NTUA network.}
+%\href{http://dionysos.survey.ntua.gr/dsoportal/_dataanalysis/BERN52PROC/netprocinfo.php?network=greece}{->> Network GREECE}
+% \label{fig:cometntua}
+% \end{center}
+% \end{figure}
+%\end{column}%
+%\end{columns}
+%%  \begin{block}{}
+%%    Can be used for EUREF densification ``as is''.
+%%  \end{block}
+%\end{frame}
+%
+%% ------------------------------------------------------------------------------
+%\begin{frame}\frametitle{Network SANTORINI}\framesubtitle{}
+%\vskip-1cm
+%  %Network installed/maintained by \texttt{CRLab}\footnote{Rift Laboratory \url{http://webobs.crlab.eu/}}. 
+%  The \texttt{Santorini Volcano} ...
+%  \begin{columns}[T]
+%    \begin{column}{.4\textwidth}
+%      \begin{itemize}
+%        \item<pro@1-> credible time-span
+%        \item<pro@1-> only covers the wider area of Santorini Volcano
+%        \item<con@1-> different providers (including surveying \& cadastral services)
+%        \item<con@1-> no log files \& equipment changes
+%      \end{itemize}
+%    \end{column}
+%    \begin{column}{.6\textwidth}
+%      \begin{figure}
+%      \begin{center}
+%        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.97\textwidth]{net_santo1.png}\\
+%        \vskip-2.5cm \hspace{-6cm}
+%        \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.35\textwidth]{net_santo2.png}
+%
+%%  \vskip .6cm
+%% \caption{EnCeladus network. \url{http://dionysos.survey.ntua.gr/dso/enceladus/}}
+%      \href{http://dionysos.survey.ntua.gr/dsoportal/_projects/supersites/santorini/}{->> Network Santorini}
+%     \label{fig:crlab}
+%     \end{center}
+% \end{figure}
+%      
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+%
+%% ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{Network HEPOS}
+%  \framesubtitle{}
+%  \label{}
+% \begin{columns}[T] % align columns
+%	\begin{column}{.50\textwidth}
+%	  Network \texttt{HEPOS} 
+%	
+%	  {\small
+%	  \begin{itemize}
+%	    \setlength\itemsep{.1em}
+%	    \item<pro@1-> covers all of Greece
+%	    \item<pro@1-> homogeneous equipment
+%	    \item<pro@1-> credible time-span (mid 2007 - now)
+%	    \item<con@1-> only four years available for processing up to now
+%	%    \item<con@1-> needs repairing
+%	\end{itemize}
+%	}
+%	\begin{columns}[T]
+%	  \begin{column}{.5\textwidth}
+%	    \begin{center}
+%	    \vskip.5cm
+%	    {\small \textit{Data availability and funding from\\ Hellenic Cadastre}}
+%	    \end{center}
+%	  \end{column}
+%	  \begin{column}{.5\textwidth}
+%	     \begin{center}
+%	       \includegraphics[width=.97\textwidth]{../../logos/Hellenic_cadastre.png}
+%	     \end{center}
+%	  \end{column}
+%	\end{columns}
+%	\end{column}%
+%	\hfill%
+%	\begin{column}{.50\textwidth}
+%	 \begin{figure}
+%	 \begin{center}
+%	 \vskip -.7cm
+%	 \includegraphics[width=.95\textwidth]{hepos.png} %1 2.2 0 0
+%%	 \vskip-.7cm
+%	% \caption{COMET/NTUA network.}
+%	\href{http://83.212.80.177/abmaps/netmap_noref.php?network=hepos}{->> Network HEPOS}
+%	 \label{fig:cometntua}
+%	 \end{center}
+%	 \end{figure}
+%	\end{column}%
+%	\end{columns}
+%\end{frame}
+%\note{} 
 
 \section{Processing}
 
@@ -259,7 +404,7 @@ through automated processing and deformation analysis.
     \setlength{\itemsep}{5pt}
     \item Station velocities and seasonal signals.
     \item Coseismic offsets and transient deformation.
-    \item Postseismic displacement evolution.
+    \item Postseismic Deformation.
 \end{itemize}
 \end{block}
 
@@ -503,29 +648,29 @@ plots} }
 %%  \end{itemize}
 %% \end{frame}
 
- % ------------------------------------------------------------------------------
-\begin{frame}
-  \frametitle{IGS20 transition for REPRO2026}
-  \framesubtitle{}
-  \label{}
-  \vspace*{-.5cm}
-%  $\Rightarrow$ New release Bernese GNSS Software \textcolor{blue}{v5.4}\\[1em]
-%  New values on processing options:
-  \begin{itemize}\setlength\itemsep{.2em}
-    \item Reference frame \texttt{\textcolor{blue}{IGS20 > IGb20 > IGc20}}
-    \item Oceans loading corrections (\texttt{\textcolor{blue}{NTUA\_FES2014b}})
-    \item \texttt{\textcolor{blue}{VMF3}} for tropospheric modeling
-    \item \texttt{ATX} file: \texttt{\textcolor{blue}{igs20.atx}}
-    \item \textcolor{blue}{Long filename of products} according to new IGS convention
-  \end{itemize}
-  ~\\[.2em]
-  \begin{center}
-    \includegraphics[width=.97\textwidth]{repro26_status.png}
-  \end{center}
-%  $\Rightarrow$  
-%  $\Rightarrow$ Reprocess all available data from late '90s up to now
-\end{frame}
-\note{}
+% % ------------------------------------------------------------------------------
+%\begin{frame}
+%  \frametitle{IGS20 transition for REPRO2026}
+%  \framesubtitle{}
+%  \label{}
+%  \vspace*{-.5cm}
+%%  $\Rightarrow$ New release Bernese GNSS Software \textcolor{blue}{v5.4}\\[1em]
+%%  New values on processing options:
+%  \begin{itemize}\setlength\itemsep{.2em}
+%    \item Reference frame \texttt{\textcolor{blue}{IGS20 > IGb20 > IGc20}}
+%    \item Oceans loading corrections (\texttt{\textcolor{blue}{NTUA\_FES2014b}})
+%    \item \texttt{\textcolor{blue}{VMF3}} for tropospheric modeling
+%    \item \texttt{ATX} file: \texttt{\textcolor{blue}{igs20.atx}}
+%    \item \textcolor{blue}{Long filename of products} according to new IGS convention
+%  \end{itemize}
+%  ~\\[.2em]
+%  \begin{center}
+%    \includegraphics[width=.97\textwidth]{repro26_status.png}
+%  \end{center}
+%%  $\Rightarrow$  
+%%  $\Rightarrow$ Reprocess all available data from late '90s up to now
+%\end{frame}
+%\note{}
 
 % % ------------------------------------------------------------------------------
 %\begin{frame}
@@ -768,24 +913,24 @@ plots} }
     \begin{column}{.33\textwidth}
       \begin{center}
       Times-series\\
-        \includegraphics[width=.97\textwidth]{ater_ts.png}
+        \includegraphics[width=.97\textwidth]{teia_ts.png}
       \end{center}
     \end{column}
     \begin{column}{.33\textwidth}
       \begin{center}
       Linear regression residuals\\
-        \includegraphics[width=.97\textwidth]{ater_res.png}
+        \includegraphics[width=.97\textwidth]{teia_res.png}
       \end{center}
     \end{column}
 %    \begin{column}{.25\textwidth}
 %      \begin{center}
-%        \includegraphics[width=.97\textwidth]{ater_sigma.png}
+%        \includegraphics[width=.97\textwidth]{teia_sigma.png}
 %      \end{center}
 %    \end{column}
     \begin{column}{.33\textwidth}
       \begin{center}
       Monthly average\\
-        \includegraphics[width=.97\textwidth]{ater_monthly.png}
+        \includegraphics[width=.97\textwidth]{teia_monthly.png}
       \end{center}
     \end{column}
   \end{columns}
@@ -1040,7 +1185,7 @@ plots} }
  % ------------------------------------------------------------------------------
 \begin{frame}
   \frametitle{PPP processing for High-rate data}
-  \framesubtitle{Santorini Volcano crisis (02.2025)}
+  %\framesubtitle{Santorini Volcano crisis (02.2025)}
   \label{}\
   \vskip-1cm
   \begin{columns}[T]
@@ -1052,8 +1197,9 @@ plots} }
     \end{column}
     \begin{column}{.49\textwidth}
       \begin{center}
-        \texttt{048A\_2025\_036}\\
-        \includegraphics[width=.9\textwidth]{048a_25036.png}
+        \texttt{rodo\_2023\_037}\\
+        \includegraphics[width=.97\textwidth]{rodo_eq2.png}
+%        \includegraphics[width=.9\textwidth]{048a_25036.png}
       \end{center}
     \end{column}
   \end{columns}
@@ -1066,7 +1212,7 @@ plots} }
     \begin{column}{.8\textwidth}
     \vskip.5cm
       \begin{itemize}\setlength\itemsep{.1em}
-        \item 1Hz data available, $\sim$5 stations from HEPOS Network.
+        \item 1Hz data available
         \item PPP-AR analysis for 2 days (DOY: 035, 036)
       \end{itemize}
  
@@ -1085,7 +1231,7 @@ plots} }
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
     \begin{center}
-      \texttt{DSO\_GRC\_2026} (2020-2026)\\
+      \texttt{DSO\_GRC\_2026} (2000-2026)\\
       \includegraphics[width=.97\textwidth]{gr-output_vel.jpg}
     \end{center}
     \end{column}
@@ -1109,7 +1255,8 @@ plots} }
   \framesubtitle{}
   \label{}
   \vskip-.5cm
-  \begin{itemize}\setlength\itemsep{.5em}
+  \begin{small}
+  \begin{itemize}\setlength\itemsep{.3em}
 %%%    \item Greece is located in a complex tectonic background with many changes in the kinematics of the area.
 %%%    \item Routine processing and monitoring are very important and revealing for 
 %%%      Greece; products are requested by and disseminated to a wide range of Geoscientists.
@@ -1124,12 +1271,14 @@ plots} }
 %         \item Including post-seismic deformation (PSD) terms in time-series analysis is essential to separate transient signals from long-term tectonic velocities and avoid biased deformation estimates.
 %       \item Dense GNSS networks improve the realization of a stable local reference frame and help detect earthquakes, volcanic signals, and other transient phenomena.
 %       \item Future work focuses on expanding the datasets, supporting rapid and high-rate solutions, and strengthening DSO's contribution to the GNSS/EUREF community.
-    \item Automated GNSS monitoring: An integrated framework processes observations from more than 100 GNSS stations across Greece using complementary geodetic processing strategies.
+    \item Automated GNSS monitoring: An integrated framework processes observations from more than 200 GNSS stations across Greece using complementary geodetic processing strategies.
+    \item PELT algorithm: reliable displacement detection even in the absence of seismic data, with greater sensitivity to larger offsets; allows the evaluation of different cost functions and statistical assumptions.
     \item Deformation signal characterization: Automated time-series analysis enables the estimation of station velocities, offsets, seasonal variations, and transient deformation, including coseismic and postseismic signals.
     \item Continuous product dissemination: Processing results and derived deformation parameters are integrated into a unified database and made accessible through an online platform.
     \item Toward operational earthquake response: Rapid processing and high-rate GNSS capabilities provide a foundation for faster earthquake-induced displacement assessment.
     \item Future developments: Reduced processing latency, automated event-triggered analysis, and integration with seismic and accelerometric observations could support future rapid-alert and earthquake early-warning applications.
   \end{itemize}
+  \end{small}
 \end{frame}
 \note{}
 
